@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.dashboard">
+   <children>
+      <AnchorPane fx:id="buttonSet" layoutX="-17.0" layoutY="-1.0" prefHeight="768.0" prefWidth="286.0" style="-fx-background-color: Black; -fx-background-radius: 30;">
+         <children>
+            <Button fx:id="btncustomer" layoutX="97.0" layoutY="81.0" mnemonicParsing="false" text="Customer" />
+            <Button fx:id="btnmeal" layoutX="98.0" layoutY="128.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="82.0" text="Meal" />
+            <Button fx:id="btnreservation" layoutX="92.0" layoutY="179.0" mnemonicParsing="false" text="Reservation" />
+            <Button fx:id="btnemployee" layoutX="98.0" layoutY="240.0" mnemonicParsing="false" text="Employee" />
+            <Button fx:id="btnsupplier" layoutX="100.0" layoutY="293.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="76.0" text="Supplier" />
+            <Button fx:id="btnIngredients" layoutX="93.0" layoutY="360.0" mnemonicParsing="false" text="Ingredients" />
+            <Button fx:id="btnPayment" layoutX="100.0" layoutY="416.0" mnemonicParsing="false" text="Payment" />
+            <Button fx:id="btnReport" layoutX="100.0" layoutY="469.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="76.0" text="Report" />
+         </children></AnchorPane>
+      <AnchorPane fx:id="Emptypane" layoutX="269.0" layoutY="-1.0" prefHeight="768.0" prefWidth="1097.0" />
+   </children>
+</AnchorPane>

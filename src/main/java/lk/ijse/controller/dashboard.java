@@ -1,11 +1,15 @@
 package lk.ijse.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
 
-public class dashboard {
+public class dashboard  implements Initializable {
 
     @FXML
     private ResourceBundle resources;
@@ -26,4 +30,15 @@ public class dashboard {
 
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/view/mainForm.fxml"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Emptypane.getChildren().clear();
+        Emptypane.getChildren().add(root);
+    }
 }

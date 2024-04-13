@@ -150,6 +150,12 @@ public class MainForm {
     private Text txt1;
 
     @FXML
+    private Text txt10;
+
+    @FXML
+    private Text txt11;
+
+    @FXML
     private Text txt2;
 
     @FXML
@@ -169,6 +175,9 @@ public class MainForm {
 
     @FXML
     private Text txt8;
+
+    @FXML
+    private Text txt9;
 
     @FXML
     void initialize() {
@@ -216,6 +225,8 @@ public class MainForm {
         assert txt02 != null : "fx:id=\"txt02\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert txt03 != null : "fx:id=\"txt03\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert txt1 != null : "fx:id=\"txt1\" was not injected: check your FXML file 'mainForm.fxml'.";
+        assert txt10 != null : "fx:id=\"txt10\" was not injected: check your FXML file 'mainForm.fxml'.";
+        assert txt11 != null : "fx:id=\"txt11\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert txt2 != null : "fx:id=\"txt2\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert txt3 != null : "fx:id=\"txt3\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert txt4 != null : "fx:id=\"txt4\" was not injected: check your FXML file 'mainForm.fxml'.";
@@ -223,6 +234,7 @@ public class MainForm {
         assert txt6 != null : "fx:id=\"txt6\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert txt7 != null : "fx:id=\"txt7\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert txt8 != null : "fx:id=\"txt8\" was not injected: check your FXML file 'mainForm.fxml'.";
+        assert txt9 != null : "fx:id=\"txt9\" was not injected: check your FXML file 'mainForm.fxml'.";
 
     }
 

@@ -21,6 +21,12 @@ public class MainForm {
     private AnchorPane AP01;
 
     @FXML
+    private AnchorPane AP010;
+
+    @FXML
+    private AnchorPane AP011;
+
+    @FXML
     private AnchorPane AP02;
 
     @FXML
@@ -42,7 +48,7 @@ public class MainForm {
     private AnchorPane AP08;
 
     @FXML
-    private ImageView FP01;
+    private AnchorPane AP09;
 
     @FXML
     private AnchorPane MainFormPane;
@@ -60,10 +66,25 @@ public class MainForm {
     private ImageView PIC04;
 
     @FXML
+    private ImageView PIC05;
+
+    @FXML
+    private ImageView PIC06;
+
+    @FXML
+    private ImageView PIC07;
+
+    @FXML
     private ImageView PIC08;
 
     @FXML
     private ImageView PIC09;
+
+    @FXML
+    private ImageView PIC10;
+
+    @FXML
+    private ImageView PIC11;
 
     @FXML
     private TextField SearchBar;
@@ -152,6 +173,8 @@ public class MainForm {
     @FXML
     void initialize() {
         assert AP01 != null : "fx:id=\"AP01\" was not injected: check your FXML file 'mainForm.fxml'.";
+        assert AP010 != null : "fx:id=\"AP010\" was not injected: check your FXML file 'mainForm.fxml'.";
+        assert AP011 != null : "fx:id=\"AP011\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert AP02 != null : "fx:id=\"AP02\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert AP03 != null : "fx:id=\"AP03\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert AP04 != null : "fx:id=\"AP04\" was not injected: check your FXML file 'mainForm.fxml'.";
@@ -159,14 +182,19 @@ public class MainForm {
         assert AP06 != null : "fx:id=\"AP06\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert AP07 != null : "fx:id=\"AP07\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert AP08 != null : "fx:id=\"AP08\" was not injected: check your FXML file 'mainForm.fxml'.";
-        assert FP01 != null : "fx:id=\"FP01\" was not injected: check your FXML file 'mainForm.fxml'.";
+        assert AP09 != null : "fx:id=\"AP09\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert MainFormPane != null : "fx:id=\"MainFormPane\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert PIC01 != null : "fx:id=\"PIC01\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert PIC02 != null : "fx:id=\"PIC02\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert PIC03 != null : "fx:id=\"PIC03\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert PIC04 != null : "fx:id=\"PIC04\" was not injected: check your FXML file 'mainForm.fxml'.";
+        assert PIC05 != null : "fx:id=\"PIC05\" was not injected: check your FXML file 'mainForm.fxml'.";
+        assert PIC06 != null : "fx:id=\"PIC06\" was not injected: check your FXML file 'mainForm.fxml'.";
+        assert PIC07 != null : "fx:id=\"PIC07\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert PIC08 != null : "fx:id=\"PIC08\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert PIC09 != null : "fx:id=\"PIC09\" was not injected: check your FXML file 'mainForm.fxml'.";
+        assert PIC10 != null : "fx:id=\"PIC10\" was not injected: check your FXML file 'mainForm.fxml'.";
+        assert PIC11 != null : "fx:id=\"PIC11\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert SearchBar != null : "fx:id=\"SearchBar\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert orderbtn1 != null : "fx:id=\"orderbtn1\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert orderbtn2 != null : "fx:id=\"orderbtn2\" was not injected: check your FXML file 'mainForm.fxml'.";

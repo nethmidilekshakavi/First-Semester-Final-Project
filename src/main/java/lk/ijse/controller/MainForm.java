@@ -54,6 +54,9 @@ public class MainForm {
     private AnchorPane MainFormPane;
 
     @FXML
+    private ImageView Map;
+
+    @FXML
     private ImageView PIC01;
 
     @FXML
@@ -118,6 +121,12 @@ public class MainForm {
 
     @FXML
     private Button orderbtn8;
+
+    @FXML
+    private AnchorPane paneNew;
+
+    @FXML
+    private ImageView pieChart;
 
     @FXML
     private Text rs1;
@@ -202,6 +211,7 @@ public class MainForm {
         assert AP08 != null : "fx:id=\"AP08\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert AP09 != null : "fx:id=\"AP09\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert MainFormPane != null : "fx:id=\"MainFormPane\" was not injected: check your FXML file 'mainForm.fxml'.";
+        assert Map != null : "fx:id=\"Map\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert PIC01 != null : "fx:id=\"PIC01\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert PIC02 != null : "fx:id=\"PIC02\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert PIC03 != null : "fx:id=\"PIC03\" was not injected: check your FXML file 'mainForm.fxml'.";
@@ -224,6 +234,8 @@ public class MainForm {
         assert orderbtn6 != null : "fx:id=\"orderbtn6\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert orderbtn7 != null : "fx:id=\"orderbtn7\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert orderbtn8 != null : "fx:id=\"orderbtn8\" was not injected: check your FXML file 'mainForm.fxml'.";
+        assert paneNew != null : "fx:id=\"paneNew\" was not injected: check your FXML file 'mainForm.fxml'.";
+        assert pieChart != null : "fx:id=\"pieChart\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert rs1 != null : "fx:id=\"rs1\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert rs2 != null : "fx:id=\"rs2\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert rs3 != null : "fx:id=\"rs3\" was not injected: check your FXML file 'mainForm.fxml'.";

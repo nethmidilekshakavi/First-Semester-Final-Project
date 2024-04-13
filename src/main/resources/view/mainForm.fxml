@@ -11,9 +11,27 @@
 
 <AnchorPane fx:id="MainFormPane" prefHeight="768.0" prefWidth="1097.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.MainForm">
    <children>
+      <AnchorPane fx:id="AP010" layoutX="266.0" layoutY="486.0" prefHeight="182.0" prefWidth="200.0" style="-fx-background-color: White; -fx-background-radius: 30;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Text fx:id="txt10" layoutX="65.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Indian Special">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
       <TextField fx:id="SearchBar" layoutX="27.0" layoutY="26.0" prefHeight="31.0" prefWidth="210.0" promptText="Search" />
-      <Text fx:id="txt01" layoutX="27.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What would you eat today?" />
-      <Text fx:id="txt02" layoutX="27.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Top meals this week" />
+      <Text fx:id="txt01" layoutX="27.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What would you eat today?">
+         <font>
+            <Font size="10.0" />
+         </font></Text>
+      <Text fx:id="txt02" layoutX="27.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Top meals this week">
+         <font>
+            <Font size="10.0" />
+         </font></Text>
       <Text fx:id="txt03" layoutX="37.0" layoutY="466.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Favourite" />
       <AnchorPane fx:id="AP01" layoutX="27.0" layoutY="127.0" prefHeight="132.0" prefWidth="148.0" style="-fx-background-radius: 20; -fx-background-color: White;">
          <effect>
@@ -235,15 +253,44 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <ImageView fx:id="PIC09" fitHeight="133.0" fitWidth="200.0" layoutX="27.0" layoutY="486.0">
-         <image>
-            <Image url="@../Images/8de0c8cb61c2407ae3f4b1c762672582.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="PIC10" fitHeight="133.0" fitWidth="200.0" layoutX="266.0" layoutY="486.0">
+      <ImageView fx:id="PIC10" fitHeight="135.0" fitWidth="200.0" layoutX="266.0" layoutY="484.0">
          <image>
             <Image url="@../Images/fc2e777cd2b2657d23804dfbb45a84b4.jpg" />
          </image>
       </ImageView>
+      <AnchorPane fx:id="AP09" layoutX="22.0" layoutY="486.0" prefHeight="182.0" prefWidth="200.0" style="-fx-background-color: White; -fx-background-radius: 30;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <ImageView fx:id="PIC09" fitHeight="133.0" fitWidth="200.0" layoutY="-3.0">
+               <image>
+                  <Image url="@../Images/8de0c8cb61c2407ae3f4b1c762672582.jpg" />
+               </image>
+            </ImageView>
+            <Text fx:id="txt9" layoutX="55.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Korean Special">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="AP011" layoutX="517.0" layoutY="486.0" prefHeight="182.0" prefWidth="192.0" style="-fx-background-color: White; -fx-background-radius: 30;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <ImageView fx:id="PIC11" fitHeight="133.0" fitWidth="192.0" layoutY="-3.0">
+               <image>
+                  <Image url="@../Images/Polish_20240411_210438362.jpg" />
+               </image>
+            </ImageView>
+            <Text fx:id="txt11" layoutX="62.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="China Special">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

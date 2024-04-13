@@ -87,7 +87,13 @@ public class MainForm {
     private ImageView PIC11;
 
     @FXML
+    private ImageView Quection;
+
+    @FXML
     private TextField SearchBar;
+
+    @FXML
+    private ImageView notification;
 
     @FXML
     private Button orderbtn1;
@@ -136,6 +142,9 @@ public class MainForm {
 
     @FXML
     private Text rs8;
+
+    @FXML
+    private ImageView setting;
 
     @FXML
     private Text txt01;
@@ -204,7 +213,9 @@ public class MainForm {
         assert PIC09 != null : "fx:id=\"PIC09\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert PIC10 != null : "fx:id=\"PIC10\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert PIC11 != null : "fx:id=\"PIC11\" was not injected: check your FXML file 'mainForm.fxml'.";
+        assert Quection != null : "fx:id=\"Quection\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert SearchBar != null : "fx:id=\"SearchBar\" was not injected: check your FXML file 'mainForm.fxml'.";
+        assert notification != null : "fx:id=\"notification\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert orderbtn1 != null : "fx:id=\"orderbtn1\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert orderbtn2 != null : "fx:id=\"orderbtn2\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert orderbtn3 != null : "fx:id=\"orderbtn3\" was not injected: check your FXML file 'mainForm.fxml'.";
@@ -221,6 +232,7 @@ public class MainForm {
         assert rs6 != null : "fx:id=\"rs6\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert rs7 != null : "fx:id=\"rs7\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert rs8 != null : "fx:id=\"rs8\" was not injected: check your FXML file 'mainForm.fxml'.";
+        assert setting != null : "fx:id=\"setting\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert txt01 != null : "fx:id=\"txt01\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert txt02 != null : "fx:id=\"txt02\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert txt03 != null : "fx:id=\"txt03\" was not injected: check your FXML file 'mainForm.fxml'.";

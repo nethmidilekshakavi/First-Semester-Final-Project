@@ -140,7 +140,7 @@
       <ImageView fx:id="PIC08" fitHeight="111.0" fitWidth="113.0" layoutX="426.0" layoutY="307.0">
 
       </ImageView>
-      <AnchorPane fx:id="paneNew" layoutX="794.0" layoutY="121.0" prefHeight="623.0" prefWidth="279.0" style="-fx-background-color: White; -fx-background-radius: 25;">
+      <AnchorPane fx:id="paneNew" layoutX="794.0" layoutY="57.0" prefHeight="623.0" prefWidth="279.0" style="-fx-background-color: White; -fx-background-radius: 25;">
          <effect>
             <DropShadow />
          </effect>

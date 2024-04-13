@@ -9,13 +9,12 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane fx:id="MainFormPane" prefHeight="768.0" prefWidth="1097.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.MainForm">
    <children>
       <TextField fx:id="SearchBar" layoutX="27.0" layoutY="26.0" prefHeight="31.0" prefWidth="210.0" promptText="Search" />
       <Text fx:id="txt01" layoutX="27.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What would you eat today?" />
       <Text fx:id="txt02" layoutX="27.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Top meals this week" />
-      <Text fx:id="txt03" layoutX="37.0" layoutY="453.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Favourite" />
+      <Text fx:id="txt03" layoutX="37.0" layoutY="466.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Favourite" />
       <AnchorPane fx:id="AP01" layoutX="27.0" layoutY="127.0" prefHeight="132.0" prefWidth="148.0" style="-fx-background-radius: 20; -fx-background-color: White;">
          <effect>
             <DropShadow />
@@ -26,7 +25,7 @@
                   <Font name="System Bold" size="10.0" />
                </font>
             </Text>
-            <Text fx:id="txt11" layoutX="37.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RS.2860.00">
+            <Text fx:id="rs1" layoutX="37.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RS.2860.00">
                <font>
                   <Font name="System Bold" size="10.0" />
                </font>
@@ -40,9 +39,8 @@
       </AnchorPane>
       <ImageView fx:id="PIC01" fitHeight="99.0" fitWidth="148.0" layoutX="27.0" layoutY="107.0">
          <image>
-            <Image url="/Images/Polish_20240411_210319866.jpg" />
-         </image>
-      </ImageView>
+            <Image url="@../Images/Polish_20240411_210319866.jpg" />
+         </image></ImageView>
       <AnchorPane fx:id="AP02" layoutX="218.0" layoutY="127.0" prefHeight="132.0" prefWidth="142.0" style="-fx-background-radius: 20; -fx-background-color: White;">
          <effect>
             <DropShadow />
@@ -50,20 +48,19 @@
          <children>
             <ImageView fx:id="PIC02" fitHeight="99.0" fitWidth="148.0" layoutY="-18.0">
                <image>
-                  <Image url="@../../../../../../Downloads/Polish_20240411_212045059.jpg" />
-               </image>
-            </ImageView>
+                  <Image url="@../Images/Polish_20240411_212045059.jpg" />
+               </image></ImageView>
             <Text fx:id="txt2" layoutX="10.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vegetable Chow Mein">
                <font>
                   <Font name="System Bold" size="10.0" />
                </font>
             </Text>
-            <Text fx:id="txt111" layoutX="42.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RS.1650.00">
+            <Text fx:id="rs2" layoutX="42.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RS.1650.00">
                <font>
                   <Font name="System Bold" size="10.0" />
                </font>
             </Text>
-            <Button fx:id="orderbtn11" layoutX="48.0" layoutY="115.0" mnemonicParsing="false" style="-fx-background-color: FFA447; -fx-background-radius: 40;" text="Order">
+            <Button fx:id="orderbtn2" layoutX="48.0" layoutY="115.0" mnemonicParsing="false" style="-fx-background-color: FFA447; -fx-background-radius: 40;" text="Order">
                <font>
                   <Font name="System Bold Italic" size="10.0" />
                </font>
@@ -77,20 +74,19 @@
          <children>
             <ImageView fx:id="PIC03" fitHeight="99.0" fitWidth="148.0" layoutY="-20.0">
                <image>
-                  <Image url="@../../../../../../Downloads/Polish_20240405_120441414.jpg" />
-               </image>
-            </ImageView>
+                  <Image url="@../Images/14aa31e4d702771ea2b02983fdb4353f.jpg" />
+               </image></ImageView>
             <Text fx:id="txt3" layoutX="25.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chicken Fride Rice">
                <font>
                   <Font name="System Bold" size="10.0" />
                </font>
             </Text>
-            <Text fx:id="txt1111" layoutX="44.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RS.2000.00">
+            <Text fx:id="rs3" layoutX="44.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RS.2000.00">
                <font>
                   <Font name="System Bold" size="10.0" />
                </font>
             </Text>
-            <Button fx:id="orderbtn111" layoutX="53.0" layoutY="114.0" mnemonicParsing="false" style="-fx-background-color: FFA447; -fx-background-radius: 40;" text="Order">
+            <Button fx:id="orderbtn3" layoutX="53.0" layoutY="114.0" mnemonicParsing="false" style="-fx-background-color: FFA447; -fx-background-radius: 40;" text="Order">
                <font>
                   <Font name="System Bold Italic" size="10.0" />
                </font>
@@ -104,79 +100,120 @@
          <children>
             <ImageView fx:id="PIC04" fitHeight="105.0" fitWidth="148.0" layoutY="-20.0">
                <image>
-                  <Image url="@../../../../../../Downloads/WhatsApp%20Image%202024-03-27%20at%207.10.42%20PM(1).jpeg" />
-               </image>
-            </ImageView>
-            <Text fx:id="txt4" layoutX="16.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Spicy Burge &amp; Drink">
+                  <Image url="@../Images/e83147604b7d6e2d448f324935ef754b.jpg" />
+               </image></ImageView>
+            <Text fx:id="txt4" layoutX="40.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Spicy Burge ">
                <font>
                   <Font name="System Bold" size="10.0" />
                </font>
             </Text>
-            <Text fx:id="txt11111" layoutX="46.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RS.890.00">
+            <Text fx:id="rs4" layoutX="46.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RS.890.00">
                <font>
                   <Font name="System Bold" size="10.0" />
                </font>
             </Text>
-            <Button fx:id="orderbtn1111" layoutX="51.0" layoutY="115.0" mnemonicParsing="false" style="-fx-background-color: FFA447; -fx-background-radius: 40;" text="Order">
+            <Button fx:id="orderbtn4" layoutX="51.0" layoutY="115.0" mnemonicParsing="false" style="-fx-background-color: FFA447; -fx-background-radius: 40;" text="Order">
                <font>
                   <Font name="System Bold Italic" size="10.0" />
                </font>
             </Button>
          </children>
       </AnchorPane>
-      <ImageView fx:id="FP02" fitHeight="133.0" fitWidth="200.0" layoutX="266.0" layoutY="467.0">
-         <image>
-            <Image url="@../../../../../8de0c8cb61c2407ae3f4b1c762672582.jpg" />
-         </image>
-         <effect>
-            <DropShadow />
-         </effect>
-      </ImageView>
       <ImageView fx:id="PIC08" fitHeight="111.0" fitWidth="113.0" layoutX="426.0" layoutY="307.0">
-         <image>
-            <Image url="@../../../../../ace218a4f4b81019717b67dffe6dfa45.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="PIC06" fitHeight="105.0" fitWidth="122.0" layoutX="228.0" layoutY="311.0">
-         <image>
-            <Image url="@../../../../../4460fb20aec801025b65bd9d11751a0f.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="FP01" fitHeight="133.0" fitWidth="200.0" layoutX="32.0" layoutY="467.0">
-         <image>
-            <Image url="@../../../../../fc2e777cd2b2657d23804dfbb45a84b4.jpg" />
-         </image>
-         <effect>
-            <DropShadow />
-         </effect>
+
       </ImageView>
       <AnchorPane layoutX="794.0" layoutY="121.0" prefHeight="623.0" prefWidth="279.0" style="-fx-background-color: White;" />
       <ImageView fx:id="PIC09" fitHeight="111.0" fitWidth="122.0" layoutX="611.0" layoutY="308.0">
-         <image>
-            <Image url="@../../../../../3a01daf9a79bfca61f21052ac5805e46.jpg" />
-         </image>
+
       </ImageView>
-      <AnchorPane fx:id="AP011" layoutX="22.0" layoutY="301.0" prefHeight="133.0" prefWidth="142.0" style="-fx-background-radius: 20; -fx-background-color: White;">
+      <AnchorPane fx:id="AP05" layoutX="22.0" layoutY="301.0" prefHeight="133.0" prefWidth="142.0" style="-fx-background-radius: 20; -fx-background-color: White;">
          <effect>
             <DropShadow />
          </effect>
          <children>
-            <Text fx:id="txt112" layoutX="37.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs.1040.00">
+            <Text fx:id="rs5" layoutX="37.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs.1040.00">
                <font>
                   <Font name="System Bold" size="10.0" />
                </font>
             </Text>
-            <Button fx:id="orderbtn12" layoutX="49.0" layoutY="115.0" mnemonicParsing="false" style="-fx-background-color: FFA447; -fx-background-radius: 40;" text="Order">
+            <Button fx:id="orderbtn5" layoutX="49.0" layoutY="115.0" mnemonicParsing="false" style="-fx-background-color: FFA447; -fx-background-radius: 40;" text="Order">
                <font>
                   <Font name="System Bold Italic" size="10.0" />
                </font>
             </Button>
-            <ImageView fx:id="PIC05" fitHeight="87.0" fitWidth="104.0" layoutX="20.0">
+            <ImageView fx:id="FP01" fitHeight="99.0" fitWidth="87.0" layoutX="25.0">
                <image>
-                  <Image url="@../../../../../10eb7c62b38898a31fe52f9648a0e8eb.jpg" />
+                  <Image url="@../Images/3a01daf9a79bfca61f21052ac5805e46.jpg" />
                </image>
             </ImageView>
-            <Text fx:id="txt11" layoutX="28.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vegetable Salad" wrappingWidth="104.0">
+            <Text fx:id="txt5" layoutX="18.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Crunch Pasta Salad">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Text>
+
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="AP06" layoutX="218.0" layoutY="301.0" prefHeight="133.0" prefWidth="142.0" style="-fx-background-radius: 20; -fx-background-color: White;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Text fx:id="rs6" layoutX="37.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs.1040.00">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Text>
+            <Button fx:id="orderbtn6" layoutX="49.0" layoutY="115.0" mnemonicParsing="false" style="-fx-background-color: FFA447; -fx-background-radius: 40;" text="Order">
+               <font>
+                  <Font name="System Bold Italic" size="10.0" />
+               </font>
+            </Button>
+            <Text fx:id="txt6" layoutX="18.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Crunch Pasta Salad">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="AP07" layoutX="412.0" layoutY="301.0" prefHeight="133.0" prefWidth="142.0" style="-fx-background-radius: 20; -fx-background-color: White;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Text fx:id="rs7" layoutX="37.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs.1040.00">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Text>
+            <Button fx:id="orderbtn7" layoutX="49.0" layoutY="115.0" mnemonicParsing="false" style="-fx-background-color: FFA447; -fx-background-radius: 40;" text="Order">
+               <font>
+                  <Font name="System Bold Italic" size="10.0" />
+               </font>
+            </Button>
+            <Text fx:id="txt7" layoutX="18.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Crunch Pasta Salad">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="AP08" layoutX="601.0" layoutY="301.0" prefHeight="133.0" prefWidth="142.0" style="-fx-background-radius: 20; -fx-background-color: White;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Text fx:id="rs8" layoutX="37.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs.1040.00">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Text>
+            <Button fx:id="orderbtn8" layoutX="49.0" layoutY="115.0" mnemonicParsing="false" style="-fx-background-color: FFA447; -fx-background-radius: 40;" text="Order">
+               <font>
+                  <Font name="System Bold Italic" size="10.0" />
+               </font>
+            </Button>
+            <Text fx:id="txt8" layoutX="18.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Crunch Pasta Salad">
                <font>
                   <Font name="System Bold" size="10.0" />
                </font>

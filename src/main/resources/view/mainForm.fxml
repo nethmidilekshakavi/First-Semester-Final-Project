@@ -140,7 +140,25 @@
       <ImageView fx:id="PIC08" fitHeight="111.0" fitWidth="113.0" layoutX="426.0" layoutY="307.0">
 
       </ImageView>
-      <AnchorPane layoutX="794.0" layoutY="121.0" prefHeight="623.0" prefWidth="279.0" style="-fx-background-color: White;" />
+      <AnchorPane fx:id="paneNew" layoutX="794.0" layoutY="121.0" prefHeight="623.0" prefWidth="279.0" style="-fx-background-color: White; -fx-background-radius: 25;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <ImageView fx:id="Map" fitHeight="200.0" fitWidth="219.0" layoutX="34.0" layoutY="20.0">
+               <image>
+                  <Image url="@../Images/thumbnail.jpeg" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="pieChart" fitHeight="125.0" fitWidth="200.0" layoutX="41.0" layoutY="247.0">
+               <image>
+                  <Image url="@../Images/pie-chart-excel-1080x675.jpg" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
       <ImageView fx:id="PIC09" fitHeight="111.0" fitWidth="122.0" layoutX="611.0" layoutY="308.0">
 
       </ImageView>
@@ -292,5 +310,20 @@
             </Text>
          </children>
       </AnchorPane>
+      <ImageView fx:id="Quection" fitHeight="20.0" fitWidth="23.0" layoutX="945.0" layoutY="23.0">
+         <image>
+            <Image url="@../Images/icons8-question-30.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="setting" fitHeight="16.0" fitWidth="23.0" layoutX="977.0" layoutY="25.0">
+         <image>
+            <Image url="@../Images/icons8-setting-50.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="notification" fitHeight="20.0" fitWidth="23.0" layoutX="1008.0" layoutY="23.0">
+         <image>
+            <Image url="@../Images/icons8-bell-24.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -11,7 +11,7 @@
 
 <AnchorPane fx:id="MainFormPane" prefHeight="768.0" prefWidth="1097.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.MainForm">
    <children>
-      <AnchorPane fx:id="AP010" layoutX="266.0" layoutY="486.0" prefHeight="182.0" prefWidth="200.0" style="-fx-background-color: White; -fx-background-radius: 30;">
+      <AnchorPane fx:id="AP010" layoutX="266.0" layoutY="486.0" prefHeight="182.0" prefWidth="200.0" style="-fx-background-color: Pink; -fx-background-radius: 30;">
          <effect>
             <DropShadow />
          </effect>
@@ -33,7 +33,7 @@
             <Font size="10.0" />
          </font></Text>
       <Text fx:id="txt03" layoutX="37.0" layoutY="466.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Favourite" />
-      <AnchorPane fx:id="AP01" layoutX="27.0" layoutY="127.0" prefHeight="132.0" prefWidth="148.0" style="-fx-background-radius: 20; -fx-background-color: White;">
+      <AnchorPane fx:id="AP01" layoutX="27.0" layoutY="127.0" prefHeight="132.0" prefWidth="148.0" style="-fx-background-radius: 20; -fx-background-color: Pink;">
          <effect>
             <DropShadow />
          </effect>
@@ -59,7 +59,7 @@
          <image>
             <Image url="@../Images/Polish_20240411_210319866.jpg" />
          </image></ImageView>
-      <AnchorPane fx:id="AP02" layoutX="218.0" layoutY="127.0" prefHeight="132.0" prefWidth="142.0" style="-fx-background-radius: 20; -fx-background-color: White;">
+      <AnchorPane fx:id="AP02" layoutX="218.0" layoutY="127.0" prefHeight="132.0" prefWidth="142.0" style="-fx-background-radius: 20; -fx-background-color: Pink;">
          <effect>
             <DropShadow />
          </effect>
@@ -85,7 +85,7 @@
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="AP03" layoutX="411.0" layoutY="127.0" prefHeight="132.0" prefWidth="148.0" style="-fx-background-radius: 20; -fx-background-color: White;">
+      <AnchorPane fx:id="AP03" layoutX="411.0" layoutY="127.0" prefHeight="132.0" prefWidth="148.0" style="-fx-background-radius: 20; -fx-background-color: Pink;">
          <effect>
             <DropShadow />
          </effect>
@@ -111,7 +111,7 @@
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="AP04" layoutX="603.0" layoutY="127.0" prefHeight="132.0" prefWidth="148.0" style="-fx-background-radius: 20; -fx-background-color: White;">
+      <AnchorPane fx:id="AP04" layoutX="603.0" layoutY="127.0" prefHeight="132.0" prefWidth="148.0" style="-fx-background-radius: 20; -fx-background-color: Pink;">
          <effect>
             <DropShadow />
          </effect>
@@ -125,7 +125,7 @@
                   <Font name="System Bold" size="10.0" />
                </font>
             </Text>
-            <Text fx:id="rs4" layoutX="46.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RS.890.00">
+            <Text fx:id="rs4" layoutX="46.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RS.890.00">
                <font>
                   <Font name="System Bold" size="10.0" />
                </font>
@@ -141,9 +141,6 @@
 
       </ImageView>
       <AnchorPane fx:id="paneNew" layoutX="794.0" layoutY="57.0" prefHeight="623.0" prefWidth="279.0" style="-fx-background-color: White; -fx-background-radius: 25;">
-         <effect>
-            <DropShadow />
-         </effect>
          <children>
             <ImageView fx:id="Map" fitHeight="200.0" fitWidth="219.0" layoutX="34.0" layoutY="20.0">
                <image>
@@ -153,9 +150,14 @@
                   <DropShadow />
                </effect>
             </ImageView>
-            <ImageView fx:id="pieChart" fitHeight="125.0" fitWidth="200.0" layoutX="41.0" layoutY="247.0">
+            <ImageView fx:id="pieChart" fitHeight="263.0" fitWidth="262.0" layoutX="11.0" layoutY="225.0">
                <image>
-                  <Image url="@../Images/pie-chart-excel-1080x675.jpg" />
+                  <Image url="@../Images/37237b98b96db9ba20c6b4834567c65c.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="lineChart" fitHeight="182.0" fitWidth="269.0" layoutX="8.0" layoutY="408.0">
+               <image>
+                  <Image url="@../Images/c56834a95485abdd00d420671fbde8c6.jpg" />
                </image>
             </ImageView>
          </children></AnchorPane>
@@ -276,7 +278,7 @@
             <Image url="@../Images/fc2e777cd2b2657d23804dfbb45a84b4.jpg" />
          </image>
       </ImageView>
-      <AnchorPane fx:id="AP09" layoutX="22.0" layoutY="486.0" prefHeight="182.0" prefWidth="200.0" style="-fx-background-color: White; -fx-background-radius: 30;">
+      <AnchorPane fx:id="AP09" layoutX="22.0" layoutY="486.0" prefHeight="182.0" prefWidth="200.0" style="-fx-background-color: Pink; -fx-background-radius: 30;">
          <effect>
             <DropShadow />
          </effect>
@@ -293,7 +295,7 @@
             </Text>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="AP011" layoutX="517.0" layoutY="486.0" prefHeight="182.0" prefWidth="192.0" style="-fx-background-color: White; -fx-background-radius: 30;">
+      <AnchorPane fx:id="AP011" layoutX="517.0" layoutY="486.0" prefHeight="182.0" prefWidth="192.0" style="-fx-background-color: Pink; -fx-background-radius: 30;">
          <effect>
             <DropShadow />
          </effect>
@@ -315,7 +317,7 @@
             <Image url="@../Images/icons8-question-30.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="setting" fitHeight="16.0" fitWidth="23.0" layoutX="977.0" layoutY="25.0">
+      <ImageView fx:id="setting" fitHeight="20.0" fitWidth="23.0" layoutX="977.0" layoutY="24.0">
          <image>
             <Image url="@../Images/icons8-setting-50.png" />
          </image>

@@ -96,6 +96,9 @@ public class MainForm {
     private TextField SearchBar;
 
     @FXML
+    private ImageView lineChart;
+
+    @FXML
     private ImageView notification;
 
     @FXML
@@ -225,6 +228,7 @@ public class MainForm {
         assert PIC11 != null : "fx:id=\"PIC11\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert Quection != null : "fx:id=\"Quection\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert SearchBar != null : "fx:id=\"SearchBar\" was not injected: check your FXML file 'mainForm.fxml'.";
+        assert lineChart != null : "fx:id=\"lineChart\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert notification != null : "fx:id=\"notification\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert orderbtn1 != null : "fx:id=\"orderbtn1\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert orderbtn2 != null : "fx:id=\"orderbtn2\" was not injected: check your FXML file 'mainForm.fxml'.";

@@ -6,6 +6,17 @@ import java.sql.SQLException;
 
 public class DbConnetion {
     public static DbConnection getInstance;
+    private static DbConnection instance;
+
+
+    public static void setInstance(DbConnection instance) {
+        DbConnetion.instance = instance;
+    }
+
+    public static DbConnection getInstance() {
+        return null;
+    }
+
 
     public class DbConnection {
         private static DbConnection dbConnection;

@@ -1,13 +1,15 @@
 package lk.ijse.Model;
 
+import lk.ijse.controller.Customer;
+
 public class CustomerModel {
 
-    private String C_ID;
-    private String First_Name;
-    private String Last_Name;
-    private String Address;
-    private  int Phone_Number;
-    private String Email;
+    private static String C_ID;
+    private static String First_Name;
+    private static String Last_Name;
+    private static String Address;
+    private static int Phone_Number;
+    private static String Email;
 
     public CustomerModel(String c_ID, String first_Name, String last_Name, String address, int phone_Number, String email) {
         C_ID = c_ID;
@@ -21,15 +23,17 @@ public class CustomerModel {
     public CustomerModel() {
     }
 
-    public String getC_ID() {
+    public static String getC_ID() {
         return C_ID;
     }
+
+
 
     public void setC_ID(String c_ID) {
         C_ID = c_ID;
     }
 
-    public String getFirst_Name() {
+    public static String getFirst_Name() {
         return First_Name;
     }
 
@@ -37,7 +41,7 @@ public class CustomerModel {
         First_Name = first_Name;
     }
 
-    public String getLast_Name() {
+    public static String getLast_Name() {
         return Last_Name;
     }
 
@@ -45,7 +49,7 @@ public class CustomerModel {
         Last_Name = last_Name;
     }
 
-    public String getAddress() {
+    public static String getAddress() {
         return Address;
     }
 
@@ -53,7 +57,7 @@ public class CustomerModel {
         Address = address;
     }
 
-    public int getPhone_Number() {
+    public static int getPhone_Number() {
         return Phone_Number;
     }
 
@@ -61,7 +65,7 @@ public class CustomerModel {
         Phone_Number = phone_Number;
     }
 
-    public String getEmail() {
+    public static String getEmail() {
         return Email;
     }
 

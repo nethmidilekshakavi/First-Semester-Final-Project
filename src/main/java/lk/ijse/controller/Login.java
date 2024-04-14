@@ -16,7 +16,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class LoginForm {
+public class Login {
 
     @FXML
     private ResourceBundle resources;
@@ -43,13 +43,10 @@ public class LoginForm {
     private ImageView eye;
 
     @FXML
+    private ImageView eye1;
+
+    @FXML
     private Button login;
-
-    @FXML
-    private ImageView loginPageGreen;
-
-    @FXML
-    private ImageView loginPagePic;
 
     @FXML
     private AnchorPane pane;
@@ -98,9 +95,8 @@ public class LoginForm {
         assert OR != null : "fx:id=\"OR\" was not injected: check your FXML file 'Login.fxml'.";
         assert ResaurentName != null : "fx:id=\"ResaurentName\" was not injected: check your FXML file 'Login.fxml'.";
         assert eye != null : "fx:id=\"eye\" was not injected: check your FXML file 'Login.fxml'.";
+        assert eye1 != null : "fx:id=\"eye1\" was not injected: check your FXML file 'Login.fxml'.";
         assert login != null : "fx:id=\"login\" was not injected: check your FXML file 'Login.fxml'.";
-        assert loginPageGreen != null : "fx:id=\"loginPageGreen\" was not injected: check your FXML file 'Login.fxml'.";
-        assert loginPagePic != null : "fx:id=\"loginPagePic\" was not injected: check your FXML file 'Login.fxml'.";
         assert pane != null : "fx:id=\"pane\" was not injected: check your FXML file 'Login.fxml'.";
         assert password != null : "fx:id=\"password\" was not injected: check your FXML file 'Login.fxml'.";
         assert txtpw != null : "fx:id=\"txtpw\" was not injected: check your FXML file 'Login.fxml'.";

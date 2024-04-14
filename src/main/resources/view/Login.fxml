@@ -9,39 +9,37 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="pane" prefHeight="409.0" prefWidth="422.0" style="-fx-background-image: 1AACAC; -fx-background-image: 73BBC9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.LoginForm">
+<AnchorPane fx:id="pane" prefHeight="409.0" prefWidth="400.0" style="-fx-background-image: 1AACAC; -fx-background-image: 73BBC9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.Login">
    <children>
-      <ImageView fx:id="loginPageGreen" fitHeight="409.0" fitWidth="125.0" layoutX="301.0" layoutY="-3.0">
+      <ImageView fx:id="eye" fitHeight="410.0" fitWidth="560.0" layoutX="-1.0">
          <image>
-            <Image url="@../Images/3bc317903bd8fabe9f272cb535da1d4c.jpg" />
+            <Image url="@../Images/f8181774f744c65093dae35aeee5df7f.jpg" />
          </image>
+         <effect>
+            <DropShadow />
+         </effect>
       </ImageView>
-      <ImageView fx:id="loginPagePic" fitHeight="417.0" fitWidth="319.0" layoutY="-8.0">
-         <image>
-            <Image url="@../Images/aa5b4bc6b68d4cd53da1ac7d39f98ae2.jpg" />
-         </image>
-      </ImageView>
-      <TextField fx:id="txtun" layoutX="219.0" layoutY="117.0" prefHeight="24.0" prefWidth="184.0" style="-fx-background-radius: 40;">
+      <TextField fx:id="txtun" layoutX="301.0" layoutY="125.0" prefHeight="24.0" prefWidth="185.0" style="-fx-background-radius: 40;">
          <effect>
             <DropShadow />
          </effect>
       </TextField>
-      <TextField fx:id="txtpw" layoutX="220.0" layoutY="163.0" prefHeight="24.0" prefWidth="184.0" style="-fx-background-radius: 40;">
+      <TextField fx:id="txtpw" layoutX="301.0" layoutY="170.0" prefHeight="24.0" prefWidth="185.0" style="-fx-background-radius: 40;">
          <effect>
             <DropShadow />
          </effect>
       </TextField>
-      <Text fx:id="username" fill="#fff9f9" layoutX="224.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USERNAME">
+      <Text fx:id="username" fill="#fff9f9" layoutX="311.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USERNAME">
          <font>
             <Font name="System Bold" size="11.0" />
          </font>
       </Text>
-      <Text fx:id="password" fill="#fff9f9" layoutX="224.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PASSWORD">
+      <Text fx:id="password" fill="#fff9f9" layoutX="307.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PASSWORD">
          <font>
             <Font name="System Bold" size="10.0" />
          </font>
       </Text>
-      <Button fx:id="login" layoutX="226.0" layoutY="220.0" mnemonicParsing="false" onAction="#loginOnAction" prefHeight="24.0" prefWidth="116.0" style="-fx-background-color: FAA300; -fx-background-radius: 40;" text="Login" textFill="#1e0101">
+      <Button fx:id="login" layoutX="336.0" layoutY="220.0" mnemonicParsing="false" onAction="#loginOnAction" prefHeight="24.0" prefWidth="116.0" style="-fx-background-color: FAA300; -fx-background-radius: 40;" text="Login" textFill="#1e0101">
          <effect>
             <DropShadow />
          </effect>
@@ -49,21 +47,16 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <ImageView fx:id="eye" fitHeight="14.0" fitWidth="21.0" layoutX="378.0" layoutY="169.0">
-         <image>
-            <Image url="@../Images/icons8-eye.gif" />
-         </image>
-      </ImageView>
-      <Text fx:id="ForgotPW" fill="#f5f2f2" layoutX="227.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot Paaword?" wrappingWidth="98.44775390625">
+      <Text fx:id="ForgotPW" fill="#f5f2f2" layoutX="307.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot Paaword?" wrappingWidth="98.44775390625">
          <font>
             <Font size="11.0" />
          </font>
       </Text>
-      <Text fx:id="OR" fill="#f5f2f2" layoutX="183.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OR Continue With" textAlignment="CENTER" wrappingWidth="172.44775390625">
+      <Text fx:id="OR" fill="#f5f2f2" layoutX="307.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OR Continue With" textAlignment="CENTER" wrappingWidth="172.44775390625">
          <font>
             <Font size="10.0" />
          </font></Text>
-      <ImageView fx:id="FB" fitHeight="37.0" fitWidth="37.0" layoutX="238.0" layoutY="274.0">
+      <ImageView fx:id="FB" fitHeight="37.0" fitWidth="37.0" layoutX="336.0" layoutY="280.0">
          <image>
             <Image url="@../Images/icons8-facebook-48.png" />
          </image>
@@ -71,7 +64,7 @@
             <DropShadow />
          </effect>
       </ImageView>
-      <ImageView fx:id="GOOGLE" fitHeight="30.0" fitWidth="30.0" layoutX="280.0" layoutY="277.0">
+      <ImageView fx:id="GOOGLE" fitHeight="30.0" fitWidth="30.0" layoutX="379.0" layoutY="283.0">
          <image>
             <Image url="@../Images/icons8-google-48.png" />
          </image>
@@ -79,14 +72,19 @@
             <DropShadow />
          </effect>
       </ImageView>
-      <Text fx:id="ResaurentName" fill="WHITE" layoutX="10.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Food Court" wrappingWidth="319.0">
+      <Text fx:id="ResaurentName" fill="WHITE" layoutX="139.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Food Court" wrappingWidth="319.0">
          <font>
             <Font name="Dyuthi Regular" size="34.0" />
          </font>
       </Text>
-      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="312.0" layoutY="274.0">
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="415.0" layoutY="280.0">
          <image>
             <Image url="@../../../../../../Downloads/icons8-instagram-48.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="eye1" fitHeight="14.0" fitWidth="21.0" layoutX="459.0" layoutY="176.0">
+         <image>
+            <Image url="@../Images/icons8-eye.gif" />
          </image>
       </ImageView>
    </children>

@@ -7,9 +7,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 
-public class dashboard  implements Initializable {
+public class dashboard implements Initializable {
 
     @FXML
     private ResourceBundle resources;
@@ -21,9 +22,32 @@ public class dashboard  implements Initializable {
     private AnchorPane Emptypane;
 
     @FXML
-    private AnchorPane buttonSet;
+    private Button btnReport;
 
     @FXML
+    private Button btncustomer;
+
+    @FXML
+    private Button btndashboard;
+
+    @FXML
+    private Button btnemployee;
+
+    @FXML
+    private Button btningredients;
+
+    @FXML
+    private Button btnmeal;
+
+    @FXML
+    private Button btnreservation;
+
+    @FXML
+    private Button btnsupplier;
+
+    @FXML
+    private AnchorPane buttonSet;
+
     void initialize() {
         assert Emptypane != null : "fx:id=\"Emptypane\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert buttonSet != null : "fx:id=\"buttonSet\" was not injected: check your FXML file 'dashboard.fxml'.";
@@ -41,4 +65,7 @@ public class dashboard  implements Initializable {
         Emptypane.getChildren().clear();
         Emptypane.getChildren().add(root);
     }
-}
+
+    }
+
+

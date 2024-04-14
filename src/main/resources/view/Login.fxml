@@ -9,37 +9,34 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="pane" prefHeight="409.0" prefWidth="400.0" style="-fx-background-image: 1AACAC; -fx-background-image: 73BBC9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.Login">
+<AnchorPane fx:id="pane" prefHeight="350.0" prefWidth="587.0" style="-fx-background-image: 1AACAC; -fx-background-image: 73BBC9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.Login">
    <children>
-      <ImageView fx:id="eye" fitHeight="410.0" fitWidth="560.0" layoutX="-1.0">
+      <ImageView fx:id="loginphoto" fitHeight="354.0" fitWidth="593.0">
          <image>
-            <Image url="@../Images/f8181774f744c65093dae35aeee5df7f.jpg" />
+            <Image url="@../Images/image-of-wooden-table-in-front-of-abstract-blurred-background-of-resturant-lights-wood-table-top-on-blur-of-lighting-in-night-cafe-restaurant-background-selective-focus-generative-ai-photo.jpg" />
          </image>
-         <effect>
-            <DropShadow />
-         </effect>
       </ImageView>
-      <TextField fx:id="txtun" layoutX="301.0" layoutY="125.0" prefHeight="24.0" prefWidth="185.0" style="-fx-background-radius: 40;">
+      <TextField fx:id="txtun" layoutX="370.0" layoutY="140.0" prefHeight="24.0" prefWidth="185.0" style="-fx-background-radius: 40;">
          <effect>
             <DropShadow />
          </effect>
       </TextField>
-      <TextField fx:id="txtpw" layoutX="301.0" layoutY="170.0" prefHeight="24.0" prefWidth="185.0" style="-fx-background-radius: 40;">
+      <TextField fx:id="txtpw" layoutX="370.0" layoutY="185.0" prefHeight="24.0" prefWidth="185.0" style="-fx-background-radius: 40;">
          <effect>
             <DropShadow />
          </effect>
       </TextField>
-      <Text fx:id="username" fill="#fff9f9" layoutX="311.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USERNAME">
+      <Text fx:id="username" fill="#fff9f9" layoutX="374.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USERNAME">
          <font>
             <Font name="System Bold" size="11.0" />
          </font>
       </Text>
-      <Text fx:id="password" fill="#fff9f9" layoutX="307.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PASSWORD">
+      <Text fx:id="password" fill="#fff9f9" layoutX="376.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PASSWORD">
          <font>
             <Font name="System Bold" size="10.0" />
          </font>
       </Text>
-      <Button fx:id="login" layoutX="336.0" layoutY="220.0" mnemonicParsing="false" onAction="#loginOnAction" prefHeight="24.0" prefWidth="116.0" style="-fx-background-color: FAA300; -fx-background-radius: 40;" text="Login" textFill="#1e0101">
+      <Button fx:id="login" layoutX="405.0" layoutY="235.0" mnemonicParsing="false" onAction="#loginOnAction" prefHeight="24.0" prefWidth="116.0" style="-fx-background-color: FAA300; -fx-background-radius: 40;" text="Login" textFill="#1e0101">
          <effect>
             <DropShadow />
          </effect>
@@ -47,16 +44,16 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Text fx:id="ForgotPW" fill="#f5f2f2" layoutX="307.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot Paaword?" wrappingWidth="98.44775390625">
+      <Text fx:id="ForgotPW" fill="#f5f2f2" layoutX="376.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot Paaword?" wrappingWidth="98.44775390625">
          <font>
             <Font size="11.0" />
          </font>
       </Text>
-      <Text fx:id="OR" fill="#f5f2f2" layoutX="307.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OR Continue With" textAlignment="CENTER" wrappingWidth="172.44775390625">
+      <Text fx:id="OR" fill="#f5f2f2" layoutX="376.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OR Continue With" textAlignment="CENTER" wrappingWidth="172.44775390625">
          <font>
             <Font size="10.0" />
          </font></Text>
-      <ImageView fx:id="FB" fitHeight="37.0" fitWidth="37.0" layoutX="336.0" layoutY="280.0">
+      <ImageView fx:id="FB" fitHeight="37.0" fitWidth="37.0" layoutX="405.0" layoutY="295.0">
          <image>
             <Image url="@../Images/icons8-facebook-48.png" />
          </image>
@@ -64,7 +61,7 @@
             <DropShadow />
          </effect>
       </ImageView>
-      <ImageView fx:id="GOOGLE" fitHeight="30.0" fitWidth="30.0" layoutX="379.0" layoutY="283.0">
+      <ImageView fx:id="GOOGLE" fitHeight="30.0" fitWidth="30.0" layoutX="448.0" layoutY="298.0">
          <image>
             <Image url="@../Images/icons8-google-48.png" />
          </image>
@@ -72,19 +69,24 @@
             <DropShadow />
          </effect>
       </ImageView>
-      <Text fx:id="ResaurentName" fill="WHITE" layoutX="139.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Food Court" wrappingWidth="319.0">
-         <font>
-            <Font name="Dyuthi Regular" size="34.0" />
-         </font>
-      </Text>
-      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="415.0" layoutY="280.0">
+      <ImageView fx:id="Insterpic" fitHeight="37.0" fitWidth="37.0" layoutX="484.0" layoutY="295.0">
          <image>
             <Image url="@../../../../../../Downloads/icons8-instagram-48.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="eye1" fitHeight="14.0" fitWidth="21.0" layoutX="459.0" layoutY="176.0">
+      <ImageView fx:id="eye1" fitHeight="14.0" fitWidth="21.0" layoutX="526.0" layoutY="192.0">
          <image>
             <Image url="@../Images/icons8-eye.gif" />
+         </image>
+      </ImageView>
+      <Text fill="#eef2ef" layoutX="14.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME TO FOOD COURT">
+         <font>
+            <Font name="FreeMono Bold" size="24.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="userpic" layoutX="434.0" layoutY="73.0">
+         <image>
+            <Image url="@../Images/icons8-user.gif" />
          </image>
       </ImageView>
    </children>

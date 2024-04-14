@@ -2,12 +2,17 @@ package lk.ijse.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import lk.ijse.DB.DbConnetion;
+import lk.ijse.Model.CustomerModel;
+import lk.ijse.Repository.CustomerRepo;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Customer {
 
@@ -86,6 +91,13 @@ public class Customer {
     @FXML
     private Text topic;
 
+    public Customer(String id, String fName, String lName, String address, int phoneNumber, String email) {
+    }
+
+    public Customer(String fName, String lName, String address, int phoneNumber, String email) {
+
+    }
+
     @FXML
     void clearOnAction(ActionEvent event) {
 
@@ -97,13 +109,63 @@ public class Customer {
     }
 
     @FXML
-    void saveOnAction(ActionEvent event) {
+    void saveOnAction(ActionEvent event) throws SQLException {
+        String id = Cidtxt.getText();
+        String FName = CFnametxt.getText();
+        String LName = CSnametxt.getText();
+        String address = Caddresstxt.getText();
+        int phoneNumber = Integer.parseInt(Cteltxt.getText());
+        String email = Cemailtxt.getText();
+
+        CustomerModel customer = new CustomerModel(id, FName, LName, address, phoneNumber, email);
+
+        boolean isSave = CustomerRepo.saveCustomer(customer);
+        if (isSave) {
+            new Alert(Alert.AlertType.CONFIRMATION, "Customer Saved!").show();
+            clearFields();
+        }
 
     }
+
+
 
     @FXML
-    void updateOnAction(ActionEvent event) {
+    void updateOnAction(ActionEvent event) throws SQLException {
+        String FName = CFnametxt.getText();
+        String LName = CSnametxt.getText();
+        String address = Caddresstxt.getText();
+        int phoneNumber = Integer.parseInt(Cteltxt.getText());
+        String email = Cemailtxt.getText();
+
+        Customer customer = new Customer(FName, LName, address, phoneNumber, email);
+
+        boolean isUpdated = CustomerRepo.updateCustomer(customer);
+        if (isUpdated) {
+            new Alert(Alert.AlertType.CONFIRMATION, "customer updated!").show();
+        }
 
     }
 
-}
+    void btnDeleteOnAction(ActionEvent event) throws SQLException {
+        String id = Cidtxt.getText();
+
+        boolean isDeleted = CustomerRepo.delete(id);
+        if (isDeleted) {
+            new Alert(Alert.AlertType.CONFIRMATION, "customer deleted!").show();
+        }
+    }
+
+    void btnClearOnAction(ActionEvent event) {
+        clearFields();
+    }
+
+
+    private void clearFields () {
+            Cidtxt.setText("");
+            CFnametxt.setText("");
+            CSnametxt.setText("");
+            Caddresstxt.setText("");
+            Cteltxt.setText("");
+            Cemailtxt.setText("");
+        }
+    }

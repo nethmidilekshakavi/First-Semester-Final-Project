@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="345.0" prefWidth="491.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.SaveCustomerForm">
+   <children>
+      <ImageView fitHeight="354.0" fitWidth="507.0">
+         <image>
+            <Image url="@../Images/6908d2800c1f153a3167dbae9dc2d7d2.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="LNAME" layoutX="244.0" layoutY="118.0" promptText="LAST NAME">
+         <effect>
+            <DropShadow />
+         </effect>
+      </TextField>
+      <TextField fx:id="NIC" layoutX="34.0" layoutY="67.0" promptText="NIC">
+         <effect>
+            <DropShadow />
+         </effect>
+      </TextField>
+      <TextField fx:id="ADDRESS" layoutX="34.0" layoutY="167.0" promptText="PHONE NUMBER">
+         <effect>
+            <DropShadow />
+         </effect>
+      </TextField>
+      <TextField fx:id="NUMBER" layoutX="34.0" layoutY="218.0" promptText="ADDRESS">
+         <effect>
+            <DropShadow />
+         </effect>
+      </TextField>
+      <TextField fx:id="FNAME" layoutX="34.0" layoutY="118.0" promptText="FIRST NAME">
+         <effect>
+            <DropShadow />
+         </effect>
+      </TextField>
+      <TextField fx:id="EMAIL" layoutX="34.0" layoutY="269.0" promptText="EMAIL">
+         <effect>
+            <DropShadow />
+         </effect>
+      </TextField>
+      <Text fx:id="customerForm" fill="#326b3d" layoutX="240.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Form" wrappingWidth="247.017578125">
+         <font>
+            <Font name="Dyuthi Regular" size="36.0" />
+         </font>
+      </Text>
+      <Button fx:id="saveBTN" layoutX="330.0" layoutY="251.0" mnemonicParsing="false" onAction="#saveCustomer" prefHeight="48.0" prefWidth="91.0" style="-fx-background-color: 2D9596; -fx-background-radius: 40;" text="SAVE" />
+   </children>
+</AnchorPane>

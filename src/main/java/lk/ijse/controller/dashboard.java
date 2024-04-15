@@ -3,12 +3,15 @@ package lk.ijse.controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class dashboard implements Initializable {
 
@@ -48,6 +51,46 @@ public class dashboard implements Initializable {
     @FXML
     private AnchorPane buttonSet;
 
+    @FXML
+    void EmployeeOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void IngredientOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void MealOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void ReportOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void ReservationOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void SupplierOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void customerOnAction(ActionEvent event) throws IOException {
+
+    }
+
+    @FXML
+    void dashboardOnAction(ActionEvent event) {
+
+    }
+
     void initialize() {
         assert Emptypane != null : "fx:id=\"Emptypane\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert buttonSet != null : "fx:id=\"buttonSet\" was not injected: check your FXML file 'dashboard.fxml'.";
@@ -66,6 +109,5 @@ public class dashboard implements Initializable {
         Emptypane.getChildren().add(root);
     }
 
-    }
 
-
+}

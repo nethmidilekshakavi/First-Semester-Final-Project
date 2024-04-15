@@ -1,8 +1,11 @@
 package lk.ijse.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import lk.ijse.DB.DbConnetion;
@@ -13,6 +16,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class Customer {
 
@@ -100,12 +104,17 @@ public class Customer {
 
     @FXML
     void clearOnAction(ActionEvent event) {
-
+        clearFields();
     }
 
     @FXML
-    void deleteOnAction(ActionEvent event) {
+    void deleteOnAction(ActionEvent event) throws SQLException {
+        String id = Cidtxt.getText();
 
+        boolean isDeleted = CustomerRepo.delete(id);
+        if (isDeleted) {
+            new Alert(Alert.AlertType.CONFIRMATION, "customer deleted!").show();
+        }
     }
 
     @FXML
@@ -145,21 +154,7 @@ public class Customer {
         }
 
     }
-
-    void btnDeleteOnAction(ActionEvent event) throws SQLException {
-        String id = Cidtxt.getText();
-
-        boolean isDeleted = CustomerRepo.delete(id);
-        if (isDeleted) {
-            new Alert(Alert.AlertType.CONFIRMATION, "customer deleted!").show();
-        }
-    }
-
-    void btnClearOnAction(ActionEvent event) {
-        clearFields();
-    }
-
-
+    
     private void clearFields () {
             Cidtxt.setText("");
             CFnametxt.setText("");
@@ -168,4 +163,45 @@ public class Customer {
             Cteltxt.setText("");
             Cemailtxt.setText("");
         }
+
+
+
+ //   public void initialize() {
+   //     setCellValueFactory();
+    //    loadAllCustomers();
     }
+
+ /*   private void loadAllCustomers() {
+       ObservableList<CustomerList> customerLists = FXCollections.observableArrayList();
+
+       try {
+           List<Customer> customerList = CustomerRepo.getAll();
+           for (Customer customer : customerList){
+
+               CustomerTM tm = new CustomerTM(
+
+               CustomerModel.getC_ID(),
+                       CustomerModel.getFirst_Name(),
+               CustomerModel.getLast_Name(),
+                       CustomerModel.getAddress(),
+                       CustomerModel.getPhone_Number(),
+               CustomerModel.getEmail()
+
+               );
+               customerLists.add(tm);
+           }
+
+
+
+       }
+     */
+
+
+
+
+
+        
+      
+        
+
+

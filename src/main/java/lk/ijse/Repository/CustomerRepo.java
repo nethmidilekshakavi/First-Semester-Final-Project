@@ -6,7 +6,10 @@ import lk.ijse.controller.Customer;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CustomerRepo {
 
@@ -52,4 +55,28 @@ public class CustomerRepo {
         return pstm.executeUpdate() > 0;
     }
 
+    public static List<Customer> getAll() throws SQLException {
+        String sql = "SELECT * FROM customers";
+
+        PreparedStatement pstm = DbConnetion.getInstance().getConnection()
+                .prepareStatement(sql);
+
+        ResultSet resultSet = pstm.executeQuery();
+
+        List<Customer> cusList = new ArrayList<>();
+
+        while (resultSet.next()) {
+            String id = resultSet.getString(1);
+            String FName = resultSet.getString(2);
+            String LName = resultSet.getString(3);
+            String address = resultSet.getString(4);
+            int phoneNumber = Integer.parseInt(resultSet.getString(5));
+            String email = resultSet.getString(6);
+
+            Customer customer = new Customer(id, FName, LName, phoneNumber, email);
+            cusList.add(customer);
+        }
+        return cusList;
+    }
 }
+

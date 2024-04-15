@@ -1,33 +1,33 @@
 package lk.ijse.controller;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
-import lk.ijse.DB.DbConnetion;
-import lk.ijse.Model.CustomerModel;
-import lk.ijse.Repository.CustomerRepo;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
 
 public class Customer {
 
     @FXML
-    private TableColumn<?, ?> ADDRESS;
+    private ResourceBundle resources;
+
+    @FXML
+    private URL location;
 
     @FXML
     private Text Address;
 
     @FXML
     private TextField CFnametxt;
+
+    @FXML
+    private TextField CNICtxt;
 
     @FXML
     private TextField CSnametxt;
@@ -42,28 +42,28 @@ public class Customer {
     private TextField Cidtxt;
 
     @FXML
+    private TableView<?> Ctable;
+
+    @FXML
     private TextField Cteltxt;
-
-    @FXML
-    private TableColumn<?, ?> EMAIL;
-
-    @FXML
-    private TableColumn<?, ?> FNAME;
 
     @FXML
     private Text Fname;
 
     @FXML
-    private TableColumn<?, ?> LNAME;
-
-    @FXML
     private Text Lname;
 
     @FXML
-    private TableColumn<?, ?> NIC;
+    private AnchorPane MainFormPane;
 
     @FXML
-    private TableColumn<?, ?> NUMBER;
+    private Text NIC;
+
+    @FXML
+    private ImageView PIC08;
+
+    @FXML
+    private Button btnBack;
 
     @FXML
     private Button btnclear;
@@ -78,7 +78,22 @@ public class Customer {
     private Button btnupdate;
 
     @FXML
-    private TableView<?> customerTable;
+    private TableColumn<?, ?> coladdress;
+
+    @FXML
+    private TableColumn<?, ?> colemail;
+
+    @FXML
+    private TableColumn<?, ?> colfname;
+
+    @FXML
+    private TableColumn<?, ?> collname;
+
+    @FXML
+    private TableColumn<?, ?> colnic;
+
+    @FXML
+    private TableColumn<?, ?> colnumber;
 
     @FXML
     private Text email;
@@ -95,113 +110,64 @@ public class Customer {
     @FXML
     private Text topic;
 
-    public Customer(String id, String fName, String lName, String address, int phoneNumber, String email) {
-    }
-
-    public Customer(String fName, String lName, String address, int phoneNumber, String email) {
+    @FXML
+    void backtoDashboard(ActionEvent event) {
 
     }
 
     @FXML
     void clearOnAction(ActionEvent event) {
-        clearFields();
+
     }
 
     @FXML
-    void deleteOnAction(ActionEvent event) throws SQLException {
-        String id = Cidtxt.getText();
+    void deleteOnAction(ActionEvent event) {
 
-        boolean isDeleted = CustomerRepo.delete(id);
-        if (isDeleted) {
-            new Alert(Alert.AlertType.CONFIRMATION, "customer deleted!").show();
-        }
     }
 
     @FXML
-    void saveOnAction(ActionEvent event) throws SQLException {
-        String id = Cidtxt.getText();
-        String FName = CFnametxt.getText();
-        String LName = CSnametxt.getText();
-        String address = Caddresstxt.getText();
-        int phoneNumber = Integer.parseInt(Cteltxt.getText());
-        String email = Cemailtxt.getText();
-
-        CustomerModel customer = new CustomerModel(id, FName, LName, address, phoneNumber, email);
-
-        boolean isSave = CustomerRepo.saveCustomer(customer);
-        if (isSave) {
-            new Alert(Alert.AlertType.CONFIRMATION, "Customer Saved!").show();
-            clearFields();
-        }
+    void saveOnAction(ActionEvent event) {
 
     }
-
-
 
     @FXML
-    void updateOnAction(ActionEvent event) throws SQLException {
-        String FName = CFnametxt.getText();
-        String LName = CSnametxt.getText();
-        String address = Caddresstxt.getText();
-        int phoneNumber = Integer.parseInt(Cteltxt.getText());
-        String email = Cemailtxt.getText();
-
-        Customer customer = new Customer(FName, LName, address, phoneNumber, email);
-
-        boolean isUpdated = CustomerRepo.updateCustomer(customer);
-        if (isUpdated) {
-            new Alert(Alert.AlertType.CONFIRMATION, "customer updated!").show();
-        }
+    void updateOnAction(ActionEvent event) {
 
     }
-    
-    private void clearFields () {
-            Cidtxt.setText("");
-            CFnametxt.setText("");
-            CSnametxt.setText("");
-            Caddresstxt.setText("");
-            Cteltxt.setText("");
-            Cemailtxt.setText("");
-        }
 
+    @FXML
+    void initialize() {
+        assert Address != null : "fx:id=\"Address\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert CFnametxt != null : "fx:id=\"CFnametxt\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert CNICtxt != null : "fx:id=\"CNICtxt\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert CSnametxt != null : "fx:id=\"CSnametxt\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert Caddresstxt != null : "fx:id=\"Caddresstxt\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert Cemailtxt != null : "fx:id=\"Cemailtxt\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert Cidtxt != null : "fx:id=\"Cidtxt\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert Ctable != null : "fx:id=\"Ctable\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert Cteltxt != null : "fx:id=\"Cteltxt\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert Fname != null : "fx:id=\"Fname\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert Lname != null : "fx:id=\"Lname\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert MainFormPane != null : "fx:id=\"MainFormPane\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert NIC != null : "fx:id=\"NIC\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert PIC08 != null : "fx:id=\"PIC08\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert btnBack != null : "fx:id=\"btnBack\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert btnclear != null : "fx:id=\"btnclear\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert btndelete != null : "fx:id=\"btndelete\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert btnsave != null : "fx:id=\"btnsave\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert btnupdate != null : "fx:id=\"btnupdate\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert coladdress != null : "fx:id=\"coladdress\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert colemail != null : "fx:id=\"colemail\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert colfname != null : "fx:id=\"colfname\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert collname != null : "fx:id=\"collname\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert colnic != null : "fx:id=\"colnic\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert colnumber != null : "fx:id=\"colnumber\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert email != null : "fx:id=\"email\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert id != null : "fx:id=\"id\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert pane1 != null : "fx:id=\"pane1\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert phoneNumber != null : "fx:id=\"phoneNumber\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert topic != null : "fx:id=\"topic\" was not injected: check your FXML file 'Customer.fxml'.";
 
-
- //   public void initialize() {
-   //     setCellValueFactory();
-    //    loadAllCustomers();
     }
 
- /*   private void loadAllCustomers() {
-       ObservableList<CustomerList> customerLists = FXCollections.observableArrayList();
-
-       try {
-           List<Customer> customerList = CustomerRepo.getAll();
-           for (Customer customer : customerList){
-
-               CustomerTM tm = new CustomerTM(
-
-               CustomerModel.getC_ID(),
-                       CustomerModel.getFirst_Name(),
-               CustomerModel.getLast_Name(),
-                       CustomerModel.getAddress(),
-                       CustomerModel.getPhone_Number(),
-               CustomerModel.getEmail()
-
-               );
-               customerLists.add(tm);
-           }
-
-
-
-       }
-     */
-
-
-
-
-
-        
-      
-        
-
-
+}

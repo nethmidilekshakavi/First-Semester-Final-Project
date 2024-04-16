@@ -4,83 +4,77 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.Customer">
    <children>
-      <AnchorPane fx:id="MainFormPane" layoutX="81.0" layoutY="62.0" prefHeight="778.0" prefWidth="1107.0">
+      <AnchorPane fx:id="customerPane" prefHeight="777.0" prefWidth="1376.0">
          <children>
-            <ImageView fx:id="PIC08" fitHeight="111.0" fitWidth="113.0" layoutX="426.0" layoutY="307.0" />
-            <AnchorPane fx:id="pane1" layoutX="-90.0" layoutY="-64.0" prefHeight="820.0" prefWidth="1191.0" style="-fx-background-color: 76ABAE;">
-               <children>
-                  <Text fx:id="topic" layoutX="468.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Manage" wrappingWidth="305.0">
-                     <font>
-                        <Font name="Dyuthi Regular" size="36.0" />
-                     </font>
-                  </Text>
-                  <TextField fx:id="Cidtxt" layoutX="40.0" layoutY="111.0" prefHeight="24.0" prefWidth="113.0" />
-                  <TextField fx:id="CFnametxt" layoutX="40.0" layoutY="246.0" prefHeight="24.0" prefWidth="203.0" />
-                  <TextField fx:id="Caddresstxt" layoutX="40.0" layoutY="377.0" prefHeight="24.0" prefWidth="203.0" />
-                  <TextField fx:id="Cteltxt" layoutX="40.0" layoutY="311.0" prefHeight="24.0" prefWidth="447.0" />
-                  <TextField fx:id="CSnametxt" layoutX="283.0" layoutY="246.0" prefHeight="24.0" prefWidth="203.0" />
-                  <TextField fx:id="Cemailtxt" layoutX="40.0" layoutY="440.0" prefHeight="24.0" prefWidth="203.0" />
-                  <Text fx:id="id" layoutX="46.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CID">
-                     <font>
-                        <Font size="11.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="Fname" layoutX="46.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
-                     <font>
-                        <Font size="11.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="Lname" layoutX="285.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name">
-                     <font>
-                        <Font size="11.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="Address" layoutX="43.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address">
-                     <font>
-                        <Font size="11.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="phoneNumber" layoutX="40.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number">
-                     <font>
-                        <Font size="11.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="email" layoutX="43.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
-                     <font>
-                        <Font size="11.0" />
-                     </font>
-                  </Text>
-                  <Button fx:id="btnsave" layoutX="281.0" layoutY="493.0" mnemonicParsing="false" onAction="#saveOnAction" prefHeight="39.0" prefWidth="66.0" style="-fx-background-radius: 50;" text="Save" />
-                  <Button fx:id="btnclear" layoutX="285.0" layoutY="641.0" mnemonicParsing="false" onAction="#clearOnAction" prefHeight="39.0" prefWidth="59.0" style="-fx-background-radius: 50;" text="Clear" />
-                  <Button fx:id="btndelete" layoutX="184.0" layoutY="562.0" mnemonicParsing="false" onAction="#deleteOnAction" prefHeight="39.0" prefWidth="66.0" style="-fx-background-radius: 50;" text="Delete" />
-                  <Button fx:id="btnupdate" layoutX="368.0" layoutY="562.0" mnemonicParsing="false" onAction="#updateOnAction" prefHeight="39.0" prefWidth="66.0" style="-fx-background-radius: 50;" text="Update" />
-                  <Text fx:id="NIC" layoutX="43.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NIC">
-                     <font>
-                        <Font size="11.0" />
-                     </font>
-                  </Text>
-                  <TextField fx:id="CNICtxt" layoutX="40.0" layoutY="185.0" prefHeight="24.0" prefWidth="203.0" />
-                  <TableView fx:id="Ctable" layoutX="500.0" layoutY="159.0" prefHeight="450.0" prefWidth="682.0">
-                    <columns>
-                      <TableColumn fx:id="colnic" prefWidth="75.0" text="NIC" />
-                      <TableColumn fx:id="colfname" prefWidth="117.0" text="FIRST NAME" />
-                        <TableColumn fx:id="collname" prefWidth="117.0" text="LAST NAME" />
-                        <TableColumn fx:id="coladdress" prefWidth="117.0" text="ADDRESS" />
-                        <TableColumn fx:id="colnumber" prefWidth="130.0" text="PHONE NUMBER" />
-                        <TableColumn fx:id="colemail" prefWidth="117.0" text="EMAIL" />
-                    </columns>
-                  </TableView>
-                  <Button fx:id="btnBack" layoutX="285.0" layoutY="570.0" mnemonicParsing="false" onAction="#backtoDashboard" prefHeight="39.0" prefWidth="59.0" style="-fx-background-radius: 50;" text="BACK" />
-               </children>
-            </AnchorPane>
+            <Text fx:id="topic" layoutX="355.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Manage" wrappingWidth="305.0">
+               <font>
+                  <Font name="Dyuthi Regular" size="36.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
+      <TextField fx:id="Cidtxt" layoutX="50.0" layoutY="121.0" prefHeight="24.0" prefWidth="113.0" />
+      <TextField fx:id="CFnametxt" layoutX="50.0" layoutY="256.0" prefHeight="24.0" prefWidth="203.0" />
+      <TextField fx:id="Caddresstxt" layoutX="50.0" layoutY="387.0" prefHeight="24.0" prefWidth="203.0" />
+      <TextField fx:id="Cteltxt" layoutX="50.0" layoutY="321.0" prefHeight="24.0" prefWidth="447.0" />
+      <TextField fx:id="CSnametxt" layoutX="293.0" layoutY="256.0" prefHeight="24.0" prefWidth="203.0" />
+      <TextField fx:id="Cemailtxt" layoutX="50.0" layoutY="450.0" prefHeight="24.0" prefWidth="203.0" />
+      <Text fx:id="id" layoutX="56.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CID">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Text>
+      <Text fx:id="Fname" layoutX="56.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Text>
+      <Text fx:id="Lname" layoutX="295.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Text>
+      <Text fx:id="Address" layoutX="53.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Text>
+      <Text fx:id="phoneNumber" layoutX="50.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Text>
+      <Text fx:id="email" layoutX="53.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnsave" layoutX="291.0" layoutY="503.0" mnemonicParsing="false" onAction="#saveOnAction" prefHeight="39.0" prefWidth="66.0" style="-fx-background-radius: 50;" text="Save" />
+      <Button fx:id="btnclear" layoutX="295.0" layoutY="651.0" mnemonicParsing="false" onAction="#clearOnAction" prefHeight="39.0" prefWidth="59.0" style="-fx-background-radius: 50;" text="Clear" />
+      <Button fx:id="btndelete" layoutX="194.0" layoutY="572.0" mnemonicParsing="false" onAction="#deleteOnAction" prefHeight="39.0" prefWidth="66.0" style="-fx-background-radius: 50;" text="Delete" />
+      <Button fx:id="btnupdate" layoutX="378.0" layoutY="572.0" mnemonicParsing="false" onAction="#updateOnAction" prefHeight="39.0" prefWidth="66.0" style="-fx-background-radius: 50;" text="Update" />
+      <Text fx:id="NIC" layoutX="53.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NIC">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Text>
+      <TextField fx:id="CNICtxt" layoutX="50.0" layoutY="195.0" prefHeight="24.0" prefWidth="203.0" />
+      <TableView fx:id="Ctable" layoutX="535.0" layoutY="169.0" prefHeight="450.0" prefWidth="817.0">
+         <columns>
+            <TableColumn fx:id="colnic" prefWidth="116.0" text="NIC" />
+            <TableColumn fx:id="colfname" prefWidth="120.0" text="FIRST NAME" />
+            <TableColumn fx:id="collname" prefWidth="135.0" text="LAST NAME" />
+            <TableColumn fx:id="coladdress" prefWidth="148.0" text="ADDRESS" />
+            <TableColumn fx:id="colnumber" prefWidth="136.0" text="PHONE NUMBER" />
+            <TableColumn fx:id="colemail" prefWidth="161.0" text="EMAIL" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnBack" layoutX="295.0" layoutY="580.0" mnemonicParsing="false" onAction="#backtoDashboard" prefHeight="39.0" prefWidth="59.0" style="-fx-background-radius: 50;" text="BACK" />
    </children>
 </AnchorPane>

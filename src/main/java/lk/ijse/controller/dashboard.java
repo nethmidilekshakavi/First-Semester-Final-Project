@@ -83,7 +83,12 @@ public class dashboard implements Initializable {
 
     @FXML
     void customerOnAction(ActionEvent event) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/Customer.fxml"));
+        Stage stage = (Stage) Emptypane.getScene().getWindow();
 
+        stage.setScene(new Scene(anchorPane));
+        stage.setTitle("Customer Form");
+        stage.centerOnScreen();
     }
 
     @FXML

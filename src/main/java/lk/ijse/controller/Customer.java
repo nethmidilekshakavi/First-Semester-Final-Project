@@ -8,7 +8,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 
@@ -54,13 +53,7 @@ public class Customer {
     private Text Lname;
 
     @FXML
-    private AnchorPane MainFormPane;
-
-    @FXML
     private Text NIC;
-
-    @FXML
-    private ImageView PIC08;
 
     @FXML
     private Button btnBack;
@@ -96,13 +89,13 @@ public class Customer {
     private TableColumn<?, ?> colnumber;
 
     @FXML
+    private AnchorPane customerPane;
+
+    @FXML
     private Text email;
 
     @FXML
     private Text id;
-
-    @FXML
-    private AnchorPane pane1;
 
     @FXML
     private Text phoneNumber;
@@ -148,9 +141,7 @@ public class Customer {
         assert Cteltxt != null : "fx:id=\"Cteltxt\" was not injected: check your FXML file 'Customer.fxml'.";
         assert Fname != null : "fx:id=\"Fname\" was not injected: check your FXML file 'Customer.fxml'.";
         assert Lname != null : "fx:id=\"Lname\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert MainFormPane != null : "fx:id=\"MainFormPane\" was not injected: check your FXML file 'Customer.fxml'.";
         assert NIC != null : "fx:id=\"NIC\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert PIC08 != null : "fx:id=\"PIC08\" was not injected: check your FXML file 'Customer.fxml'.";
         assert btnBack != null : "fx:id=\"btnBack\" was not injected: check your FXML file 'Customer.fxml'.";
         assert btnclear != null : "fx:id=\"btnclear\" was not injected: check your FXML file 'Customer.fxml'.";
         assert btndelete != null : "fx:id=\"btndelete\" was not injected: check your FXML file 'Customer.fxml'.";
@@ -162,9 +153,9 @@ public class Customer {
         assert collname != null : "fx:id=\"collname\" was not injected: check your FXML file 'Customer.fxml'.";
         assert colnic != null : "fx:id=\"colnic\" was not injected: check your FXML file 'Customer.fxml'.";
         assert colnumber != null : "fx:id=\"colnumber\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert customerPane != null : "fx:id=\"customerPane\" was not injected: check your FXML file 'Customer.fxml'.";
         assert email != null : "fx:id=\"email\" was not injected: check your FXML file 'Customer.fxml'.";
         assert id != null : "fx:id=\"id\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert pane1 != null : "fx:id=\"pane1\" was not injected: check your FXML file 'Customer.fxml'.";
         assert phoneNumber != null : "fx:id=\"phoneNumber\" was not injected: check your FXML file 'Customer.fxml'.";
         assert topic != null : "fx:id=\"topic\" was not injected: check your FXML file 'Customer.fxml'.";
 

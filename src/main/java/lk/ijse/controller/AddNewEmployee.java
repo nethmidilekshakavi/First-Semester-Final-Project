@@ -43,6 +43,9 @@ public class AddNewEmployee {
     private Button btnSave;
 
     @FXML
+    private Text cidtxt;
+
+    @FXML
     private TextField daytxt;
 
     @FXML
@@ -116,6 +119,7 @@ public class AddNewEmployee {
         assert birthday != null : "fx:id=\"birthday\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
         assert btnCancel != null : "fx:id=\"btnCancel\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
         assert btnSave != null : "fx:id=\"btnSave\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
+        assert cidtxt != null : "fx:id=\"cidtxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
         assert daytxt != null : "fx:id=\"daytxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
         assert email != null : "fx:id=\"email\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
         assert emailtxt != null : "fx:id=\"emailtxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";

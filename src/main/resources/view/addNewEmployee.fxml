@@ -9,7 +9,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.AddNewEmployee">
    <children>
       <ImageView fx:id="addEmployeePane" fitHeight="450.0" fitWidth="680.0">
@@ -54,5 +53,6 @@
             <Font name="Dyuthi Regular" size="36.0" />
          </font>
       </Text>
+      <Text fx:id="cidtxt" layoutX="80.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" />
    </children>
 </AnchorPane>

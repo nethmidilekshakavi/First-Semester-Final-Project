@@ -1,16 +1,19 @@
 package lk.ijse.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class Customer {
 
@@ -21,152 +24,75 @@ public class Customer {
     private URL location;
 
     @FXML
-    private Text Address;
+    private ImageView EmployeePane;
 
     @FXML
-    private TextField CFnametxt;
+    private Button btnAdd;
 
     @FXML
-    private TextField CNICtxt;
+    private Button btnPrint;
 
     @FXML
-    private TextField CSnametxt;
+    private TableColumn<?, ?> colAddress;
 
     @FXML
-    private TextField Caddresstxt;
+    private TableColumn<?, ?> colMobile;
 
     @FXML
-    private TextField Cemailtxt;
+    private TableColumn<?, ?> colNIC;
 
     @FXML
-    private TextField Cidtxt;
+    private TableColumn<?, ?> colName1;
 
     @FXML
-    private TableView<?> Ctable;
-
-    @FXML
-    private TextField Cteltxt;
-
-    @FXML
-    private Text Fname;
-
-    @FXML
-    private Text Lname;
-
-    @FXML
-    private AnchorPane MainFormPane;
-
-    @FXML
-    private Text NIC;
-
-    @FXML
-    private ImageView PIC08;
-
-    @FXML
-    private Button btnBack;
-
-    @FXML
-    private Button btnclear;
-
-    @FXML
-    private Button btndelete;
-
-    @FXML
-    private Button btnsave;
-
-    @FXML
-    private Button btnupdate;
-
-    @FXML
-    private TableColumn<?, ?> coladdress;
+    private TableColumn<?, ?> coldelete;
 
     @FXML
     private TableColumn<?, ?> colemail;
 
     @FXML
-    private TableColumn<?, ?> colfname;
+    private TableColumn<?, ?> colupdate;
 
     @FXML
-    private TableColumn<?, ?> collname;
+    private TableView<?> employeeTable;
 
     @FXML
-    private TableColumn<?, ?> colnic;
+    private Text title;
 
     @FXML
-    private TableColumn<?, ?> colnumber;
+    private TableColumn<?, ?> viewCustomer;
 
     @FXML
-    private Text email;
-
-    @FXML
-    private Text id;
-
-    @FXML
-    private AnchorPane pane1;
-
-    @FXML
-    private Text phoneNumber;
-
-    @FXML
-    private Text topic;
-
-    @FXML
-    void backtoDashboard(ActionEvent event) {
-
+    void addNewCustomer(ActionEvent event) throws IOException {
+        Parent parent = FXMLLoader.load(getClass().getResource("/view/saveCustomerForm.fxml"));
+        Scene scene =new Scene(parent);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Add New Customer Form");
+        stage.centerOnScreen();
+        stage.show();
     }
 
     @FXML
-    void clearOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void deleteOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void saveOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void updateOnAction(ActionEvent event) {
+    void getReport(ActionEvent event) {
 
     }
 
     @FXML
     void initialize() {
-        assert Address != null : "fx:id=\"Address\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert CFnametxt != null : "fx:id=\"CFnametxt\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert CNICtxt != null : "fx:id=\"CNICtxt\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert CSnametxt != null : "fx:id=\"CSnametxt\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert Caddresstxt != null : "fx:id=\"Caddresstxt\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert Cemailtxt != null : "fx:id=\"Cemailtxt\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert Cidtxt != null : "fx:id=\"Cidtxt\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert Ctable != null : "fx:id=\"Ctable\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert Cteltxt != null : "fx:id=\"Cteltxt\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert Fname != null : "fx:id=\"Fname\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert Lname != null : "fx:id=\"Lname\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert MainFormPane != null : "fx:id=\"MainFormPane\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert NIC != null : "fx:id=\"NIC\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert PIC08 != null : "fx:id=\"PIC08\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert btnBack != null : "fx:id=\"btnBack\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert btnclear != null : "fx:id=\"btnclear\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert btndelete != null : "fx:id=\"btndelete\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert btnsave != null : "fx:id=\"btnsave\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert btnupdate != null : "fx:id=\"btnupdate\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert coladdress != null : "fx:id=\"coladdress\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert EmployeePane != null : "fx:id=\"EmployeePane\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert btnAdd != null : "fx:id=\"btnAdd\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert btnPrint != null : "fx:id=\"btnPrint\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert colAddress != null : "fx:id=\"colAddress\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert colMobile != null : "fx:id=\"colMobile\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert colNIC != null : "fx:id=\"colNIC\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert colName1 != null : "fx:id=\"colName1\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert coldelete != null : "fx:id=\"coldelete\" was not injected: check your FXML file 'Customer.fxml'.";
         assert colemail != null : "fx:id=\"colemail\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert colfname != null : "fx:id=\"colfname\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert collname != null : "fx:id=\"collname\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert colnic != null : "fx:id=\"colnic\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert colnumber != null : "fx:id=\"colnumber\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert email != null : "fx:id=\"email\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert id != null : "fx:id=\"id\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert pane1 != null : "fx:id=\"pane1\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert phoneNumber != null : "fx:id=\"phoneNumber\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert topic != null : "fx:id=\"topic\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert colupdate != null : "fx:id=\"colupdate\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert employeeTable != null : "fx:id=\"employeeTable\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert title != null : "fx:id=\"title\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert viewCustomer != null : "fx:id=\"viewCustomer\" was not injected: check your FXML file 'Customer.fxml'.";
 
     }
 

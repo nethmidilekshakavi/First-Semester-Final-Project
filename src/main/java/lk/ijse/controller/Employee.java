@@ -12,7 +12,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -71,13 +70,18 @@ public class Employee {
 
     @FXML
     void addNewEmployee(ActionEvent event) throws IOException {
-        Parent parent = FXMLLoader.load(getClass().getResource("/view/addNewEmployee.fxmlfxml"));
+        Parent parent = FXMLLoader.load(getClass().getResource("/view/addNewEmployee.fxml"));
         Scene scene =new Scene(parent);
         Stage stage = new Stage();
         stage.setScene(scene);
-        stage.setTitle("Employee Form");
+        stage.setTitle("Add New Employee Form");
         stage.centerOnScreen();
         stage.show();
+    }
+
+    @FXML
+    void getReport(ActionEvent event) {
+
     }
 
     @FXML

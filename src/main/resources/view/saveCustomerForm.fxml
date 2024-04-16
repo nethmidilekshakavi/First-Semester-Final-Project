@@ -40,7 +40,7 @@
       <Text fx:id="mobile" layoutX="25.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile Number" />
       <Text fx:id="email" layoutX="193.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
       <JFXTextArea fx:id="nictxt" layoutX="28.0" layoutY="134.0" prefHeight="36.0" prefWidth="137.0" />
-      <TextField fx:id="cidtxt" layoutX="53.0" layoutY="69.0" prefHeight="36.0" prefWidth="73.0" />
+      <TextField fx:id="cidtxt" layoutX="57.0" layoutY="69.0" prefHeight="36.0" prefWidth="52.0" />
       <JFXTextArea fx:id="firsttxt" layoutX="25.0" layoutY="194.0" prefHeight="36.0" prefWidth="137.0" />
       <JFXTextArea fx:id="lasttxt" layoutX="193.0" layoutY="195.0" prefHeight="36.0" prefWidth="137.0" />
       <JFXTextArea fx:id="addresstxt" layoutX="25.0" layoutY="272.0" prefHeight="36.0" prefWidth="137.0" />

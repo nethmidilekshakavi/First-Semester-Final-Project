@@ -36,6 +36,6 @@
         </columns>
       </TableView>
       <Button fx:id="btnAdd" layoutX="977.0" layoutY="66.0" mnemonicParsing="false" onAction="#addNewEmployee" prefHeight="24.0" prefWidth="63.0" text="ADD" />
-      <Button fx:id="btnPrint" layoutX="904.0" layoutY="66.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="63.0" text="PRINT" />
+      <Button fx:id="btnPrint" layoutX="904.0" layoutY="66.0" mnemonicParsing="false" onAction="#getReport" prefHeight="24.0" prefWidth="63.0" text="PRINT" />
    </children>
 </AnchorPane>

@@ -5,14 +5,18 @@ import lk.ijse.controller.Customer;
 public class CustomerModel {
 
     private static String C_ID;
+    private static String NIC;
     private static String First_Name;
     private static String Last_Name;
     private static String Address;
     private static int Phone_Number;
     private static String Email;
 
-    public CustomerModel(String c_ID, String first_Name, String last_Name, String address, int phone_Number, String email) {
+
+
+    public CustomerModel(String c_ID, String nic, String first_Name, String last_Name, String address, int phone_Number, String email) {
         C_ID = c_ID;
+        NIC = nic;
         First_Name = first_Name;
         Last_Name = last_Name;
         Address = address;
@@ -31,6 +35,14 @@ public class CustomerModel {
 
     public void setC_ID(String c_ID) {
         C_ID = c_ID;
+    }
+
+    public static String getNIC() {
+        return NIC;
+    }
+
+    public static void setNIC(String NIC) {
+        CustomerModel.NIC = NIC;
     }
 
     public static String getFirst_Name() {
@@ -77,6 +89,7 @@ public class CustomerModel {
     public String toString() {
         return "CustomerModel{" +
                 "C_ID='" + C_ID + '\'' +
+                "NIC'" + NIC + '\''+
                 ", First_Name='" + First_Name + '\'' +
                 ", Last_Name='" + Last_Name + '\'' +
                 ", Address='" + Address + '\'' +

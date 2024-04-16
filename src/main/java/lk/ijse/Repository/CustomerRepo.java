@@ -14,33 +14,35 @@ import java.util.List;
 public class CustomerRepo {
 
     public static boolean saveCustomer(CustomerModel customer) throws SQLException {
-        String sql = "INSERT INTO Customer VALUES(?, ?, ?, ?,?,?)";
+        String sql = "INSERT INTO Customer VALUES(?, ?, ?, ?,?,?,?)";
 
         Connection connection = DbConnetion.getInstance().getConnection();
         PreparedStatement ptsm = connection.prepareStatement(sql);
 
         ptsm.setObject(1, CustomerModel.getC_ID());
-        ptsm.setObject(2, CustomerModel.getFirst_Name());
-        ptsm.setObject(3, CustomerModel.getLast_Name());
-        ptsm.setObject(4, CustomerModel.getAddress());
-        ptsm.setObject(5, CustomerModel.getPhone_Number());
-        ptsm.setObject(6, CustomerModel.getEmail());
+        ptsm.setObject(2,CustomerModel.getNIC());
+        ptsm.setObject(3, CustomerModel.getFirst_Name());
+        ptsm.setObject(4, CustomerModel.getLast_Name());
+        ptsm.setObject(5, CustomerModel.getAddress());
+        ptsm.setObject(6, CustomerModel.getPhone_Number());
+        ptsm.setObject(7, CustomerModel.getEmail());
 
         return ptsm.executeUpdate() > 0;
     }
 
 
     public static boolean updateCustomer(Customer customer) throws SQLException {
-        String sql = "UPDATE customers SET FirstName = ?, LastName = ?, Address = ? ,PhoneNumber = ? ,Email = ? WHERE id = ?";
+        String sql = "UPDATE customers SET NIC = ?, FirstName = ?, LastName = ?, Address = ? ,PhoneNumber = ? ,Email = ? WHERE id = ?";
 
         Connection connection = DbConnetion.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);
-        pstm.setObject(1, CustomerModel.getFirst_Name());
-        pstm.setObject(2, CustomerModel.getLast_Name());
-        pstm.setObject(3, CustomerModel.getAddress());
-        pstm.setObject(4, CustomerModel.getPhone_Number());
-        pstm.setObject(5, CustomerModel.getEmail());
-        pstm.setObject(6, CustomerModel.getC_ID());
+        pstm.setObject(1, CustomerModel.getNIC());
+        pstm.setObject(2, CustomerModel.getFirst_Name());
+        pstm.setObject(3, CustomerModel.getLast_Name());
+        pstm.setObject(4, CustomerModel.getAddress());
+        pstm.setObject(5, CustomerModel.getPhone_Number());
+        pstm.setObject(6, CustomerModel.getEmail());
+        pstm.setObject(7, CustomerModel.getC_ID());
 
         return pstm.executeUpdate() > 0;
     }
@@ -55,7 +57,7 @@ public class CustomerRepo {
         return pstm.executeUpdate() > 0;
     }
 
-    public static List<Customer> getAll() throws SQLException {
+  /*  public static List<Customer> getAll() throws SQLException {
         String sql = "SELECT * FROM customers";
 
         PreparedStatement pstm = DbConnetion.getInstance().getConnection()
@@ -67,16 +69,17 @@ public class CustomerRepo {
 
         while (resultSet.next()) {
             String id = resultSet.getString(1);
-            String FName = resultSet.getString(2);
-            String LName = resultSet.getString(3);
-            String address = resultSet.getString(4);
-            int phoneNumber = Integer.parseInt(resultSet.getString(5));
-            String email = resultSet.getString(6);
+            String nic = resultSet.getString(2);
+            String FName = resultSet.getString(3);
+            String LName = resultSet.getString(4);
+            String address = resultSet.getString(5);
+            int phoneNumber = Integer.parseInt(resultSet.getString(6));
+            String email = resultSet.getString(7);
 
-            Customer customer = new Customer(id, FName, LName, phoneNumber, email);
+            Customer customer = new Customer(id,nic, FName, LName,address, phoneNumber, email);
             cusList.add(customer);
         }
         return cusList;
-    }
+    }*/
 }
 

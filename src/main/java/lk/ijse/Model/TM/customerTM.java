@@ -11,6 +11,7 @@ import lombok.*;
 
 public class customerTM {
     private String C_ID;
+    private String NIC;
     private String First_Name;
     private String Last_Name;
     private String Address;

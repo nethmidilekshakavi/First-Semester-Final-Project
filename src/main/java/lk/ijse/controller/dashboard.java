@@ -52,9 +52,8 @@ public class dashboard implements Initializable {
     private AnchorPane buttonSet;
 
     @FXML
-    void EmployeeOnAction(ActionEvent event) throws IOException {
-        Parent parent = FXMLLoader.load(getClass().getResource("/view/Employee.fxml"));
-        Emptypane.getChildren().setAll(parent);
+    void EmployeeOnAction(ActionEvent event) {
+
     }
 
     @FXML
@@ -73,9 +72,8 @@ public class dashboard implements Initializable {
     }
 
     @FXML
-    void ReservationOnAction(ActionEvent event) throws IOException {
-        Parent parent = FXMLLoader.load(getClass().getResource("/view/Reservation.fxml"));
-        Emptypane.getChildren().setAll(parent);
+    void ReservationOnAction(ActionEvent event) {
+
     }
 
     @FXML
@@ -85,14 +83,17 @@ public class dashboard implements Initializable {
 
     @FXML
     void customerOnAction(ActionEvent event) throws IOException {
-        Parent parent = FXMLLoader.load(getClass().getResource("/view/Customer.fxml"));
-        Emptypane.getChildren().setAll(parent);
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/Customer.fxml"));
+        Stage stage = (Stage) Emptypane.getScene().getWindow();
+
+        stage.setScene(new Scene(anchorPane));
+        stage.setTitle("Customer Form");
+        stage.centerOnScreen();
     }
 
     @FXML
-    void dashboardOnAction(ActionEvent event) throws IOException {
-        Parent parent=FXMLLoader.load(getClass().getResource("/view/mainForm.fxml"));
-        Emptypane.getChildren().setAll(parent);
+    void dashboardOnAction(ActionEvent event) {
+
     }
 
     void initialize() {

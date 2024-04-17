@@ -1,6 +1,5 @@
 package lk.ijse.controller;
 
-import com.jfoenix.controls.JFXTextArea;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -31,7 +30,7 @@ public class AddNewEmployee {
     private Text address;
 
     @FXML
-    private JFXTextArea addresstxt;
+    private Text addresstxt;
 
     @FXML
     private Text birthday;
@@ -52,25 +51,22 @@ public class AddNewEmployee {
     private Text email;
 
     @FXML
-    private JFXTextArea emailtxt;
+    private Text emailtxt;
 
     @FXML
     private Text firstNmae1;
 
     @FXML
-    private JFXTextArea fnametxt;
-
-    @FXML
     private Text lastName;
 
     @FXML
-    private JFXTextArea lname;
+    private Text lnametxt;
 
     @FXML
     private Text mobile;
 
     @FXML
-    private JFXTextArea mobiletxt;
+    private Text mobiletxt;
 
     @FXML
     private TextField monthtxt;
@@ -79,7 +75,7 @@ public class AddNewEmployee {
     private Text name;
 
     @FXML
-    private JFXTextArea nictxt;
+    private Text nictxt;
 
     @FXML
     private Text personalInformation;
@@ -88,13 +84,13 @@ public class AddNewEmployee {
     private Text position;
 
     @FXML
-    private JFXTextArea positiontxt;
+    private Text positiontxt;
 
     @FXML
     private Text salary;
 
     @FXML
-    private JFXTextArea salarytxt;
+    private Text salarytxt;
 
     @FXML
     private TextField yeartxt;
@@ -124,9 +120,8 @@ public class AddNewEmployee {
         assert email != null : "fx:id=\"email\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
         assert emailtxt != null : "fx:id=\"emailtxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
         assert firstNmae1 != null : "fx:id=\"firstNmae1\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert fnametxt != null : "fx:id=\"fnametxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
         assert lastName != null : "fx:id=\"lastName\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert lname != null : "fx:id=\"lname\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
+        assert lnametxt != null : "fx:id=\"lnametxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
         assert mobile != null : "fx:id=\"mobile\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
         assert mobiletxt != null : "fx:id=\"mobiletxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
         assert monthtxt != null : "fx:id=\"monthtxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";

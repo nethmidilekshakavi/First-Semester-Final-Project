@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXTextArea?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -11,7 +10,7 @@
 
 <AnchorPane prefHeight="345.0" prefWidth="491.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.SaveCustomerForm">
    <children>
-      <ImageView fx:id="addCustomerPane" fitHeight="406.0" fitWidth="625.0" layoutX="-10.0">
+      <ImageView fx:id="addCustomerPane" fitHeight="491.0" fitWidth="698.0" layoutX="-10.0">
          <image>
             <Image url="@../Images/6908d2800c1f153a3167dbae9dc2d7d2.jpg" />
          </image>
@@ -21,30 +20,20 @@
             <Font name="Dyuthi Regular" size="36.0" />
          </font>
       </Text>
-      <Button fx:id="saveBTN" layoutX="502.0" layoutY="334.0" mnemonicParsing="false" onAction="#saveCustomer" prefHeight="17.0" prefWidth="91.0" style="-fx-background-color: 2D9596; -fx-background-radius: 40;" text="SAVE" />
-      <Button fx:id="cancelbtn" layoutX="388.0" layoutY="334.0" mnemonicParsing="false" onAction="#dontSave" prefHeight="17.0" prefWidth="91.0" style="-fx-background-color: 2D9596; -fx-background-radius: 40;" text="CANCEL" />
+      <Button fx:id="saveBTN" layoutX="505.0" layoutY="397.0" mnemonicParsing="false" onAction="#saveCustomer" prefHeight="36.0" prefWidth="91.0" style="-fx-background-color: 2D9596; -fx-background-radius: 40;" text="SAVE" />
+      <Button fx:id="cancelbtn" layoutX="396.0" layoutY="397.0" mnemonicParsing="false" onAction="#dontSave" prefHeight="36.0" prefWidth="91.0" style="-fx-background-color: 2D9596; -fx-background-radius: 40;" text="CANCEL" />
       <Text fx:id="nic" layoutX="28.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NIC" />
       <Text fx:id="cid" layoutX="28.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CID" wrappingWidth="33.6357421875" />
-      <Text fx:id="name" layoutX="25.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NAME" />
-      <Text layoutX="26.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Text>
-      <Text layoutX="193.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Text>
-      <Text fx:id="address" layoutX="27.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
-      <Text fx:id="mobile" layoutX="25.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile Number" />
-      <Text fx:id="email" layoutX="193.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
-      <JFXTextArea fx:id="nictxt" layoutX="28.0" layoutY="134.0" prefHeight="36.0" prefWidth="137.0" />
-      <TextField fx:id="cidtxt" layoutX="57.0" layoutY="69.0" prefHeight="36.0" prefWidth="52.0" />
-      <JFXTextArea fx:id="firsttxt" layoutX="25.0" layoutY="194.0" prefHeight="36.0" prefWidth="137.0" />
-      <JFXTextArea fx:id="lasttxt" layoutX="193.0" layoutY="195.0" prefHeight="36.0" prefWidth="137.0" />
-      <JFXTextArea fx:id="addresstxt" layoutX="25.0" layoutY="272.0" prefHeight="36.0" prefWidth="137.0" />
-      <JFXTextArea fx:id="emailtxt" layoutX="195.0" layoutY="272.0" prefHeight="36.0" prefWidth="137.0" />
-      <JFXTextArea fx:id="mobiletxt" layoutX="20.0" layoutY="339.0" prefHeight="36.0" prefWidth="147.0" />
+      <Text fx:id="name" layoutX="28.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NAME" wrappingWidth="37.421875" />
+      <Text fx:id="address" layoutX="32.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
+      <Text fx:id="mobile" layoutX="28.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile Number" />
+      <Text fx:id="email" layoutX="28.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+      <TextField fx:id="cidtxt" layoutX="57.0" layoutY="70.0" prefHeight="36.0" prefWidth="52.0" />
+      <TextField fx:id="nictxt" layoutX="28.0" layoutY="149.0" />
+      <TextField fx:id="fnametxt" layoutX="26.0" layoutY="227.0" promptText="First Name" />
+      <TextField fx:id="lnametxt" layoutX="213.0" layoutY="228.0" promptText="Last Name" />
+      <TextField fx:id="emailtxt" layoutX="28.0" layoutY="298.0" />
+      <TextField fx:id="addresstxt" layoutX="29.0" layoutY="376.0" />
+      <TextField fx:id="mobiletxt" layoutX="27.0" layoutY="446.0" />
    </children>
 </AnchorPane>

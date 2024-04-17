@@ -1,6 +1,5 @@
 package lk.ijse.controller;
 
-import com.jfoenix.controls.JFXTextArea;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -25,7 +24,7 @@ public class SaveCustomerForm {
     private Text address;
 
     @FXML
-    private JFXTextArea addresstxt;
+    private TextField addresstxt;
 
     @FXML
     private Button cancelbtn;
@@ -43,19 +42,19 @@ public class SaveCustomerForm {
     private Text email;
 
     @FXML
-    private JFXTextArea emailtxt;
+    private TextField emailtxt;
 
     @FXML
-    private JFXTextArea firsttxt;
+    private TextField fnametxt;
 
     @FXML
-    private JFXTextArea lasttxt;
+    private TextField lnametxt;
 
     @FXML
     private Text mobile;
 
     @FXML
-    private JFXTextArea mobiletxt;
+    private TextField mobiletxt;
 
     @FXML
     private Text name;
@@ -64,7 +63,7 @@ public class SaveCustomerForm {
     private Text nic;
 
     @FXML
-    private JFXTextArea nictxt;
+    private TextField nictxt;
 
     @FXML
     private Button saveBTN;
@@ -90,8 +89,8 @@ public class SaveCustomerForm {
         assert customerForm != null : "fx:id=\"customerForm\" was not injected: check your FXML file 'saveCustomerForm.fxml'.";
         assert email != null : "fx:id=\"email\" was not injected: check your FXML file 'saveCustomerForm.fxml'.";
         assert emailtxt != null : "fx:id=\"emailtxt\" was not injected: check your FXML file 'saveCustomerForm.fxml'.";
-        assert firsttxt != null : "fx:id=\"firsttxt\" was not injected: check your FXML file 'saveCustomerForm.fxml'.";
-        assert lasttxt != null : "fx:id=\"lasttxt\" was not injected: check your FXML file 'saveCustomerForm.fxml'.";
+        assert fnametxt != null : "fx:id=\"fnametxt\" was not injected: check your FXML file 'saveCustomerForm.fxml'.";
+        assert lnametxt != null : "fx:id=\"lnametxt\" was not injected: check your FXML file 'saveCustomerForm.fxml'.";
         assert mobile != null : "fx:id=\"mobile\" was not injected: check your FXML file 'saveCustomerForm.fxml'.";
         assert mobiletxt != null : "fx:id=\"mobiletxt\" was not injected: check your FXML file 'saveCustomerForm.fxml'.";
         assert name != null : "fx:id=\"name\" was not injected: check your FXML file 'saveCustomerForm.fxml'.";

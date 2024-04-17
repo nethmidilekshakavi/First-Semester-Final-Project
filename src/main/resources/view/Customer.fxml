@@ -23,7 +23,7 @@
       </Text>
       <Button fx:id="btnAdd" layoutX="987.0" layoutY="76.0" mnemonicParsing="false" onAction="#addNewCustomer" prefHeight="24.0" prefWidth="63.0" text="ADD" />
       <Button fx:id="btnPrint" layoutX="914.0" layoutY="76.0" mnemonicParsing="false" onAction="#getReport" prefHeight="24.0" prefWidth="63.0" text="PRINT" />
-      <TableView fx:id="employeeTable" layoutX="41.0" layoutY="137.0" prefHeight="539.0" prefWidth="1055.0">
+      <TableView fx:id="employeeTable" layoutX="14.0" layoutY="137.0" prefHeight="539.0" prefWidth="1055.0">
          <columns>
             <TableColumn fx:id="colNIC" prefWidth="111.0" text="NIC" />
             <TableColumn fx:id="viewCustomer" prefWidth="124.0" text="FIRST NAME" />

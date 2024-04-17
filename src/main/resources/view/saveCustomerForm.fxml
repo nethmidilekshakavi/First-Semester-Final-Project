@@ -24,7 +24,7 @@
       <Button fx:id="cancelbtn" layoutX="396.0" layoutY="397.0" mnemonicParsing="false" onAction="#dontSave" prefHeight="36.0" prefWidth="91.0" style="-fx-background-color: 2D9596; -fx-background-radius: 40;" text="CANCEL" />
       <Text fx:id="nic" layoutX="28.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NIC" />
       <Text fx:id="cid" layoutX="28.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CID" wrappingWidth="33.6357421875" />
-      <Text fx:id="name" layoutX="28.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NAME" wrappingWidth="37.421875" />
+      <Text fx:id="name" layoutX="28.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="49.0625" />
       <Text fx:id="address" layoutX="32.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
       <Text fx:id="mobile" layoutX="28.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile Number" />
       <Text fx:id="email" layoutX="28.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />

@@ -91,7 +91,7 @@ public class dashboard implements Initializable {
 
     @FXML
     void dashboardOnAction(ActionEvent event) throws IOException {
-        Parent parent= FXMLLoader.load(getClass().getResource("/view/dashboard.fxml"));
+        Parent parent= FXMLLoader.load(getClass().getResource("/view/mainForm.fxml"));
         Emptypane.getChildren().setAll(parent);
 
     }

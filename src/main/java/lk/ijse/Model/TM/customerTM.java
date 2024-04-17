@@ -4,10 +4,7 @@ import lombok.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Setter
-@Getter
-@ToString
-@EqualsAndHashCode
+@Data
 
 public class customerTM {
     private String C_ID;

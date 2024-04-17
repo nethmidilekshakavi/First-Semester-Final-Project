@@ -58,8 +58,9 @@ public class dashboard implements Initializable {
     }
 
     @FXML
-    void IngredientOnAction(ActionEvent event) {
-
+    void IngredientOnAction(ActionEvent event) throws IOException {
+        Parent parent= FXMLLoader.load(getClass().getResource("/view/Ingredients.fxml"));
+        Emptypane.getChildren().setAll(parent);
     }
 
     @FXML

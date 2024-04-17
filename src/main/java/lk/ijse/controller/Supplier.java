@@ -1,14 +1,19 @@
 package lk.ijse.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class Supplier {
 
@@ -61,8 +66,14 @@ public class Supplier {
     private Text title;
 
     @FXML
-    void addNewSupplier(ActionEvent event) {
-
+    void addNewSupplier(ActionEvent event) throws IOException {
+        Parent parent = FXMLLoader.load(getClass().getResource("/view/AddNewSupplier.fxml"));
+        Scene scene =new Scene(parent);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Add New Supplier Form");
+        stage.centerOnScreen();
+        stage.show();
     }
 
     @FXML

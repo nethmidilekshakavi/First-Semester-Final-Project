@@ -83,7 +83,6 @@ public class dashboard implements Initializable {
     void SupplierOnAction(ActionEvent event) throws IOException {
         Parent parent= FXMLLoader.load(getClass().getResource("/view/Supplier.fxml"));
         Emptypane.getChildren().setAll(parent);
-
     }
 
     @FXML

@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
@@ -16,7 +17,7 @@ public class Ingredients {
     private URL location;
 
     @FXML
-    private ImageView EmployeePane;
+    private ImageView IngredientPage;
 
     @FXML
     private TableColumn<?, ?> colDesc;
@@ -31,15 +32,19 @@ public class Ingredients {
     private TableColumn<?, ?> colSID;
 
     @FXML
+    private TableView<?> ingredientTable;
+
+    @FXML
     private Text title;
 
     @FXML
     void initialize() {
-        assert EmployeePane != null : "fx:id=\"EmployeePane\" was not injected: check your FXML file 'Ingredients.fxml'.";
+        assert IngredientPage != null : "fx:id=\"IngredientPage\" was not injected: check your FXML file 'Ingredients.fxml'.";
         assert colDesc != null : "fx:id=\"colDesc\" was not injected: check your FXML file 'Ingredients.fxml'.";
         assert colIid != null : "fx:id=\"colIid\" was not injected: check your FXML file 'Ingredients.fxml'.";
         assert colQOh != null : "fx:id=\"colQOh\" was not injected: check your FXML file 'Ingredients.fxml'.";
         assert colSID != null : "fx:id=\"colSID\" was not injected: check your FXML file 'Ingredients.fxml'.";
+        assert ingredientTable != null : "fx:id=\"ingredientTable\" was not injected: check your FXML file 'Ingredients.fxml'.";
         assert title != null : "fx:id=\"title\" was not injected: check your FXML file 'Ingredients.fxml'.";
 
     }

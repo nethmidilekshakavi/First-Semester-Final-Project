@@ -5,6 +5,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -46,6 +47,9 @@
             <TableColumn fx:id="colprice" prefWidth="191.0" text="Unit Prices" />
             <TableColumn fx:id="coltotal" prefWidth="140.0" text="Total" />
         </columns>
+         <effect>
+            <DropShadow />
+         </effect>
       </TableView>
       <Button fx:id="btnnewCID" layoutX="299.0" layoutY="164.0" mnemonicParsing="false" text="+ NEW" />
       <Text fx:id="total" layoutX="40.0" layoutY="682.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total :-" />

@@ -30,9 +30,6 @@ public class AddNewEmployee {
     private Text address;
 
     @FXML
-    private Text addresstxt;
-
-    @FXML
     private Text birthday;
 
     @FXML
@@ -42,7 +39,7 @@ public class AddNewEmployee {
     private Button btnSave;
 
     @FXML
-    private Text cidtxt;
+    private TextField cidtxt;
 
     @FXML
     private TextField daytxt;
@@ -51,22 +48,22 @@ public class AddNewEmployee {
     private Text email;
 
     @FXML
-    private Text emailtxt;
+    private TextField emailtxt;
 
     @FXML
-    private Text firstNmae1;
+    private TextField fnametxt;
 
     @FXML
-    private Text lastName;
+    private TextField lnametxt;
 
     @FXML
-    private Text lnametxt;
+    private TextField lnametxt1;
 
     @FXML
     private Text mobile;
 
     @FXML
-    private Text mobiletxt;
+    private TextField mobiletxt;
 
     @FXML
     private TextField monthtxt;
@@ -75,7 +72,7 @@ public class AddNewEmployee {
     private Text name;
 
     @FXML
-    private Text nictxt;
+    private TextField nictxt;
 
     @FXML
     private Text personalInformation;
@@ -84,13 +81,13 @@ public class AddNewEmployee {
     private Text position;
 
     @FXML
-    private Text positiontxt;
+    private TextField positiontxt;
 
     @FXML
     private Text salary;
 
     @FXML
-    private Text salarytxt;
+    private TextField salarytxt;
 
     @FXML
     private TextField yeartxt;
@@ -111,7 +108,6 @@ public class AddNewEmployee {
         assert NIC != null : "fx:id=\"NIC\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
         assert addEmployeePane != null : "fx:id=\"addEmployeePane\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
         assert address != null : "fx:id=\"address\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert addresstxt != null : "fx:id=\"addresstxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
         assert birthday != null : "fx:id=\"birthday\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
         assert btnCancel != null : "fx:id=\"btnCancel\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
         assert btnSave != null : "fx:id=\"btnSave\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
@@ -119,9 +115,9 @@ public class AddNewEmployee {
         assert daytxt != null : "fx:id=\"daytxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
         assert email != null : "fx:id=\"email\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
         assert emailtxt != null : "fx:id=\"emailtxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert firstNmae1 != null : "fx:id=\"firstNmae1\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert lastName != null : "fx:id=\"lastName\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
+        assert fnametxt != null : "fx:id=\"fnametxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
         assert lnametxt != null : "fx:id=\"lnametxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
+        assert lnametxt1 != null : "fx:id=\"lnametxt1\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
         assert mobile != null : "fx:id=\"mobile\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
         assert mobiletxt != null : "fx:id=\"mobiletxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
         assert monthtxt != null : "fx:id=\"monthtxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";

@@ -31,7 +31,10 @@ public class Supplier {
     private TableColumn<?, ?> colAddress;
 
     @FXML
-    private TableColumn<?, ?> colDate;
+    private TableColumn<?, ?> colAmountDate;
+
+    @FXML
+    private TableColumn<?, ?> colDateOfPayment;
 
     @FXML
     private TableColumn<?, ?> colIngredients;
@@ -46,10 +49,10 @@ public class Supplier {
     private TableColumn<?, ?> colPaid;
 
     @FXML
-    private TableColumn<?, ?> colType;
+    private TableColumn<?, ?> colPaymentType;
 
     @FXML
-    private TableColumn<?, ?> coldue;
+    private TableColumn<?, ?> coldateOfPurches;
 
     @FXML
     private TableView<?> employeeTable;
@@ -73,13 +76,14 @@ public class Supplier {
         assert btnAdd != null : "fx:id=\"btnAdd\" was not injected: check your FXML file 'Supplier.fxml'.";
         assert btnPrint != null : "fx:id=\"btnPrint\" was not injected: check your FXML file 'Supplier.fxml'.";
         assert colAddress != null : "fx:id=\"colAddress\" was not injected: check your FXML file 'Supplier.fxml'.";
-        assert colDate != null : "fx:id=\"colDate\" was not injected: check your FXML file 'Supplier.fxml'.";
+        assert colAmountDate != null : "fx:id=\"colAmountDate\" was not injected: check your FXML file 'Supplier.fxml'.";
+        assert colDateOfPayment != null : "fx:id=\"colDateOfPayment\" was not injected: check your FXML file 'Supplier.fxml'.";
         assert colIngredients != null : "fx:id=\"colIngredients\" was not injected: check your FXML file 'Supplier.fxml'.";
         assert colMobile != null : "fx:id=\"colMobile\" was not injected: check your FXML file 'Supplier.fxml'.";
         assert colName != null : "fx:id=\"colName\" was not injected: check your FXML file 'Supplier.fxml'.";
         assert colPaid != null : "fx:id=\"colPaid\" was not injected: check your FXML file 'Supplier.fxml'.";
-        assert colType != null : "fx:id=\"colType\" was not injected: check your FXML file 'Supplier.fxml'.";
-        assert coldue != null : "fx:id=\"coldue\" was not injected: check your FXML file 'Supplier.fxml'.";
+        assert colPaymentType != null : "fx:id=\"colPaymentType\" was not injected: check your FXML file 'Supplier.fxml'.";
+        assert coldateOfPurches != null : "fx:id=\"coldateOfPurches\" was not injected: check your FXML file 'Supplier.fxml'.";
         assert employeeTable != null : "fx:id=\"employeeTable\" was not injected: check your FXML file 'Supplier.fxml'.";
         assert title != null : "fx:id=\"title\" was not injected: check your FXML file 'Supplier.fxml'.";
 

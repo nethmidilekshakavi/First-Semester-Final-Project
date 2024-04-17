@@ -38,7 +38,7 @@
       <TextField fx:id="nictxt" layoutX="78.0" layoutY="120.0" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <TextField fx:id="fnametxt" layoutX="45.0" layoutY="185.0" prefHeight="24.0" prefWidth="166.0" promptText="First Name" style="-fx-background-radius: 40;" />
       <TextField fx:id="lnametxt" layoutX="229.0" layoutY="184.0" prefHeight="24.0" prefWidth="166.0" promptText="Last Name" style="-fx-background-radius: 40;" />
-      <TextField fx:id="lnametxt1" layoutX="40.0" layoutY="251.0" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="lnametxt1" layoutX="44.0" layoutY="251.0" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <TextField fx:id="mobiletxt" layoutX="39.0" layoutY="305.0" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <TextField fx:id="emailtxt" layoutX="40.0" layoutY="358.0" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <TextField fx:id="positiontxt" layoutX="41.0" layoutY="413.0" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />

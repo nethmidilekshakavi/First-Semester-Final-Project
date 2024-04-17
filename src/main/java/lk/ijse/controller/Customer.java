@@ -33,34 +33,34 @@ public class Customer {
     private Button btnPrint;
 
     @FXML
-    private TableColumn<?, ?> colAddress;
+    private TableColumn<?, ?> colDelete;
 
     @FXML
-    private TableColumn<?, ?> colMobile;
+    private TableColumn<?, ?> colEmail;
+
+    @FXML
+    private TableColumn<?, ?> colFname;
+
+    @FXML
+    private TableColumn<?, ?> colLname;
 
     @FXML
     private TableColumn<?, ?> colNIC;
 
     @FXML
-    private TableColumn<?, ?> colName1;
+    private TableColumn<?, ?> colUpdate;
 
     @FXML
-    private TableColumn<?, ?> coldelete;
+    private TableColumn<?, ?> coladdress;
 
     @FXML
-    private TableColumn<?, ?> colemail;
+    private TableColumn<?, ?> colmobile;
 
     @FXML
-    private TableColumn<?, ?> colupdate;
-
-    @FXML
-    private TableView<?> employeeTable;
+    private TableView<?> customerTable;
 
     @FXML
     private Text title;
-
-    @FXML
-    private TableColumn<?, ?> viewCustomer;
 
     @FXML
     void addNewCustomer(ActionEvent event) throws IOException {
@@ -83,16 +83,16 @@ public class Customer {
         assert EmployeePane != null : "fx:id=\"EmployeePane\" was not injected: check your FXML file 'Customer.fxml'.";
         assert btnAdd != null : "fx:id=\"btnAdd\" was not injected: check your FXML file 'Customer.fxml'.";
         assert btnPrint != null : "fx:id=\"btnPrint\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert colAddress != null : "fx:id=\"colAddress\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert colMobile != null : "fx:id=\"colMobile\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert colDelete != null : "fx:id=\"colDelete\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert colEmail != null : "fx:id=\"colEmail\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert colFname != null : "fx:id=\"colFname\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert colLname != null : "fx:id=\"colLname\" was not injected: check your FXML file 'Customer.fxml'.";
         assert colNIC != null : "fx:id=\"colNIC\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert colName1 != null : "fx:id=\"colName1\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert coldelete != null : "fx:id=\"coldelete\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert colemail != null : "fx:id=\"colemail\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert colupdate != null : "fx:id=\"colupdate\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert employeeTable != null : "fx:id=\"employeeTable\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert colUpdate != null : "fx:id=\"colUpdate\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert coladdress != null : "fx:id=\"coladdress\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert colmobile != null : "fx:id=\"colmobile\" was not injected: check your FXML file 'Customer.fxml'.";
+        assert customerTable != null : "fx:id=\"customerTable\" was not injected: check your FXML file 'Customer.fxml'.";
         assert title != null : "fx:id=\"title\" was not injected: check your FXML file 'Customer.fxml'.";
-        assert viewCustomer != null : "fx:id=\"viewCustomer\" was not injected: check your FXML file 'Customer.fxml'.";
 
     }
 

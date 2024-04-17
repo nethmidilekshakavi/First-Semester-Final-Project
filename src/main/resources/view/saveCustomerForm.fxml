@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="345.0" prefWidth="491.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.SaveCustomerForm">
    <children>
-      <ImageView fx:id="addCustomerPane" fitHeight="491.0" fitWidth="698.0" layoutX="-10.0">
+      <ImageView fx:id="addCustomerPane" fitHeight="491.0" fitWidth="698.0" layoutX="-10.0" style="-fx-background-radius: 40;">
          <image>
             <Image url="@../Images/6908d2800c1f153a3167dbae9dc2d7d2.jpg" />
          </image>
@@ -28,12 +28,12 @@
       <Text fx:id="address" layoutX="32.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
       <Text fx:id="mobile" layoutX="28.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile Number" />
       <Text fx:id="email" layoutX="28.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
-      <TextField fx:id="cidtxt" layoutX="57.0" layoutY="70.0" prefHeight="36.0" prefWidth="52.0" />
-      <TextField fx:id="nictxt" layoutX="28.0" layoutY="149.0" />
-      <TextField fx:id="fnametxt" layoutX="26.0" layoutY="227.0" promptText="First Name" />
-      <TextField fx:id="lnametxt" layoutX="213.0" layoutY="228.0" promptText="Last Name" />
-      <TextField fx:id="emailtxt" layoutX="28.0" layoutY="298.0" />
-      <TextField fx:id="addresstxt" layoutX="29.0" layoutY="376.0" />
-      <TextField fx:id="mobiletxt" layoutX="27.0" layoutY="446.0" />
+      <TextField fx:id="cidtxt" layoutX="57.0" layoutY="70.0" prefHeight="36.0" prefWidth="52.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="nictxt" layoutX="28.0" layoutY="149.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="fnametxt" layoutX="26.0" layoutY="227.0" promptText="First Name" style="-fx-background-radius: 40;" />
+      <TextField fx:id="lnametxt" layoutX="213.0" layoutY="228.0" promptText="Last Name" style="-fx-background-radius: 40;" />
+      <TextField fx:id="emailtxt" layoutX="28.0" layoutY="298.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="addresstxt" layoutX="29.0" layoutY="376.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="mobiletxt" layoutX="27.0" layoutY="446.0" style="-fx-background-radius: 40;" />
    </children>
 </AnchorPane>

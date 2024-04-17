@@ -2,20 +2,45 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.dashboard">
    <children>
-      <AnchorPane fx:id="buttonSet" layoutX="-26.0" layoutY="-14.0" prefHeight="768.0" prefWidth="286.0" style="-fx-background-color: Black; -fx-background-radius: 30;">
+      <AnchorPane fx:id="buttonSet" layoutX="-26.0" layoutY="-14.0" prefHeight="781.0" prefWidth="286.0" style="-fx-background-radius: 30; -fx-background-color: black;">
          <children>
-            <Button fx:id="btnReport" layoutX="58.0" layoutY="663.0" mnemonicParsing="false" onAction="#ReportOnAction" prefHeight="56.0" prefWidth="160.0" text="REPORTS" />
-            <Button fx:id="btningredients" layoutX="63.0" layoutY="575.0" mnemonicParsing="false" onAction="#IngredientOnAction" prefHeight="56.0" prefWidth="160.0" text="INGREDIENTS" />
-            <Button fx:id="btnsupplier" layoutX="63.0" layoutY="482.0" mnemonicParsing="false" onAction="#SupplierOnAction" prefHeight="56.0" prefWidth="160.0" text="SUPPLIERS" />
-            <Button fx:id="btnemployee" layoutX="63.0" layoutY="401.0" mnemonicParsing="false" onAction="#EmployeeOnAction" prefHeight="56.0" prefWidth="160.0" text="EMPLOYEE" />
-            <Button fx:id="btnreservation" layoutX="67.0" layoutY="311.0" mnemonicParsing="false" onAction="#ReservationOnAction" prefHeight="56.0" prefWidth="160.0" text="RESERVATION" />
-            <Button fx:id="btnmeal" layoutX="63.0" layoutY="222.0" mnemonicParsing="false" onAction="#MealOnAction" prefHeight="56.0" prefWidth="160.0" text="MEAL" />
-            <Button fx:id="btncustomer" layoutX="63.0" layoutY="138.0" mnemonicParsing="false" onAction="#customerOnAction" prefHeight="56.0" prefWidth="160.0" text="CUSTOMER" />
-            <Button fx:id="btndashboard" layoutX="67.0" layoutY="42.0" mnemonicParsing="false" onAction="#dashboardOnAction" prefHeight="56.0" prefWidth="160.0" text="DASHBOARD" />
+            <Button fx:id="btnReport" layoutX="28.0" layoutY="663.0" mnemonicParsing="false" onAction="#ReportOnAction" prefHeight="56.0" prefWidth="257.0" style="-fx-background-color: Black;" text="REPORTS" textFill="#fcfafa">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font></Button>
+            <Button fx:id="btningredients" layoutX="28.0" layoutY="607.0" mnemonicParsing="false" onAction="#IngredientOnAction" prefHeight="56.0" prefWidth="257.0" style="-fx-background-color: Black;" text="INGREDIENTS" textFill="#f5efef">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font></Button>
+            <Button fx:id="btnsupplier" layoutX="28.0" layoutY="551.0" mnemonicParsing="false" onAction="#SupplierOnAction" prefHeight="56.0" prefWidth="257.0" style="-fx-background-color: Black;" text="SUPPLIERS" textFill="#f5efef">
+               <font>
+                  <Font name="System Bold Italic" size="25.0" />
+               </font></Button>
+            <Button fx:id="btnemployee" layoutX="28.0" layoutY="494.0" mnemonicParsing="false" onAction="#EmployeeOnAction" prefHeight="56.0" prefWidth="257.0" style="-fx-background-color: Black;" text="EMPLOYEE" textFill="#f5efef">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font></Button>
+            <Button fx:id="btnreservation" layoutX="28.0" layoutY="439.0" mnemonicParsing="false" onAction="#ReservationOnAction" prefHeight="56.0" prefWidth="257.0" style="-fx-background-color: Black;" text="RESERVATION" textFill="#f5efef">
+               <font>
+                  <Font name="System Bold Italic" size="25.0" />
+               </font></Button>
+            <Button fx:id="btnmeal" layoutX="27.0" layoutY="383.0" mnemonicParsing="false" onAction="#MealOnAction" prefHeight="56.0" prefWidth="257.0" style="-fx-background-color: black;" text="MEAL" textFill="#fcf7f7">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font></Button>
+            <Button fx:id="btncustomer" layoutX="27.0" layoutY="327.0" mnemonicParsing="false" onAction="#customerOnAction" prefHeight="56.0" prefWidth="257.0" style="-fx-background-color: black;" text="CUSTOMER" textFill="#fcf7f7">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font></Button>
+            <Button fx:id="btndashboard" layoutX="28.0" layoutY="271.0" mnemonicParsing="false" onAction="#dashboardOnAction" prefHeight="56.0" prefWidth="257.0" style="-fx-background-color: black;" text="DASHBOARD" textFill="#fcf7f7">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font></Button>
          </children></AnchorPane>
-      <AnchorPane fx:id="Emptypane" layoutX="269.0" layoutY="-1.0" prefHeight="768.0" prefWidth="1097.0" />
+      <AnchorPane fx:id="Emptypane" layoutX="269.0" layoutY="-1.0" prefHeight="768.0" prefWidth="1097.0" style="-fx-background-color: BlWhiteck;" />
    </children>
 </AnchorPane>

@@ -13,6 +13,8 @@ import java.util.List;
 
 public class CustomerRepo {
 
+
+
     public static boolean saveCustomer(CustomerModel customer) throws SQLException {
         String sql = "INSERT INTO Customer VALUES(?, ?, ?, ?,?,?,?)";
 
@@ -57,29 +59,6 @@ public class CustomerRepo {
         return pstm.executeUpdate() > 0;
     }
 
-  /*  public static List<Customer> getAll() throws SQLException {
-        String sql = "SELECT * FROM customers";
 
-        PreparedStatement pstm = DbConnetion.getInstance().getConnection()
-                .prepareStatement(sql);
-
-        ResultSet resultSet = pstm.executeQuery();
-
-        List<Customer> cusList = new ArrayList<>();
-
-        while (resultSet.next()) {
-            String id = resultSet.getString(1);
-            String nic = resultSet.getString(2);
-            String FName = resultSet.getString(3);
-            String LName = resultSet.getString(4);
-            String address = resultSet.getString(5);
-            int phoneNumber = Integer.parseInt(resultSet.getString(6));
-            String email = resultSet.getString(7);
-
-            Customer customer = new Customer(id,nic, FName, LName,address, phoneNumber, email);
-            cusList.add(customer);
-        }
-        return cusList;
-    }*/
 }
 

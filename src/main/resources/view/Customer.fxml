@@ -16,23 +16,23 @@
             <Image url="@../Images/dc3f9b90daf9f333225c4d70c9355c64.jpg" />
          </image>
       </ImageView>
-      <Text fx:id="title" layoutX="526.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Details">
+      <Text fx:id="title" layoutX="435.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Details">
          <font>
             <Font name="Dyuthi Regular" size="36.0" />
          </font>
       </Text>
       <Button fx:id="btnAdd" layoutX="987.0" layoutY="76.0" mnemonicParsing="false" onAction="#addNewCustomer" prefHeight="24.0" prefWidth="63.0" text="ADD" />
       <Button fx:id="btnPrint" layoutX="914.0" layoutY="76.0" mnemonicParsing="false" onAction="#getReport" prefHeight="24.0" prefWidth="63.0" text="PRINT" />
-      <TableView fx:id="employeeTable" layoutX="14.0" layoutY="137.0" prefHeight="539.0" prefWidth="1055.0">
+      <TableView fx:id="customerTable" layoutX="31.0" layoutY="135.0" prefHeight="539.0" prefWidth="1055.0">
          <columns>
             <TableColumn fx:id="colNIC" prefWidth="111.0" text="NIC" />
-            <TableColumn fx:id="viewCustomer" prefWidth="124.0" text="FIRST NAME" />
-            <TableColumn fx:id="colAddress" prefWidth="115.0" text="LAST NAME" />
-            <TableColumn fx:id="colMobile" prefWidth="134.0" text="ADDRESS" />
-            <TableColumn fx:id="colemail" prefWidth="133.0" text="MOBILE NUMBER" />
-            <TableColumn fx:id="coldelete" prefWidth="170.0" text="EMAIL" />
-            <TableColumn fx:id="colName1" prefWidth="142.0" text="UPADTE" />
-            <TableColumn fx:id="colupdate" prefWidth="125.0" text="DELETE" />
+            <TableColumn fx:id="colFname" prefWidth="124.0" text="FIRST NAME" />
+            <TableColumn fx:id="colLname" prefWidth="115.0" text="LAST NAME" />
+            <TableColumn fx:id="coladdress" prefWidth="134.0" text="ADDRESS" />
+            <TableColumn fx:id="colmobile" prefWidth="133.0" text="MOBILE NUMBER" />
+            <TableColumn fx:id="colEmail" prefWidth="170.0" text="EMAIL" />
+            <TableColumn fx:id="colUpdate" prefWidth="142.0" text="UPADTE" />
+            <TableColumn fx:id="colDelete" prefWidth="125.0" text="DELETE" />
          </columns>
       </TableView>
    </children>

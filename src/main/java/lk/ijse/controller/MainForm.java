@@ -201,6 +201,9 @@ public class MainForm {
     private Text txt9;
 
     @FXML
+    private ImageView user;
+
+    @FXML
     void initialize() {
         assert AP01 != null : "fx:id=\"AP01\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert AP010 != null : "fx:id=\"AP010\" was not injected: check your FXML file 'mainForm.fxml'.";
@@ -263,6 +266,7 @@ public class MainForm {
         assert txt7 != null : "fx:id=\"txt7\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert txt8 != null : "fx:id=\"txt8\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert txt9 != null : "fx:id=\"txt9\" was not injected: check your FXML file 'mainForm.fxml'.";
+        assert user != null : "fx:id=\"user\" was not injected: check your FXML file 'mainForm.fxml'.";
 
     }
 

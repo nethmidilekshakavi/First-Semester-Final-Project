@@ -62,6 +62,8 @@ public class Customer {
     @FXML
     private Text title;
 
+
+
     @FXML
     void addNewCustomer(ActionEvent event) throws IOException {
         Parent parent = FXMLLoader.load(getClass().getResource("/view/saveCustomerForm.fxml"));

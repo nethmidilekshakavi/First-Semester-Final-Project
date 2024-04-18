@@ -8,14 +8,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class CustomerModel {
+public class CustomerModel extends Customer {
 
-    private static String C_ID;
-    private static String NIC;
-    private static String First_Name;
-    private static String Last_Name;
-    private static String Address;
-    private static int Phone_Number;
-    private static String Email;
+    private String C_ID;
+    private  String NIC;
+    private  String First_Name;
+    private  String Last_Name;
+    private  String Address;
+    private  int Phone_Number;
+    private  String Email;
 
 }

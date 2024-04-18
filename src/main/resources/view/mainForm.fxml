@@ -142,6 +142,11 @@
       </ImageView>
       <AnchorPane fx:id="paneNew" layoutX="794.0" layoutY="57.0" prefHeight="623.0" prefWidth="279.0" style="-fx-background-color: White; -fx-background-radius: 25;">
          <children>
+            <ImageView fx:id="pieChart" fitHeight="263.0" fitWidth="262.0" layoutX="11.0" layoutY="225.0">
+               <image>
+                  <Image url="@../Images/37237b98b96db9ba20c6b4834567c65c.jpg" />
+               </image>
+            </ImageView>
             <ImageView fx:id="Map" fitHeight="200.0" fitWidth="219.0" layoutX="34.0" layoutY="20.0">
                <image>
                   <Image url="@../Images/thumbnail.jpeg" />
@@ -149,11 +154,6 @@
                <effect>
                   <DropShadow />
                </effect>
-            </ImageView>
-            <ImageView fx:id="pieChart" fitHeight="263.0" fitWidth="262.0" layoutX="11.0" layoutY="225.0">
-               <image>
-                  <Image url="@../Images/37237b98b96db9ba20c6b4834567c65c.jpg" />
-               </image>
             </ImageView>
             <ImageView fx:id="lineChart" fitHeight="182.0" fitWidth="269.0" layoutX="8.0" layoutY="408.0">
                <image>
@@ -325,6 +325,11 @@
       <ImageView fx:id="notification" fitHeight="20.0" fitWidth="23.0" layoutX="1008.0" layoutY="23.0">
          <image>
             <Image url="@../Images/icons8-bell-24.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="user" fitHeight="31.0" fitWidth="30.0" layoutX="1039.0" layoutY="18.0">
+         <image>
+            <Image url="@../Images/icons8-user-50.png" />
          </image>
       </ImageView>
    </children>

@@ -8,10 +8,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.AddNewSupplier">
    <children>
-      <ImageView fx:id="AddNewSupplierPage" fitHeight="422.0" fitWidth="690.0">
+      <ImageView fx:id="AddNewSupplierPage" fitHeight="435.0" fitWidth="711.0">
          <image>
             <Image url="@../Images/6908d2800c1f153a3167dbae9dc2d7d2.jpg" />
          </image>
@@ -21,17 +20,27 @@
             <Font name="Dyuthi Regular" size="36.0" />
          </font>
       </Text>
-      <Text fx:id="name" layoutX="55.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-      <Text fx:id="address" layoutX="51.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
+      <Text fx:id="name" layoutX="52.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :" />
+      <Text fx:id="address" layoutX="51.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address :" />
       <Text fx:id="SID" layoutX="53.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SID :" wrappingWidth="36.0673828125" />
-      <Text fx:id="mobile" layoutX="54.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile Number" />
+      <Text fx:id="mobile" layoutX="51.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile Number :" />
       <TextField fx:id="sidtxt" layoutX="91.0" layoutY="85.0" prefHeight="24.0" prefWidth="85.0" style="-fx-background-radius: 40;" />
-      <TextField fx:id="nametxt" layoutX="52.0" layoutY="173.0" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
-      <TextField fx:id="addresstxt" layoutX="51.0" layoutY="239.0" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
-      <TextField fx:id="mobiletxt" layoutX="51.0" layoutY="301.0" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
-      <Text fx:id="ingredient" layoutX="54.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingredient" />
-      <TextField fx:id="txtIngredient" layoutX="52.0" layoutY="365.0" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="nametxt" layoutX="180.0" layoutY="136.0" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="addresstxt" layoutX="181.0" layoutY="169.0" prefHeight="16.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="mobiletxt" layoutX="181.0" layoutY="199.0" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <Text fx:id="ingredient" layoutX="48.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingredient :" />
+      <TextField fx:id="txtIngredient" layoutX="181.0" layoutY="271.0" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <Button fx:id="btnSave" layoutX="600.0" layoutY="384.0" mnemonicParsing="false" onAction="#saveSupplier" prefHeight="24.0" prefWidth="67.0" style="-fx-background-radius: 40;" text="SAVE" />
       <Button fx:id="btnCancel" layoutX="512.0" layoutY="386.0" mnemonicParsing="false" onAction="#dontSaveSupplier" style="-fx-background-radius: 40;" text="CANCEL" />
+      <Text fx:id="dateOdPurchase" layoutX="385.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Of Purchase :" />
+      <TextField fx:id="purchasetxt" layoutX="512.0" layoutY="269.0" prefHeight="24.0" prefWidth="151.0" style="-fx-background-radius: 40;" />
+      <Text fx:id="amountDue" layoutX="46.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount Due :" />
+      <TextField fx:id="AmountDuetxt" layoutX="180.0" layoutY="305.0" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <Text fx:id="dateOdPayment" layoutX="385.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Payment :" />
+      <TextField fx:id="dataOfPaymenttxt" layoutX="512.0" layoutY="305.0" prefHeight="24.0" prefWidth="151.0" style="-fx-background-radius: 40;" />
+      <Text fx:id="dateOdPayment1" layoutX="47.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Type :" />
+      <TextField fx:id="PaymentTypetxt" layoutX="181.0" layoutY="338.0" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <Text fx:id="AmountPaid" layoutX="48.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount Paid :" />
+      <TextField fx:id="AmountPaidtxt" layoutX="181.0" layoutY="371.0" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
    </children>
 </AnchorPane>

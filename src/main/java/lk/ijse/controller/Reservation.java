@@ -4,7 +4,13 @@ import com.jfoenix.controls.JFXComboBox;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.List;
 import java.util.ResourceBundle;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +23,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lk.ijse.Repository.CustomerRepo;
+import lk.ijse.Repository.ReservationRepo;
 
 public class Reservation {
 
@@ -118,38 +126,61 @@ public class Reservation {
         FXMLLoader.load(getClass().getResource("/view/dashboard.fxml"));
     }
 
-    @FXML
-    void initialize() {
-        assert CNIC != null : "fx:id=\"CNIC\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert QOHtxt != null : "fx:id=\"QOHtxt\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert RCODE != null : "fx:id=\"RCODE\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert RID != null : "fx:id=\"RID\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert btnPlaceOrder != null : "fx:id=\"btnPlaceOrder\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert btnback != null : "fx:id=\"btnback\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert btnnewCID != null : "fx:id=\"btnnewCID\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert colcode != null : "fx:id=\"colcode\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert coldesc != null : "fx:id=\"coldesc\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert colprice != null : "fx:id=\"colprice\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert colqty != null : "fx:id=\"colqty\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert coltotal != null : "fx:id=\"coltotal\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert date != null : "fx:id=\"date\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert datetxt != null : "fx:id=\"datetxt\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert desc != null : "fx:id=\"desc\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert nicList != null : "fx:id=\"nicList\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert orderPane != null : "fx:id=\"orderPane\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert orderTable != null : "fx:id=\"orderTable\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert price != null : "fx:id=\"price\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert pricetxt != null : "fx:id=\"pricetxt\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert qty != null : "fx:id=\"qty\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert qtyOnHand != null : "fx:id=\"qtyOnHand\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert qtytxt != null : "fx:id=\"qtytxt\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert reservationIDtxt != null : "fx:id=\"reservationIDtxt\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert reservationList != null : "fx:id=\"reservationList\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert title != null : "fx:id=\"title\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert total != null : "fx:id=\"total\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert totaltxt != null : "fx:id=\"totaltxt\" was not injected: check your FXML file 'Reservation.fxml'.";
-        assert txtdesc != null : "fx:id=\"txtdesc\" was not injected: check your FXML file 'Reservation.fxml'.";
+    public void initialize() {
+        setDate();
+        getCurrentOrderId();
+       //getCustomerIds();
+       // getItemCodes();
+       // setCellValueFactory();
+    }
+
+  /*  private void getCustomerIds() {
+        ObservableList<String> obList = FXCollections.observableArrayList();
+
+        try {
+            List<String> idList = CustomerRepo.getIds();
+
+            for(String id : idList) {
+                obList.add(id);
+            }
+
+            reservationList.setItems(obList);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }*/
+
+    private String generateNextOrderId(String currentId) {
+        if(currentId != null) {
+            String[] split = currentId.split("O");
+            int idNum = Integer.parseInt(split[1]);
+            return "O" + ++idNum;
+        }
+        return "O1";
+    }
+
+    private void getCurrentOrderId() {
+        try {
+            String currentId = ReservationRepo.getCurrentId();
+
+            String nextOrderId = generateNextOrderId(currentId);
+            RID.setText(nextOrderId);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void setDate() {
+            LocalDate now = LocalDate.now();
+            date.setText(String.valueOf(now));
+        }
+
+
+
+
 
     }
 
-}
+

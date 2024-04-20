@@ -1,13 +1,22 @@
 package lk.ijse.controller;
 
+import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import lk.ijse.Model.CustomerModel;
+import lk.ijse.Repository.CustomerRepo;
 
 public class SaveCustomerForm {
 
@@ -70,12 +79,30 @@ public class SaveCustomerForm {
 
     @FXML
     void dontSave(ActionEvent event) {
-
+        Stage stage =(Stage)cidtxt.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
-    void saveCustomer(ActionEvent event) {
+    void saveCustomer(ActionEvent event) throws SQLException {
+        String id=cidtxt.getText();
+       String nic= nictxt.getText();
+        String fname=fnametxt.getText();
+        String lname =lnametxt.getText();
+        String address=addresstxt.getText();
+        int mobile=Integer.parseInt(mobiletxt.getText());
+        String email=emailtxt.getText();
 
+        CustomerModel customerModel=new CustomerModel(id,nic,fname,lname,address,mobile,email);
+        boolean a = CustomerRepo.savecustomer(customerModel);
+        System.out.println(a);
+        if (a){
+            new Alert(Alert.AlertType.CONFIRMATION,"customer saved successfully").show();
+        }else {
+            new Alert(Alert.AlertType.ERROR,"something went wrong").show();
+        }
+        Stage stage =(Stage)cidtxt.getScene().getWindow();
+        stage.close();
     }
 
     @FXML

@@ -2,7 +2,14 @@ package lk.ijse.controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+
+import com.jfoenix.controls.JFXButton;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,9 +18,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lk.ijse.Model.CustomerModel;
+import lk.ijse.Model.TM.customerTM;
+import lk.ijse.Repository.CustomerRepo;
 
 public class Customer {
 
@@ -33,31 +45,31 @@ public class Customer {
     private Button btnPrint;
 
     @FXML
-    private TableColumn<?, ?> colDelete;
+    private TableColumn<customerTM, JFXButton> colDelete;
 
     @FXML
-    private TableColumn<?, ?> colEmail;
+    private TableColumn<customerTM, String> colEmail;
 
     @FXML
-    private TableColumn<?, ?> colFname;
+    private TableColumn<customerTM, String> colFname;
 
     @FXML
-    private TableColumn<?, ?> colLname;
+    private TableColumn<customerTM, String> colLname;
 
     @FXML
-    private TableColumn<?, ?> colNIC;
+    private TableColumn<customerTM, String> colNIC;
 
     @FXML
-    private TableColumn<?, ?> colUpdate;
+    private TableColumn<customerTM, JFXButton> colUpdate;
 
     @FXML
-    private TableColumn<?, ?> coladdress;
+    private TableColumn<customerTM, String> coladdress;
 
     @FXML
-    private TableColumn<?, ?> colmobile;
+    private TableColumn<customerTM, String> colmobile;
 
     @FXML
-    private TableView<?> customerTable;
+    private TableView<customerTM> customerTable;
 
     @FXML
     private Text title;
@@ -79,9 +91,50 @@ public class Customer {
     void getReport(ActionEvent event) {
 
     }
+  public void loadvalues() throws SQLException {
+        ArrayList<CustomerModel> allcustomer=CustomerRepo.getAll();
+      System.out.println(allcustomer.size());
+      ObservableList<customerTM>observableList =FXCollections.observableArrayList();
+
+      for (int i=0 ;i< allcustomer.size() ; i++){
+          //String mobile =String.valueOf(allcustomer.get(i).getPhone_Number());
+          customerTM customerTM =new customerTM(allcustomer.get(i).getC_ID(),allcustomer.get(i).getNIC(),allcustomer.get(i).getFirst_Name(),allcustomer.get(i).getLast_Name(),allcustomer.get(i).getAddress(),allcustomer.get(i).getPhone_Number(),allcustomer.get(i).getEmail(),new JFXButton("Delete"),new JFXButton("Update"));
+          observableList.add(customerTM);
+      }
+      customerTable.setItems(observableList);
+      for (int i = 0; i < observableList.size(); i++) {
+          observableList.get(i).getUpdate().setStyle("-fx-background-color: rgba(96,120,205,0.97)");
+          observableList.get(i).getDelete().setStyle("-fx-background-color: rgba(175,108,108,1)");
+          observableList.get(i).getUpdate().setTextFill(Color.WHITE);
+          observableList.get(i).getDelete().setTextFill(Color.WHITE);
+      }
+      for (int i=0 ;i<observableList.size();i++){
+          String id =observableList.get(i).getC_ID();
+          String  nic =observableList.get(i).getNIC();
+          String fn =observableList.get(i).getFirst_Name();
+          String ln =observableList.get(i).getLast_Name();
+          String add =observableList.get(i).getAddress();
+          int mobile =observableList.get(i).getPhone_Number();
+          String email =observableList.get(i).getEmail();
+          observableList.get(i).getDelete().setOnAction(actionEvent -> {});
+          observableList.get(i).getUpdate().setOnAction(actionEvent -> {});
+      }
+  }
+
+        public void setValues(){
+            colNIC.setCellValueFactory(new PropertyValueFactory<>("NIC"));
+            colFname.setCellValueFactory(new PropertyValueFactory<>("First_Name"));
+            colLname.setCellValueFactory(new PropertyValueFactory<>("Last_Name"));
+            coladdress.setCellValueFactory(new PropertyValueFactory<>("Address"));
+            colmobile.setCellValueFactory(new PropertyValueFactory<>("Phone_Number"));
+            colEmail.setCellValueFactory(new PropertyValueFactory<>("Email"));
+            colDelete.setCellValueFactory(new PropertyValueFactory<customerTM,JFXButton>("Delete"));
+            colUpdate.setCellValueFactory(new PropertyValueFactory<customerTM,JFXButton>("Update"));
+        }
+
 
     @FXML
-    void initialize() {
+    void initialize() throws SQLException {
         assert EmployeePane != null : "fx:id=\"EmployeePane\" was not injected: check your FXML file 'Customer.fxml'.";
         assert btnAdd != null : "fx:id=\"btnAdd\" was not injected: check your FXML file 'Customer.fxml'.";
         assert btnPrint != null : "fx:id=\"btnPrint\" was not injected: check your FXML file 'Customer.fxml'.";

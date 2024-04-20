@@ -1,5 +1,6 @@
 package lk.ijse.Model.TM;
 
+import com.jfoenix.controls.JFXButton;
 import lombok.*;
 
 @NoArgsConstructor
@@ -14,6 +15,8 @@ public class customerTM {
     private String Address;
     private  int Phone_Number;
     private String Email;
+    private JFXButton delete;
+    private JFXButton update;
 
 
 

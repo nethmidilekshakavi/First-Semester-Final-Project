@@ -16,7 +16,7 @@ public class EmployeeModel {
     private String First_Name;
     private String Last_Name;
     private String Address;
-    private String Phone_Number;
+    private int Phone_Number;
     private String Email;
     private String Salary;
     private String Position;

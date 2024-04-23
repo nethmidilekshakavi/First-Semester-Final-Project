@@ -93,32 +93,32 @@ public class Customer {
     }
   public void loadvalues() throws SQLException {
         ArrayList<CustomerModel> allcustomer=CustomerRepo.getAll();
-      System.out.println(allcustomer.size());
-      ObservableList<customerTM>observableList =FXCollections.observableArrayList();
+        ObservableList<customerTM>observableList =FXCollections.observableArrayList();
 
       for (int i=0 ;i< allcustomer.size() ; i++){
-          //String mobile =String.valueOf(allcustomer.get(i).getPhone_Number());
-          customerTM customerTM =new customerTM(allcustomer.get(i).getC_ID(),allcustomer.get(i).getNIC(),allcustomer.get(i).getFirst_Name(),allcustomer.get(i).getLast_Name(),allcustomer.get(i).getAddress(),allcustomer.get(i).getPhone_Number(),allcustomer.get(i).getEmail(),new JFXButton("Delete"),new JFXButton("Update"));
+          String mobile =String.valueOf(allcustomer.get(i).getPhone_Number());
+          customerTM customerTM =new customerTM(allcustomer.get(i).getC_ID(),allcustomer.get(i).getNIC(),allcustomer.get(i).getFirst_Name(),allcustomer.get(i).getLast_Name(),allcustomer.get(i).getAddress(),mobile,allcustomer.get(i).getEmail(),new JFXButton("Delete"),new JFXButton("Update"));
           observableList.add(customerTM);
+          customerTable.setItems(observableList);
       }
-      customerTable.setItems(observableList);
+
       for (int i = 0; i < observableList.size(); i++) {
           observableList.get(i).getUpdate().setStyle("-fx-background-color: rgba(96,120,205,0.97)");
           observableList.get(i).getDelete().setStyle("-fx-background-color: rgba(175,108,108,1)");
           observableList.get(i).getUpdate().setTextFill(Color.WHITE);
           observableList.get(i).getDelete().setTextFill(Color.WHITE);
       }
-      for (int i=0 ;i<observableList.size();i++){
-          String id =observableList.get(i).getC_ID();
-          String  nic =observableList.get(i).getNIC();
-          String fn =observableList.get(i).getFirst_Name();
-          String ln =observableList.get(i).getLast_Name();
-          String add =observableList.get(i).getAddress();
-          int mobile =observableList.get(i).getPhone_Number();
-          String email =observableList.get(i).getEmail();
-          observableList.get(i).getDelete().setOnAction(actionEvent -> {});
-          observableList.get(i).getUpdate().setOnAction(actionEvent -> {});
-      }
+//      for (int i=0 ;i<observableList.size();i++){
+//          String id =observableList.get(i).getC_ID();
+//          String  nic =observableList.get(i).getNIC();
+//          String fn =observableList.get(i).getFirst_Name();
+//          String ln =observableList.get(i).getLast_Name();
+//          String add =observableList.get(i).getAddress();
+//          String mobile =observableList.get(i).getPhone_Number();
+//          String email =observableList.get(i).getEmail();
+//          observableList.get(i).getDelete().setOnAction(actionEvent -> {});
+//          observableList.get(i).getUpdate().setOnAction(actionEvent -> {});
+//      }
   }
 
         public void setValues(){
@@ -148,7 +148,8 @@ public class Customer {
         assert colmobile != null : "fx:id=\"colmobile\" was not injected: check your FXML file 'Customer.fxml'.";
         assert customerTable != null : "fx:id=\"customerTable\" was not injected: check your FXML file 'Customer.fxml'.";
         assert title != null : "fx:id=\"title\" was not injected: check your FXML file 'Customer.fxml'.";
-
+        loadvalues();
+        setValues();
     }
 
 }

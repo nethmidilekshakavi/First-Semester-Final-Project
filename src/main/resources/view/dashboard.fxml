@@ -47,7 +47,19 @@
                   <Image url="@../Images/Untitled.jpeg" />
                </image>
             </ImageView>
+            <Button fx:id="exitbtn" layoutX="36.0" layoutY="733.0" mnemonicParsing="false" opacity="0.9" prefHeight="39.0" prefWidth="76.0" style="-fx-background-radius: 10; -fx-background-color: #007F73;" text="EXIT" textFill="#fff6f6">
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="23.0">
+                     <image>
+                        <Image url="@../Images/icons8-exit-48.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold Italic" size="10.0" />
+               </font>
+            </Button>
          </children></AnchorPane>
-      <AnchorPane fx:id="Emptypane" layoutX="269.0" layoutY="-1.0" prefHeight="768.0" prefWidth="1097.0" style="-fx-background-color: BlWhiteck;" />
+      <AnchorPane fx:id="Emptypane" layoutX="269.0" layoutY="-5.0" prefHeight="768.0" prefWidth="1097.0" style="-fx-background-color: BlWhiteck;" />
    </children>
 </AnchorPane>

@@ -30,8 +30,8 @@
       <TextField fx:id="mobiletxt" layoutX="181.0" layoutY="199.0" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <Text fx:id="ingredient" layoutX="48.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingredient :" />
       <TextField fx:id="txtIngredient" layoutX="181.0" layoutY="271.0" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
-      <Button fx:id="btnSave" layoutX="600.0" layoutY="384.0" mnemonicParsing="false" onAction="#saveSupplier" prefHeight="24.0" prefWidth="67.0" style="-fx-background-radius: 40;" text="SAVE" />
-      <Button fx:id="btnCancel" layoutX="512.0" layoutY="386.0" mnemonicParsing="false" onAction="#dontSaveSupplier" style="-fx-background-radius: 40;" text="CANCEL" />
+      <Button fx:id="btnSave" layoutX="611.0" layoutY="384.0" mnemonicParsing="false" onAction="#saveSupplier" prefHeight="33.0" prefWidth="75.0" style="-fx-background-radius: 40; -fx-background-color: #FF9800;" text="SAVE" />
+      <Button fx:id="btnCancel" layoutX="529.0" layoutY="386.0" mnemonicParsing="false" onAction="#dontSaveSupplier" prefHeight="33.0" prefWidth="75.0" style="-fx-background-radius: 40; -fx-background-color: #378CE7;" text="CANCEL" />
       <Text fx:id="dateOdPurchase" layoutX="385.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Of Purchase :" />
       <TextField fx:id="purchasetxt" layoutX="512.0" layoutY="269.0" prefHeight="24.0" prefWidth="151.0" style="-fx-background-radius: 40;" />
       <Text fx:id="amountDue" layoutX="46.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount Due :" />

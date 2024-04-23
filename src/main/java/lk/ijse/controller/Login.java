@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -28,6 +29,9 @@ public class Login {
     private ImageView FB;
 
     @FXML
+    private Text FOODCOURT;
+
+    @FXML
     private Text ForgotPW;
 
     @FXML
@@ -38,6 +42,9 @@ public class Login {
 
     @FXML
     private Text OR;
+
+    @FXML
+    private Text TO;
 
     @FXML
     private ImageView eye1;
@@ -52,10 +59,13 @@ public class Login {
     private AnchorPane pane;
 
     @FXML
+    private AnchorPane pane2;
+
+    @FXML
     private Text password;
 
     @FXML
-    private TextField txtpw;
+    private PasswordField txtpw;
 
     @FXML
     private TextField txtun;
@@ -65,6 +75,9 @@ public class Login {
 
     @FXML
     private ImageView userpic;
+
+    @FXML
+    private Text welcome;
 
     @FXML
     void loginOnAction(ActionEvent event) throws IOException {
@@ -87,25 +100,28 @@ public class Login {
         else if(txtpw.getText()!=(password)) {
             new Alert(Alert.AlertType.INFORMATION, "sorry! user password can't be find!").show();
         }
-
     }
 
     @FXML
     void initialize() {
         assert FB != null : "fx:id=\"FB\" was not injected: check your FXML file 'Login.fxml'.";
+        assert FOODCOURT != null : "fx:id=\"FOODCOURT\" was not injected: check your FXML file 'Login.fxml'.";
         assert ForgotPW != null : "fx:id=\"ForgotPW\" was not injected: check your FXML file 'Login.fxml'.";
         assert GOOGLE != null : "fx:id=\"GOOGLE\" was not injected: check your FXML file 'Login.fxml'.";
         assert Insterpic != null : "fx:id=\"Insterpic\" was not injected: check your FXML file 'Login.fxml'.";
         assert OR != null : "fx:id=\"OR\" was not injected: check your FXML file 'Login.fxml'.";
+        assert TO != null : "fx:id=\"TO\" was not injected: check your FXML file 'Login.fxml'.";
         assert eye1 != null : "fx:id=\"eye1\" was not injected: check your FXML file 'Login.fxml'.";
         assert login != null : "fx:id=\"login\" was not injected: check your FXML file 'Login.fxml'.";
         assert loginphoto != null : "fx:id=\"loginphoto\" was not injected: check your FXML file 'Login.fxml'.";
         assert pane != null : "fx:id=\"pane\" was not injected: check your FXML file 'Login.fxml'.";
+        assert pane2 != null : "fx:id=\"pane2\" was not injected: check your FXML file 'Login.fxml'.";
         assert password != null : "fx:id=\"password\" was not injected: check your FXML file 'Login.fxml'.";
         assert txtpw != null : "fx:id=\"txtpw\" was not injected: check your FXML file 'Login.fxml'.";
         assert txtun != null : "fx:id=\"txtun\" was not injected: check your FXML file 'Login.fxml'.";
         assert username != null : "fx:id=\"username\" was not injected: check your FXML file 'Login.fxml'.";
         assert userpic != null : "fx:id=\"userpic\" was not injected: check your FXML file 'Login.fxml'.";
+        assert welcome != null : "fx:id=\"welcome\" was not injected: check your FXML file 'Login.fxml'.";
 
     }
 

@@ -3,12 +3,13 @@ package lk.ijse.controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -52,7 +53,10 @@ public class dashboard implements Initializable {
     private AnchorPane buttonSet;
 
     @FXML
-    void EmployeeOnAction(ActionEvent event) throws IOException {
+    private Button exitbtn;
+
+    @FXML
+    void EmployeeOnAction(ActionEvent event) throws IOException, IOException {
         Parent parent= FXMLLoader.load(getClass().getResource("/view/Employee.fxml"));
         Emptypane.getChildren().setAll(parent);
     }
@@ -115,6 +119,5 @@ public class dashboard implements Initializable {
         Emptypane.getChildren().clear();
         Emptypane.getChildren().add(root);
     }
-
 
 }

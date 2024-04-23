@@ -24,7 +24,7 @@
       </Text>
       <Button fx:id="btnAdd" layoutX="987.0" layoutY="76.0" mnemonicParsing="false" onAction="#addNewCustomer" prefHeight="24.0" prefWidth="63.0" text="ADD" />
       <Button fx:id="btnPrint" layoutX="914.0" layoutY="76.0" mnemonicParsing="false" onAction="#getReport" prefHeight="24.0" prefWidth="63.0" text="PRINT" />
-      <TableView fx:id="customerTable" layoutX="31.0" layoutY="135.0" prefHeight="539.0" prefWidth="1055.0">
+      <TableView fx:id="customerTable" layoutX="53.0" layoutY="135.0" prefHeight="539.0" prefWidth="1011.0">
          <columns>
             <TableColumn fx:id="colNIC" prefWidth="111.0" text="NIC" />
             <TableColumn fx:id="colFname" prefWidth="124.0" text="FIRST NAME" />
@@ -32,8 +32,8 @@
             <TableColumn fx:id="coladdress" prefWidth="134.0" text="ADDRESS" />
             <TableColumn fx:id="colmobile" prefWidth="133.0" text="MOBILE NUMBER" />
             <TableColumn fx:id="colEmail" prefWidth="170.0" text="EMAIL" />
-            <TableColumn fx:id="colUpdate" prefWidth="142.0" text="UPADTE" />
-            <TableColumn fx:id="colDelete" prefWidth="125.0" text="DELETE" />
+            <TableColumn fx:id="colUpdate" prefWidth="110.0" text="UPADTE" />
+            <TableColumn fx:id="colDelete" prefWidth="110.0" text="DELETE" />
          </columns>
          <effect>
             <DropShadow />

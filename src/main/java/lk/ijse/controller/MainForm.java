@@ -3,7 +3,6 @@ package lk.ijse.controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -96,34 +95,7 @@ public class MainForm {
     private TextField SearchBar;
 
     @FXML
-    private ImageView lineChart;
-
-    @FXML
     private ImageView notification;
-
-    @FXML
-    private Button orderbtn1;
-
-    @FXML
-    private Button orderbtn2;
-
-    @FXML
-    private Button orderbtn3;
-
-    @FXML
-    private Button orderbtn4;
-
-    @FXML
-    private Button orderbtn5;
-
-    @FXML
-    private Button orderbtn6;
-
-    @FXML
-    private Button orderbtn7;
-
-    @FXML
-    private Button orderbtn8;
 
     @FXML
     private AnchorPane paneNew;
@@ -231,16 +203,7 @@ public class MainForm {
         assert PIC11 != null : "fx:id=\"PIC11\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert Quection != null : "fx:id=\"Quection\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert SearchBar != null : "fx:id=\"SearchBar\" was not injected: check your FXML file 'mainForm.fxml'.";
-        assert lineChart != null : "fx:id=\"lineChart\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert notification != null : "fx:id=\"notification\" was not injected: check your FXML file 'mainForm.fxml'.";
-        assert orderbtn1 != null : "fx:id=\"orderbtn1\" was not injected: check your FXML file 'mainForm.fxml'.";
-        assert orderbtn2 != null : "fx:id=\"orderbtn2\" was not injected: check your FXML file 'mainForm.fxml'.";
-        assert orderbtn3 != null : "fx:id=\"orderbtn3\" was not injected: check your FXML file 'mainForm.fxml'.";
-        assert orderbtn4 != null : "fx:id=\"orderbtn4\" was not injected: check your FXML file 'mainForm.fxml'.";
-        assert orderbtn5 != null : "fx:id=\"orderbtn5\" was not injected: check your FXML file 'mainForm.fxml'.";
-        assert orderbtn6 != null : "fx:id=\"orderbtn6\" was not injected: check your FXML file 'mainForm.fxml'.";
-        assert orderbtn7 != null : "fx:id=\"orderbtn7\" was not injected: check your FXML file 'mainForm.fxml'.";
-        assert orderbtn8 != null : "fx:id=\"orderbtn8\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert paneNew != null : "fx:id=\"paneNew\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert pieChart != null : "fx:id=\"pieChart\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert rs1 != null : "fx:id=\"rs1\" was not injected: check your FXML file 'mainForm.fxml'.";

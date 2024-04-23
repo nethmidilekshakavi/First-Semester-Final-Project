@@ -24,7 +24,7 @@ public class EmployeeRepo {
             ptsm.setString(3, employeeModel.getFirst_Name());
             ptsm.setString(4, employeeModel.getLast_Name());
             ptsm.setString(5, employeeModel.getAddress());
-            ptsm.setString(6, employeeModel.getPhone_Number());
+            ptsm.setInt(6, employeeModel.getPhone_Number());
             ptsm.setString(7, employeeModel.getEmail());
             ptsm.setString(8, employeeModel.getSalary());
             ptsm.setString(9, employeeModel.getPosition());
@@ -49,7 +49,7 @@ public class EmployeeRepo {
         ptsm.setString(2, employeeModel.getFirst_Name());
         ptsm.setString(3, employeeModel.getLast_Name());
         ptsm.setString(4, employeeModel.getAddress());
-        ptsm.setString(5, employeeModel.getPhone_Number());
+        ptsm.setInt(5, employeeModel.getPhone_Number());
         ptsm.setString(6, employeeModel.getEmail());
         ptsm.setString(7, employeeModel.getSalary());
         ptsm.setString(8, employeeModel.getPosition());
@@ -87,7 +87,7 @@ public class EmployeeRepo {
             String First_Name = resultSet.getString(3);
             String Last_Name = resultSet.getString(4);
             String Address = resultSet.getString(5);
-            String Phone_Number = resultSet.getString(6);
+            int Phone_Number = Integer.parseInt(resultSet.getString(6));
             String Email = resultSet.getString(7);
             String Salary = resultSet.getString(8);
             String Position = resultSet.getString(9);
@@ -111,7 +111,7 @@ public class EmployeeRepo {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()){
-                EmployeeModel employeeModel = new EmployeeModel(resultSet.getString(1),resultSet.getString(2),resultSet.getString(3),resultSet.getString(4),resultSet.getString(5),resultSet.getString(6),resultSet.getString(7),resultSet.getString(8),resultSet.getString(9));
+                EmployeeModel employeeModel = new EmployeeModel(resultSet.getString(1),resultSet.getString(2),resultSet.getString(3),resultSet.getString(4),resultSet.getString(5),resultSet.getInt(6),resultSet.getString(7),resultSet.getString(8),resultSet.getString(9));
                 employeeModels.add(employeeModel);
             }
         } catch (SQLException e) {

@@ -3,6 +3,8 @@ package lk.ijse.controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,9 +13,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lk.ijse.Model.TM.EmployeeTM;
 
 public class Employee {
 
@@ -54,13 +58,13 @@ public class Employee {
     private TableColumn<?, ?> colSalary;
 
     @FXML
-    private TableColumn<?, ?> coldelete;
+    private TableColumn<EmployeeTM, JFXButton> coldelete;
 
     @FXML
     private TableColumn<?, ?> colemail;
 
     @FXML
-    private TableColumn<?, ?> colupdate;
+    private TableColumn<EmployeeTM, JFXButton> colupdate;
 
     @FXML
     private TableView<?> employeeTable;
@@ -82,6 +86,16 @@ public class Employee {
     @FXML
     void getReport(ActionEvent event) {
 
+    }
+
+    public void setValues(){
+        colNIC.setCellValueFactory(new PropertyValueFactory<>("NIC"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("First_Name"+" "+"Last_Name"));
+        colAddress.setCellValueFactory(new PropertyValueFactory<>("Address"));
+        colMobile.setCellValueFactory(new PropertyValueFactory<>("Phone_Number"));
+        colemail.setCellValueFactory(new PropertyValueFactory<>("Email"));
+        coldelete.setCellValueFactory(new PropertyValueFactory<EmployeeTM,JFXButton>("Delete"));
+        colupdate.setCellValueFactory(new PropertyValueFactory<EmployeeTM,JFXButton>("Update"));
     }
 
     @FXML

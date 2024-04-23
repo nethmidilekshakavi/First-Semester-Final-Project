@@ -8,17 +8,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-
-public class EmployeeTM {
-    private String E_ID;
-    private String NIC;
-    private String First_Name;
-    private String Last_Name;
+public class SupplierTM {
+    private String S_ID;
+    private String Name;
     private String Address;
     private int Phone_Number;
-    private String Email;
-    private String Salary;
-    private String Position;
+    private String Ingredient;
+    private String Date_Of_Purchase;
+    private String Amount_due;
+    private String Date_of_Payment;
+    private String Payment_Type;
+    private String Amount_Paid;
     private JFXButton delete;
     private JFXButton update;
 }

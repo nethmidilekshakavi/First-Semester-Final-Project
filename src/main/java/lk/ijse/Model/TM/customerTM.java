@@ -13,11 +13,9 @@ public class customerTM {
     private String First_Name;
     private String Last_Name;
     private String Address;
-    private  int Phone_Number;
+    private String Phone_Number;
     private String Email;
     private JFXButton delete;
     private JFXButton update;
-
-
 
 }

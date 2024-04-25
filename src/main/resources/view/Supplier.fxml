@@ -9,33 +9,38 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.Supplier">
    <children>
-      <ImageView fx:id="SupplierPane" fitHeight="778.0" fitWidth="1117.0">
+      <ImageView fx:id="SupplierPane" fitHeight="778.0" fitWidth="1128.0" layoutX="-11.0">
          <image>
-            <Image url="@../Images/dc3f9b90daf9f333225c4d70c9355c64.jpg" />
+            <Image url="@../Images/pngtree-blue-gradient-web-ui-background-image_518658.jpg" />
          </image>
       </ImageView>
-      <TableView fx:id="employeeTable" layoutX="22.0" layoutY="109.0" prefHeight="554.0" prefWidth="1066.0">
+      <TableView fx:id="SupplierTable" layoutX="15.0" layoutY="121.0" prefHeight="554.0" prefWidth="1066.0">
          <columns>
             <TableColumn fx:id="colName" prefWidth="96.0" text="Name" />
             <TableColumn fx:id="colAddress" prefWidth="121.0" text="Address" />
             <TableColumn fx:id="colMobile" prefWidth="124.0" text="Mobile Num" />
             <TableColumn fx:id="colIngredients" prefWidth="107.0" text="Ingredient" />
             <TableColumn fx:id="coldateOfPurches" prefWidth="145.0" text="Date of Purchase" />
-            <TableColumn fx:id="colAmountDate" prefWidth="109.0" text="Amount due" />
+            <TableColumn fx:id="colAmountDue" prefWidth="109.0" text="Amount due" />
             <TableColumn fx:id="colDateOfPayment" prefWidth="133.0" text="Date of Payment" />
             <TableColumn fx:id="colPaymentType" prefWidth="116.0" text="payment Type" />
             <TableColumn fx:id="colPaid" prefWidth="112.0" text="Amount Paid" />
          </columns>
       </TableView>
-      <Text fx:id="title" layoutX="445.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suppliers Details">
+      <Text fx:id="title" layoutX="445.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suppliers Details">
          <font>
             <Font name="Dyuthi Regular" size="36.0" />
          </font>
       </Text>
-      <Button fx:id="btnAdd" layoutX="1007.0" layoutY="76.0" mnemonicParsing="false" onAction="#addNewSupplier" prefHeight="24.0" prefWidth="63.0" text="ADD" />
-      <Button fx:id="btnPrint" layoutX="924.0" layoutY="76.0" mnemonicParsing="false" onAction="#getReport" prefHeight="24.0" prefWidth="63.0" text="PRINT" />
+      <Button fx:id="btnAdd" layoutX="995.0" layoutY="85.0" mnemonicParsing="false" onAction="#addNewSupplier" prefHeight="24.0" prefWidth="63.0" style="-fx-background-color: #FC819E;" text="ADD" textFill="#1b1a1a">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></Button>
+      <Button fx:id="btnPrint" layoutX="923.0" layoutY="85.0" mnemonicParsing="false" onAction="#getReport" prefHeight="24.0" prefWidth="63.0" style="-fx-background-color: #4CCD99;" text="PRINT" textFill="#141313">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></Button>
    </children>
 </AnchorPane>

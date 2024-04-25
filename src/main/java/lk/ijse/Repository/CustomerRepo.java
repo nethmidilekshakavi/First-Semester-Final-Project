@@ -38,7 +38,7 @@ public class CustomerRepo {
 
 
     public static boolean updateCustomer(CustomerModel customerModel) throws SQLException {
-        String sql = "UPDATE customers SET NIC = ?, FirstName = ?, LastName = ?, Address = ? ,PhoneNumber = ? ,Email = ? WHERE id = ?";
+        String sql = "UPDATE customers SET NIC = ?, FirstName = ?, LastName = ?, Address = ? ,PhoneNumber = ? ,Email = ? WHERE C_ID = ?";
 
         Connection connection = DbConnection.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);
@@ -56,11 +56,11 @@ public class CustomerRepo {
     public static boolean delete(String id) throws SQLException {
             try{
                 Connection connection= DbConnection.getInstance().getConnection();
-                PreparedStatement preparedStatement=connection.prepareStatement("delete from customer where CID=?");
+                PreparedStatement preparedStatement=connection.prepareStatement("delete from Customer where C_ID=?");
                 preparedStatement.setString(1,id);
                 int i;
                 i=preparedStatement.executeUpdate();
-                return i>0;
+                return i > 0;
             }catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -68,7 +68,7 @@ public class CustomerRepo {
         }
 
     public static CustomerModel searchById(String id) throws SQLException {
-        String sql = "SELECT * FROM customers WHERE id = ?";
+        String sql = "SELECT * FROM Customer WHERE C_ID = ?";
 
         Connection connection = DbConnection.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);
@@ -110,7 +110,7 @@ public class CustomerRepo {
     }
 
     public static List<String> getIds() throws SQLException {
-        String sql = "SELECT id FROM customers";
+        String sql = "SELECT C_ID FROM Customers";
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
 

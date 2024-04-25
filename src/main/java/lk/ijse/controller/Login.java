@@ -29,9 +29,6 @@ public class Login {
     private ImageView FB;
 
     @FXML
-    private Text FOODCOURT;
-
-    @FXML
     private Text ForgotPW;
 
     @FXML
@@ -42,12 +39,6 @@ public class Login {
 
     @FXML
     private Text OR;
-
-    @FXML
-    private Text TO;
-
-    @FXML
-    private ImageView eye1;
 
     @FXML
     private Button login;
@@ -65,6 +56,9 @@ public class Login {
     private Text password;
 
     @FXML
+    private ImageView passwordpic;
+
+    @FXML
     private PasswordField txtpw;
 
     @FXML
@@ -74,10 +68,10 @@ public class Login {
     private Text username;
 
     @FXML
-    private ImageView userpic;
+    private ImageView usernamepic;
 
     @FXML
-    private Text welcome;
+    private ImageView userpic;
 
     @FXML
     void loginOnAction(ActionEvent event) throws IOException {
@@ -105,23 +99,21 @@ public class Login {
     @FXML
     void initialize() {
         assert FB != null : "fx:id=\"FB\" was not injected: check your FXML file 'Login.fxml'.";
-        assert FOODCOURT != null : "fx:id=\"FOODCOURT\" was not injected: check your FXML file 'Login.fxml'.";
         assert ForgotPW != null : "fx:id=\"ForgotPW\" was not injected: check your FXML file 'Login.fxml'.";
         assert GOOGLE != null : "fx:id=\"GOOGLE\" was not injected: check your FXML file 'Login.fxml'.";
         assert Insterpic != null : "fx:id=\"Insterpic\" was not injected: check your FXML file 'Login.fxml'.";
         assert OR != null : "fx:id=\"OR\" was not injected: check your FXML file 'Login.fxml'.";
-        assert TO != null : "fx:id=\"TO\" was not injected: check your FXML file 'Login.fxml'.";
-        assert eye1 != null : "fx:id=\"eye1\" was not injected: check your FXML file 'Login.fxml'.";
         assert login != null : "fx:id=\"login\" was not injected: check your FXML file 'Login.fxml'.";
         assert loginphoto != null : "fx:id=\"loginphoto\" was not injected: check your FXML file 'Login.fxml'.";
         assert pane != null : "fx:id=\"pane\" was not injected: check your FXML file 'Login.fxml'.";
         assert pane2 != null : "fx:id=\"pane2\" was not injected: check your FXML file 'Login.fxml'.";
         assert password != null : "fx:id=\"password\" was not injected: check your FXML file 'Login.fxml'.";
+        assert passwordpic != null : "fx:id=\"passwordpic\" was not injected: check your FXML file 'Login.fxml'.";
         assert txtpw != null : "fx:id=\"txtpw\" was not injected: check your FXML file 'Login.fxml'.";
         assert txtun != null : "fx:id=\"txtun\" was not injected: check your FXML file 'Login.fxml'.";
         assert username != null : "fx:id=\"username\" was not injected: check your FXML file 'Login.fxml'.";
+        assert usernamepic != null : "fx:id=\"usernamepic\" was not injected: check your FXML file 'Login.fxml'.";
         assert userpic != null : "fx:id=\"userpic\" was not injected: check your FXML file 'Login.fxml'.";
-        assert welcome != null : "fx:id=\"welcome\" was not injected: check your FXML file 'Login.fxml'.";
 
     }
 

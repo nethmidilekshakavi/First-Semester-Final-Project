@@ -20,4 +20,6 @@ public class SupplierModel extends Supplier {
     private String Date_of_Payment;
     private String Payment_Type;
     private String Amount_Paid;
+
+
 }

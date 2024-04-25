@@ -1,13 +1,20 @@
 package lk.ijse.controller;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import lk.ijse.Model.CustomerModel;
+import lk.ijse.Model.SupplierModel;
+import lk.ijse.Repository.CustomerRepo;
+import lk.ijse.Repository.SupplierRepo;
 
 public class AddNewSupplier {
 
@@ -91,13 +98,39 @@ public class AddNewSupplier {
 
     @FXML
     void dontSaveSupplier(ActionEvent event) {
+        Stage stage =(Stage)sidtxt.getScene().getWindow();
+        stage.close();
 
+        Stage stage1 =(Stage)sidtxt.getScene().getWindow();
+        stage1.close();
     }
 
     @FXML
-    void saveSupplier(ActionEvent event) {
+    void saveSupplier(ActionEvent event) throws SQLException {
+        String sid = sidtxt.getText();
+        String name = nametxt.getText();
+        String address = addresstxt.getText();
+        int mobile = Integer.parseInt(mobiletxt.getText());
+        String ingredient = txtIngredient.getText();
+        String dateOfPurchase = purchasetxt.getText();
+        String AmountDue = AmountDuetxt.getText();
+        String dateOfPayment = dataOfPaymenttxt.getText();
+        String paymentType = PaymentTypetxt.getText();
+        String amountPaid = AmountPaidtxt.getText();
 
+
+
+       SupplierModel supplierModel = new SupplierModel(sid,name,address,mobile,ingredient,dateOfPurchase,AmountDue,dateOfPayment,paymentType,amountPaid);
+        boolean a = SupplierRepo.saveSupplier(supplierModel);
+        System.out.println(a);
+        if (a){
+            new Alert(Alert.AlertType.CONFIRMATION,"Supplier saved successfully").show();
+        }else {
+            new Alert(Alert.AlertType.ERROR,"something went wrong").show();
+        }
     }
+
+
 
     @FXML
     void initialize() {
@@ -125,6 +158,7 @@ public class AddNewSupplier {
         assert purchasetxt != null : "fx:id=\"purchasetxt\" was not injected: check your FXML file 'AddNewSupplier.fxml'.";
         assert sidtxt != null : "fx:id=\"sidtxt\" was not injected: check your FXML file 'AddNewSupplier.fxml'.";
         assert txtIngredient != null : "fx:id=\"txtIngredient\" was not injected: check your FXML file 'AddNewSupplier.fxml'.";
+
 
     }
 

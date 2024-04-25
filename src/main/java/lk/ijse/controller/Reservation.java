@@ -126,61 +126,6 @@ public class Reservation {
         FXMLLoader.load(getClass().getResource("/view/dashboard.fxml"));
     }
 
-    public void initialize() {
-        setDate();
-        getCurrentOrderId();
-       //getCustomerIds();
-       // getItemCodes();
-       // setCellValueFactory();
-    }
-
-  /*  private void getCustomerIds() {
-        ObservableList<String> obList = FXCollections.observableArrayList();
-
-        try {
-            List<String> idList = CustomerRepo.getIds();
-
-            for(String id : idList) {
-                obList.add(id);
-            }
-
-            reservationList.setItems(obList);
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }*/
-
-    private String generateNextOrderId(String currentId) {
-        if(currentId != null) {
-            String[] split = currentId.split("O");
-            int idNum = Integer.parseInt(split[1]);
-            return "O" + ++idNum;
-        }
-        return "O1";
-    }
-
-    private void getCurrentOrderId() {
-        try {
-            String currentId = ReservationRepo.getCurrentId();
-
-            String nextOrderId = generateNextOrderId(currentId);
-            RID.setText(nextOrderId);
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    private void setDate() {
-            LocalDate now = LocalDate.now();
-            date.setText(String.valueOf(now));
-        }
-
-
-
-
-
     }
 
 

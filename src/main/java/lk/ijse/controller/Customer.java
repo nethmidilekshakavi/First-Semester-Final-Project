@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
@@ -15,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -78,7 +78,7 @@ public class Customer {
 
     @FXML
     void addNewCustomer(ActionEvent event) throws IOException {
-        Parent parent = FXMLLoader.load(getClass().getResource("/view/saveCustomerForm.fxml"));
+        Parent parent = FXMLLoader.load(getClass().getResource("/view/addNewCustomer.fxml"));
         Scene scene =new Scene(parent);
         Stage stage = new Stage();
         stage.setScene(scene);
@@ -97,7 +97,7 @@ public class Customer {
 
       for (int i=0 ;i< allcustomer.size() ; i++){
           String mobile =String.valueOf(allcustomer.get(i).getPhone_Number());
-          customerTM customerTM =new customerTM(allcustomer.get(i).getC_ID(),allcustomer.get(i).getNIC(),allcustomer.get(i).getFirst_Name(),allcustomer.get(i).getLast_Name(),allcustomer.get(i).getAddress(),mobile,allcustomer.get(i).getEmail(),new JFXButton("Delete"),new JFXButton("Update"));
+          customerTM customerTM =new customerTM(allcustomer.get(i).getC_ID(),allcustomer.get(i).getNIC(),allcustomer.get(i).getFirst_Name(),allcustomer.get(i).getLast_Name(),allcustomer.get(i).getAddress(),mobile,allcustomer.get(i).getEmail(), new JFXButton("Delete"),new JFXButton("Update"));
           observableList.add(customerTM);
           customerTable.setItems(observableList);
       }
@@ -108,17 +108,27 @@ public class Customer {
           observableList.get(i).getUpdate().setTextFill(Color.WHITE);
           observableList.get(i).getDelete().setTextFill(Color.WHITE);
       }
-//      for (int i=0 ;i<observableList.size();i++){
-//          String id =observableList.get(i).getC_ID();
-//          String  nic =observableList.get(i).getNIC();
-//          String fn =observableList.get(i).getFirst_Name();
-//          String ln =observableList.get(i).getLast_Name();
-//          String add =observableList.get(i).getAddress();
-//          String mobile =observableList.get(i).getPhone_Number();
-//          String email =observableList.get(i).getEmail();
-//          observableList.get(i).getDelete().setOnAction(actionEvent -> {});
-//          observableList.get(i).getUpdate().setOnAction(actionEvent -> {});
-//      }
+      for (int i=0 ;i<observableList.size();i++){
+          String id =observableList.get(i).getC_ID();
+          String  nic =observableList.get(i).getNIC();
+          String fn =observableList.get(i).getFirst_Name();
+          String ln =observableList.get(i).getLast_Name();
+          String add =observableList.get(i).getAddress();
+          String mobile =observableList.get(i).getPhone_Number();
+          String email =observableList.get(i).getEmail();
+          observableList.get(i).getDelete().setOnAction(actionEvent -> {
+              try {
+                  boolean b = CustomerRepo.delete(id);
+                  if (b){
+                      new Alert(Alert.AlertType.CONFIRMATION,"Customer Deleted");
+                      loadvalues();
+                  }
+              } catch (SQLException e) {
+                  throw new RuntimeException(e);
+              }
+          });
+          observableList.get(i).getUpdate().setOnAction(actionEvent -> {});
+      }
   }
 
         public void setValues(){

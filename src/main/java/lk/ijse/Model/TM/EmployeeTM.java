@@ -15,10 +15,10 @@ public class EmployeeTM {
     private String First_Name;
     private String Last_Name;
     private String Address;
-    private int Phone_Number;
+    private String Phone_Number;
     private String Email;
     private String Salary;
     private String Position;
-    private JFXButton delete;
-    private JFXButton update;
+    private JFXButton Update;
+    private JFXButton Delete;
 }

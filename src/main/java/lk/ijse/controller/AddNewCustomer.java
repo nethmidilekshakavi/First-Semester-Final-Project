@@ -81,8 +81,7 @@ public class AddNewCustomer {
         Stage stage =(Stage)cidtxt.getScene().getWindow();
         stage.close();
 
-        Stage stage1 =(Stage)cidtxt.getScene().getWindow();
-        stage1.close();
+
     }
 
     @FXML
@@ -105,7 +104,8 @@ public class AddNewCustomer {
         }else {
             new Alert(Alert.AlertType.ERROR,"something went wrong").show();
         }
-
+        Stage stage1 =(Stage)cidtxt.getScene().getWindow();
+        stage1.close();
     }
 
     @FXML

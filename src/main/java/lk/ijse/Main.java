@@ -12,9 +12,10 @@ public class Main  extends Application{
 
     @Override
     public void start(Stage stage) throws Exception {
-        stage.setScene(new Scene(FXMLLoader.load(this.getClass().getResource("/view/Login.fxml"))));
-        stage.setTitle("Login Form");
+        stage.setScene(new Scene(FXMLLoader.load(this.getClass().getResource("/view/welocomePage.fxml"))));
+        stage.setTitle("WELCOME!");
         stage.show();
+        stage.centerOnScreen();
 
     }
 }

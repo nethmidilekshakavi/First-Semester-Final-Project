@@ -1,12 +1,17 @@
 package lk.ijse.controller;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+
+import static sun.awt.util.PerformanceLogger.setTime;
 
 public class MainForm {
 
@@ -95,6 +100,12 @@ public class MainForm {
     private TextField SearchBar;
 
     @FXML
+    private Label lblDate;
+
+    @FXML
+    private Label lblTime;
+
+    @FXML
     private ImageView notification;
 
     @FXML
@@ -175,8 +186,12 @@ public class MainForm {
     @FXML
     private ImageView user;
 
+
+
     @FXML
     void initialize() {
+        setData();
+        setTime();
         assert AP01 != null : "fx:id=\"AP01\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert AP010 != null : "fx:id=\"AP010\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert AP011 != null : "fx:id=\"AP011\" was not injected: check your FXML file 'mainForm.fxml'.";
@@ -203,6 +218,8 @@ public class MainForm {
         assert PIC11 != null : "fx:id=\"PIC11\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert Quection != null : "fx:id=\"Quection\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert SearchBar != null : "fx:id=\"SearchBar\" was not injected: check your FXML file 'mainForm.fxml'.";
+        assert lblDate != null : "fx:id=\"lblDate\" was not injected: check your FXML file 'mainForm.fxml'.";
+        assert lblTime != null : "fx:id=\"lblTime\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert notification != null : "fx:id=\"notification\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert paneNew != null : "fx:id=\"paneNew\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert pieChart != null : "fx:id=\"pieChart\" was not injected: check your FXML file 'mainForm.fxml'.";
@@ -231,6 +248,16 @@ public class MainForm {
         assert txt9 != null : "fx:id=\"txt9\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert user != null : "fx:id=\"user\" was not injected: check your FXML file 'mainForm.fxml'.";
 
+    }
+
+    private void setTime() {
+        LocalTime now = LocalTime.now();
+        lblTime.setText(String.valueOf(now));
+    }
+
+    private void setData() {
+        LocalDate now = LocalDate.now();
+        lblDate.setText(String.valueOf(now));
     }
 
 }

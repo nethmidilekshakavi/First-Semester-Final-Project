@@ -2,11 +2,13 @@ package lk.ijse.controller;
 
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
@@ -76,6 +78,8 @@ public class AddNewCustomer {
     @FXML
     private TextField numtxt;
 
+
+
     @FXML
     void dontSaveCustomer(ActionEvent event) {
         Stage stage =(Stage)cidtxt.getScene().getWindow();
@@ -83,6 +87,8 @@ public class AddNewCustomer {
 
 
     }
+
+
 
     @FXML
     void saveCustomer(ActionEvent event) throws SQLException {

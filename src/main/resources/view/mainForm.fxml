@@ -206,7 +206,7 @@
                   <Image url="@../Images/icons8-star-48.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="PIC09" fitHeight="89.0" fitWidth="137.0" layoutX="31.0" layoutY="535.0">
+            <ImageView fx:id="PIC09" fitHeight="72.0" fitWidth="104.0" layoutX="31.0" layoutY="525.0">
                <image>
                   <Image url="@../Images/8de0c8cb61c2407ae3f4b1c762672582.jpg" />
                </image>
@@ -214,7 +214,7 @@
                   <DropShadow />
                </effect>
             </ImageView>
-            <ImageView fx:id="PIC10" fitHeight="89.0" fitWidth="137.0" layoutX="31.0" layoutY="431.0">
+            <ImageView fx:id="PIC10" fitHeight="72.0" fitWidth="104.0" layoutX="31.0" layoutY="431.0">
                <image>
                   <Image url="@../Images/fc2e777cd2b2657d23804dfbb45a84b4.jpg" />
                </image>
@@ -222,7 +222,7 @@
                   <DropShadow />
                </effect>
             </ImageView>
-            <ImageView fx:id="PIC11" fitHeight="89.0" fitWidth="137.0" layoutX="31.0" layoutY="640.0">
+            <ImageView fx:id="PIC11" fitHeight="72.0" fitWidth="109.0" layoutX="29.0" layoutY="621.0">
                <image>
                   <Image url="@../Images/Polish_20240411_210438362.jpg" />
                </image>
@@ -256,109 +256,109 @@
                   <Image url="@../Images/icons8-80--100.png" />
                </image>
             </ImageView>
-            <Text fx:id="totaltxt" layoutX="521.0" layoutY="494.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Sales">
+            <Text fx:id="totaltxt" layoutX="500.0" layoutY="494.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Sales">
                <font>
                   <Font size="11.0" />
                </font>
             </Text>
-            <Text fx:id="total" layoutX="549.0" layoutY="477.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6,732">
+            <Text fx:id="total" layoutX="528.0" layoutY="477.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6,732">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
             </Text>
-            <ImageView fx:id="chart" fitHeight="35.0" fitWidth="30.0" layoutX="515.0" layoutY="448.0">
+            <ImageView fx:id="chart" fitHeight="35.0" fitWidth="30.0" layoutX="494.0" layoutY="448.0">
                <image>
                   <Image url="@../Images/icons8-chart-24.png" />
                </image>
             </ImageView>
-            <Text fx:id="p180" layoutX="374.0" layoutY="474.0" strokeType="OUTSIDE" strokeWidth="0.0" text="180%">
+            <Text fx:id="p180" layoutX="359.0" layoutY="474.0" strokeType="OUTSIDE" strokeWidth="0.0" text="180%">
                <font>
                   <Font name="System Bold Italic" size="19.0" />
                </font>
             </Text>
-            <Text fx:id="interesttxt" layoutX="379.0" layoutY="489.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Interest">
+            <Text fx:id="interesttxt" layoutX="370.0" layoutY="486.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Interest">
                <font>
                   <Font size="10.0" />
                </font>
             </Text>
-            <ImageView fx:id="linec1" fitHeight="57.0" fitWidth="96.0" layoutX="230.0" layoutY="462.0">
+            <ImageView fx:id="linec1" fitHeight="57.0" fitWidth="96.0" layoutX="191.0" layoutY="455.0">
                <image>
                   <Image url="@../Images/c56834a95485abdd00d420671fbde8c6.jpg" />
                </image>
             </ImageView>
-            <ImageView fx:id="linec2" fitHeight="57.0" fitWidth="96.0" layoutX="232.0" layoutY="561.0">
+            <ImageView fx:id="linec2" fitHeight="57.0" fitWidth="81.0" layoutX="196.0" layoutY="550.0">
                <image>
                   <Image url="@../Images/c56834a95485abdd00d420671fbde8c6.jpg" />
                </image>
             </ImageView>
-            <ImageView fx:id="line3" fitHeight="57.0" fitWidth="96.0" layoutX="230.0" layoutY="664.0">
+            <ImageView fx:id="line3" fitHeight="57.0" fitWidth="148.0" layoutX="191.0" layoutY="650.0">
                <image>
                   <Image url="@../Images/c56834a95485abdd00d420671fbde8c6.jpg" />
                </image>
             </ImageView>
-            <Text fx:id="totaltxt1" layoutX="519.0" layoutY="600.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Sales">
+            <Text fx:id="totaltxt1" layoutX="498.0" layoutY="600.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Sales">
                <font>
                   <Font size="11.0" />
                </font>
             </Text>
-            <Text fx:id="total1" layoutX="547.0" layoutY="583.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5,721">
+            <Text fx:id="total1" layoutX="526.0" layoutY="583.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5,721">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
             </Text>
-            <ImageView fx:id="chart1" fitHeight="35.0" fitWidth="30.0" layoutX="513.0" layoutY="554.0">
+            <ImageView fx:id="chart1" fitHeight="35.0" fitWidth="30.0" layoutX="492.0" layoutY="554.0">
                <image>
                   <Image url="@../Images/icons8-chart-24.png" />
                </image>
             </ImageView>
-            <Text fx:id="p1801" layoutX="383.0" layoutY="583.0" strokeType="OUTSIDE" strokeWidth="0.0" text="30%">
+            <Text fx:id="p1801" layoutX="366.0" layoutY="583.0" strokeType="OUTSIDE" strokeWidth="0.0" text="30%">
                <font>
                   <Font name="System Bold Italic" size="19.0" />
                </font>
             </Text>
-            <Text fx:id="interesttxt1" layoutX="384.0" layoutY="597.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Interest">
+            <Text fx:id="interesttxt1" layoutX="367.0" layoutY="597.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Interest">
                <font>
                   <Font size="10.0" />
                </font>
             </Text>
-            <Text fx:id="totaltxt11" layoutX="521.0" layoutY="703.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Sales">
+            <Text fx:id="totaltxt11" layoutX="500.0" layoutY="703.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Sales">
                <font>
                   <Font size="11.0" />
                </font>
             </Text>
-            <Text fx:id="total11" layoutX="549.0" layoutY="686.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3,515">
+            <Text fx:id="total11" layoutX="528.0" layoutY="686.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3,515">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
             </Text>
-            <ImageView fx:id="chart11" fitHeight="35.0" fitWidth="30.0" layoutX="515.0" layoutY="657.0">
+            <ImageView fx:id="chart11" fitHeight="35.0" fitWidth="30.0" layoutX="494.0" layoutY="657.0">
                <image>
                   <Image url="@../Images/icons8-chart-24.png" />
                </image>
             </ImageView>
-            <Text fx:id="p18011" layoutX="380.0" layoutY="685.0" strokeType="OUTSIDE" strokeWidth="0.0" text="80%">
+            <Text fx:id="p18011" layoutX="363.0" layoutY="685.0" strokeType="OUTSIDE" strokeWidth="0.0" text="80%">
                <font>
                   <Font name="System Bold Italic" size="19.0" />
                </font>
             </Text>
-            <Text fx:id="interesttxt11" layoutX="387.0" layoutY="699.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Interest">
+            <Text fx:id="interesttxt11" layoutX="370.0" layoutY="699.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Interest">
                <font>
                   <Font size="10.0" />
                </font>
             </Text>
             <TextField fx:id="SearchBar" layoutX="26.0" layoutY="39.0" opacity="0.15" prefHeight="31.0" prefWidth="210.0" promptText="Search" style="-fx-background-color: black; -fx-background-radius: 20;" />
             <Text layoutX="35.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search" />
-            <Text fx:id="chainesfood" layoutX="178.0" layoutY="651.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chinese Food">
+            <Text fx:id="chainesfood" layoutX="148.0" layoutY="637.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chinese Food">
                <font>
                   <Font size="9.0" />
                </font>
             </Text>
-            <Text fx:id="chainesfood1" layoutX="178.0" layoutY="548.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Korean Food">
+            <Text fx:id="chainesfood1" layoutX="150.0" layoutY="533.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Korean Food">
                <font>
                   <Font size="9.0" />
                </font>
             </Text>
-            <Text fx:id="chainesfood11" layoutX="178.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Indian Food">
+            <Text fx:id="chainesfood11" layoutX="148.0" layoutY="446.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Indian Food">
                <font>
                   <Font size="9.0" />
                </font>
@@ -588,7 +588,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="paneNew" layoutX="786.0" layoutY="95.0" prefHeight="614.0" prefWidth="291.0" style="-fx-background-color: white; -fx-background-radius: 50;">
+      <AnchorPane fx:id="paneNew" layoutX="786.0" layoutY="95.0" prefHeight="592.0" prefWidth="297.0" style="-fx-background-color: white; -fx-background-radius: 50;">
          <children>
             <Text fx:id="dailyTrendingMenu" fill="#274a9a" layoutX="70.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Daily Trending Menus">
                <font>
@@ -714,7 +714,7 @@
                   </Text>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="pane5" layoutX="2.0" layoutY="488.0" prefHeight="89.0" prefWidth="279.0" style="-fx-background-color: white;">
+            <AnchorPane fx:id="pane5" layoutX="10.0" layoutY="488.0" prefHeight="78.0" prefWidth="273.0" style="-fx-background-color: white;">
                <children>
                   <ImageView fx:id="pic5" fitHeight="65.0" fitWidth="64.0" layoutX="23.0" layoutY="11.0">
                      <image>
@@ -732,7 +732,7 @@
                         <Font name="System Bold Italic" size="16.0" />
                      </font>
                   </Text>
-                  <Text layoutX="228.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="order 38k">
+                  <Text layoutX="228.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="order 38k">
                      <font>
                         <Font size="9.0" />
                      </font>

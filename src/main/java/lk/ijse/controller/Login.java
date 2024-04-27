@@ -14,6 +14,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -39,6 +40,18 @@ public class Login {
 
     @FXML
     private Text OR;
+
+    @FXML
+    private Circle c1;
+
+    @FXML
+    private Circle c2;
+
+    @FXML
+    private Circle c3;
+
+    @FXML
+    private Circle c4;
 
     @FXML
     private Button login;
@@ -75,25 +88,26 @@ public class Login {
 
     @FXML
     void loginOnAction(ActionEvent event) throws IOException {
-        String username = "admin";
-        String password = "1234";
+            String username = "admin";
+            String password = "1234";
 
-        if (txtun.getText().equals(username) && txtpw.getText().equals(password)) {
-            Object parent = FXMLLoader.load(getClass().getResource("/view/dashboard.fxml"));
-            Scene scene = new Scene((Parent) parent);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.setTitle("DashBoard");
-            stage.show();
-            Stage stage1 = (Stage) txtun.getScene().getWindow();
-            stage1.close();
-        }
-        else if(txtun.getText()!=(username)){
-            new Alert(Alert.AlertType.INFORMATION, "sorry! user id can't be find!").show();
-        }
-        else if(txtpw.getText()!=(password)) {
-            new Alert(Alert.AlertType.INFORMATION, "sorry! user password can't be find!").show();
-        }
+            if (txtun.getText().equals(username) && txtpw.getText().equals(password)) {
+                Object parent = FXMLLoader.load(getClass().getResource("/view/dashboard.fxml"));
+                Scene scene = new Scene((Parent) parent);
+                Stage stage = new Stage();
+                stage.setScene(scene);
+                stage.setTitle("DashBoard");
+                stage.show();
+                Stage stage1 = (Stage) txtun.getScene().getWindow();
+                stage1.close();
+            }
+            else if(txtun.getText()!=(username)){
+                new Alert(Alert.AlertType.INFORMATION, "sorry! user id can't be find!").show();
+            }
+            else if(txtpw.getText()!=(password)) {
+                new Alert(Alert.AlertType.INFORMATION, "sorry! user password can't be find!").show();
+            }
+
     }
 
     @FXML
@@ -103,6 +117,10 @@ public class Login {
         assert GOOGLE != null : "fx:id=\"GOOGLE\" was not injected: check your FXML file 'Login.fxml'.";
         assert Insterpic != null : "fx:id=\"Insterpic\" was not injected: check your FXML file 'Login.fxml'.";
         assert OR != null : "fx:id=\"OR\" was not injected: check your FXML file 'Login.fxml'.";
+        assert c1 != null : "fx:id=\"c1\" was not injected: check your FXML file 'Login.fxml'.";
+        assert c2 != null : "fx:id=\"c2\" was not injected: check your FXML file 'Login.fxml'.";
+        assert c3 != null : "fx:id=\"c3\" was not injected: check your FXML file 'Login.fxml'.";
+        assert c4 != null : "fx:id=\"c4\" was not injected: check your FXML file 'Login.fxml'.";
         assert login != null : "fx:id=\"login\" was not injected: check your FXML file 'Login.fxml'.";
         assert loginphoto != null : "fx:id=\"loginphoto\" was not injected: check your FXML file 'Login.fxml'.";
         assert pane != null : "fx:id=\"pane\" was not injected: check your FXML file 'Login.fxml'.";

@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class Main  extends Application{
     public static void main(String[] args) {
         launch(args);
@@ -12,11 +14,11 @@ public class Main  extends Application{
 
     @Override
     public void start(Stage stage) throws Exception {
-        stage.setScene(new Scene(FXMLLoader.load(this.getClass().getResource("/view/welocomePage.fxml"))));
-        stage.setTitle("WELCOME!");
+        stage.setScene(new Scene(FXMLLoader.load(this.getClass().getResource("/view/Login.fxml"))));
         stage.show();
         stage.centerOnScreen();
 
     }
+    
 }
 

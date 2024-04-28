@@ -119,15 +119,21 @@ public class Customer {
           observableList.get(i).getUpdate();
 
           observableList.get(i).getDelete().setOnAction(actionEvent -> {
+              boolean b = false;
               try {
-                  boolean b = CustomerRepo.delete(id);
-                  if (b){
-                      new Alert(Alert.AlertType.CONFIRMATION,"Customer Deleted");
-                      loadvalues();
-                  }
-              } catch (SQLException e) {
+                   b = CustomerRepo.delete(id);
+              }catch (SQLException e) {
                   throw new RuntimeException(e);
               }
+                  if (b) {
+                      new Alert(Alert.AlertType.CONFIRMATION, "Customer Deleted");
+                  }
+                  try{
+                      loadvalues();
+                  } catch (SQLException e) {
+                  throw new RuntimeException(e);
+              }
+
           });
           observableList.get(i).getUpdate().setOnAction(actionEvent -> {});
       }

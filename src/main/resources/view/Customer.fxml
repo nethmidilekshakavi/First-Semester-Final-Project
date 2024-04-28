@@ -10,9 +10,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="768.0" prefWidth="1243.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.Customer">
+<AnchorPane prefHeight="781.0" prefWidth="1266.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.Customer">
    <children>
-      <ImageView fx:id="cusPage" fitHeight="783.0" fitWidth="1265.0" layoutX="-22.0" layoutY="-2.0">
+      <ImageView fx:id="cusPage" fitHeight="783.0" fitWidth="1256.0" layoutX="-13.0" layoutY="-2.0">
          <image>
             <Image url="@../Images/pngtree-blue-gradient-web-ui-background-image_518658.jpg" />
          </image>
@@ -22,30 +22,30 @@
             <Font name="Dyuthi Regular" size="36.0" />
          </font>
       </Text>
-      <Button fx:id="btnAdd" layoutX="1057.0" layoutY="89.0" mnemonicParsing="false" onAction="#addNewCustomer" prefHeight="24.0" prefWidth="63.0" style="-fx-background-color: #FC819E;" text="ADD" textFill="#2f2c2c">
+      <Button fx:id="btnAdd" layoutX="1107.0" layoutY="89.0" mnemonicParsing="false" onAction="#addNewCustomer" prefHeight="24.0" prefWidth="63.0" style="-fx-background-color: #FC819E;" text="ADD" textFill="#2f2c2c">
          <effect>
             <DropShadow />
          </effect>
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Button>
-      <Button fx:id="btnPrint" layoutX="984.0" layoutY="89.0" mnemonicParsing="false" onAction="#getReport" prefHeight="24.0" prefWidth="63.0" style="-fx-background-color: #4CCD99;" text="PRINT" textFill="#252323">
+      <Button fx:id="btnPrint" layoutX="1034.0" layoutY="89.0" mnemonicParsing="false" onAction="#getReport" prefHeight="24.0" prefWidth="63.0" style="-fx-background-color: #4CCD99;" text="PRINT" textFill="#252323">
          <effect>
             <DropShadow />
          </effect>
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font></Button>
-      <TableView fx:id="customerTable" layoutX="116.0" layoutY="121.0" prefHeight="539.0" prefWidth="1011.0">
+      <TableView fx:id="customerTable" layoutX="8.0" layoutY="121.0" prefHeight="531.0" prefWidth="1164.0">
          <columns>
             <TableColumn fx:id="colNIC" prefWidth="111.0" text="NIC" />
-            <TableColumn fx:id="colFname" prefWidth="124.0" text="FIRST NAME" />
-            <TableColumn fx:id="colLname" prefWidth="115.0" text="LAST NAME" />
-            <TableColumn fx:id="coladdress" prefWidth="134.0" text="ADDRESS" />
-            <TableColumn fx:id="colmobile" prefWidth="133.0" text="MOBILE NUMBER" />
-            <TableColumn fx:id="colEmail" prefWidth="170.0" text="EMAIL" />
-            <TableColumn fx:id="colUpdate" prefWidth="110.0" text="UPADTE" />
-            <TableColumn fx:id="colDelete" prefWidth="110.0" text="DELETE" />
+            <TableColumn fx:id="colFname" prefWidth="135.0" text="FIRST NAME" />
+            <TableColumn fx:id="colLname" prefWidth="139.0" text="LAST NAME" />
+            <TableColumn fx:id="coladdress" prefWidth="140.0" text="ADDRESS" />
+            <TableColumn fx:id="colmobile" prefWidth="182.0" text="MOBILE NUMBER" />
+            <TableColumn fx:id="colEmail" prefWidth="186.0" text="EMAIL" />
+            <TableColumn fx:id="colUpdate" prefWidth="147.0" text="UPADTE" />
+            <TableColumn fx:id="colDelete" prefWidth="123.0" text="DELETE" />
          </columns>
          <effect>
             <DropShadow />

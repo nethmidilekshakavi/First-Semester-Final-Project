@@ -19,5 +19,7 @@ public class SupplierTM {
     private String Date_of_Payment;
     private String Payment_Type;
     private String Amount_Paid;
+    private JFXButton Update;
+    private JFXButton Delete;
 
 }

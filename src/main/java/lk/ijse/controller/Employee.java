@@ -110,7 +110,7 @@ public class Employee {
         for (int i=0; i<observableList.size(); i++){
             observableList.get(i).getUpdate().setStyle("-fx-background-color: rgba(96,120,205,0,97)");
             observableList.get(i).getDelete().setStyle("-fx-background-color: rgba(175,108,108,1)");
-            observableList.get(i).getUpdate().setTextFill(Color.WHITE);
+          observableList.get(i).getUpdate().setTextFill(Color.WHITE);
             observableList.get(i).getDelete().setTextFill(Color.WHITE);
         }
         for (int i=0 ;i<observableList.size();i++){
@@ -123,7 +123,7 @@ public class Employee {
             String email =observableList.get(i).getEmail();
             String salary = observableList.get(i).getSalary();
             String position = observableList.get(i).getPosition();
-            observableList.get(i).getUpdate().setOnAction(actionEvent -> {});
+          observableList.get(i).getUpdate().setOnAction(actionEvent -> {});
             observableList.get(i).getDelete().setOnAction(actionEvent -> {});
 
         }

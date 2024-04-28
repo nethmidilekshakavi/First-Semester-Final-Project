@@ -19,7 +19,7 @@
             <Image url="@../Images/pngtree-blue-gradient-web-ui-background-image_518658.jpg" />
          </image>
       </ImageView>
-      <Text fx:id="title" layoutX="496.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Place Order Form">
+      <Text fx:id="title" layoutX="511.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Place Order Form">
          <font>
             <Font name="Dyuthi Regular" size="36.0" />
          </font>

@@ -15,7 +15,7 @@ public class SupplierRepo {
     public static boolean saveSupplier(SupplierModel supplierModel) throws SQLException {
        try {
            Connection connection = DbConnection.getInstance().getConnection();
-              PreparedStatement ptsm = connection.prepareStatement("INSERT INTO Supplier VALUES(?, ?, ?, ?,?,?,?,?,?,?,?)");
+              PreparedStatement ptsm = connection.prepareStatement("INSERT INTO Supplier VALUES(?,?,?,?,?,?,?,?,?,?)");
 
            ptsm.setString(1, supplierModel.getS_ID());
            ptsm.setString(2, supplierModel.getName());

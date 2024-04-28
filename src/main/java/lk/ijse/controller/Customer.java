@@ -116,6 +116,8 @@ public class Customer {
           String add =observableList.get(i).getAddress();
           String mobile =observableList.get(i).getPhone_Number();
           String email =observableList.get(i).getEmail();
+          observableList.get(i).getUpdate();
+
           observableList.get(i).getDelete().setOnAction(actionEvent -> {
               try {
                   boolean b = CustomerRepo.delete(id);

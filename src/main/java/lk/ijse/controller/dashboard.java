@@ -8,10 +8,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 
 public class dashboard implements Initializable {
 
@@ -52,7 +51,37 @@ public class dashboard implements Initializable {
     private AnchorPane buttonSet;
 
     @FXML
-    private Button exitbtn;
+    private ImageView customerpic;
+
+    @FXML
+    private ImageView employeepic;
+
+    @FXML
+    private ImageView home;
+
+    @FXML
+    private ImageView homepic;
+
+    @FXML
+    private ImageView ingredientpic;
+
+    @FXML
+    private ImageView ingrepic;
+
+    @FXML
+    private ImageView mealpic;
+
+    @FXML
+    private ImageView orderpic;
+
+    @FXML
+    private AnchorPane owner;
+
+    @FXML
+    private ImageView reportpic;
+
+    @FXML
+    private ImageView supplierpic;
 
     @FXML
     void EmployeeOnAction(ActionEvent event) throws IOException {
@@ -60,16 +89,7 @@ public class dashboard implements Initializable {
         Emptypane.getChildren().setAll(parent);
     }
 
-    @FXML
-    void ExitTheSystem(ActionEvent event) throws IOException {
-        Object parent = FXMLLoader.load(getClass().getResource("/view/Login.fxml"));
-        Scene scene = new Scene((Parent) parent);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.setTitle("Login");
-        stage.show();
-        stage.close();
-    }
+
 
     @FXML
     void IngredientOnAction(ActionEvent event) throws IOException {
@@ -98,6 +118,7 @@ public class dashboard implements Initializable {
     void SupplierOnAction(ActionEvent event) throws IOException {
         Parent parent= FXMLLoader.load(getClass().getResource("/view/Supplier.fxml"));
         Emptypane.getChildren().setAll(parent);
+
     }
 
     @FXML
@@ -112,7 +133,6 @@ public class dashboard implements Initializable {
         Emptypane.getChildren().setAll(parent);
     }
 
-
     @FXML
     void initialize() {
         assert Emptypane != null : "fx:id=\"Emptypane\" was not injected: check your FXML file 'dashboard.fxml'.";
@@ -125,9 +145,19 @@ public class dashboard implements Initializable {
         assert btnreservation != null : "fx:id=\"btnreservation\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert btnsupplier != null : "fx:id=\"btnsupplier\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert buttonSet != null : "fx:id=\"buttonSet\" was not injected: check your FXML file 'dashboard.fxml'.";
-        assert exitbtn != null : "fx:id=\"exitbtn\" was not injected: check your FXML file 'dashboard.fxml'.";
-    }
+        assert customerpic != null : "fx:id=\"customerpic\" was not injected: check your FXML file 'dashboard.fxml'.";
+        assert employeepic != null : "fx:id=\"employeepic\" was not injected: check your FXML file 'dashboard.fxml'.";
+        assert home != null : "fx:id=\"home\" was not injected: check your FXML file 'dashboard.fxml'.";
+        assert homepic != null : "fx:id=\"homepic\" was not injected: check your FXML file 'dashboard.fxml'.";
+        assert ingredientpic != null : "fx:id=\"ingredientpic\" was not injected: check your FXML file 'dashboard.fxml'.";
+        assert ingrepic != null : "fx:id=\"ingrepic\" was not injected: check your FXML file 'dashboard.fxml'.";
+        assert mealpic != null : "fx:id=\"mealpic\" was not injected: check your FXML file 'dashboard.fxml'.";
+        assert orderpic != null : "fx:id=\"orderpic\" was not injected: check your FXML file 'dashboard.fxml'.";
+        assert owner != null : "fx:id=\"owner\" was not injected: check your FXML file 'dashboard.fxml'.";
+        assert reportpic != null : "fx:id=\"reportpic\" was not injected: check your FXML file 'dashboard.fxml'.";
+        assert supplierpic != null : "fx:id=\"supplierpic\" was not injected: check your FXML file 'dashboard.fxml'.";
 
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

@@ -123,8 +123,9 @@ public class Employee {
             String email =observableList.get(i).getEmail();
             String salary = observableList.get(i).getSalary();
             String position = observableList.get(i).getPosition();
-            observableList.get(i).getDelete().setOnAction(actionEvent -> {});
             observableList.get(i).getUpdate().setOnAction(actionEvent -> {});
+            observableList.get(i).getDelete().setOnAction(actionEvent -> {});
+
         }
 
     }

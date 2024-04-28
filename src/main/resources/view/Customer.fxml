@@ -10,33 +10,33 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="768.0" prefWidth="1097.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.Customer">
+<AnchorPane prefHeight="768.0" prefWidth="1243.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.Customer">
    <children>
-      <ImageView fx:id="cusPage" fitHeight="783.0" fitWidth="1139.0" layoutX="-22.0" layoutY="-2.0">
+      <ImageView fx:id="cusPage" fitHeight="783.0" fitWidth="1265.0" layoutX="-22.0" layoutY="-2.0">
          <image>
             <Image url="@../Images/pngtree-blue-gradient-web-ui-background-image_518658.jpg" />
          </image>
       </ImageView>
-      <Text fx:id="title" fill="#171717" layoutX="435.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Details">
+      <Text fx:id="title" fill="#171717" layoutX="477.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Details">
          <font>
             <Font name="Dyuthi Regular" size="36.0" />
          </font>
       </Text>
-      <Button fx:id="btnAdd" layoutX="967.0" layoutY="89.0" mnemonicParsing="false" onAction="#addNewCustomer" prefHeight="24.0" prefWidth="63.0" style="-fx-background-color: #FC819E;" text="ADD" textFill="#2f2c2c">
+      <Button fx:id="btnAdd" layoutX="1057.0" layoutY="89.0" mnemonicParsing="false" onAction="#addNewCustomer" prefHeight="24.0" prefWidth="63.0" style="-fx-background-color: #FC819E;" text="ADD" textFill="#2f2c2c">
          <effect>
             <DropShadow />
          </effect>
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Button>
-      <Button fx:id="btnPrint" layoutX="894.0" layoutY="89.0" mnemonicParsing="false" onAction="#getReport" prefHeight="24.0" prefWidth="63.0" style="-fx-background-color: #4CCD99;" text="PRINT" textFill="#252323">
+      <Button fx:id="btnPrint" layoutX="984.0" layoutY="89.0" mnemonicParsing="false" onAction="#getReport" prefHeight="24.0" prefWidth="63.0" style="-fx-background-color: #4CCD99;" text="PRINT" textFill="#252323">
          <effect>
             <DropShadow />
          </effect>
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font></Button>
-      <TableView fx:id="customerTable" layoutX="30.0" layoutY="135.0" prefHeight="539.0" prefWidth="1011.0">
+      <TableView fx:id="customerTable" layoutX="116.0" layoutY="121.0" prefHeight="539.0" prefWidth="1011.0">
          <columns>
             <TableColumn fx:id="colNIC" prefWidth="111.0" text="NIC" />
             <TableColumn fx:id="colFname" prefWidth="124.0" text="FIRST NAME" />

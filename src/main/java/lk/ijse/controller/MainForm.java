@@ -1,6 +1,12 @@
 package lk.ijse.controller;
 
 import java.net.URL;
+import java.sql.Time;
+import java.time.Clock;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -9,6 +15,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
+
+import static sun.awt.util.PerformanceLogger.setTime;
 
 public class MainForm {
 
@@ -122,6 +130,9 @@ public class MainForm {
 
     @FXML
     private Text dailyTrendingMenu;
+
+    @FXML
+    private Text date;
 
     @FXML
     private ImageView h1;
@@ -455,6 +466,7 @@ public class MainForm {
 
     @FXML
     void initialize() {
+        setDate();
         assert AP01 != null : "fx:id=\"AP01\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert AP02 != null : "fx:id=\"AP02\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert AP03 != null : "fx:id=\"AP03\" was not injected: check your FXML file 'mainForm.fxml'.";
@@ -490,6 +502,7 @@ public class MainForm {
         assert chart1 != null : "fx:id=\"chart1\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert chart11 != null : "fx:id=\"chart11\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert dailyTrendingMenu != null : "fx:id=\"dailyTrendingMenu\" was not injected: check your FXML file 'mainForm.fxml'.";
+        assert date != null : "fx:id=\"date\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert h1 != null : "fx:id=\"h1\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert h2 != null : "fx:id=\"h2\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert h3 != null : "fx:id=\"h3\" was not injected: check your FXML file 'mainForm.fxml'.";
@@ -601,6 +614,13 @@ public class MainForm {
         assert user != null : "fx:id=\"user\" was not injected: check your FXML file 'mainForm.fxml'.";
         assert watermelon != null : "fx:id=\"watermelon\" was not injected: check your FXML file 'mainForm.fxml'.";
 
+    }
+
+
+
+    private void setDate() {
+        LocalDate now = LocalDate.now();
+        date.setText(String.valueOf(now));
     }
 
 }

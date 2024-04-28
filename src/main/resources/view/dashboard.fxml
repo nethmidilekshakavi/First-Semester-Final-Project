@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -8,58 +9,169 @@
 
 <AnchorPane prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.dashboard">
    <children>
-      <AnchorPane fx:id="buttonSet" layoutX="-26.0" layoutY="-14.0" prefHeight="781.0" prefWidth="286.0" style="-fx-background-radius: 30; -fx-background-color: black;">
+      <AnchorPane fx:id="buttonSet" layoutX="-26.0" layoutY="-14.0" prefHeight="788.0" prefWidth="201.0" style="-fx-background-radius: 30; -fx-background-color: #135D66;">
          <children>
-            <Button fx:id="btnReport" layoutX="28.0" layoutY="585.0" mnemonicParsing="false" onAction="#ReportOnAction" prefHeight="56.0" prefWidth="257.0" style="-fx-background-color: Black;" text="REPORTS" textFill="#fcfafa">
+            <Button fx:id="btnReport" layoutX="63.0" layoutY="584.0" mnemonicParsing="false" onAction="#ReportOnAction" prefHeight="46.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#fcfafa">
                <font>
                   <Font name="System Bold" size="25.0" />
-               </font></Button>
-            <Button fx:id="btningredients" layoutX="28.0" layoutY="529.0" mnemonicParsing="false" onAction="#IngredientOnAction" prefHeight="56.0" prefWidth="257.0" style="-fx-background-color: Black;" text="INGREDIENTS" textFill="#f5efef">
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Button fx:id="btnemployee" layoutX="66.0" layoutY="378.0" mnemonicParsing="false" onAction="#EmployeeOnAction" prefHeight="46.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#f5efef">
                <font>
                   <Font name="System Bold" size="25.0" />
-               </font></Button>
-            <Button fx:id="btnsupplier" layoutX="28.0" layoutY="473.0" mnemonicParsing="false" onAction="#SupplierOnAction" prefHeight="56.0" prefWidth="257.0" style="-fx-background-color: Black;" text="SUPPLIERS" textFill="#f5efef">
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Button fx:id="btnreservation" layoutX="66.0" layoutY="231.0" mnemonicParsing="false" onAction="#ReservationOnAction" prefHeight="50.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#f5efef">
                <font>
                   <Font name="System Bold Italic" size="25.0" />
-               </font></Button>
-            <Button fx:id="btnemployee" layoutX="28.0" layoutY="416.0" mnemonicParsing="false" onAction="#EmployeeOnAction" prefHeight="56.0" prefWidth="257.0" style="-fx-background-color: Black;" text="EMPLOYEE" textFill="#f5efef">
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Button fx:id="btnmeal" layoutX="66.0" layoutY="305.0" mnemonicParsing="false" onAction="#MealOnAction" prefHeight="50.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#fcf7f7">
                <font>
                   <Font name="System Bold" size="25.0" />
-               </font></Button>
-            <Button fx:id="btnreservation" layoutX="28.0" layoutY="361.0" mnemonicParsing="false" onAction="#ReservationOnAction" prefHeight="56.0" prefWidth="257.0" style="-fx-background-color: Black;" text="RESERVATION" textFill="#f5efef">
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Button fx:id="btncustomer" layoutX="64.0" layoutY="160.0" mnemonicParsing="false" onAction="#customerOnAction" prefHeight="46.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#fcf7f7">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Button fx:id="btndashboard" layoutX="65.0" layoutY="89.0" mnemonicParsing="false" onAction="#dashboardOnAction" prefHeight="46.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#fcf7f7">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Button fx:id="btnsupplier" layoutX="64.0" layoutY="518.0" mnemonicParsing="false" onAction="#SupplierOnAction" prefHeight="46.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#f5efef">
                <font>
                   <Font name="System Bold Italic" size="25.0" />
-               </font></Button>
-            <Button fx:id="btnmeal" layoutX="27.0" layoutY="305.0" mnemonicParsing="false" onAction="#MealOnAction" prefHeight="56.0" prefWidth="257.0" style="-fx-background-color: black;" text="MEAL" textFill="#fcf7f7">
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Button fx:id="btningredients" layoutX="65.0" layoutY="447.0" mnemonicParsing="false" onAction="#IngredientOnAction" prefHeight="50.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#f5efef">
                <font>
                   <Font name="System Bold" size="25.0" />
-               </font></Button>
-            <Button fx:id="btncustomer" layoutX="27.0" layoutY="249.0" mnemonicParsing="false" onAction="#customerOnAction" prefHeight="56.0" prefWidth="257.0" style="-fx-background-color: black;" text="CUSTOMER" textFill="#fcf7f7">
-               <font>
-                  <Font name="System Bold" size="25.0" />
-               </font></Button>
-            <Button fx:id="btndashboard" layoutX="28.0" layoutY="193.0" mnemonicParsing="false" onAction="#dashboardOnAction" prefHeight="56.0" prefWidth="257.0" style="-fx-background-color: black;" text="DASHBOARD" textFill="#fcf7f7">
-               <font>
-                  <Font name="System Bold" size="25.0" />
-               </font></Button>
-            <ImageView fitHeight="107.0" fitWidth="204.0" layoutX="55.0" layoutY="49.0">
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <ImageView fx:id="customerpic" layoutX="128.0" layoutY="213.0" style="-fx-background-color: white;">
                <image>
-                  <Image url="@../Images/Untitled.jpeg" />
+                  <Image url="@../../../../../../Downloads/icons8-customer-50.png" />
                </image>
             </ImageView>
-            <Button fx:id="exitbtn" layoutX="36.0" layoutY="654.0" mnemonicParsing="false" onAction="#ExitTheSystem" opacity="0.9" prefHeight="39.0" prefWidth="76.0" style="-fx-background-radius: 10; -fx-background-color: #007F73;" text="EXIT" textFill="#fff6f6">
-               <graphic>
-                  <ImageView fitHeight="26.0" fitWidth="29.0">
-                     <image>
-                        <Image url="@../Images/icons8-exit-48.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font name="System Bold Italic" size="10.0" />
-               </font>
-            </Button>
+            <ImageView fx:id="home" layoutX="128.0" layoutY="146.0" style="-fx-background-color: white;">
+               <image>
+                  <Image url="@../../../../../../Downloads/icons8-home-50.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="orderpic" layoutX="128.0" layoutY="278.0" style="-fx-background-color: white;">
+               <image>
+                  <Image url="@../../../../../../Downloads/icons8-order-50.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="mealpic" layoutX="128.0" layoutY="343.0" style="-fx-background-color: white;">
+               <image>
+                  <Image url="@../../../../../../Downloads/icons8-meal-50.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="ingredientpic" fitHeight="46.0" fitWidth="50.0" layoutX="128.0" layoutY="482.0" style="-fx-background-color: white;">
+               <image>
+                  <Image url="@../../../../../../Downloads/icons8-ingredients-50.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="supplierpic" layoutX="128.0" layoutY="544.0" style="-fx-background-color: white;">
+               <image>
+                  <Image url="@../../../../../../Downloads/icons8-supplier-50.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="employeepic" layoutX="128.0" layoutY="413.0" style="-fx-background-color: white;">
+               <image>
+                  <Image url="@../../../../../../Downloads/icons8-employee-50.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="reportpic" fitHeight="46.0" fitWidth="58.0" layoutX="124.0" layoutY="608.0" style="-fx-background-color: white;">
+               <image>
+                  <Image url="@../../../../../../Downloads/icons8-reports-58.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="customerpic" fitHeight="39.0" fitWidth="50.0" layoutX="88.0" layoutY="164.0" opacity="0.82">
+               <image>
+                  <Image url="@../Images/icons8-customer-50.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="employeepic" fitHeight="39.0" fitWidth="43.0" layoutX="92.0" layoutY="382.0" opacity="0.82">
+               <image>
+                  <Image url="@../Images/icons8-employee-50.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="homepic" fitHeight="39.0" fitWidth="43.0" layoutX="91.0" layoutY="93.0" opacity="0.82">
+               <image>
+                  <Image url="@../Images/icons8-home-50.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="ingrepic" fitHeight="39.0" fitWidth="43.0" layoutX="92.0" layoutY="451.0" opacity="0.82">
+               <image>
+                  <Image url="@../Images/icons8-ingredients-50.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="mealpic" fitHeight="39.0" fitWidth="43.0" layoutX="91.0" layoutY="311.0" opacity="0.82">
+               <image>
+                  <Image url="@../Images/icons8-meal-50.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="reportpic" fitHeight="39.0" fitWidth="43.0" layoutX="90.0" layoutY="588.0" opacity="0.82">
+               <image>
+                  <Image url="@../Images/icons8-reports-58.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="orderpic" fitHeight="39.0" fitWidth="43.0" layoutX="88.0" layoutY="237.0" opacity="0.82">
+               <image>
+                  <Image url="@../Images/icons8-order-50.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="supplierpic" fitHeight="39.0" fitWidth="43.0" layoutX="90.0" layoutY="522.0" opacity="0.82">
+               <image>
+                  <Image url="@../Images/icons8-supplier-50.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ImageView>
          </children></AnchorPane>
-      <AnchorPane fx:id="Emptypane" layoutX="269.0" layoutY="-5.0" prefHeight="768.0" prefWidth="1097.0" style="-fx-background-color: BlWhiteck;" />
+      <AnchorPane fx:id="Emptypane" layoutX="173.0" layoutY="-5.0" prefHeight="768.0" prefWidth="1243.0" style="-fx-background-color: white;" />
    </children>
 </AnchorPane>

@@ -2,19 +2,32 @@ package lk.ijse.controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+
+import com.jfoenix.controls.JFXButton;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lk.ijse.Model.SupplierModel;
 import lk.ijse.Model.TM.SupplierTM;
+import lk.ijse.Model.TM.customerTM;
+import lk.ijse.Repository.CustomerRepo;
+import lk.ijse.Repository.SupplierRepo;
 
 public class Supplier {
 
@@ -28,7 +41,7 @@ public class Supplier {
     private ImageView SupplierPane;
 
     @FXML
-    private TableView<?> SupplierTable;
+    private TableView<SupplierTM> SupplierTable;
 
     @FXML
     private Button btnAdd;
@@ -64,10 +77,10 @@ public class Supplier {
     private TableColumn<?, ?> coldateOfPurches;
 
     @FXML
-    private TableColumn<?, ?> coldelete;
+    private TableColumn<customerTM, JFXButton> coldelete;
 
     @FXML
-    private TableColumn<?, ?> colupdate;
+    private TableColumn<customerTM, JFXButton> colupdate;
 
     @FXML
     private Text title;
@@ -87,9 +100,61 @@ public class Supplier {
     void getReport(ActionEvent event) {
 
     }
+    public void loadvalues() throws SQLException {
+        ArrayList<SupplierModel> allSupplier = SupplierRepo.getAll();
+        ObservableList<SupplierTM> observableList = FXCollections.observableArrayList();
 
+        for (int i = 0; i < allSupplier.size(); i++) {
+            String mobile = String.valueOf(allSupplier.get(i).getPhone_Number());
+            SupplierTM supplierTM = new SupplierTM(allSupplier.get(i).getS_ID(), allSupplier.get(i).getName(), allSupplier.get(i).getAddress(), mobile, allSupplier.get(i).getIngredient(), allSupplier.get(i).getDate_Of_Purchase(), allSupplier.get(i).getAmount_due(), allSupplier.get(i).getDate_of_Payment(), allSupplier.get(i).getPayment_Type(), allSupplier.get(i).getAmount_Paid(), new JFXButton("Update"), new JFXButton("Delete"));
+            observableList.add(supplierTM);
+            SupplierTable.setItems(observableList);
+        }
+
+        for (int i = 0; i < observableList.size(); i++) {
+            observableList.get(i).getUpdate().setStyle("-fx-background-color: rgba(96,120,205,0.97)");
+            observableList.get(i).getDelete().setStyle("-fx-background-color: rgba(175,108,108,1)");
+            observableList.get(i).getUpdate().setTextFill(Color.WHITE);
+            observableList.get(i).getDelete().setTextFill(Color.WHITE);
+        }
+        for (int i = 0; i < observableList.size(); i++) {
+            String id = observableList.get(i).getS_ID();
+            observableList.get(i).getDelete().setOnAction(actionEvent -> {
+                boolean b = false;
+                try {
+                    b = CustomerRepo.delete(id);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                if (b) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "Supplier Deleted");
+                }
+                try {
+                    loadvalues();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+
+            });
+            observableList.get(i).getUpdate().setOnAction(actionEvent -> {
+
+            });
+        }
+    }
+    public void setValues(){
+        colName.setCellValueFactory(new PropertyValueFactory<>("Name"));
+        colAddress.setCellValueFactory(new PropertyValueFactory<>("Address"));
+        colMobile.setCellValueFactory(new PropertyValueFactory<>("Phone_Number"));
+        coldateOfPurches.setCellValueFactory(new PropertyValueFactory<>("Date_Of_Purchase"));
+        colAmountDue.setCellValueFactory(new PropertyValueFactory<>(" Amount_due"));
+        colDateOfPayment.setCellValueFactory(new PropertyValueFactory<>(" Date_of_Payment"));
+        colPaymentType.setCellValueFactory(new PropertyValueFactory<>("Payment_Type"));
+        colPaid.setCellValueFactory(new PropertyValueFactory<>("Amount_Paid"));
+        colupdate.setCellValueFactory(new PropertyValueFactory<customerTM,JFXButton>("Update"));
+        coldelete.setCellValueFactory(new PropertyValueFactory<customerTM,JFXButton>("Delete"));
+    }
     @FXML
-    void initialize() {
+    void initialize() throws SQLException {
         assert SupplierPane != null : "fx:id=\"SupplierPane\" was not injected: check your FXML file 'Supplier.fxml'.";
         assert SupplierTable != null : "fx:id=\"SupplierTable\" was not injected: check your FXML file 'Supplier.fxml'.";
         assert btnAdd != null : "fx:id=\"btnAdd\" was not injected: check your FXML file 'Supplier.fxml'.";
@@ -106,7 +171,8 @@ public class Supplier {
         assert coldelete != null : "fx:id=\"coldelete\" was not injected: check your FXML file 'Supplier.fxml'.";
         assert colupdate != null : "fx:id=\"colupdate\" was not injected: check your FXML file 'Supplier.fxml'.";
         assert title != null : "fx:id=\"title\" was not injected: check your FXML file 'Supplier.fxml'.";
-
+    loadvalues();
+    setValues();
     }
 
 }

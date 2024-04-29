@@ -1,5 +1,6 @@
 package lk.ijse.Model;
 
+import com.jfoenix.controls.JFXButton;
 import lk.ijse.controller.Supplier;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,6 +21,5 @@ public class SupplierModel extends Supplier {
     private String Date_of_Payment;
     private String Payment_Type;
     private String Amount_Paid;
-
 
 }

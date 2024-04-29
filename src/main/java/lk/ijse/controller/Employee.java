@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -24,7 +25,9 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lk.ijse.Model.EmployeeModel;
 import lk.ijse.Model.TM.EmployeeTM;
+import lk.ijse.Repository.CustomerRepo;
 import lk.ijse.Repository.EmployeeRepo;
+import lk.ijse.Repository.SupplierRepo;
 
 public class Employee {
 
@@ -99,36 +102,52 @@ public class Employee {
     }
     public void loadvalues() throws SQLException {
         ArrayList<EmployeeModel> allEmployee = EmployeeRepo.getAll();
-        ObservableList<EmployeeTM>observableList= FXCollections.observableArrayList();
+        ObservableList<EmployeeTM> observableList = FXCollections.observableArrayList();
 
-        for (int i=0; i< allEmployee.size() ; i++){
+        for (int i = 0; i < allEmployee.size(); i++) {
             String mobile = String.valueOf(allEmployee.get(i).getPhone_Number());
-            EmployeeTM employeeTM = new EmployeeTM(allEmployee.get(i).getE_ID(),allEmployee.get(i).getNIC(),allEmployee.get(i).getFirst_Name(),allEmployee.get(i).getLast_Name(),allEmployee.get(i).getAddress(),mobile,allEmployee.get(i).getEmail(),allEmployee.get(i).getSalary(),allEmployee.get(i).getPosition(),new JFXButton("Update"),new JFXButton("Delete"));
+            EmployeeTM employeeTM = new EmployeeTM(allEmployee.get(i).getE_ID(), allEmployee.get(i).getNIC(), allEmployee.get(i).getFirst_Name(), allEmployee.get(i).getLast_Name(), allEmployee.get(i).getAddress(), mobile, allEmployee.get(i).getEmail(), allEmployee.get(i).getSalary(), allEmployee.get(i).getPosition(), new JFXButton("Update"), new JFXButton("Delete"));
             observableList.add(employeeTM);
             employeeTable.setItems(observableList);
         }
-        for (int i=0; i<observableList.size(); i++){
+        for (int i = 0; i < observableList.size(); i++) {
             observableList.get(i).getUpdate().setStyle("-fx-background-color: rgba(96,120,205,0,97)");
             observableList.get(i).getDelete().setStyle("-fx-background-color: rgba(175,108,108,1)");
-          observableList.get(i).getUpdate().setTextFill(Color.WHITE);
+            observableList.get(i).getUpdate().setTextFill(Color.WHITE);
             observableList.get(i).getDelete().setTextFill(Color.WHITE);
         }
-        for (int i=0 ;i<observableList.size();i++){
-            String id =observableList.get(i).getE_ID();
-            String  nic =observableList.get(i).getNIC();
-            String fn =observableList.get(i).getFirst_Name();
-            String ln =observableList.get(i).getLast_Name();
-            String add =observableList.get(i).getAddress();
-            String mobile =observableList.get(i).getPhone_Number();
-            String email =observableList.get(i).getEmail();
+        for (int i = 0; i < observableList.size(); i++) {
+            String id = observableList.get(i).getE_ID();
+            String nic = observableList.get(i).getNIC();
+            String fn = observableList.get(i).getFirst_Name();
+            String ln = observableList.get(i).getLast_Name();
+            String add = observableList.get(i).getAddress();
+            String mobile = observableList.get(i).getPhone_Number();
+            String email = observableList.get(i).getEmail();
             String salary = observableList.get(i).getSalary();
             String position = observableList.get(i).getPosition();
-          observableList.get(i).getUpdate().setOnAction(actionEvent -> {});
-            observableList.get(i).getDelete().setOnAction(actionEvent -> {});
+            observableList.get(i).getUpdate().setOnAction(actionEvent -> {
+                Parent parent = null;
+                try {
+                    parent = FXMLLoader.load(getClass().getResource("/view/UpdateEmployee.fxml"));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                Scene scene = new Scene(parent);
+                Stage stage = new Stage();
+                stage.setScene(scene);
+                stage.setTitle("Update Employee");
+                stage.centerOnScreen();
+                stage.show();
+            });
+                observableList.get(i).getDelete().setOnAction(actionEvent -> {
+
+                });
+
+            }
 
         }
 
-    }
     private void setValues() {
         colNIC.setCellValueFactory(new PropertyValueFactory<>("NIC"));
         colfName.setCellValueFactory(new PropertyValueFactory<>("First_Name"));

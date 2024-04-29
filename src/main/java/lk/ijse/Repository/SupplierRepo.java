@@ -1,6 +1,8 @@
 package lk.ijse.Repository;
 
 import lk.ijse.DB.DbConnection;
+import lk.ijse.Model.CustomerModel;
+import lk.ijse.Model.MealModel;
 import lk.ijse.Model.SupplierModel;
 
 import java.sql.Connection;
@@ -13,88 +15,83 @@ import java.util.List;
 public class SupplierRepo {
 
     public static boolean saveSupplier(SupplierModel supplierModel) throws SQLException {
-       try {
-           Connection connection = DbConnection.getInstance().getConnection();
-              PreparedStatement ptsm = connection.prepareStatement("INSERT INTO Supplier VALUES(?,?,?,?,?,?,?,?,?,?)");
+        try {
+            Connection connection = DbConnection.getInstance().getConnection();
+            PreparedStatement pstm = connection.prepareStatement("INSERT INTO Supplier VALUES (?,?,?,?,?,?,?,?,?,?)");
+            pstm.setString(1, supplierModel.getS_ID());
+            pstm.setString(2, supplierModel.getName());
+            pstm.setString(3, supplierModel.getAddress());
+            pstm.setInt(4, supplierModel.getPhone_Number());
+            pstm.setString(5, supplierModel.getIngredient());
+            pstm.setString(6, supplierModel.getDate_Of_Purchase());
+            pstm.setString(7, supplierModel.getAmount_due());
+            pstm.setString(8, supplierModel.getDate_of_Payment());
+            pstm.setString(9, supplierModel.getPayment_Type());
+            pstm.setString(10, supplierModel.getAmount_Paid());
 
-           ptsm.setString(1, supplierModel.getS_ID());
-           ptsm.setString(2, supplierModel.getName());
-           ptsm.setString(3, supplierModel.getAddress());
-           ptsm.setInt(4, supplierModel.getPhone_Number());
-           ptsm.setString(5, supplierModel.getIngredient());
-           ptsm.setString(6, supplierModel.getDate_Of_Purchase());
-           ptsm.setString(7, supplierModel.getAmount_due());
-           ptsm.setString(8, supplierModel.getDate_of_Payment());
-           ptsm.setString(9, supplierModel.getPayment_Type());
-           ptsm.setString(10, supplierModel.getAmount_Paid());
-       } catch (SQLException e) {
-           throw new RuntimeException(e);
-       }
-
-          return false;
+            int i;
+            i = pstm.executeUpdate();
+            return i > 0;
+        } catch (SQLException e) {
+           e.printStackTrace();
+        }
+        return false;
     }
 
-        public  static  boolean updateSupplier(SupplierModel supplierModel) throws SQLException {
-        String sql = "UPDATE Supplier SET Name = ?, Address = ?, Phone_Number = ?, Ingredient =?, Date_Of_Purchase=? , Amount_due = ?, Date_of_Payment = ?, Payment_Type =?, Amount_Paid= ? WHERE S_ID = ?";
+    public static boolean updateSupplier(SupplierModel supplierModel) throws SQLException {
 
         Connection connection = DbConnection.getInstance().getConnection();
-        PreparedStatement ptsm = connection.prepareStatement(sql);
+        PreparedStatement pstm = connection.prepareStatement("UPDATE Supplier SET Name = ?, Address = ?,Phone_Number =?, Ingredient =?,Date_Of_Purchase=?,Amount_due=?,Date_of_Payment =?,Payment_Type =?,Amount_Paid =? WHERE S_ID = ?");
+        pstm.setString(1,supplierModel.getName());
+        pstm.setString(2,supplierModel.getAddress());
+        pstm.setInt(3,supplierModel.getPhone_Number());
+        pstm.setString(4,supplierModel.getIngredient());
+        pstm.setString(5,supplierModel.getDate_Of_Purchase());
+        pstm.setString(6,supplierModel.getAmount_due());
+        pstm.setString(7,supplierModel.getDate_of_Payment());
+        pstm.setString(8,supplierModel.getPayment_Type());
+        pstm.setString(9,supplierModel.getAmount_Paid());
+        pstm.setString(10,supplierModel.getS_ID());
 
-        ptsm.setString(1,supplierModel.getName());
-        ptsm.setString(2,supplierModel.getAddress());
-        ptsm.setInt(3,supplierModel.getPhone_Number());
-        ptsm.setString(4,supplierModel.getIngredient());
-        ptsm.setString(5,supplierModel.getDate_Of_Purchase());
-        ptsm.setString(6,supplierModel.getAmount_due());
-        ptsm.setString(7,supplierModel.getDate_of_Payment());
-        ptsm.setString(8,supplierModel.getPayment_Type());
-        ptsm.setString(9,supplierModel.getAmount_Paid());
-        ptsm.setString(10,supplierModel.getS_ID());
-
-        return ptsm.executeUpdate() > 0;
-
+        return pstm.executeUpdate() > 0;
     }
 
-    public static boolean Delete(String sid){
-        try {
-            Connection connection =DbConnection.getInstance().getConnection();
-            PreparedStatement ptsm = connection.prepareStatement("delete from Supplier where S_ID = ?");
-            ptsm.setString(1,sid);
+    public static boolean delete(String id) throws SQLException {
+        try{
+            Connection connection= DbConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement=connection.prepareStatement("delete from Customer where S_ID=?");
+            preparedStatement.setString(1,id);
             int i;
-            i = ptsm.executeUpdate();
+            i=preparedStatement.executeUpdate();
             return i > 0;
-
-        } catch (SQLException e) {
+        }catch (SQLException e) {
             e.printStackTrace();
         }
         return false;
     }
 
     public static SupplierModel searchById(String id) throws SQLException {
-        String sql = "SELECT * FROM Supplier WHERE id = ?";
-
         Connection connection = DbConnection.getInstance().getConnection();
-        PreparedStatement pstm = connection.prepareStatement(sql);
+        PreparedStatement pstm = connection.prepareStatement("SELECT * FROM Customer WHERE S_ID = ?");
         pstm.setString(1, id);
 
         ResultSet resultSet = pstm.executeQuery();
         if (resultSet.next()) {
             String S_ID = resultSet.getString(1);
-            String Name = resultSet.getString(2);
-            String Address = resultSet.getString(3);
-            int PhoneNumber = resultSet.getInt(4);
-            String Ingredient = resultSet.getString(5);
-            String DOPurchase = resultSet.getString(6);
+            String name = resultSet.getString(2);
+            String address = resultSet.getString(3);
+            int mobile = resultSet.getInt(4);
+            String ingredient = resultSet.getString(5);
+            String DateOfPurchase = resultSet.getString(6);
             String amountDue = resultSet.getString(7);
-            String DOPayment = resultSet.getString(8);
-            String paymentType = resultSet.getString(9);
+            String dateOfPayment = resultSet.getString(8);
+            String paymetType = resultSet.getString(9);
             String AmountPaid = resultSet.getString(10);
 
-            SupplierModel supplierModel= new SupplierModel(S_ID,Name,Address,PhoneNumber,Ingredient,DOPurchase,amountDue,DOPayment,paymentType,AmountPaid);
+          SupplierModel supplierModel =  new SupplierModel(S_ID,name,address,mobile,ingredient,DateOfPurchase,amountDue,dateOfPayment,paymetType,AmountPaid);
 
-            return supplierModel;
+          return supplierModel;
         }
-
         return null;
     }
 

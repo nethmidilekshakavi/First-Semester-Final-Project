@@ -110,14 +110,6 @@ public class Customer {
       }
       for (int i=0 ;i<observableList.size();i++){
           String id =observableList.get(i).getC_ID();
-          String  nic =observableList.get(i).getNIC();
-          String fn =observableList.get(i).getFirst_Name();
-          String ln =observableList.get(i).getLast_Name();
-          String add =observableList.get(i).getAddress();
-          String mobile =observableList.get(i).getPhone_Number();
-          String email =observableList.get(i).getEmail();
-          observableList.get(i).getUpdate();
-
           observableList.get(i).getDelete().setOnAction(actionEvent -> {
               boolean b = false;
               try {
@@ -135,10 +127,22 @@ public class Customer {
               }
 
           });
-          observableList.get(i).getUpdate().setOnAction(actionEvent -> {});
+          observableList.get(i).getUpdate().setOnAction(actionEvent -> {
+              Parent parent = null;
+              try {
+                  parent = FXMLLoader.load(getClass().getResource("/view/UpdateCustomer.fxml"));
+              } catch (IOException e) {
+                  throw new RuntimeException(e);
+              }
+              Scene scene =new Scene(parent);
+              Stage stage = new Stage();
+              stage.setScene(scene);
+              stage.setTitle("Update Customer");
+              stage.centerOnScreen();
+              stage.show();
+          });
       }
   }
-
         public void setValues(){
             colNIC.setCellValueFactory(new PropertyValueFactory<>("NIC"));
             colFname.setCellValueFactory(new PropertyValueFactory<>("First_Name"));
@@ -169,5 +173,4 @@ public class Customer {
         loadvalues();
         setValues();
     }
-
 }

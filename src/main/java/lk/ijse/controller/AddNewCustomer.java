@@ -84,8 +84,6 @@ public class AddNewCustomer {
     void dontSaveCustomer(ActionEvent event) {
         Stage stage =(Stage)cidtxt.getScene().getWindow();
         stage.close();
-
-
     }
 
 

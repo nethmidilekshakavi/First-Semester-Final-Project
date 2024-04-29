@@ -30,7 +30,7 @@ public class UpdateCustomer {
     private Button btnCancel;
 
     @FXML
-    private Button btnSave;
+    private Button btnUpdate;
 
     @FXML
     private TextField cidtxt;
@@ -83,7 +83,7 @@ public class UpdateCustomer {
     }
 
     @FXML
-    void saveCustomer(ActionEvent event) {
+    void updateEmployee(ActionEvent event) {
 
     }
 
@@ -93,7 +93,7 @@ public class UpdateCustomer {
         assert NEWicdtxt != null : "fx:id=\"NEWicdtxt\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";
         assert address != null : "fx:id=\"address\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";
         assert btnCancel != null : "fx:id=\"btnCancel\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";
-        assert btnSave != null : "fx:id=\"btnSave\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";
+        assert btnUpdate != null : "fx:id=\"btnUpdate\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";
         assert cidtxt != null : "fx:id=\"cidtxt\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";
         assert email != null : "fx:id=\"email\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";
         assert fname != null : "fx:id=\"fname\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";

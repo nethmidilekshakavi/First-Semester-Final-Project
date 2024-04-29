@@ -58,10 +58,10 @@ public class EmployeeRepo {
         return ptsm.executeUpdate() > 0;
     }
 
-    public static boolean DeleteEmployee(String eid) throws SQLException {
+    public static boolean delete(String eid) throws SQLException {
         try {
             Connection connection = DbConnection.getInstance().getConnection();
-            PreparedStatement ptsm = connection.prepareStatement("delete from customer where E_ID=?");
+            PreparedStatement ptsm = connection.prepareStatement("delete from Employee where E_ID=?");
             ptsm.setString(1, eid);
             int i;
             i = ptsm.executeUpdate();

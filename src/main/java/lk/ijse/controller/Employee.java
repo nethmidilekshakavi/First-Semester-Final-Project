@@ -111,21 +111,30 @@ public class Employee {
             employeeTable.setItems(observableList);
         }
         for (int i = 0; i < observableList.size(); i++) {
-            observableList.get(i).getUpdate().setStyle("-fx-background-color: rgba(96,120,205,0,97)");
+            observableList.get(i).getUpdate().setStyle("-fx-background-color: rgba(96,120,205,0.97)");
             observableList.get(i).getDelete().setStyle("-fx-background-color: rgba(175,108,108,1)");
             observableList.get(i).getUpdate().setTextFill(Color.WHITE);
             observableList.get(i).getDelete().setTextFill(Color.WHITE);
         }
         for (int i = 0; i < observableList.size(); i++) {
             String id = observableList.get(i).getE_ID();
-            String nic = observableList.get(i).getNIC();
-            String fn = observableList.get(i).getFirst_Name();
-            String ln = observableList.get(i).getLast_Name();
-            String add = observableList.get(i).getAddress();
-            String mobile = observableList.get(i).getPhone_Number();
-            String email = observableList.get(i).getEmail();
-            String salary = observableList.get(i).getSalary();
-            String position = observableList.get(i).getPosition();
+            observableList.get(i).getDelete().setOnAction(actionEvent -> {
+                boolean b = false;
+                try {
+                    b = EmployeeRepo.delete(id);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                if (b) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "Employee Deleted");
+                }
+                try {
+                    loadvalues();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+
+            });
             observableList.get(i).getUpdate().setOnAction(actionEvent -> {
                 Parent parent = null;
                 try {
@@ -140,13 +149,8 @@ public class Employee {
                 stage.centerOnScreen();
                 stage.show();
             });
-                observableList.get(i).getDelete().setOnAction(actionEvent -> {
-
-                });
-
-            }
-
         }
+    }
 
     private void setValues() {
         colNIC.setCellValueFactory(new PropertyValueFactory<>("NIC"));

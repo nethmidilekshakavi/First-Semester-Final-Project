@@ -25,7 +25,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lk.ijse.Model.MealModel;
 import lk.ijse.Model.TM.MealTM;
-import lk.ijse.Repository.CustomerRepo;
+import lk.ijse.Model.TM.customerTM;
 import lk.ijse.Repository.MealRepo;
 
 public class Meal {
@@ -56,6 +56,12 @@ public class Meal {
 
     @FXML
     private TableView<MealTM> mealTable;
+
+    @FXML
+    private TableColumn<customerTM, JFXButton> colDelete;
+
+    @FXML
+    private TableColumn<customerTM, JFXButton> colUpdate;
 
     @FXML
     private Text title;
@@ -109,7 +115,20 @@ public class Meal {
                     throw new RuntimeException(e);
                 }
             });
-            observableList.get(i).getUpdate().setOnAction(actionEvent -> {});
+            observableList.get(i).getUpdate().setOnAction(actionEvent -> {
+                Parent parent = null;
+                try {
+                    parent = FXMLLoader.load(getClass().getResource("/view/updateMeal.fxml"));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                Scene scene =new Scene(parent);
+                Stage stage = new Stage();
+                stage.setScene(scene);
+                stage.setTitle("Update Meal");
+                stage.centerOnScreen();
+                stage.show();
+            });
         }
 
     }
@@ -117,6 +136,8 @@ public class Meal {
         colmid.setCellValueFactory(new PropertyValueFactory<>("MID"));
         colname.setCellValueFactory(new PropertyValueFactory<>("Name"));
         colprice.setCellValueFactory(new PropertyValueFactory<>("Price"));
+        colDelete.setCellValueFactory(new PropertyValueFactory<customerTM,JFXButton>("Delete"));
+        colUpdate.setCellValueFactory(new PropertyValueFactory<customerTM,JFXButton>("Update"));
     }
 
         @FXML

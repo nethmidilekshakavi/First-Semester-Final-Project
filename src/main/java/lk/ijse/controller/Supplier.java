@@ -137,7 +137,18 @@ public class Supplier {
 
             });
             observableList.get(i).getUpdate().setOnAction(actionEvent -> {
-
+                Parent parent = null;
+                try {
+                    parent = FXMLLoader.load(getClass().getResource("/view/updateSupplier.fxml"));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                Scene scene =new Scene(parent);
+                Stage stage = new Stage();
+                stage.setScene(scene);
+                stage.setTitle("Update Supplier");
+                stage.centerOnScreen();
+                stage.show();
             });
         }
     }

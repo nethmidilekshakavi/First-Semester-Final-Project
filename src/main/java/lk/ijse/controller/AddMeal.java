@@ -56,7 +56,8 @@ public class AddMeal {
 
     @FXML
     void dontSaveMeal(ActionEvent event) {
-
+        Stage stage =(Stage)midtxt.getScene().getWindow();
+        stage.close();
     }
 
     @FXML

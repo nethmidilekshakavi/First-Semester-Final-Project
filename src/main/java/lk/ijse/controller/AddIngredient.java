@@ -1,13 +1,20 @@
 package lk.ijse.controller;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import lk.ijse.Model.CustomerModel;
+import lk.ijse.Model.IngredientModel;
+import lk.ijse.Repository.CustomerRepo;
+import lk.ijse.Repository.IngredientRepo;
 
 public class AddIngredient {
 
@@ -54,13 +61,30 @@ public class AddIngredient {
     private TextField suppliertxt;
 
     @FXML
-    void dontSaveCustomer(ActionEvent event) {
-
+    void dontSaveIngredient(ActionEvent event) {
+        Stage stage =(Stage)iidtxt.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
-    void saveCustomer(ActionEvent event) {
+    void saveIngredinet(ActionEvent event) throws SQLException {
 
+        String iid = iidtxt.getText();
+        String desc = desctxt.getText();
+        String qoh = QOHtxt.getText();
+        String supplier = suppliertxt.getText();
+
+        IngredientModel ingredientModel = new  IngredientModel(iid,desc,qoh,supplier);
+        boolean a = IngredientRepo.save(ingredientModel);
+        System.out.println(a);
+        if (a){
+            new Alert(Alert.AlertType.CONFIRMATION,"Ingredient saved successfully").show();
+
+        }else {
+            new Alert(Alert.AlertType.ERROR,"something went wrong").show();
+        }
+        Stage stage1 =(Stage)iidtxt.getScene().getWindow();
+        stage1.close();
     }
 
     @FXML
@@ -79,4 +103,5 @@ public class AddIngredient {
         assert suppliertxt != null : "fx:id=\"suppliertxt\" was not injected: check your FXML file 'addIngredient.fxml'.";
 
     }
+
 }

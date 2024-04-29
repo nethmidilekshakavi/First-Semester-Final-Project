@@ -110,7 +110,7 @@ public class CustomerRepo {
     }
 
     public static List<String> getIds() throws SQLException {
-        String sql = "SELECT C_ID FROM Customers";
+        String sql = "SELECT C_ID FROM Customer";
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
 

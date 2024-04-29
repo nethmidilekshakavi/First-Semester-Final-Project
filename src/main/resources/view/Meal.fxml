@@ -17,29 +17,31 @@
             <Image url="@../Images/pngtree-blue-gradient-web-ui-background-image_518658.jpg" />
          </image>
       </ImageView>
-      <Text fx:id="title" layoutX="533.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meal Details">
+      <Text fx:id="title" layoutX="533.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meal Details">
          <font>
             <Font name="Dyuthi Regular" size="36.0" />
          </font>
       </Text>
-      <TableView fx:id="mealTable" layoutX="237.0" layoutY="204.0" prefHeight="406.0" prefWidth="732.0">
+      <TableView fx:id="mealTable" layoutX="110.0" layoutY="164.0" prefHeight="519.0" prefWidth="961.0">
         <columns>
           <TableColumn fx:id="colmid" prefWidth="191.0" text="MID" />
-          <TableColumn fx:id="colname" prefWidth="309.0" text="NAME" />
-            <TableColumn fx:id="colprice" prefWidth="231.0" text="PRICE" />
+          <TableColumn fx:id="colname" prefWidth="228.0" text="NAME" />
+            <TableColumn fx:id="colprice" prefWidth="202.0" text="PRICE" />
+            <TableColumn fx:id="colUpdate" prefWidth="167.0" text="UPDATE" />
+            <TableColumn fx:id="colDelete" prefWidth="173.0" text="DELETE" />
         </columns>
          <effect>
             <DropShadow />
          </effect>
       </TableView>
-      <Button fx:id="btnAdd" layoutX="899.0" layoutY="167.0" mnemonicParsing="false" onAction="#addNewEmployee" prefHeight="24.0" prefWidth="63.0" style="-fx-background-color: #FC819E;" text="ADD">
+      <Button fx:id="btnAdd" layoutX="1006.0" layoutY="125.0" mnemonicParsing="false" onAction="#addNewEmployee" prefHeight="24.0" prefWidth="63.0" style="-fx-background-color: #FC819E;" text="ADD">
          <effect>
             <DropShadow />
          </effect>
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Button>
-      <Button fx:id="btnPrint" layoutX="825.0" layoutY="167.0" mnemonicParsing="false" onAction="#getReport" prefHeight="24.0" prefWidth="63.0" style="-fx-background-color: #4CCD99;" text="PRINT">
+      <Button fx:id="btnPrint" layoutX="932.0" layoutY="125.0" mnemonicParsing="false" onAction="#getReport" prefHeight="24.0" prefWidth="63.0" style="-fx-background-color: #4CCD99;" text="PRINT">
          <effect>
             <DropShadow />
          </effect>

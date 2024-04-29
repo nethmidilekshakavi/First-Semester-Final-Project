@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -14,7 +16,7 @@
 
 <AnchorPane prefHeight="774.0" prefWidth="1211.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.Reservation">
    <children>
-      <ImageView fx:id="EmployeePane" fitHeight="793.0" fitWidth="1263.0">
+      <ImageView fx:id="pane" fitHeight="793.0" fitWidth="1263.0">
          <image>
             <Image url="@../Images/pngtree-blue-gradient-web-ui-background-image_518658.jpg" />
          </image>
@@ -24,50 +26,67 @@
             <Font name="Dyuthi Regular" size="36.0" />
          </font>
       </Text>
-      <JFXComboBox fx:id="nicList" layoutX="181.0" layoutY="140.0" prefHeight="24.0" prefWidth="145.0" />
+      <JFXComboBox fx:id="nicList" layoutX="181.0" layoutY="140.0" onAction="#comboCustomerList" prefHeight="24.0" prefWidth="145.0" />
       <Text fx:id="RID" layoutX="75.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation ID :" />
       <Text fx:id="date" layoutX="960.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation Date :" />
       <Text fx:id="CNIC" layoutX="76.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer NIC :" />
       <Text fx:id="RCODE" layoutX="75.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Code :" />
-      <JFXComboBox fx:id="reservationList" layoutX="77.0" layoutY="213.0" prefHeight="24.0" prefWidth="145.0" />
+      <JFXComboBox fx:id="reservationList" layoutX="77.0" layoutY="213.0" onAction="#comboMealList" prefHeight="24.0" prefWidth="145.0" />
       <Text fx:id="desc" layoutX="430.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description :" />
-      <Text fx:id="txtdesc" layoutX="451.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="asd" wrappingWidth="34.0" />
-      <Text fx:id="reservationIDtxt" layoutX="190.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="mznm" wrappingWidth="64.0" />
+      <Text fx:id="txtdesc" layoutX="451.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="34.0" />
+      <Text fx:id="reservationIDtxt" layoutX="190.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="64.0" />
       <Text fx:id="price" layoutX="638.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price :" />
-      <Text fx:id="pricetxt" layoutX="654.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="asd" wrappingWidth="42.0" />
+      <Text fx:id="pricetxt" layoutX="614.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="120.0" />
       <Text fx:id="qtyOnHand" layoutX="833.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty On Hand :" />
-      <Text fx:id="QOHtxt" layoutX="860.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="asd" wrappingWidth="42.0" />
+      <Text fx:id="QOHtxt" layoutX="860.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="42.0" />
       <Text fx:id="qty" layoutX="1050.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QTY" />
       <TextField fx:id="qtytxt" layoutX="1051.0" layoutY="237.0" prefHeight="33.0" prefWidth="59.0">
          <effect>
             <DropShadow />
          </effect></TextField>
-      <TableView fx:id="orderTable" layoutX="76.0" layoutY="281.0" prefHeight="365.0" prefWidth="1038.0">
+      <TableView fx:id="orderTable" layoutX="81.0" layoutY="359.0" prefHeight="235.0" prefWidth="1038.0">
         <columns>
           <TableColumn fx:id="colcode" prefWidth="163.0" text="CODE" />
           <TableColumn fx:id="coldesc" prefWidth="240.0" text="Description" />
             <TableColumn fx:id="colqty" prefWidth="162.0" text="QTY" />
             <TableColumn fx:id="colprice" prefWidth="191.0" text="Unit Prices" />
             <TableColumn fx:id="coltotal" prefWidth="140.0" text="Total" />
+            <TableColumn fx:id="remove" prefWidth="140.0" text="Remove" />
         </columns>
          <effect>
             <DropShadow />
          </effect>
       </TableView>
-      <Button fx:id="btnnewCID" layoutX="337.0" layoutY="146.0" mnemonicParsing="false" style="-fx-background-color: #90D26D;" text="+ NEW">
+      <Button fx:id="btnnewCID" layoutX="337.0" layoutY="146.0" mnemonicParsing="false" onAction="#btnNewCustomerOnAction" style="-fx-background-color: #90D26D;" text="+ NEW">
          <effect>
             <DropShadow />
          </effect></Button>
       <Text fx:id="total" layoutX="44.0" layoutY="695.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total :-" />
-      <Text fx:id="totaltxt" layoutX="98.0" layoutY="695.0" strokeType="OUTSIDE" strokeWidth="0.0" text="mzndc" wrappingWidth="82.55126953125" />
-      <Button fx:id="btnback" layoutX="950.0" layoutY="674.0" mnemonicParsing="false" onAction="#backToDashboard" text="BACK">
+      <Text fx:id="totaltxt" layoutX="98.0" layoutY="695.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="82.55126953125" />
+      <Button fx:id="btnPlaceOrder" layoutX="1005.0" layoutY="673.0" mnemonicParsing="false" onAction="#btnPlaceOrderOnAction" style="-fx-background-color: #FF6500;" text="Place Order" textFill="#fffefe">
          <effect>
             <DropShadow />
-         </effect></Button>
-      <Button fx:id="btnPlaceOrder" layoutX="1020.0" layoutY="673.0" mnemonicParsing="false" text="Place Order">
-         <effect>
-            <DropShadow />
-         </effect></Button>
-      <Text fx:id="datetxt" layoutX="1085.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xzx" wrappingWidth="26.1142578125" />
+         </effect>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Text fx:id="datetxt" layoutX="1085.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="26.1142578125" />
+      <JFXButton fx:id="btnAddToCart" buttonType="RAISED" layoutX="997.0" layoutY="301.0" onAction="#btnAddToCartOnAction" prefHeight="33.0" prefWidth="120.0" style="-fx-background-color: #41B06E;" text="Add to cart" textFill="#eee8e8">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../database-programming/_05-supermarket-mvc/src/main/resources/asserts/icon/cart(2).png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <Text fx:id="cusName" layoutX="609.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :" />
+      <Text fx:id="nametxt" layoutX="659.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
    </children>
 </AnchorPane>

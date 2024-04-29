@@ -9,7 +9,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="327.0" prefWidth="661.0" style="-fx-background-radius: 40;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.AddMeal">
    <children>
       <ImageView fx:id="addNewMeal" fitHeight="328.0" fitWidth="661.0">
@@ -37,7 +36,7 @@
          </font>
       </Text>
       <TextField fx:id="midtxt" layoutX="113.0" layoutY="120.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
-      <Text fx:id="price" fill="WHITE" layoutX="43.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :">
+      <Text fx:id="price" fill="WHITE" layoutX="43.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

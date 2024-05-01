@@ -48,7 +48,7 @@
          </font>
       </Text>
       <TextField fx:id="desctxt" layoutX="208.0" layoutY="190.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
-      <Button fx:id="btnSave" layoutX="619.0" layoutY="382.0" mnemonicParsing="false" onAction="#saveIngredinet" prefHeight="33.0" prefWidth="75.0" style="-fx-background-radius: 40; -fx-background-color: #41B06E;" text="SAVE" textFill="#fffafa">
+      <Button fx:id="btnSave" layoutX="619.0" layoutY="382.0" mnemonicParsing="false" onAction="#saveIngredinet" prefHeight="33.0" prefWidth="75.0" style="-fx-background-radius: 10; -fx-background-color: #33b249;" text="SAVE" textFill="#1e1d1d">
          <effect>
             <DropShadow />
          </effect>
@@ -56,7 +56,7 @@
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnCancel" layoutX="522.0" layoutY="382.0" mnemonicParsing="false" onAction="#dontSaveIngredient" prefHeight="33.0" prefWidth="85.0" style="-fx-background-radius: 40; -fx-background-color: #378CE7;" text="CANCEL" textFill="#fffafa">
+      <Button fx:id="btnCancel" layoutX="522.0" layoutY="382.0" mnemonicParsing="false" onAction="#dontSaveIngredient" prefHeight="33.0" prefWidth="85.0" style="-fx-background-radius: 10; -fx-background-color: #B5C0D0;" text="CANCEL" textFill="#1e1d1d">
          <effect>
             <DropShadow />
          </effect>

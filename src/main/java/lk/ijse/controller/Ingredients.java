@@ -24,8 +24,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lk.ijse.Model.CustomerModel;
 import lk.ijse.Model.IngredientModel;
 import lk.ijse.Model.TM.IngredientTM;
+import lk.ijse.Model.TM.customerTM;
+import lk.ijse.Repository.CustomerRepo;
 import lk.ijse.Repository.IngredientRepo;
 
 public class Ingredients {
@@ -86,34 +89,35 @@ public class Ingredients {
     }
 
     public void loadvalues() throws SQLException {
-        ArrayList<IngredientModel> allIngredients = IngredientRepo.getAll();
+        ArrayList<IngredientModel> allIgredient = IngredientRepo.getAll();
         ObservableList<IngredientTM> observableList = FXCollections.observableArrayList();
 
-        for (int i = 0; i < allIngredients.size(); i++) {
-            IngredientTM ingredientTM = new IngredientTM(allIngredients.get(i).getI_ID(), allIngredients.get(i).getDescription(), allIngredients.get(i).getQty_On_Hand(), allIngredients.get(i).getSupplier(), new JFXButton("Update"), new JFXButton("Delete"));
-            observableList.add(ingredientTM);
+        for (int i = 0; i < allIgredient.size(); i++) {
+            String qty = String.valueOf(allIgredient.get(i).getQty_On_Hand());
+            IngredientTM IngredientTM = new IngredientTM(allIgredient.get(i).getI_ID(),allIgredient.get(i).getDescription(),qty,allIgredient.get(i).getSupplier(),new JFXButton("Delete"), new JFXButton("Update"));
+            observableList.add(IngredientTM);
             ingredientTable.setItems(observableList);
         }
 
         for (int i = 0; i < observableList.size(); i++) {
             observableList.get(i).getUpdate().setStyle("-fx-background-color: rgba(96,120,205,0.97)");
             observableList.get(i).getDelete().setStyle("-fx-background-color: rgba(175,108,108,1)");
-            observableList.get(i).getUpdate().setTextFill(javafx.scene.paint.Color.WHITE);
+            observableList.get(i).getUpdate().setTextFill(Color.WHITE);
             observableList.get(i).getDelete().setTextFill(Color.WHITE);
         }
-        for (int i = 0; i < observableList.size(); i++) {
-            String id = observableList.get(i).getI_ID();
+        for (int i=0 ;i<observableList.size();i++){
+            String id =observableList.get(i).getI_ID();
             observableList.get(i).getDelete().setOnAction(actionEvent -> {
                 boolean b = false;
                 try {
-                    b = IngredientRepo.delete(id);
-                } catch (SQLException e) {
+                    b = CustomerRepo.delete(id);
+                }catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
                 if (b) {
                     new Alert(Alert.AlertType.CONFIRMATION, "Ingredient Deleted");
                 }
-                try {
+                try{
                     loadvalues();
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
@@ -127,7 +131,7 @@ public class Ingredients {
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-                Scene scene = new Scene(parent);
+                Scene scene =new Scene(parent);
                 Stage stage = new Stage();
                 stage.setScene(scene);
                 stage.setTitle("Update Ingredient");
@@ -136,14 +140,13 @@ public class Ingredients {
             });
         }
     }
-
     public void setValues() {
         colIid.setCellValueFactory(new PropertyValueFactory<>("I_ID"));
-        colDesc.setCellValueFactory(new PropertyValueFactory<>("Description"));
-        colQOh.setCellValueFactory(new PropertyValueFactory<>("Qty_On_Hand"));
-        colSID.setCellValueFactory(new PropertyValueFactory<>("S_ID"));
-        coldelete.setCellValueFactory(new PropertyValueFactory<IngredientTM, JFXButton>("Delete"));
-        colupdate.setCellValueFactory(new PropertyValueFactory<IngredientTM, JFXButton>("Update"));
+       colDesc.setCellValueFactory(new PropertyValueFactory<>("Description"));
+       colQOh.setCellValueFactory(new PropertyValueFactory<>("Qty_On_Hand"));
+       colSID.setCellValueFactory(new PropertyValueFactory<>("S_ID"));
+       colupdate.setCellValueFactory(new PropertyValueFactory<IngredientTM,JFXButton>("Update"));
+       coldelete.setCellValueFactory(new PropertyValueFactory<IngredientTM,JFXButton>("Delete"));
     }
 
 

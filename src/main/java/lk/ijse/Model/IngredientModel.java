@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 public class IngredientModel {
     private String I_ID;
     private String Description;
-    private String Qty_On_Hand;
+    private int Qty_On_Hand;
     private String Supplier;
 }

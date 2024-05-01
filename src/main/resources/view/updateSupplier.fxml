@@ -9,7 +9,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.UpdateSupplier">
    <children>
       <ImageView fx:id="updateSupplierPane" fitHeight="475.0" fitWidth="711.0">
@@ -86,7 +85,7 @@
          </font>
       </Text>
       <TextField fx:id="newsidtxt" layoutX="187.0" layoutY="122.0" opacity="0.72" prefHeight="24.0" prefWidth="85.0" style="-fx-background-radius: 40;" />
-      <Button fx:id="btnUpdate" layoutX="603.0" layoutY="414.0" mnemonicParsing="false" onAction="#updateSupplier" prefHeight="34.0" prefWidth="85.0" style="-fx-background-radius: 40; -fx-background-color: #41B06E;" text="UPDATE" textFill="#fffdfd">
+      <Button fx:id="btnUpdate" layoutX="603.0" layoutY="414.0" mnemonicParsing="false" onAction="#updateSupplier" prefHeight="34.0" prefWidth="85.0" style="-fx-background-radius: 15; -fx-background-color: #F99417;" text="UPDATE" textFill="#070707">
          <effect>
             <DropShadow />
          </effect>
@@ -94,7 +93,7 @@
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnCancel" layoutX="521.0" layoutY="414.0" mnemonicParsing="false" onAction="#dontSaveSupplier" prefHeight="34.0" prefWidth="76.0" style="-fx-background-radius: 40; -fx-background-color: #378CE7;" text="CANCEL" textFill="#fffdfd">
+      <Button fx:id="btnCancel" layoutX="521.0" layoutY="414.0" mnemonicParsing="false" onAction="#dontSaveSupplier" prefHeight="34.0" prefWidth="76.0" style="-fx-background-radius: 15; -fx-background-color: #D6E4E5;" text="CANCEL" textFill="#070707">
          <effect>
             <DropShadow />
          </effect>

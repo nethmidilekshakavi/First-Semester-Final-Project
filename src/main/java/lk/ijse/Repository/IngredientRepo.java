@@ -13,35 +13,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class IngredientRepo {
-    public static boolean save(IngredientModel ingredientModel) throws SQLException {
-        try {
-            Connection connection = DbConnection.getInstance().getConnection();
-            PreparedStatement ptsm = connection.prepareStatement("INSERT INTO Ingredient VALUES (?,?,?,?)");
-            ptsm.setString(1,ingredientModel.getI_ID());
-            ptsm.setString(2,ingredientModel.getDescription());
-            ptsm.setString(3,ingredientModel.getQty_On_Hand());
-            ptsm.setString(4,ingredientModel.getSupplier());
+ public static boolean saveIngredient(IngredientModel ingredientModel){
+     try {
+         Connection connection = DbConnection.getInstance().getConnection();
+         PreparedStatement pstm = connection.prepareStatement("INSERT INTO Ingredient VALUES (?,?,?,?)");
 
-            int i;
-            i = ptsm.executeUpdate();
-            return i > 0;
+         pstm.setString(1,ingredientModel.getI_ID());
+         pstm.setString(2,ingredientModel.getDescription());
+         pstm.setInt(3,ingredientModel.getQty_On_Hand());
+         pstm.setString(4,ingredientModel.getSupplier());
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
+         int i;
+         i=pstm.executeUpdate();
+         return i > 0;
 
-    public static boolean updateIngredient(IngredientModel ingredientModel) throws SQLException {
-        Connection connection = DbConnection.getInstance().getConnection();
-        PreparedStatement pstm = connection.prepareStatement("UPDATE Ingredient SET  Description = ?,Qty_On_Hand = ?,S_ID = ? WHERE I_ID = ?");
-        pstm.setString(1,ingredientModel.getDescription());
-        pstm.setString(2,ingredientModel.getQty_On_Hand());
-        pstm.setString(3,ingredientModel.getSupplier());
-        pstm.setString(4,ingredientModel.getI_ID());
+     } catch (SQLException e) {
+        e.printStackTrace();
+     }
+     return false;
+ }
 
-        return pstm.executeUpdate() > 0;
-    }
+
+ public static boolean updateIngredient(IngredientModel ingredientModel) throws SQLException {
+     Connection connection = DbConnection.getInstance().getConnection();
+     PreparedStatement ptsm = connection.prepareStatement("UPDATE Ingredient SET I_ID = ?,Descrption = ?,Qty_On_Hand = ?,S_ID = ?");
+
+     ptsm.setString(1,ingredientModel.getI_ID());
+     ptsm.setString(2,ingredientModel.getDescription());
+     ptsm.setInt(3,ingredientModel.getQty_On_Hand());
+     ptsm.setString(4,ingredientModel.getSupplier());
+
+     return ptsm.executeUpdate() > 0;
+ }
 
     public static boolean delete(String id) throws SQLException {
         try{
@@ -58,7 +61,7 @@ public class IngredientRepo {
     }
 
     public static IngredientModel searchById(String id) throws SQLException {
-        String sql = "SELECT * FROM Ingredient WHERE I_ID = ?";
+        String sql = "SELECT * FROM Ingredient WHERE C_ID = ?";
 
         Connection connection = DbConnection.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);
@@ -68,12 +71,12 @@ public class IngredientRepo {
         if (resultSet.next()) {
             String I_ID = resultSet.getString(1);
             String description = resultSet.getString(2);
-            String QOH = resultSet.getString(3);
+            int qoh = resultSet.getInt(3);
             String supplier = resultSet.getString(4);
 
-            IngredientModel ingredientModel = new IngredientModel(I_ID,description,QOH,supplier);
+            IngredientModel ingredientModel = new IngredientModel(I_ID,description,qoh,supplier);
 
-           return ingredientModel;
+            return ingredientModel;
         }
         return null;
     }
@@ -86,7 +89,7 @@ public class IngredientRepo {
             ResultSet resultSet =preparedStatement.executeQuery();
 
             while (resultSet.next()){
-              IngredientModel ingredientModel =new IngredientModel(resultSet.getString(1),resultSet.getString(2),resultSet.getString(3),resultSet.getString(4));
+                IngredientModel ingredientModel =new IngredientModel(resultSet.getString(1),resultSet.getString(2),resultSet.getInt(3),resultSet.getString(4));
                 ingredientModels.add(ingredientModel);
             }
         } catch (SQLException ex) {
@@ -94,9 +97,8 @@ public class IngredientRepo {
         }
         return ingredientModels;
     }
-
     public static List<String> getIds() throws SQLException {
-        String sql = "SELECT C_ID FROM Ingredient";
+        String sql = "SELECT I_ID FROM Ingredient";
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
 
@@ -109,6 +111,8 @@ public class IngredientRepo {
         }
         return idList;
     }
+
+
 
 
 

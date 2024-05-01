@@ -1,5 +1,6 @@
 package lk.ijse.Model.TM;
 
+import com.jfoenix.controls.JFXButton;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,6 +15,7 @@ public class ReservationTM {
     private int qty;
     private double unitPrice;
     private double total;
+    private JFXButton Remove;
 
 
 }

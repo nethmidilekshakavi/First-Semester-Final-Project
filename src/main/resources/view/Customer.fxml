@@ -22,14 +22,14 @@
             <Font name="Dyuthi Regular" size="36.0" />
          </font>
       </Text>
-      <Button fx:id="btnAdd" layoutX="1107.0" layoutY="89.0" mnemonicParsing="false" onAction="#addNewCustomer" prefHeight="24.0" prefWidth="63.0" style="-fx-background-color: #FC819E;" text="ADD" textFill="#2f2c2c">
+      <Button fx:id="btnAdd" layoutX="1107.0" layoutY="80.0" mnemonicParsing="false" onAction="#addNewCustomer" prefHeight="33.0" prefWidth="63.0" style="-fx-background-color: #ffbd03;" text="ADD" textFill="#2f2c2c">
          <effect>
             <DropShadow />
          </effect>
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Button>
-      <Button fx:id="btnPrint" layoutX="1034.0" layoutY="89.0" mnemonicParsing="false" onAction="#getReport" prefHeight="24.0" prefWidth="63.0" style="-fx-background-color: #4CCD99;" text="PRINT" textFill="#252323">
+      <Button fx:id="btnPrint" layoutX="1034.0" layoutY="80.0" mnemonicParsing="false" onAction="#getReport" prefHeight="33.0" prefWidth="63.0" style="-fx-background-color: #5adbb5;" text="PRINT" textFill="#252323">
          <effect>
             <DropShadow />
          </effect>

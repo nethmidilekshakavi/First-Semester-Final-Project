@@ -225,16 +225,8 @@
                   <DropShadow />
                </effect>
             </ImageView>
-            <ImageView layoutX="212.0" layoutY="602.0">
-               <image>
-                  <Image url="@../../../../../../Downloads/icons8-80--100.png" />
-               </image>
-            </ImageView>
-            <ImageView layoutX="196.0" layoutY="402.0">
-               <image>
-                  <Image url="@../../../../../../Downloads/icons8-30--100.png" />
-               </image>
-            </ImageView>
+
+
             <ImageView fx:id="pwesatage30" fitHeight="65.0" fitWidth="71.0" layoutX="719.0" layoutY="537.0">
                <image>
                   <Image url="@../Images/icons8-30--100.png" />
@@ -378,21 +370,13 @@
             <DropShadow />
          </effect>
          <children>
-            <Text fx:id="txt1" fill="#f8f5f5" layoutX="15.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chicken Cheese Pizza">
-               <font>
-                  <Font name="System Bold" size="10.0" />
-               </font>
-            </Text>
+
             <Text fx:id="rs1" fill="#f8f5f5" layoutX="37.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RS.2860.00">
                <font>
                   <Font name="System Bold" size="10.0" />
                </font>
             </Text>
-            <ImageView fx:id="star1" fitHeight="16.0" fitWidth="20.0" layoutX="21.0" layoutY="113.0">
-               <image>
-                  <Image url="@../Images/icons8-star-48.png" />
-               </image>
-            </ImageView>
+
             <ImageView fx:id="star11" fitHeight="16.0" fitWidth="20.0" layoutX="45.0" layoutY="113.0">
                <image>
                   <Image url="@../Images/icons8-star-48.png" />
@@ -410,22 +394,30 @@
             </ImageView>
             <ImageView fx:id="star1" fitHeight="15.0" fitWidth="20.0" layoutX="24.0" layoutY="116.0">
                <image>
-                  <Image url="@../../../../../../Downloads/icons8-star-48.png" />
+                  <Image>
+                     <url>@../../../../../../Downloads/icons8-star-48.png</url>
+                  </Image>
                </image>
             </ImageView>
             <ImageView fx:id="star13" fitHeight="15.0" fitWidth="20.0" layoutX="45.0" layoutY="116.0">
                <image>
-                  <Image url="@../../../../../../Downloads/icons8-star-48.png" />
+                  <Image>
+                     <url>@../../../../../../Downloads/icons8-star-48.png</url>
+                  </Image>
                </image>
             </ImageView>
             <ImageView fx:id="star131" fitHeight="15.0" fitWidth="20.0" layoutX="69.0" layoutY="116.0">
                <image>
-                  <Image url="@../../../../../../Downloads/icons8-star-48.png" />
+                  <Image>
+                     <url>@../../../../../../Downloads/icons8-star-48.png</url>
+                  </Image>
                </image>
             </ImageView>
             <ImageView fx:id="star1311" fitHeight="15.0" fitWidth="20.0" layoutX="91.0" layoutY="116.0">
                <image>
-                  <Image url="@../../../../../../Downloads/icons8-star-48.png" />
+                  <Image>
+                     <url>@../../../../../../Downloads/icons8-star-48.png</url>
+                  </Image>
                </image>
             </ImageView>
          </children>
@@ -475,23 +467,19 @@
             </ImageView>
             <ImageView fx:id="star14" fitHeight="15.0" fitWidth="20.0" layoutX="28.0" layoutY="114.0">
                <image>
-                  <Image url="@../../../../../../Downloads/icons8-star-48.png" />
+                  <Image>
+                     <url>@../../../../../../Downloads/icons8-star-48.png</url>
+                  </Image>
                </image>
             </ImageView>
             <ImageView fx:id="star132" fitHeight="15.0" fitWidth="20.0" layoutX="49.0" layoutY="114.0">
-               <image>
-                  <Image url="@../../../../../../Downloads/icons8-star-48.png" />
-               </image>
+
             </ImageView>
             <ImageView fx:id="star1312" fitHeight="15.0" fitWidth="20.0" layoutX="73.0" layoutY="114.0">
-               <image>
-                  <Image url="@../../../../../../Downloads/icons8-star-48.png" />
-               </image>
+
             </ImageView>
             <ImageView fx:id="star13111" fitHeight="15.0" fitWidth="20.0" layoutX="95.0" layoutY="114.0">
-               <image>
-                  <Image url="@../../../../../../Downloads/icons8-star-48.png" />
-               </image>
+
             </ImageView>
          </children>
       </AnchorPane>
@@ -515,15 +503,10 @@
                </font>
             </Text>
             <ImageView fx:id="star1321" fitHeight="15.0" fitWidth="20.0" layoutX="51.0" layoutY="115.0">
-               <image>
-                  <Image url="@../../../../../../Downloads/icons8-star-48.png" />
-               </image>
+
+
             </ImageView>
-            <ImageView fx:id="star13121" fitHeight="15.0" fitWidth="20.0" layoutX="75.0" layoutY="115.0">
-               <image>
-                  <Image url="@../../../../../../Downloads/icons8-star-48.png" />
-               </image>
-            </ImageView>
+
             <ImageView fx:id="sk1113" fitHeight="16.0" fitWidth="19.0" layoutX="39.0" layoutY="114.0">
                <image>
                   <Image url="@../Images/icons8-star-48.png" />
@@ -560,16 +543,8 @@
                   <Font name="System Bold" size="10.0" />
                </font>
             </Text>
-            <ImageView fx:id="star13211" fitHeight="15.0" fitWidth="20.0" layoutX="51.0" layoutY="114.0">
-               <image>
-                  <Image url="@../../../../../../Downloads/icons8-star-48.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="star131211" fitHeight="15.0" fitWidth="20.0" layoutX="75.0" layoutY="114.0">
-               <image>
-                  <Image url="@../../../../../../Downloads/icons8-star-48.png" />
-               </image>
-            </ImageView>
+
+
             <ImageView fx:id="sk11132" fitHeight="16.0" fitWidth="19.0" layoutX="45.0" layoutY="113.0">
                <image>
                   <Image url="@../Images/icons8-star-48.png" />
@@ -758,10 +733,6 @@
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <ImageView fx:id="searchicon" fitHeight="20.0" fitWidth="20.0" layoutX="209.0" layoutY="25.0">
-         <image>
-            <Image url="@../../../../../../Downloads/icons8-search-50.png" />
-         </image>
-      </ImageView>
+
    </children>
 </AnchorPane>

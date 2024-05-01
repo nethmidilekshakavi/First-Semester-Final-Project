@@ -28,15 +28,24 @@
       </Text>
       <JFXComboBox fx:id="nicList" layoutX="181.0" layoutY="140.0" onAction="#comboCustomerList" prefHeight="24.0" prefWidth="145.0" />
       <Text fx:id="RID" layoutX="75.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation ID :" />
-      <Text fx:id="date" layoutX="960.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation Date :" />
+      <Text fx:id="date" layoutX="960.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation Date :">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Text>
       <Text fx:id="CNIC" layoutX="76.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer NIC :" />
       <Text fx:id="RCODE" layoutX="75.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Code :" />
       <JFXComboBox fx:id="reservationList" layoutX="77.0" layoutY="213.0" onAction="#comboMealList" prefHeight="24.0" prefWidth="145.0" />
       <Text fx:id="desc" layoutX="430.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description :" />
-      <Text fx:id="txtdesc" layoutX="451.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="34.0" />
+      <Text fx:id="txtdesc" layoutX="410.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="121.42431640625">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></Text>
       <Text fx:id="reservationIDtxt" layoutX="190.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="64.0" />
       <Text fx:id="price" layoutX="638.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price :" />
-      <Text fx:id="pricetxt" layoutX="614.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="120.0" />
+      <Text fx:id="ptxt" layoutX="614.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="120.0">
+         <font>
+            <Font size="20.0" />
+         </font></Text>
       <Text fx:id="qtyOnHand" layoutX="833.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty On Hand :" />
       <Text fx:id="QOHtxt" layoutX="860.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="42.0" />
       <Text fx:id="qty" layoutX="1050.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QTY" />
@@ -62,7 +71,10 @@
             <DropShadow />
          </effect></Button>
       <Text fx:id="total" layoutX="44.0" layoutY="695.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total :-" />
-      <Text fx:id="totaltxt" layoutX="98.0" layoutY="695.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="82.55126953125" />
+      <Text fx:id="totaltxt" layoutX="98.0" layoutY="695.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="82.55126953125">
+         <font>
+            <Font size="23.0" />
+         </font></Text>
       <Button fx:id="btnPlaceOrder" layoutX="1005.0" layoutY="673.0" mnemonicParsing="false" onAction="#btnPlaceOrderOnAction" style="-fx-background-color: #FF6500;" text="Place Order" textFill="#fffefe">
          <effect>
             <DropShadow />
@@ -70,7 +82,10 @@
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Button>
-      <Text fx:id="datetxt" layoutX="1085.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="26.1142578125" />
+      <Text fx:id="datetxt" layoutX="1085.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="26.1142578125">
+         <font>
+            <Font size="25.0" />
+         </font></Text>
       <JFXButton fx:id="btnAddToCart" buttonType="RAISED" layoutX="997.0" layoutY="301.0" onAction="#btnAddToCartOnAction" prefHeight="33.0" prefWidth="120.0" style="-fx-background-color: #41B06E;" text="Add to cart" textFill="#eee8e8">
          <graphic>
             <ImageView fitHeight="16.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
@@ -87,6 +102,9 @@
          </font>
       </JFXButton>
       <Text fx:id="cusName" layoutX="609.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :" />
-      <Text fx:id="nametxt" layoutX="659.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="nametxt" layoutX="659.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font></Text>
    </children>
 </AnchorPane>

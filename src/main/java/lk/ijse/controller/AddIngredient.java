@@ -71,11 +71,11 @@ public class AddIngredient {
 
         String iid = iidtxt.getText();
         String desc = desctxt.getText();
-        String qoh = QOHtxt.getText();
+        int qoh = Integer.parseInt(QOHtxt.getText());
         String supplier = suppliertxt.getText();
 
         IngredientModel ingredientModel = new  IngredientModel(iid,desc,qoh,supplier);
-        boolean a = IngredientRepo.save(ingredientModel);
+        boolean a = IngredientRepo.saveIngredient(ingredientModel);
         System.out.println(a);
         if (a){
             new Alert(Alert.AlertType.CONFIRMATION,"Ingredient saved successfully").show();

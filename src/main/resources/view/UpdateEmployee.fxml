@@ -72,7 +72,7 @@
       <TextField fx:id="daytxt" layoutX="186.0" layoutY="300.0" opacity="0.8" prefHeight="24.0" prefWidth="109.0" promptText="Day" style="-fx-background-radius: 40;" />
       <TextField fx:id="yeartxt" layoutX="425.0" layoutY="300.0" opacity="0.8" prefHeight="24.0" prefWidth="109.0" promptText="Year" style="-fx-background-radius: 40;" />
       <TextField fx:id="monthtxt" layoutX="304.0" layoutY="300.0" opacity="0.8" prefHeight="24.0" prefWidth="109.0" promptText="Month" style="-fx-background-radius: 40;" />
-      <Button fx:id="btnUpdate" layoutX="593.0" layoutY="431.0" mnemonicParsing="false" onAction="#updateEmployee" prefHeight="34.0" prefWidth="85.0" style="-fx-background-radius: 40; -fx-background-color: #41B06E;" text="UPDATE" textFill="#fffdfd">
+      <Button fx:id="btnUpdate" layoutX="593.0" layoutY="431.0" mnemonicParsing="false" onAction="#updateEmployee" prefHeight="34.0" prefWidth="85.0" style="-fx-background-radius: 15; -fx-background-color: #F99417;" text="UPDATE" textFill="#111010">
          <effect>
             <DropShadow />
          </effect>
@@ -80,7 +80,7 @@
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnCancel" layoutX="511.0" layoutY="431.0" mnemonicParsing="false" onAction="#dontSaveEmployee" prefHeight="34.0" prefWidth="76.0" style="-fx-background-radius: 40; -fx-background-color: #378CE7;" text="CANCEL" textFill="#fffdfd">
+      <Button fx:id="btnCancel" layoutX="511.0" layoutY="431.0" mnemonicParsing="false" onAction="#dontSaveEmployee" prefHeight="34.0" prefWidth="76.0" style="-fx-background-radius: 15; -fx-background-color: #D6E4E5;" text="CANCEL" textFill="#111010">
          <effect>
             <DropShadow />
          </effect>

@@ -35,7 +35,7 @@
             <DropShadow />
          </effect>
       </TableView>
-      <Button fx:id="btnAdd" layoutX="1094.0" layoutY="89.0" mnemonicParsing="false" onAction="#addNewIngredient" prefHeight="24.0" prefWidth="63.0" style="-fx-background-color: #FC819E;" text="ADD">
+      <Button fx:id="btnAdd" layoutX="1095.0" layoutY="74.0" mnemonicParsing="false" onAction="#addNewIngredient" prefHeight="39.0" prefWidth="63.0" style="-fx-background-color: #ffbd03;" text="ADD">
          <effect>
             <DropShadow />
          </effect>
@@ -43,7 +43,7 @@
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnPrint" layoutX="1015.0" layoutY="89.0" mnemonicParsing="false" onAction="#getReport" prefHeight="24.0" prefWidth="63.0" style="-fx-background-color: #4CCD99;" text="PRINT">
+      <Button fx:id="btnPrint" layoutX="1015.0" layoutY="74.0" mnemonicParsing="false" onAction="#getReport" prefHeight="39.0" prefWidth="63.0" style="-fx-background-color: #5adbb5;" text="PRINT">
          <effect>
             <DropShadow />
          </effect>

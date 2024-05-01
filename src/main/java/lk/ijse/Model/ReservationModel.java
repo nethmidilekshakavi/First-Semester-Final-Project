@@ -8,9 +8,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class ReservationModel {
-    private String code;
+    private int RID;
+    private int CID;
+    private String Date;
     private String description;
-    private int qty;
-    private double unitPrice;
-    private double total;
+    private String time;
+    private String total;
+    private int EID;
+    private int  DID;
+
+
 }

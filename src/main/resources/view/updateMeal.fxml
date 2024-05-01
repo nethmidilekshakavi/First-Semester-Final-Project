@@ -9,7 +9,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="328.0" prefWidth="671.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.UpdateMeal">
    <children>
       <ImageView fx:id="updatemealpane" fitHeight="338.0" fitWidth="671.0">
@@ -49,7 +48,7 @@
          </font>
       </Text>
       <TextField fx:id="newmidtxt" layoutX="134.0" layoutY="175.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
-      <Button fx:id="btnMeal" layoutX="568.0" layoutY="276.0" mnemonicParsing="false" onAction="#updateMeal" prefHeight="34.0" prefWidth="85.0" style="-fx-background-radius: 40; -fx-background-color: #41B06E;" text="UPDATE" textFill="#fffdfd">
+      <Button fx:id="btnMeal" layoutX="568.0" layoutY="276.0" mnemonicParsing="false" onAction="#updateMeal" prefHeight="34.0" prefWidth="85.0" style="-fx-background-radius: 15; -fx-background-color: #F99417;" text="UPDATE" textFill="#252323">
          <effect>
             <DropShadow />
          </effect>
@@ -57,7 +56,7 @@
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnCancel" layoutX="486.0" layoutY="276.0" mnemonicParsing="false" onAction="#dontSaveMeal" prefHeight="34.0" prefWidth="76.0" style="-fx-background-radius: 40; -fx-background-color: #378CE7;" text="CANCEL" textFill="#fffdfd">
+      <Button fx:id="btnCancel" layoutX="486.0" layoutY="276.0" mnemonicParsing="false" onAction="#dontSaveMeal" prefHeight="34.0" prefWidth="76.0" style="-fx-background-radius: 15; -fx-background-color: #D6E4E5;" text="CANCEL" textFill="#252323">
          <effect>
             <DropShadow />
          </effect>

@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 
 public class dashboard implements Initializable {
 
@@ -19,6 +20,9 @@ public class dashboard implements Initializable {
 
     @FXML
     private URL location;
+
+    @FXML
+    private Text Customertxt;
 
     @FXML
     private AnchorPane Emptypane;
@@ -54,16 +58,19 @@ public class dashboard implements Initializable {
     private ImageView customerpic;
 
     @FXML
+    private Text dashboardtxt;
+
+    @FXML
     private ImageView employeepic;
 
     @FXML
-    private ImageView home;
+    private Text employeetxt;
 
     @FXML
     private ImageView homepic;
 
     @FXML
-    private ImageView ingredientpic;
+    private Text ingredienttxt;
 
     @FXML
     private ImageView ingrepic;
@@ -72,16 +79,25 @@ public class dashboard implements Initializable {
     private ImageView mealpic;
 
     @FXML
-    private ImageView orderpic;
+    private Text mealtxt;
 
     @FXML
-    private AnchorPane owner;
+    private ImageView orderpic;
 
     @FXML
     private ImageView reportpic;
 
     @FXML
+    private Text reporttxt;
+
+    @FXML
+    private Text reservationtxt;
+
+    @FXML
     private ImageView supplierpic;
+
+    @FXML
+    private Text supplierstxt;
 
     @FXML
     void EmployeeOnAction(ActionEvent event) throws IOException {
@@ -133,8 +149,13 @@ public class dashboard implements Initializable {
         Emptypane.getChildren().setAll(parent);
     }
 
+
+
+
+
     @FXML
     void initialize() {
+        assert Customertxt != null : "fx:id=\"Customertxt\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert Emptypane != null : "fx:id=\"Emptypane\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert btnReport != null : "fx:id=\"btnReport\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert btncustomer != null : "fx:id=\"btncustomer\" was not injected: check your FXML file 'dashboard.fxml'.";
@@ -146,16 +167,20 @@ public class dashboard implements Initializable {
         assert btnsupplier != null : "fx:id=\"btnsupplier\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert buttonSet != null : "fx:id=\"buttonSet\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert customerpic != null : "fx:id=\"customerpic\" was not injected: check your FXML file 'dashboard.fxml'.";
+        assert dashboardtxt != null : "fx:id=\"dashboardtxt\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert employeepic != null : "fx:id=\"employeepic\" was not injected: check your FXML file 'dashboard.fxml'.";
-        assert home != null : "fx:id=\"home\" was not injected: check your FXML file 'dashboard.fxml'.";
+        assert employeetxt != null : "fx:id=\"employeetxt\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert homepic != null : "fx:id=\"homepic\" was not injected: check your FXML file 'dashboard.fxml'.";
-        assert ingredientpic != null : "fx:id=\"ingredientpic\" was not injected: check your FXML file 'dashboard.fxml'.";
+        assert ingredienttxt != null : "fx:id=\"ingredienttxt\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert ingrepic != null : "fx:id=\"ingrepic\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert mealpic != null : "fx:id=\"mealpic\" was not injected: check your FXML file 'dashboard.fxml'.";
+        assert mealtxt != null : "fx:id=\"mealtxt\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert orderpic != null : "fx:id=\"orderpic\" was not injected: check your FXML file 'dashboard.fxml'.";
-        assert owner != null : "fx:id=\"owner\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert reportpic != null : "fx:id=\"reportpic\" was not injected: check your FXML file 'dashboard.fxml'.";
+        assert reporttxt != null : "fx:id=\"reporttxt\" was not injected: check your FXML file 'dashboard.fxml'.";
+        assert reservationtxt != null : "fx:id=\"reservationtxt\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert supplierpic != null : "fx:id=\"supplierpic\" was not injected: check your FXML file 'dashboard.fxml'.";
+        assert supplierstxt != null : "fx:id=\"supplierstxt\" was not injected: check your FXML file 'dashboard.fxml'.";
 
     }
 

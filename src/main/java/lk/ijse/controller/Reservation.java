@@ -5,8 +5,10 @@ import com.jfoenix.controls.JFXComboBox;
 
 import java.io.IOException;
 import java.net.URL;
+import java.rmi.Remote;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -17,20 +19,20 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lk.ijse.Model.CustomerModel;
 import lk.ijse.Model.MealModel;
+import lk.ijse.Model.OrderDetailsModel;
+import lk.ijse.Model.ReservationModel;
 import lk.ijse.Model.TM.OrderTM;
+import lk.ijse.Model.TM.ReservationTM;
 import lk.ijse.Repository.CustomerRepo;
 import lk.ijse.Repository.MealRepo;
+import lk.ijse.Repository.OrderDetailRepo;
 import lk.ijse.Repository.ReservationRepo;
 
 public class Reservation {
@@ -97,13 +99,10 @@ public class Reservation {
     private JFXComboBox<String> nicList;
 
     @FXML
-    private TableView<?> orderTable;
+    private TableView<ReservationTM> orderTable;
 
     @FXML
     private Text price;
-
-    @FXML
-    private Text pricetxt;
 
     @FXML
     private Text qty;
@@ -115,7 +114,7 @@ public class Reservation {
     private TextField qtytxt;
 
     @FXML
-    private TableColumn<?, ?> remove;
+    private TableColumn<ReservationTM, JFXButton> remove;
 
     @FXML
     private Text reservationIDtxt;
@@ -140,19 +139,28 @@ public class Reservation {
     @FXML
     private Text nametxt;
 
+    @FXML
+    private Text ptxt;
+
 
     private ObservableList<OrderTM> oblist = FXCollections.observableArrayList();
+    ObservableList<ReservationTM> observableList = FXCollections.observableArrayList();
 
     public void initialize() {
         setDate();
-        getCurrentOrderId();
+        //getCurrentOrderId();
         getCustomerIds();
         getItemCodes();
         setCellValueFactory();
     }
 
     private void setCellValueFactory() {
-
+        colcode.setCellValueFactory(new PropertyValueFactory<>("code"));
+        coldesc.setCellValueFactory(new PropertyValueFactory<>("description"));
+        colqty.setCellValueFactory(new PropertyValueFactory<>("Qty"));
+        colprice.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
+        coltotal.setCellValueFactory(new PropertyValueFactory<>("total"));
+        remove.setCellValueFactory(new PropertyValueFactory<ReservationTM,JFXButton>("Remove"));
     }
 
     private void getItemCodes() {
@@ -170,7 +178,7 @@ public class Reservation {
         }
     }
 
-    private void getCurrentOrderId() {
+  /*  private void getCurrentOrderId() {
         try {
             String currentId = ReservationRepo.getCurrentId();
 
@@ -180,15 +188,15 @@ public class Reservation {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-    }
-    private String generateNextOrderId(String currentId) {
+    }*/
+ /*   private String generateNextOrderId(String currentId) {
         if(currentId != null) {
             String[] split = currentId.split("O");
             int idNum = Integer.parseInt(split[1]);
             return "O" + ++idNum;
         }
         return "O1";
-    }
+    }*/
 
     private void getCustomerIds() {
         ObservableList<String> idlist = FXCollections.observableArrayList();
@@ -231,7 +239,7 @@ public class Reservation {
             if(mealModel != null){
                 txtdesc.setText(mealModel.getName());
              //   QOHtxt.setText(mealModel.);
-                pricetxt.setText(mealModel.getPrice());
+                ptxt.setText(mealModel.getPrice());
             }
 
             qtytxt.requestFocus();
@@ -241,9 +249,21 @@ public class Reservation {
     }
 
 
-
+    double alltotal = 0 ;
     @FXML
     void btnAddToCartOnAction(ActionEvent event) {
+        String code = reservationList.getValue();
+        String des = txtdesc.getText();
+        int qty = Integer.parseInt(qtytxt.getText());
+        System.out.println(ptxt.getText());
+        double price = Double.parseDouble((ptxt.getText()));
+
+        double total = qty*price;
+        alltotal +=   total;
+        totaltxt.setText(String.valueOf(alltotal));
+        observableList.add(new ReservationTM(code,des,qty,price,total,new JFXButton("Remove")));
+
+        orderTable.setItems(observableList);
 
     }
 
@@ -260,8 +280,40 @@ public class Reservation {
 
     @FXML
     void btnPlaceOrderOnAction(ActionEvent event) {
+    String orderid = reservationIDtxt.getText();
+    String cusid = nicList.getValue();
+    String date = String.valueOf(LocalDate.now());
+    double t = alltotal;
+        String des = txtdesc.getText();
+    String time = String.valueOf(LocalTime.now());
+
+    new ReservationModel(0,Integer.parseInt(cusid),date,des,time,String.valueOf(t),1,1);
+        try {
+            ReservationRepo.saveReservation(new ReservationModel(0,Integer.parseInt(cusid),date,des,time,String.valueOf(t),1,1));
+            new Alert(Alert.AlertType.CONFIRMATION,"Saved to reservation").show();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        for (int i = 0; i < observableList.size(); i++) {
+            String q = "0";
+            String w  = observableList.get(i).getCode();
+            String e = String.valueOf(observableList.get(i).getQty());
+            String r = String.valueOf(observableList.get(i).getUnitPrice());
+            OrderDetailRepo.saveOrderDetail(new OrderDetailsModel(q,w,e,r));
+
+        }
 
     }
+
+   private  void  caculateNetTotal(){
+        String total = String.valueOf(0);
+        for (int i = 0; i < orderTable.getItems().size(); i++){
+            total += (String)coltotal.getCellData(i);
+        }
+        totaltxt.setText(total);
+   }
 
 
 

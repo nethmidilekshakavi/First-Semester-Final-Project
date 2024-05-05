@@ -21,6 +21,9 @@ public class EmployeeModel extends Employee {
     private String Email;
     private String Salary;
     private String Position;
+    private int Year;
+    private int Month;
+    private int Day;
 
 
 

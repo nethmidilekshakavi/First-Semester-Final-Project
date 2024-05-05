@@ -1,15 +1,21 @@
 package lk.ijse.controller;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import lk.ijse.Model.CustomerModel;
+import lk.ijse.Model.MealModel;
+import lk.ijse.Repository.CustomerRepo;
+import lk.ijse.Repository.MealRepo;
 
-public class UpdateMeal {
+public class UpdateMeal extends Meal{
 
     @FXML
     private ResourceBundle resources;
@@ -32,20 +38,16 @@ public class UpdateMeal {
     @FXML
     private Text name;
 
-    @FXML
-    private TextField nametxt;
-
-    @FXML
-    private Text newmid;
-
-    @FXML
-    private TextField newmidtxt;
 
     @FXML
     private Text price;
 
     @FXML
-    private TextField pricetxt;
+    private TextField newNametxt;
+
+    @FXML
+    private TextField newpricetxt;
+
 
     @FXML
     private Text updatemeal;
@@ -59,8 +61,21 @@ public class UpdateMeal {
     }
 
     @FXML
-    void updateMeal(ActionEvent event) {
+    void updateMeal(ActionEvent event) throws SQLException {
 
+        String mid = midtxt.getText();
+        String name = newNametxt.getText();
+        String price = newpricetxt.getText();
+
+        MealModel updateMeal =new MealModel(mid,name,price);
+        boolean c = MealRepo.updateMeal(updateMeal);
+        System.out.println(c);
+        if (c){
+            new Alert(Alert.AlertType.CONFIRMATION,"Meal Update successfully").show();
+
+        }else {
+            new Alert(Alert.AlertType.ERROR,"something went wrong").show();
+        }
     }
 
     @FXML
@@ -70,11 +85,7 @@ public class UpdateMeal {
         assert mid != null : "fx:id=\"mid\" was not injected: check your FXML file 'updateMeal.fxml'.";
         assert midtxt != null : "fx:id=\"midtxt\" was not injected: check your FXML file 'updateMeal.fxml'.";
         assert name != null : "fx:id=\"name\" was not injected: check your FXML file 'updateMeal.fxml'.";
-        assert nametxt != null : "fx:id=\"nametxt\" was not injected: check your FXML file 'updateMeal.fxml'.";
-        assert newmid != null : "fx:id=\"newmid\" was not injected: check your FXML file 'updateMeal.fxml'.";
-        assert newmidtxt != null : "fx:id=\"newmidtxt\" was not injected: check your FXML file 'updateMeal.fxml'.";
         assert price != null : "fx:id=\"price\" was not injected: check your FXML file 'updateMeal.fxml'.";
-        assert pricetxt != null : "fx:id=\"pricetxt\" was not injected: check your FXML file 'updateMeal.fxml'.";
         assert updatemeal != null : "fx:id=\"updatemeal\" was not injected: check your FXML file 'updateMeal.fxml'.";
         assert updatemealpane != null : "fx:id=\"updatemealpane\" was not injected: check your FXML file 'updateMeal.fxml'.";
 

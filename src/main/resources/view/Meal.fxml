@@ -22,13 +22,14 @@
             <Font name="Dyuthi Regular" size="36.0" />
          </font>
       </Text>
-      <TableView fx:id="mealTable" layoutX="110.0" layoutY="164.0" prefHeight="519.0" prefWidth="961.0">
+      <TableView fx:id="mealTable" layoutX="110.0" layoutY="164.0" prefHeight="519.0" prefWidth="1129.0">
         <columns>
           <TableColumn fx:id="colmid" prefWidth="191.0" text="MID" />
           <TableColumn fx:id="colname" prefWidth="228.0" text="NAME" />
             <TableColumn fx:id="colprice" prefWidth="202.0" text="PRICE" />
             <TableColumn fx:id="colUpdate" prefWidth="167.0" text="UPDATE" />
             <TableColumn fx:id="colDelete" prefWidth="173.0" text="DELETE" />
+            <TableColumn fx:id="colimage" prefWidth="173.0" text="Image" />
         </columns>
          <effect>
             <DropShadow />

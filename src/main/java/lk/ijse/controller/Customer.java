@@ -66,7 +66,7 @@ public class Customer {
     private TableColumn<customerTM, String> coladdress;
 
     @FXML
-    private TableColumn<customerTM, String> colmobile;
+    private TableColumn<?,?> colmobile;
 
     @FXML
     private TableView<customerTM> customerTable;

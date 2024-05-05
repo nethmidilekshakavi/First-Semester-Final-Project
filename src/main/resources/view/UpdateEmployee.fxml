@@ -39,7 +39,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <Text fx:id="EID" fill="#f5f3f3" layoutX="50.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CID :" wrappingWidth="36.0673828125">
+      <Text fx:id="EID" fill="#f5f3f3" layoutX="50.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EID :" wrappingWidth="36.0673828125">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -97,11 +97,5 @@
       <TextField fx:id="emailtxt" layoutX="186.0" layoutY="369.0" opacity="0.8" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <TextField fx:id="positiontxt" layoutX="186.0" layoutY="401.0" opacity="0.8" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <TextField fx:id="salarytxt" layoutX="186.0" layoutY="432.0" opacity="0.8" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
-      <Text fx:id="neweid" fill="#f5f3f3" layoutX="52.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NEW CID :" wrappingWidth="84.99999999999994">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Text>
-      <TextField fx:id="neweidtxt" layoutX="188.0" layoutY="158.0" opacity="0.8" prefHeight="24.0" prefWidth="85.0" style="-fx-background-radius: 40;" />
    </children>
 </AnchorPane>

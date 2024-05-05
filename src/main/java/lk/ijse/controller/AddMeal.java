@@ -1,5 +1,6 @@
 package lk.ijse.controller;
 
+import java.io.File;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -8,12 +9,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import lk.ijse.Model.CustomerModel;
 import lk.ijse.Model.MealModel;
-import lk.ijse.Repository.CustomerRepo;
 import lk.ijse.Repository.MealRepo;
 
 public class AddMeal {
@@ -32,6 +34,9 @@ public class AddMeal {
 
     @FXML
     private Button btnSave;
+
+    @FXML
+    private ImageView imageview;
 
     @FXML
     private Text mealInfor;
@@ -53,12 +58,29 @@ public class AddMeal {
 
     @FXML
     private TextField pricetxt;
+  //  String url;
+ //   String imagePath;
 
     @FXML
     void dontSaveMeal(ActionEvent event) {
-        Stage stage =(Stage)midtxt.getScene().getWindow();
+        Stage stage = (Stage)midtxt.getScene().getWindow();
         stage.close();
     }
+
+   // @FXML
+  /*  void imageOnClick(MouseEvent event) {
+        Stage stage = new Stage();
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Image");
+        File file = fileChooser.showOpenDialog(stage);
+        if(file != null){
+            url = file.toURI().toString();
+            Image image = new Image(url);
+            imagePath = file.getPath();
+            imageview.setImage(image);
+        }*/
+
+    //}
 
     @FXML
     void saveMeal(ActionEvent event) throws SQLException {
@@ -66,19 +88,14 @@ public class AddMeal {
         String name = nametxt.getText();
         String price = pricetxt.getText();
 
-        MealModel mealModel = new MealModel(mid,name,price);
+        MealModel mealModel = new MealModel(mid, name, price);
         boolean b = MealRepo.saveMeal(mealModel);
-       // System.out.println(b);
-        if (b){
-            new Alert(Alert.AlertType.CONFIRMATION,"Meal Saves Successfully!").show();
-        }
-        else {
-            new Alert(Alert.AlertType.ERROR,"something went Wrong").show();
-        }
+        if (b) {
+            new Alert(Alert.AlertType.CONFIRMATION, "Meal Saves Successfully!").show();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "something went Wrong").show();
 
-        Stage stage = (Stage)midtxt.getScene().getWindow();
-        stage.close();
-
+        }
     }
 
     @FXML
@@ -86,6 +103,7 @@ public class AddMeal {
         assert addNewMeal != null : "fx:id=\"addNewMeal\" was not injected: check your FXML file 'addMeal.fxml'.";
         assert btnCancel != null : "fx:id=\"btnCancel\" was not injected: check your FXML file 'addMeal.fxml'.";
         assert btnSave != null : "fx:id=\"btnSave\" was not injected: check your FXML file 'addMeal.fxml'.";
+        assert imageview != null : "fx:id=\"imageview\" was not injected: check your FXML file 'addMeal.fxml'.";
         assert mealInfor != null : "fx:id=\"mealInfor\" was not injected: check your FXML file 'addMeal.fxml'.";
         assert mid != null : "fx:id=\"mid\" was not injected: check your FXML file 'addMeal.fxml'.";
         assert midtxt != null : "fx:id=\"midtxt\" was not injected: check your FXML file 'addMeal.fxml'.";

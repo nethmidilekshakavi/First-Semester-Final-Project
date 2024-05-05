@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.Year;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class EmployeeRepo {
     public static boolean saveEmployee(EmployeeModel employeeModel) {
         try {
             Connection connection = DbConnection.getInstance().getConnection();
-            PreparedStatement ptsm = connection.prepareStatement("INSERT INTO Employee VALUES(?, ?,?,?,?,?,?,?,?)");
+            PreparedStatement ptsm = connection.prepareStatement("INSERT INTO Employee VALUES(?, ?,?,?,?,?,?,?,?,?,?,?)");
 
             ptsm.setString(1, employeeModel.getE_ID());
             ptsm.setString(2, employeeModel.getNIC());
@@ -28,6 +29,10 @@ public class EmployeeRepo {
             ptsm.setString(7, employeeModel.getEmail());
             ptsm.setString(8, employeeModel.getSalary());
             ptsm.setString(9, employeeModel.getPosition());
+            ptsm.setInt(10,employeeModel.getYear());
+            ptsm.setInt(11,employeeModel.getMonth());
+            ptsm.setInt(12,employeeModel.getDay());
+
 
             int i;
             i = ptsm.executeUpdate();
@@ -41,7 +46,7 @@ public class EmployeeRepo {
 
     public static boolean updateEmployee(EmployeeModel employeeModel) throws SQLException {
 
-        String sql = "UPDATE Employee SET NIC = ? ,First_Name = ?,Last_Name =?,Address = ?,Phone_Number = ?,Email = ?,Salary = ?,Position = ? WHERE E_ID = ?";
+        String sql = "UPDATE Employee SET NIC = ? ,First_Name = ?,Last_Name =?,Address = ?,Phone_Number = ?,Email = ?,Salary = ?,Position = ?, year = ?,Month = ?,Day = ? WHERE E_ID = ?";
 
         Connection connection = DbConnection.getInstance().getConnection();
         PreparedStatement ptsm = connection.prepareStatement(sql);
@@ -53,7 +58,10 @@ public class EmployeeRepo {
         ptsm.setString(6, employeeModel.getEmail());
         ptsm.setString(7, employeeModel.getSalary());
         ptsm.setString(8, employeeModel.getPosition());
-        ptsm.setString(9, employeeModel.getE_ID());
+        ptsm.setInt(9,employeeModel.getYear());
+        ptsm.setInt(10,employeeModel.getMonth());
+        ptsm.setInt(11,employeeModel.getDay());
+        ptsm.setString(12, employeeModel.getE_ID());
 
         return ptsm.executeUpdate() > 0;
     }
@@ -91,8 +99,11 @@ public class EmployeeRepo {
             String Email = resultSet.getString(7);
             String Salary = resultSet.getString(8);
             String Position = resultSet.getString(9);
+            int year = Integer.parseInt(resultSet.getString(10));
+            int Month = Integer.parseInt(resultSet.getString(11));
+            int Day = Integer.parseInt(resultSet.getString(12));
 
-            EmployeeModel employeeModel = new EmployeeModel(E_ID, NIC, First_Name, Last_Name, Address, Phone_Number, Email, Salary, Position);
+            EmployeeModel employeeModel = new EmployeeModel(E_ID, NIC, First_Name, Last_Name, Address, Phone_Number, Email, Salary, Position, year,Month,Day);
 
             return employeeModel;
 
@@ -111,7 +122,7 @@ public class EmployeeRepo {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()){
-                EmployeeModel employeeModel = new EmployeeModel(resultSet.getString(1),resultSet.getString(2),resultSet.getString(3),resultSet.getString(4),resultSet.getString(5),resultSet.getInt(6),resultSet.getString(7),resultSet.getString(8),resultSet.getString(9));
+                EmployeeModel employeeModel = new EmployeeModel(resultSet.getString(1),resultSet.getString(2),resultSet.getString(3),resultSet.getString(4),resultSet.getString(5),resultSet.getInt(6),resultSet.getString(7),resultSet.getString(8),resultSet.getString(9),resultSet.getInt(10),resultSet.getInt(11),resultSet.getInt(12));
                 employeeModels.add(employeeModel);
             }
         } catch (SQLException e) {

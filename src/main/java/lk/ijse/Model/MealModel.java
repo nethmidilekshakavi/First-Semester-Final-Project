@@ -13,6 +13,7 @@ public class MealModel extends Meal {
     private String MID;
     private String Name;
     private String Price;
+  //  private String meal;
 
 
 }

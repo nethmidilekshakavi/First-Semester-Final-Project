@@ -115,8 +115,12 @@ public class AddNewEmployee {
         String email=emailtxt.getText();
         String salary = salarytxt.getText();
         String position = positiontxt.getText();
+        int year = Integer.parseInt(yeartxt.getText());
+        int month = Integer.parseInt(monthtxt.getText());
+        int Day = Integer.parseInt(daytxt.getText());
 
-        EmployeeModel employeeModel=new EmployeeModel(id,nic,finame,laname,address,mobile,email,salary,position);
+
+        EmployeeModel employeeModel=new EmployeeModel(id,nic,finame,laname,address,mobile,email,salary,position,year,month,Day);
         boolean a = EmployeeRepo.saveEmployee(employeeModel);
         System.out.println(a);
         if (a){

@@ -1,15 +1,20 @@
 package lk.ijse.controller;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import lk.ijse.Model.CustomerModel;
+import lk.ijse.Repository.CustomerRepo;
 
-public class UpdateCustomer {
+public class UpdateCustomer extends Customer{
 
     @FXML
     private ResourceBundle resources;
@@ -19,9 +24,6 @@ public class UpdateCustomer {
 
     @FXML
     private Text CID;
-
-    @FXML
-    private TextField NEWicdtxt;
 
     @FXML
     private Text address;
@@ -51,9 +53,6 @@ public class UpdateCustomer {
     private TextField newaddresstxt;
 
     @FXML
-    private Text newcid;
-
-    @FXML
     private TextField newfnametxt;
 
     @FXML
@@ -76,21 +75,38 @@ public class UpdateCustomer {
 
     @FXML
     private Text updatecustomerinfor;
-
     @FXML
-    void dontSaveCustomer(ActionEvent event) {
-
+    void dontUpdateCustomer(ActionEvent event) {
+        Stage stage =(Stage)cidtxt.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
-    void updateEmployee(ActionEvent event) {
+    void updateCustomerOnAction(ActionEvent event) throws SQLException {
+        String cidd = cidtxt.getText();
+        String nnic = newnictxt.getText();
+        String finame = newfnametxt.getText();
+        String laname= newlnametxt.getText();
+        String add = newaddresstxt.getText();
+        int phone = Integer.parseInt(newnumtxt.getText());
+        String ema = newEmailtxt.getText();
+
+
+        CustomerModel updatecustomer =new CustomerModel(cidd,nnic, finame, laname, add, phone,ema);
+        boolean c = CustomerRepo.updateCustomer(updatecustomer);
+        System.out.println(c);
+        if (c){
+            new Alert(Alert.AlertType.CONFIRMATION,"customer Update successfully").show();
+
+        }else {
+            new Alert(Alert.AlertType.ERROR,"something went wrong").show();
+        }
 
     }
 
     @FXML
     void initialize() {
         assert CID != null : "fx:id=\"CID\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";
-        assert NEWicdtxt != null : "fx:id=\"NEWicdtxt\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";
         assert address != null : "fx:id=\"address\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";
         assert btnCancel != null : "fx:id=\"btnCancel\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";
         assert btnUpdate != null : "fx:id=\"btnUpdate\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";
@@ -100,7 +116,6 @@ public class UpdateCustomer {
         assert lname != null : "fx:id=\"lname\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";
         assert newEmailtxt != null : "fx:id=\"newEmailtxt\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";
         assert newaddresstxt != null : "fx:id=\"newaddresstxt\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";
-        assert newcid != null : "fx:id=\"newcid\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";
         assert newfnametxt != null : "fx:id=\"newfnametxt\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";
         assert newlnametxt != null : "fx:id=\"newlnametxt\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";
         assert newnictxt != null : "fx:id=\"newnictxt\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";

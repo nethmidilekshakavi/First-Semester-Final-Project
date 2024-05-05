@@ -29,7 +29,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="nametxt" layoutX="134.0" layoutY="218.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="newNametxt" layoutX="134.0" layoutY="218.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <Text fx:id="mid" fill="WHITE" layoutX="53.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MID :">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -41,13 +41,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="pricetxt" layoutX="134.0" layoutY="262.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
-      <Text fx:id="newmid" fill="WHITE" layoutX="53.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New MID:">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Text>
-      <TextField fx:id="newmidtxt" layoutX="134.0" layoutY="175.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="newpricetxt" layoutX="134.0" layoutY="262.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <Button fx:id="btnMeal" layoutX="568.0" layoutY="276.0" mnemonicParsing="false" onAction="#updateMeal" prefHeight="34.0" prefWidth="85.0" style="-fx-background-radius: 15; -fx-background-color: #F99417;" text="UPDATE" textFill="#252323">
          <effect>
             <DropShadow />

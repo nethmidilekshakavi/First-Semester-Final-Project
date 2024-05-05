@@ -38,15 +38,17 @@ public class CustomerRepo {
 
 
     public static boolean updateCustomer(CustomerModel customerModel) throws SQLException {
-        Connection connection = DbConnection.getInstance().getConnection();
-        PreparedStatement pstm = connection.prepareStatement("UPDATE Customers SET NIC = ?, FirstName = ?, LastName = ?, Address = ? ,PhoneNumber = ? ,Email = ? WHERE C_ID = ?");
-        pstm.setString(1, customerModel.getNIC());
-        pstm.setString(2, customerModel.getFirst_Name());
-        pstm.setString(3, customerModel.getLast_Name());
-        pstm.setString(4, customerModel.getAddress());
-        pstm.setInt(5,customerModel.getPhone_Number());
-        pstm.setString(6, customerModel.getEmail());
-        pstm.setString(7,customerModel.getC_ID());
+
+
+            Connection connection = DbConnection.getInstance().getConnection();
+            PreparedStatement pstm = connection.prepareStatement("UPDATE Customer SET NIC = ?, First_Name = ?, Last_Name = ?, Address = ?  , Email = ?, Phone_Number = ?  WHERE C_ID = ?");
+            pstm.setString(1, customerModel.getNIC());
+            pstm.setString(2, customerModel.getFirst_Name());
+            pstm.setString(3, customerModel.getLast_Name());
+            pstm.setString(4, customerModel.getAddress());
+            pstm.setInt(6, customerModel.getPhone_Number());
+            pstm.setString(5, customerModel.getEmail());
+            pstm.setString(7, customerModel.getC_ID());
 
         return pstm.executeUpdate() > 0;
     }

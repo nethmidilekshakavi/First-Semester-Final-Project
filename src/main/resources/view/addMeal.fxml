@@ -58,5 +58,6 @@
             <DropShadow />
          </effect>
       </Button>
+      <ImageView fx:id="imageview" fitHeight="150.0" fitWidth="200.0" layoutX="374.0" layoutY="89.0" onMouseClicked="#imageOnClick" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

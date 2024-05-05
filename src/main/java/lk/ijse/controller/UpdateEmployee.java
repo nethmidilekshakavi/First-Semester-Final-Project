@@ -1,13 +1,19 @@
 package lk.ijse.controller;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import lk.ijse.Model.CustomerModel;
+import lk.ijse.Model.EmployeeModel;
+import lk.ijse.Repository.CustomerRepo;
+import lk.ijse.Repository.EmployeeRepo;
 
 public class UpdateEmployee {
 
@@ -104,7 +110,28 @@ public class UpdateEmployee {
     }
 
     @FXML
-    void updateEmployee(ActionEvent event) {
+    void updateEmployee(ActionEvent event) throws SQLException {
+        String eid = eidtxt.getText();
+        String nic = nictxt.getText();
+        String fname = fnametxt.getText();
+        String lname = lnametxt.getText();
+        String add = addresstxt.getText();
+        int mobile = Integer.parseInt(mobiletxt.getText());
+        String email = emailtxt.getText();
+        String salary = salarytxt.getText();
+        String position = positiontxt.getText();
+        int year = Integer.parseInt(yeartxt.getText());
+        int month = Integer.parseInt(monthtxt.getText());
+        int day = Integer.parseInt(daytxt.getText());
+
+        EmployeeModel employeeModel = new EmployeeModel(eid,nic,fname,lname,add,mobile,email,salary,position,year,month,day);
+        boolean a = EmployeeRepo.updateEmployee(employeeModel);
+        if (a) {
+            new Alert(Alert.AlertType.CONFIRMATION,"Update Employee Successfully!").show();
+        }
+        else {
+            new Alert(Alert.AlertType.ERROR,"Somthing went Wrong").show();
+        }
 
     }
 

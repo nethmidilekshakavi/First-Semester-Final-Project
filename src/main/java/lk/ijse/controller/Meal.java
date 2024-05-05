@@ -19,13 +19,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lk.ijse.Model.MealModel;
 import lk.ijse.Model.TM.MealTM;
-import lk.ijse.Model.TM.customerTM;
 import lk.ijse.Repository.MealRepo;
 
 public class Meal {
@@ -43,13 +43,15 @@ public class Meal {
     private Button btnPrint;
 
     @FXML
-    private TableColumn<?, ?> colmid;
+    private TableColumn<MealTM, String> colmid;
 
     @FXML
-    private TableColumn<?, ?> colname;
+    private TableColumn<MealTM, String> colname;
 
     @FXML
-    private TableColumn<?, ?> colprice;
+    private TableColumn<MealTM, String> colprice;
+    @FXML
+    private TableColumn<MealTM, ImageView> colimage;
 
     @FXML
     private ImageView mealPane;
@@ -58,13 +60,16 @@ public class Meal {
     private TableView<MealTM> mealTable;
 
     @FXML
-    private TableColumn<customerTM, JFXButton> colDelete;
+    private TableColumn<MealTM, JFXButton> colDelete;
 
     @FXML
-    private TableColumn<customerTM, JFXButton> colUpdate;
+    private TableColumn<MealTM, JFXButton> colUpdate;
 
     @FXML
     private Text title;
+
+   //    Image meal = new Image(MealModel.getMeal());
+    //   ImageView imageView = new ImageView(meal);
 
     @FXML
     void addNewEmployee(ActionEvent event) throws IOException {
@@ -81,12 +86,18 @@ public class Meal {
     void getReport(ActionEvent event) {
 
     }
+
+
     public void loadvalues() throws SQLException {
         ArrayList<MealModel> allMeal = MealRepo.getAll();
         ObservableList<MealTM>observableList = FXCollections.observableArrayList();
+    //   Image image = new Image(MealModel.getMeal());
+     //   ImageView imageView = new ImageView(meal);
 
         for (int i = 0; i < allMeal.size(); i++){
-            MealTM mealTM = new MealTM(allMeal.get(i).getMID(),allMeal.get(i).getName(),allMeal.get(i).getPrice(),new JFXButton("Update"),new JFXButton("Delete"));
+         //  Image image = new Image();
+        //   ImageView imageView = new ImageView(meal);
+            MealTM mealTM = new MealTM(allMeal.get(i).getMID(), allMeal.get(i).getName(), allMeal.get(i).getPrice(), new JFXButton("Upadte"), new JFXButton("Delete"));
             observableList.add(mealTM);
             mealTable.setItems(observableList);
         }
@@ -101,6 +112,7 @@ public class Meal {
             String id =observableList.get(i).getMID();
             String name =observableList.get(i).getName();
             String price =observableList.get(i).getPrice();
+          //  String meal = String.valueOf(observableList.get(i).getMeal());
 
             observableList.get(i).getUpdate();
 
@@ -136,8 +148,9 @@ public class Meal {
         colmid.setCellValueFactory(new PropertyValueFactory<>("MID"));
         colname.setCellValueFactory(new PropertyValueFactory<>("Name"));
         colprice.setCellValueFactory(new PropertyValueFactory<>("Price"));
-        colDelete.setCellValueFactory(new PropertyValueFactory<customerTM,JFXButton>("Delete"));
-        colUpdate.setCellValueFactory(new PropertyValueFactory<customerTM,JFXButton>("Update"));
+        colimage.setCellValueFactory(new PropertyValueFactory<>("Meal"));
+        colDelete.setCellValueFactory(new PropertyValueFactory<MealTM,JFXButton>("Delete"));
+        colUpdate.setCellValueFactory(new PropertyValueFactory<MealTM,JFXButton>("Update"));
     }
 
         @FXML
@@ -150,6 +163,7 @@ public class Meal {
             assert mealPane != null : "fx:id=\"mealPane\" was not injected: check your FXML file 'Meal.fxml'.";
             assert mealTable != null : "fx:id=\"mealTable\" was not injected: check your FXML file 'Meal.fxml'.";
             assert title != null : "fx:id=\"title\" was not injected: check your FXML file 'Meal.fxml'.";
+            assert colimage != null:"fx:id=\"colimage\" was not injected: check your FXML file 'Meal.fxml'.";
             loadvalues();
             setValues();
 

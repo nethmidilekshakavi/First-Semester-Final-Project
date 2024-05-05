@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class dashboard implements Initializable {
 
@@ -59,6 +60,9 @@ public class dashboard implements Initializable {
     private ImageView customerpic;
 
     @FXML
+    private ImageView dashboardpic;
+
+    @FXML
     private Text dashboardtxt;
 
     @FXML
@@ -68,13 +72,13 @@ public class dashboard implements Initializable {
     private Text employeetxt;
 
     @FXML
-    private ImageView homepic;
-
-    @FXML
     private Text ingredienttxt;
 
     @FXML
     private ImageView ingrepic;
+
+    @FXML
+    private Button llogoutbtn;
 
     @FXML
     private ImageView mealpic;
@@ -121,7 +125,7 @@ public class dashboard implements Initializable {
     }
     @FXML
     void ReservationOnAction(ActionEvent event) throws IOException {
-        Parent parent= FXMLLoader.load(getClass().getResource("/view/Reservation.fxml"));
+        Parent parent = FXMLLoader.load(getClass().getResource("/view/Reservation.fxml"));
         Emptypane.getChildren().setAll(parent);
     }
     @FXML
@@ -138,10 +142,9 @@ public class dashboard implements Initializable {
     }
     @FXML
     void dashboardOnAction(ActionEvent event) throws IOException {
-        Parent parent= FXMLLoader.load(getClass().getResource("/view/mainForm.fxml"));
-        Emptypane.getChildren().setAll(parent);
+       Parent parent = FXMLLoader.load(getClass().getResource("/view/MainForm.fxml"));
+       Emptypane.getChildren().setAll(parent);
     }
-
     @FXML
     void initialize() {
         assert Customertxt != null : "fx:id=\"Customertxt\" was not injected: check your FXML file 'dashboard.fxml'.";
@@ -156,12 +159,13 @@ public class dashboard implements Initializable {
         assert btnsupplier != null : "fx:id=\"btnsupplier\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert buttonSet != null : "fx:id=\"buttonSet\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert customerpic != null : "fx:id=\"customerpic\" was not injected: check your FXML file 'dashboard.fxml'.";
+        assert dashboardpic != null : "fx:id=\"dashboardpic\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert dashboardtxt != null : "fx:id=\"dashboardtxt\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert employeepic != null : "fx:id=\"employeepic\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert employeetxt != null : "fx:id=\"employeetxt\" was not injected: check your FXML file 'dashboard.fxml'.";
-        assert homepic != null : "fx:id=\"homepic\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert ingredienttxt != null : "fx:id=\"ingredienttxt\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert ingrepic != null : "fx:id=\"ingrepic\" was not injected: check your FXML file 'dashboard.fxml'.";
+        assert llogoutbtn != null : "fx:id=\"llogoutbtn\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert mealpic != null : "fx:id=\"mealpic\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert mealtxt != null : "fx:id=\"mealtxt\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert orderpic != null : "fx:id=\"orderpic\" was not injected: check your FXML file 'dashboard.fxml'.";
@@ -170,20 +174,21 @@ public class dashboard implements Initializable {
         assert reservationtxt != null : "fx:id=\"reservationtxt\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert supplierpic != null : "fx:id=\"supplierpic\" was not injected: check your FXML file 'dashboard.fxml'.";
         assert supplierstxt != null : "fx:id=\"supplierstxt\" was not injected: check your FXML file 'dashboard.fxml'.";
-    }
 
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Parent root =null;
         try {
-            root = FXMLLoader.load(getClass().getResource("/view/mainForm.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/view/MainForm.fxml"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
         Emptypane.getChildren().clear();
         Emptypane.getChildren().add(root);
     }
-       public void logOutTheSystem(ActionEvent actionEvent) throws IOException {
+    @FXML
+    void logOutTheSystem(ActionEvent event) throws IOException {
 
     }
 

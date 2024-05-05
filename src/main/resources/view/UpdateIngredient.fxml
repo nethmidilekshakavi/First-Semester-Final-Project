@@ -64,11 +64,5 @@
          </font>
       </Text>
       <TextField fx:id="desctxt" layoutX="218.0" layoutY="239.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
-      <Text fx:id="NEWIID" fill="WHITE" layoutX="73.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New IID :" wrappingWidth="75.61962890624994">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Text>
-      <TextField fx:id="newiddtxt" layoutX="150.0" layoutY="188.0" opacity="0.72" prefHeight="24.0" prefWidth="85.0" style="-fx-background-radius: 40;" />
    </children>
 </AnchorPane>

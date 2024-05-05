@@ -156,9 +156,10 @@ public class Supplier {
         colName.setCellValueFactory(new PropertyValueFactory<>("Name"));
         colAddress.setCellValueFactory(new PropertyValueFactory<>("Address"));
         colMobile.setCellValueFactory(new PropertyValueFactory<>("Phone_Number"));
+        colIngredients.setCellValueFactory(new PropertyValueFactory<>("Ingredient"));
         coldateOfPurches.setCellValueFactory(new PropertyValueFactory<>("Date_Of_Purchase"));
-        colAmountDue.setCellValueFactory(new PropertyValueFactory<>(" Amount_due"));
-        colDateOfPayment.setCellValueFactory(new PropertyValueFactory<>(" Date_of_Payment"));
+        colAmountDue.setCellValueFactory(new PropertyValueFactory<>("Amount_due"));
+        colDateOfPayment.setCellValueFactory(new PropertyValueFactory<>("Date_of_Payment"));
         colPaymentType.setCellValueFactory(new PropertyValueFactory<>("Payment_Type"));
         colPaid.setCellValueFactory(new PropertyValueFactory<>("Amount_Paid"));
         colupdate.setCellValueFactory(new PropertyValueFactory<customerTM,JFXButton>("Update"));

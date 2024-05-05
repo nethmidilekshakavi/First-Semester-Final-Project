@@ -1,13 +1,19 @@
 package lk.ijse.controller;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import lk.ijse.Model.IngredientModel;
+import lk.ijse.Model.SupplierModel;
+import lk.ijse.Repository.IngredientRepo;
+import lk.ijse.Repository.SupplierRepo;
 
 public class UpdateSupplier {
 
@@ -72,14 +78,7 @@ public class UpdateSupplier {
     private Text name;
 
     @FXML
-    private TextField nametxt;
-
-    @FXML
-    private Text newSID;
-
-    @FXML
-    private TextField newsidtxt;
-
+    private TextField newSnametxt;
     @FXML
     private TextField purchasetxt;
 
@@ -101,8 +100,23 @@ public class UpdateSupplier {
     }
 
     @FXML
-    void updateSupplier(ActionEvent event) {
+    void updateSupplier(ActionEvent event) throws SQLException {
+       String sid = sidtxt.getText();
+       String newname = newSnametxt.getText();
+       String addr = addresstxt.getText();
+       int num = Integer.parseInt(mobiletxt.getText());
+       String igre = txtIngredient.getText();
+       String dopur = purchasetxt.getText();
+       String amountdue = AmountDuetxt.getText();
+       String dopay = dataOfPaymenttxt.getText();
+       String PT = PaymentTypetxt.getText();
+       String AP = AmountPaidtxt.getText();
 
+        SupplierModel supplierModel = new SupplierModel(sid,newname,addr,num,igre,dopur,amountdue,dopay,PT,AP);
+        boolean s = SupplierRepo.updateSupplier(supplierModel);
+
+        if (s){new Alert(Alert.AlertType.CONFIRMATION,"Update Supplier Successfully!").show();}
+        else {new Alert(Alert.AlertType.ERROR,"Somthing went Wrong!").show();}
     }
 
     @FXML
@@ -125,9 +139,6 @@ public class UpdateSupplier {
         assert mobile != null : "fx:id=\"mobile\" was not injected: check your FXML file 'updateSupplier.fxml'.";
         assert mobiletxt != null : "fx:id=\"mobiletxt\" was not injected: check your FXML file 'updateSupplier.fxml'.";
         assert name != null : "fx:id=\"name\" was not injected: check your FXML file 'updateSupplier.fxml'.";
-        assert nametxt != null : "fx:id=\"nametxt\" was not injected: check your FXML file 'updateSupplier.fxml'.";
-        assert newSID != null : "fx:id=\"newSID\" was not injected: check your FXML file 'updateSupplier.fxml'.";
-        assert newsidtxt != null : "fx:id=\"newsidtxt\" was not injected: check your FXML file 'updateSupplier.fxml'.";
         assert purchasetxt != null : "fx:id=\"purchasetxt\" was not injected: check your FXML file 'updateSupplier.fxml'.";
         assert sidtxt != null : "fx:id=\"sidtxt\" was not injected: check your FXML file 'updateSupplier.fxml'.";
         assert txtIngredient != null : "fx:id=\"txtIngredient\" was not injected: check your FXML file 'updateSupplier.fxml'.";

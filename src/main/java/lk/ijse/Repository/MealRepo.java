@@ -4,10 +4,8 @@ import lk.ijse.DB.DbConnection;
 import lk.ijse.Model.CustomerModel;
 import lk.ijse.Model.MealModel;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import javax.swing.text.html.ImageView;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +17,6 @@ public class MealRepo {
             ptsm.setString(1, mealModel.getMID());
             ptsm.setString(2, mealModel.getName());
             ptsm.setString(3, mealModel.getPrice());
-
             int i;
             i = ptsm.executeUpdate();
             return i > 0;
@@ -68,6 +65,7 @@ public class MealRepo {
             String M_ID = resultSet.getString(1);
             String Name = resultSet.getString(2);
             String  Price = resultSet.getString(3);
+            String image =resultSet.getString(4);
 
             MealModel mealModel = new MealModel(M_ID,Name,Price);
 
@@ -106,18 +104,6 @@ public class MealRepo {
         }
         return idList;
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

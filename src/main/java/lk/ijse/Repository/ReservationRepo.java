@@ -11,7 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ReservationRepo {
-  /*  public static String getCurrentId() throws SQLException {
+   public static String getCurrentId() throws SQLException {
         String sql = "SELECT R_ID FROM Reservation ORDER BY R_ID DESC LIMIT 1";
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
@@ -23,7 +23,7 @@ public class ReservationRepo {
         }
         return null;
     }
-*/
+
     public static boolean saveReservation(ReservationModel reservationModel) throws SQLException {
         try {
             Connection connection = DbConnection.getInstance().getConnection();
@@ -31,7 +31,7 @@ public class ReservationRepo {
 
             ptsm.setString(1, String.valueOf(reservationModel.getRID()));
             ptsm.setString(2, String.valueOf(reservationModel.getCID()));
-            ptsm.setString(3, reservationModel.getDate());
+           ptsm.setString(3, reservationModel.getDate());
             ptsm.setString(4, reservationModel.getDescription());
             ptsm.setString(5, reservationModel.getTime());
             ptsm.setString(6, reservationModel.getTotal());

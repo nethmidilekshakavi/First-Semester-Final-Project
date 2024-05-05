@@ -40,7 +40,7 @@
          </font>
       </Text>
       <TextField fx:id="sidtxt" layoutX="186.0" layoutY="88.0" opacity="0.72" prefHeight="24.0" prefWidth="85.0" style="-fx-background-radius: 40;" />
-      <TextField fx:id="nametxt" layoutX="188.0" layoutY="157.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="newSnametxt" layoutX="188.0" layoutY="157.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <TextField fx:id="addresstxt" layoutX="190.0" layoutY="194.0" opacity="0.72" prefHeight="16.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <TextField fx:id="mobiletxt" layoutX="190.0" layoutY="229.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <Text fx:id="ingredient" fill="WHITE" layoutX="58.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingredient :">
@@ -79,12 +79,6 @@
          </font>
       </Text>
       <TextField fx:id="AmountPaidtxt" layoutX="191.0" layoutY="390.0" opacity="0.72" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
-      <Text fx:id="newSID" fill="WHITE" layoutX="56.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New SID :" wrappingWidth="77.37548828125">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Text>
-      <TextField fx:id="newsidtxt" layoutX="187.0" layoutY="122.0" opacity="0.72" prefHeight="24.0" prefWidth="85.0" style="-fx-background-radius: 40;" />
       <Button fx:id="btnUpdate" layoutX="603.0" layoutY="414.0" mnemonicParsing="false" onAction="#updateSupplier" prefHeight="34.0" prefWidth="85.0" style="-fx-background-radius: 15; -fx-background-color: #F99417;" text="UPDATE" textFill="#070707">
          <effect>
             <DropShadow />

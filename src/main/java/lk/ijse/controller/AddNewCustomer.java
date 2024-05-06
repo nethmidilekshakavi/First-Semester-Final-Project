@@ -1,9 +1,12 @@
 package lk.ijse.controller;
 
+import java.awt.event.KeyEvent;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
+import java.util.regex.Pattern;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -99,18 +102,39 @@ public class AddNewCustomer {
         int mobile = Integer.parseInt(numtxt.getText());
         String email = Emailtxt.getText();
 
-        CustomerModel customerModel=new CustomerModel(cid,nic,fname,lname,address,mobile,email);
-        boolean a = CustomerRepo.savecustomer(customerModel);
-        System.out.println(a);
-        if (a){
-            new Alert(Alert.AlertType.CONFIRMATION,"customer saved successfully").show();
+        if (validateCustomer()) {
+            CustomerModel customerModel = new CustomerModel(cid, nic, fname, lname, address, mobile, email);
+            boolean a = CustomerRepo.savecustomer(customerModel);
+            System.out.println(a);
+            if (a) {
+                new Alert(Alert.AlertType.CONFIRMATION, "customer saved successfully").show();
 
-        }else {
-            new Alert(Alert.AlertType.ERROR,"something went wrong").show();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "something went wrong").show();
+            }
         }
         Stage stage1 =(Stage)cidtxt.getScene().getWindow();
         stage1.close();
     }
+
+    private boolean validateCustomer(){
+
+        boolean matches1 = Pattern.matches("^([ \\u00c0-\\u01ffa-zA-Z'\\-]{3,})+$", fnametxt.getText());
+        if(!matches1){
+            Alert alert = new Alert(Alert.AlertType.ERROR,"Invalid name");
+            alert.showAndWait();
+            return false;
+        }
+
+        boolean matches2 = Pattern.matches("[A-Za-z0-9'\\.\\-\\s\\,]{5,}", lnametxt.getText());
+        if(!matches2){
+            Alert alert = new Alert(Alert.AlertType.ERROR,"Invalid address");
+            alert.showAndWait();
+            return false;
+        }
+        return true;
+    }
+
 
     @FXML
     void initialize() {

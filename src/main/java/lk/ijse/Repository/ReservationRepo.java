@@ -31,7 +31,7 @@ public class ReservationRepo {
 
             ptsm.setString(1, String.valueOf(reservationModel.getRID()));
             ptsm.setString(2, String.valueOf(reservationModel.getCID()));
-           ptsm.setString(3, reservationModel.getDate());
+            ptsm.setString(3, reservationModel.getDate());
             ptsm.setString(4, reservationModel.getDescription());
             ptsm.setString(5, reservationModel.getTime());
             ptsm.setString(6, reservationModel.getTotal());

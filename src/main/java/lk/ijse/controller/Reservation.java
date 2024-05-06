@@ -8,10 +8,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.ResourceBundle;
+import java.util.*;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -27,10 +24,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import lk.ijse.Model.CustomerModel;
-import lk.ijse.Model.MealModel;
-import lk.ijse.Model.OrderDetailsModel;
-import lk.ijse.Model.ReservationModel;
+import lk.ijse.Model.*;
 import lk.ijse.Model.TM.OrderTM;
 import lk.ijse.Model.TM.ReservationTM;
 import lk.ijse.Repository.CustomerRepo;
@@ -74,7 +68,7 @@ public class Reservation {
     private TableColumn<ReservationTM, String> coldesc;
 
     @FXML
-    private TableColumn<ReservationTM, ?> colprice;
+    private TableColumn<ReservationTM, String> colprice;
 
     @FXML
     private TableColumn<ReservationTM, String> colqty;
@@ -227,8 +221,8 @@ public class Reservation {
         String code = reservationList.getValue();
         String desc = txtdesc.getText();
         int qty = Integer.parseInt(qtytxt.getText());
-        double price = Double.parseDouble(ptxt.getText());
-        double total = Double.parseDouble(totaltxt.getText());
+        double price =Integer.parseInt(ptxt.getText());
+        double total = Integer.parseInt(totaltxt.getText());
         JFXButton btnremove = new JFXButton("remove");
         btnremove.setCursor(Cursor.HAND);
 
@@ -251,7 +245,7 @@ public class Reservation {
 
                 ReservationTM tm = oblist.get(i);
                 qty += tm.getQty();
-                total = qty * price;
+                total = qty * price ;
 
                 tm.setQty(qty);
                 tm.setTotal(total);
@@ -264,9 +258,9 @@ public class Reservation {
             }
         }
          ReservationTM reservationTM = new ReservationTM(code,desc,qty,price,total,new JFXButton("Remove"));
-        observableList.add(reservationTM);
+        oblist.add(reservationTM);
 
-        orderTable.setItems(observableList);
+        orderTable.setItems(oblist);
         calculateNetTotal();
         qtytxt.setText("");
     }
@@ -295,20 +289,38 @@ public class Reservation {
     void btnPlaceOrderOnAction(ActionEvent event) {
         String orderid = reservationIDtxt.getText();
         String cusid = nicList.getValue();
-        String date = String.valueOf(LocalDate.now());
-        double alltotal = 0;
+        String date = String.valueOf(Date.parse(String.valueOf(LocalDate.now())));
+       double alltotal = 0;
         double t = alltotal;
         String des = txtdesc.getText();
         String time = String.valueOf(LocalTime.now());
 
+      // OrderModel om= new OrderModel(orderid,cusid,date);
         new ReservationModel(0,Integer.parseInt(cusid),date,des,time,String.valueOf(t),1,1);
-        try {
-            ReservationRepo.saveReservation(new ReservationModel(0,Integer.parseInt(cusid),date,des,time,String.valueOf(t),1,1));
+
+      /*  List<OrderDetailsModel> odlist = new ArrayList<>();
+
+        for(int i = 0; i<orderTable.getItems().size(); i++){
+            ReservationTM tm = oblist.get(i);
+
+            OrderDetailsModel od = new OrderDetailsModel(
+                    orderid,
+                    tm.getCode(),
+                    tm.getQty(),
+                    tm.getUnitPrice()
+            );
+            odlist.add(od);
+        }*/
+
+       
+
+      /*  try {
+         //   ReservationRepo.saveReservation(new ReservationModel(0,Integer.parseInt(cusid),date,des,time,String.parse(t),1,1));
             new Alert(Alert.AlertType.CONFIRMATION,"Saved to reservation").show();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+*/
 
         for (int i = 0; i < observableList.size(); i++) {
             String q = "0";
@@ -318,6 +330,8 @@ public class Reservation {
             OrderDetailRepo.saveOrderDetail(new OrderDetailsModel(q,w,e,r));
 
         }
+
+
     }
 
     @FXML

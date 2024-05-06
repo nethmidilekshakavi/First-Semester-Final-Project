@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
+import lk.ijse.Model.MealModel;
 
 public class MainForm {
 
@@ -283,8 +284,7 @@ public class MainForm {
     @FXML
     private ImageView q;
 
-    @FXML
-    private Text rs1;
+
 
     @FXML
     private Text rs2;
@@ -399,6 +399,8 @@ public class MainForm {
 
     @FXML
     private Text txtC211;
+    @FXML
+    private Text rs1;
 
     @FXML
     private ImageView userpic;
@@ -406,9 +408,13 @@ public class MainForm {
     @FXML
     private ImageView watermelonpic;
 
+
     @FXML
     void initialize() {
        getDate();
+       getPrice();
+
+
         assert AP01 != null : "fx:id=\"AP01\" was not injected: check your FXML file 'MainForm.fxml'.";
         assert AP02 != null : "fx:id=\"AP02\" was not injected: check your FXML file 'MainForm.fxml'.";
         assert AP03 != null : "fx:id=\"AP03\" was not injected: check your FXML file 'MainForm.fxml'.";
@@ -497,7 +503,6 @@ public class MainForm {
         assert pic4 != null : "fx:id=\"pic4\" was not injected: check your FXML file 'MainForm.fxml'.";
         assert pic5 != null : "fx:id=\"pic5\" was not injected: check your FXML file 'MainForm.fxml'.";
         assert q != null : "fx:id=\"q\" was not injected: check your FXML file 'MainForm.fxml'.";
-        assert rs1 != null : "fx:id=\"rs1\" was not injected: check your FXML file 'MainForm.fxml'.";
         assert rs2 != null : "fx:id=\"rs2\" was not injected: check your FXML file 'MainForm.fxml'.";
         assert rs3 != null : "fx:id=\"rs3\" was not injected: check your FXML file 'MainForm.fxml'.";
         assert rs4 != null : "fx:id=\"rs4\" was not injected: check your FXML file 'MainForm.fxml'.";
@@ -539,6 +544,10 @@ public class MainForm {
         assert userpic != null : "fx:id=\"userpic\" was not injected: check your FXML file 'MainForm.fxml'.";
         assert watermelonpic != null : "fx:id=\"watermelonpic\" was not injected: check your FXML file 'MainForm.fxml'.";
 
+    }
+
+
+    private void getPrice() {
     }
 
     private void getDate() {

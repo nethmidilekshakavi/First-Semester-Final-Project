@@ -12,13 +12,12 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
@@ -103,15 +102,62 @@ public class Customer {
       }
 
       for (int i = 0; i < observableList.size(); i++) {
-          observableList.get(i).getUpdate().setStyle("-fx-background-color: rgba(96,120,205,0.97)");
-          observableList.get(i).getDelete().setStyle("-fx-background-color: rgba(175,108,108,1)");
+          observableList.get(i).getUpdate().setStyle("-fx-background-color: rgba(16, 176, 72)");
+          observableList.get(i).getUpdate().setPrefWidth(130);
+          observableList.get(i).getUpdate().setPrefHeight(30);
+          observableList.get(i).getUpdate().setCursor(Cursor.HAND);
+          observableList.get(i).getDelete().setStyle("-fx-background-color: rgba(166, 7, 33)");
+          observableList.get(i).getDelete().setCursor(Cursor.HAND);
+          observableList.get(i).getDelete().setPrefWidth(120);
+          observableList.get(i).getDelete().setPrefHeight(30);
           observableList.get(i).getUpdate().setTextFill(Color.WHITE);
           observableList.get(i).getDelete().setTextFill(Color.WHITE);
+
       }
       for (int i=0 ;i<observableList.size();i++){
           String id =observableList.get(i).getC_ID();
           observableList.get(i).getDelete().setOnAction(actionEvent -> {
-              boolean b = false;
+
+                      Alert confirmDialog = new Alert(Alert.AlertType.CONFIRMATION);
+                      confirmDialog.setTitle("Confirm Deletion");
+                      confirmDialog.setHeaderText("Are you sure you want to delete this customer?");
+                      confirmDialog.setContentText("Press OK to confirm or Cancel to abort.");
+
+                      confirmDialog.showAndWait().ifPresent(response -> {
+                          if (response == ButtonType.OK) {
+                              try {
+                                  boolean deleted = CustomerRepo.delete(id);
+                                  if (deleted) {
+                                      Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+                                      successAlert.setTitle("Success");
+                                      successAlert.setHeaderText(null);
+                                      successAlert.setContentText("Customer Deleted Successfully");
+                                      successAlert.showAndWait();
+                                      // Reload values after successful deletion
+
+                                  } else {
+                                      // Handle deletion failure
+                                      Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                                      errorAlert.setTitle("Error");
+                                      errorAlert.setHeaderText(null);
+                                      errorAlert.setContentText("Failed to delete customer.");
+                                      errorAlert.showAndWait();
+                                  }
+                              } catch (SQLException e) {
+                                  throw new RuntimeException(e);
+                              }
+                              try {
+                                  loadvalues();
+                              } catch (SQLException e) {
+                                  throw new RuntimeException(e);
+                              }
+                          }
+                      });
+                  });
+
+
+
+           /*   boolean b = false;
               try {
                    b = CustomerRepo.delete(id);
               }catch (SQLException e) {
@@ -124,9 +170,9 @@ public class Customer {
                       loadvalues();
                   } catch (SQLException e) {
                   throw new RuntimeException(e);
-              }
+              }*/
 
-          });
+
           observableList.get(i).getUpdate().setOnAction(actionEvent -> {
               Parent parent = null;
               try {
@@ -140,9 +186,11 @@ public class Customer {
               stage.setTitle("Update Customer");
               stage.centerOnScreen();
               stage.show();
+
           });
       }
   }
+
         public void setValues(){
             colNIC.setCellValueFactory(new PropertyValueFactory<>("NIC"));
             colFname.setCellValueFactory(new PropertyValueFactory<>("First_Name"));

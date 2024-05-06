@@ -19,86 +19,74 @@
                <effect>
                   <DropShadow />
                </effect></Button>
-            <Button fx:id="btnemployee" layoutX="48.0" layoutY="353.0" mnemonicParsing="false" onAction="#EmployeeOnAction" prefHeight="61.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#f5efef">
+            <Button fx:id="btnemployee" layoutX="47.0" layoutY="353.0" mnemonicParsing="false" onAction="#EmployeeOnAction" prefHeight="61.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#f5efef">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
                <effect>
                   <DropShadow />
                </effect></Button>
-            <Button fx:id="btnreservation" layoutX="48.0" layoutY="196.0" mnemonicParsing="false" onAction="#ReservationOnAction" prefHeight="61.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#f5efef">
+            <Button fx:id="btnmeal" layoutX="47.0" layoutY="199.0" mnemonicParsing="false" onAction="#MealOnAction" prefHeight="61.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#fcf7f7">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Button fx:id="btncustomer" layoutX="47.0" layoutY="124.0" mnemonicParsing="false" onAction="#customerOnAction" prefHeight="61.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#fcf7f7">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Button fx:id="btndashboard" layoutX="48.0" layoutY="48.0" mnemonicParsing="false" onAction="#dashboardOnAction" prefHeight="61.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#fcf7f7">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Button fx:id="btnsupplier" layoutX="47.0" layoutY="432.0" mnemonicParsing="false" onAction="#SupplierOnAction" prefHeight="61.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#f5efef">
                <font>
                   <Font name="System Bold Italic" size="25.0" />
                </font>
                <effect>
                   <DropShadow />
                </effect></Button>
-            <Button fx:id="btnmeal" layoutX="48.0" layoutY="274.0" mnemonicParsing="false" onAction="#MealOnAction" prefHeight="61.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#fcf7f7">
+            <Button fx:id="btningredients" layoutX="47.0" layoutY="276.0" mnemonicParsing="false" onAction="#IngredientOnAction" prefHeight="61.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#f5efef">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
                <effect>
                   <DropShadow />
                </effect></Button>
-            <Button fx:id="btncustomer" layoutX="47.0" layoutY="121.0" mnemonicParsing="false" onAction="#customerOnAction" prefHeight="61.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#fcf7f7">
-               <font>
-                  <Font name="System Bold" size="25.0" />
-               </font>
-               <effect>
-                  <DropShadow />
-               </effect></Button>
-            <Button fx:id="btndashboard" layoutX="48.0" layoutY="43.0" mnemonicParsing="false" onAction="#dashboardOnAction" prefHeight="61.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#fcf7f7">
-               <font>
-                  <Font name="System Bold" size="25.0" />
-               </font>
-               <effect>
-                  <DropShadow />
-               </effect></Button>
-            <Button fx:id="btnsupplier" layoutX="47.0" layoutY="505.0" mnemonicParsing="false" onAction="#SupplierOnAction" prefHeight="61.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#f5efef">
-               <font>
-                  <Font name="System Bold Italic" size="25.0" />
-               </font>
-               <effect>
-                  <DropShadow />
-               </effect></Button>
-            <Button fx:id="btningredients" layoutX="48.0" layoutY="431.0" mnemonicParsing="false" onAction="#IngredientOnAction" prefHeight="61.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#f5efef">
-               <font>
-                  <Font name="System Bold" size="25.0" />
-               </font>
-               <effect>
-                  <DropShadow />
-               </effect></Button>
-            <Text fx:id="dashboardtxt" fill="#fcf2f2" layoutX="68.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DashBoard" wrappingWidth="58.00000000000006">
+            <Text fx:id="dashboardtxt" fill="#fcf2f2" layoutX="68.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DashBoard" wrappingWidth="58.00000000000006">
                <font>
                   <Font name="System Bold Italic" size="9.0" />
                </font>
             </Text>
-            <Text fx:id="Customertxt" fill="#fcf2f2" layoutX="68.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customers" wrappingWidth="58.00000000000006">
+            <Text fx:id="Customertxt" fill="#fcf2f2" layoutX="68.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customers" wrappingWidth="58.00000000000006">
                <font>
                   <Font name="System Bold Italic" size="9.0" />
                </font>
             </Text>
-            <Text fx:id="reservationtxt" fill="#fcf2f2" layoutX="65.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation" wrappingWidth="66.00000000000006">
+            <Text fx:id="mealtxt" fill="#fcf2f2" layoutX="79.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meals" wrappingWidth="30.000000000000057">
                <font>
                   <Font name="System Bold Italic" size="9.0" />
                </font>
             </Text>
-            <Text fx:id="mealtxt" fill="#fcf2f2" layoutX="80.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meals" wrappingWidth="30.000000000000057">
+            <Text fx:id="employeetxt" fill="#fcf2f2" layoutX="69.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employees" wrappingWidth="58.00000000000006">
                <font>
                   <Font name="System Bold Italic" size="9.0" />
                </font>
             </Text>
-            <Text fx:id="employeetxt" fill="#fcf2f2" layoutX="70.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employees" wrappingWidth="58.00000000000006">
+            <Text fx:id="ingredienttxt" fill="#fcf2f2" layoutX="66.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingredients" wrappingWidth="66.00000000000011">
                <font>
                   <Font name="System Bold Italic" size="9.0" />
                </font>
             </Text>
-            <Text fx:id="ingredienttxt" fill="#fcf2f2" layoutX="67.0" layoutY="487.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingredients" wrappingWidth="66.00000000000011">
-               <font>
-                  <Font name="System Bold Italic" size="9.0" />
-               </font>
-            </Text>
-            <Text fx:id="supplierstxt" fill="#fcf2f2" layoutX="71.0" layoutY="561.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suppliers" wrappingWidth="66.00000000000011">
+            <Text fx:id="supplierstxt" fill="#fcf2f2" layoutX="71.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suppliers" wrappingWidth="66.00000000000011">
                <font>
                   <Font name="System Bold Italic" size="9.0" />
                </font>
@@ -116,37 +104,32 @@
                   <DropShadow />
                </effect>
             </Button>
-            <ImageView fx:id="dashboardpic" fitHeight="39.0" fitWidth="43.0" layoutX="73.0" layoutY="48.0">
+            <ImageView fx:id="dashboardpic" fitHeight="39.0" fitWidth="43.0" layoutX="73.0" layoutY="53.0">
                <image>
                   <Image url="@../Images/icons8-home-50.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="customerpic" fitHeight="39.0" fitWidth="43.0" layoutX="74.0" layoutY="125.0">
+            <ImageView fx:id="customerpic" fitHeight="39.0" fitWidth="43.0" layoutX="74.0" layoutY="128.0">
                <image>
                   <Image url="@../Images/icons8-customer-50.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="orderpic" fitHeight="39.0" fitWidth="43.0" layoutX="69.0" layoutY="203.0">
-               <image>
-                  <Image url="@../Images/icons8-order-50.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="mealpic" fitHeight="39.0" fitWidth="43.0" layoutX="73.0" layoutY="279.0">
+            <ImageView fx:id="mealpic" fitHeight="39.0" fitWidth="43.0" layoutX="72.0" layoutY="204.0">
                <image>
                   <Image url="@../Images/icons8-meal-50.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="ingrepic" fitHeight="39.0" fitWidth="43.0" layoutX="76.0" layoutY="438.0">
+            <ImageView fx:id="ingrepic" fitHeight="39.0" fitWidth="43.0" layoutX="75.0" layoutY="283.0">
                <image>
                   <Image url="@../Images/icons8-ingredients-50.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="employeepic" fitHeight="39.0" fitWidth="43.0" layoutX="69.0" layoutY="358.0">
+            <ImageView fx:id="employeepic" fitHeight="39.0" fitWidth="43.0" layoutX="68.0" layoutY="358.0">
                <image>
                   <Image url="@../Images/icons8-employee-50.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="supplierpic" fitHeight="39.0" fitWidth="43.0" layoutX="72.0" layoutY="510.0">
+            <ImageView fx:id="supplierpic" fitHeight="39.0" fitWidth="43.0" layoutX="72.0" layoutY="437.0">
                <image>
                   <Image url="@../Images/icons8-supplier-50.png" />
                </image>
@@ -159,6 +142,23 @@
             <ImageView fx:id="logoutbtnpic" fitHeight="29.0" fitWidth="30.0" layoutX="38.0" layoutY="694.0" style="-fx-rotate: 180;">
                <image>
                   <Image url="@../Images/icons8-logout-24.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnreservation" layoutX="48.0" layoutY="509.0" mnemonicParsing="false" onAction="#ReservationOnAction" prefHeight="61.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#f5efef">
+               <font>
+                  <Font name="System Bold Italic" size="25.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Text fx:id="reservationtxt" fill="#fcf2f2" layoutX="65.0" layoutY="564.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation" wrappingWidth="66.00000000000006">
+               <font>
+                  <Font name="System Bold Italic" size="9.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="orderpic" fitHeight="39.0" fitWidth="43.0" layoutX="69.0" layoutY="516.0">
+               <image>
+                  <Image url="@../Images/icons8-order-50.png" />
                </image>
             </ImageView>
 

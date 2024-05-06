@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class UpdateIngredient {
 
@@ -61,7 +62,8 @@ public class UpdateIngredient {
 
     @FXML
     void dontSaveIngredient(ActionEvent event) {
-
+        Stage stage =(Stage)iidtxt.getScene().getWindow();
+        stage.close();
     }
 
     @FXML

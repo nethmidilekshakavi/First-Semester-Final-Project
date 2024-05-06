@@ -131,6 +131,20 @@ public class AddNewEmployee {
         Stage stage =(Stage)eidtxt.getScene().getWindow();
         stage.close();
     }
+    @FXML
+    void clearOnAction(ActionEvent event) {
+        clear();
+    }
+    public void clear(){
+      eidtxt.clear();   nictxt.clear();
+      nictxt.clear();   emailtxt.clear();
+      fnametxt.clear(); positiontxt.clear();
+      lnametxt.clear(); salarytxt.clear();
+      addresstxt.clear();   monthtxt.clear();
+      yeartxt.clear();  daytxt.clear();
+      monthtxt.clear(); mobiletxt.clear();
+    }
+
 
     @FXML
     void initialize() {

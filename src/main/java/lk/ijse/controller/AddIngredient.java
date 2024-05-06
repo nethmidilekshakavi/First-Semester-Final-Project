@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -29,6 +30,10 @@ public class AddIngredient {
 
     @FXML
     private Text IID;
+
+    @FXML
+    private Button clear;
+
 
     @FXML
     private Text QOH;
@@ -79,12 +84,24 @@ public class AddIngredient {
         System.out.println(a);
         if (a){
             new Alert(Alert.AlertType.CONFIRMATION,"Ingredient saved successfully").show();
+            ((Node) (event.getSource())).getScene().getWindow().hide();
 
         }else {
             new Alert(Alert.AlertType.ERROR,"something went wrong").show();
         }
         Stage stage1 =(Stage)iidtxt.getScene().getWindow();
         stage1.close();
+    }
+
+    @FXML
+    void clearOnAction(ActionEvent event) {
+        clear();
+    }
+    public void clear(){
+       iidtxt.clear();
+       desctxt.clear();
+       QOHtxt.clear();
+       suppliertxt.clear();
     }
 
     @FXML

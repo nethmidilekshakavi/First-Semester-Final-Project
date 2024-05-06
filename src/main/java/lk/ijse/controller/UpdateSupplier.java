@@ -5,11 +5,13 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import lk.ijse.Model.IngredientModel;
 import lk.ijse.Model.SupplierModel;
 import lk.ijse.Repository.IngredientRepo;
@@ -96,7 +98,8 @@ public class UpdateSupplier {
 
     @FXML
     void dontSaveSupplier(ActionEvent event) {
-
+        Stage stage =(Stage)sidtxt.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
@@ -115,8 +118,23 @@ public class UpdateSupplier {
         SupplierModel supplierModel = new SupplierModel(sid,newname,addr,num,igre,dopur,amountdue,dopay,PT,AP);
         boolean s = SupplierRepo.updateSupplier(supplierModel);
 
-        if (s){new Alert(Alert.AlertType.CONFIRMATION,"Update Supplier Successfully!").show();}
-        else {new Alert(Alert.AlertType.ERROR,"Somthing went Wrong!").show();}
+        if (s) {
+
+            Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+            successAlert.setTitle("Success");
+            successAlert.setHeaderText(null);
+            successAlert.setContentText("Supplier details updated successfully.");
+            successAlert.showAndWait();
+
+            ((Node) (event.getSource())).getScene().getWindow().hide();
+        } else {
+
+            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+            errorAlert.setTitle("Error");
+            errorAlert.setHeaderText(null);
+            errorAlert.setContentText("Something went wrong.");
+            errorAlert.show();
+        }
     }
 
     @FXML

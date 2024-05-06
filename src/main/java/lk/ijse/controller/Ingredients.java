@@ -13,12 +13,11 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
@@ -94,36 +93,65 @@ public class Ingredients {
 
         for (int i = 0; i < allIgredient.size(); i++) {
             String qty = String.valueOf(allIgredient.get(i).getQty_On_Hand());
-            IngredientTM IngredientTM = new IngredientTM(allIgredient.get(i).getI_ID(),allIgredient.get(i).getDescription(),qty,allIgredient.get(i).getSupplier(),new JFXButton("Delete"), new JFXButton("Update"));
+            IngredientTM IngredientTM = new IngredientTM(allIgredient.get(i).getI_ID(),allIgredient.get(i).getDescription(),qty,allIgredient.get(i).getSupplier(), new JFXButton("Update"),new JFXButton("Delete"));
             observableList.add(IngredientTM);
             ingredientTable.setItems(observableList);
         }
 
         for (int i = 0; i < observableList.size(); i++) {
-            observableList.get(i).getUpdate().setStyle("-fx-background-color: rgba(96,120,205,0.97)");
-            observableList.get(i).getDelete().setStyle("-fx-background-color: rgba(175,108,108,1)");
+            observableList.get(i).getUpdate().setStyle("-fx-background-color: rgba(16, 176, 72)");
+            observableList.get(i).getUpdate().setPrefWidth(100);
+            observableList.get(i).getUpdate().setPrefHeight(30);
+            observableList.get(i).getUpdate().setCursor(Cursor.HAND);
+            observableList.get(i).getDelete().setStyle("-fx-background-color: rgba(166, 7, 33)");
+            observableList.get(i).getDelete().setPrefWidth(100);
+            observableList.get(i).getDelete().setPrefHeight(30);
+            observableList.get(i).getDelete().setCursor(Cursor.HAND);
             observableList.get(i).getUpdate().setTextFill(Color.WHITE);
             observableList.get(i).getDelete().setTextFill(Color.WHITE);
+
         }
         for (int i=0 ;i<observableList.size();i++){
             String id =observableList.get(i).getI_ID();
             observableList.get(i).getDelete().setOnAction(actionEvent -> {
-                boolean b = false;
-                try {
-                    b = CustomerRepo.delete(id);
-                }catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-                if (b) {
-                    new Alert(Alert.AlertType.CONFIRMATION, "Ingredient Deleted");
-                }
-                try{
-                    loadvalues();
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
+                Alert confirmDialog = new Alert(Alert.AlertType.CONFIRMATION);
+                confirmDialog.setTitle("Confirm Deletion");
+                confirmDialog.setHeaderText("Are you sure you want to delete this Ingredient?");
+                confirmDialog.setContentText("Press OK to confirm or Cancel to abort.");
 
+                confirmDialog.showAndWait().ifPresent(response -> {
+                    if (response == ButtonType.OK) {
+                        try {
+                            boolean deleted = IngredientRepo.delete(id);
+                            if (deleted) {
+                                Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+                                successAlert.setTitle("Success");
+                                successAlert.setHeaderText(null);
+                                successAlert.setContentText("Ingredient Deleted Successfully");
+                                successAlert.showAndWait();
+                                // Reload values after successful deletion
+
+                            } else {
+                                // Handle deletion failure
+                                Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                                errorAlert.setTitle("Error");
+                                errorAlert.setHeaderText(null);
+                                errorAlert.setContentText("Failed to delete Ingredient.");
+                                errorAlert.showAndWait();
+                            }
+                        } catch (SQLException e) {
+                            throw new RuntimeException(e);
+                        }
+                        try {
+                            loadvalues();
+                        } catch (SQLException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+                });
             });
+
+
             observableList.get(i).getUpdate().setOnAction(actionEvent -> {
                 Parent parent = null;
                 try {

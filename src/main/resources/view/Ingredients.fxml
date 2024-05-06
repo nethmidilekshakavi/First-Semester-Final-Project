@@ -10,9 +10,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="775.0" prefWidth="1194.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.Ingredients">
+<AnchorPane prefHeight="788.0" prefWidth="1206.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.Ingredients">
    <children>
-      <ImageView fx:id="IngredientPage" fitHeight="776.0" fitWidth="1192.0" layoutY="-1.0">
+      <ImageView fx:id="IngredientPage" fitHeight="889.0" fitWidth="1206.0">
          <image>
             <Image url="@../Images/55a5e47c099e0ddaf60fcfdcf3761eb6.jpg" />
          </image>
@@ -22,20 +22,20 @@
             <Font name="Dyuthi Regular" size="36.0" />
          </font>
       </Text>
-      <TableView fx:id="ingredientTable" layoutX="40.0" layoutY="131.0" prefHeight="493.0" prefWidth="1118.0">
+      <TableView fx:id="ingredientTable" layoutX="164.0" layoutY="195.0" prefHeight="448.0" prefWidth="874.0">
         <columns>
-          <TableColumn fx:id="colIid" prefWidth="146.0" text="IID" />
-          <TableColumn fx:id="colDesc" prefWidth="234.0" text="Description" />
-            <TableColumn fx:id="colQOh" prefWidth="182.0" text="Qty On Hand" />
-            <TableColumn fx:id="colSID" prefWidth="211.0" text="Supplier" />
-            <TableColumn fx:id="colupdate" prefWidth="173.0" text="UPDATE" />
-            <TableColumn fx:id="coldelete" prefWidth="173.0" text="DELETE" />
+          <TableColumn fx:id="colIid" prefWidth="143.0" text="IID" />
+          <TableColumn fx:id="colDesc" prefWidth="208.0" text="Description" />
+            <TableColumn fx:id="colQOh" prefWidth="150.0" text="Qty On Hand" />
+            <TableColumn fx:id="colSID" prefWidth="140.0" text="Supplier" />
+            <TableColumn fx:id="colupdate" prefWidth="112.0" text="UPDATE" />
+            <TableColumn fx:id="coldelete" prefWidth="120.0" text="DELETE" />
         </columns>
          <effect>
             <DropShadow />
          </effect>
       </TableView>
-      <Button fx:id="btnAdd" layoutX="1095.0" layoutY="74.0" mnemonicParsing="false" onAction="#addNewIngredient" prefHeight="39.0" prefWidth="63.0" style="-fx-background-color: #ffbd03;" text="ADD">
+      <Button fx:id="btnAdd" layoutX="975.0" layoutY="143.0" mnemonicParsing="false" onAction="#addNewIngredient" prefHeight="39.0" prefWidth="63.0" style="-fx-background-color: #ffbd03;" text="ADD">
          <effect>
             <DropShadow />
          </effect>
@@ -43,7 +43,7 @@
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnPrint" layoutX="1015.0" layoutY="74.0" mnemonicParsing="false" onAction="#getReport" prefHeight="39.0" prefWidth="63.0" style="-fx-background-color: #5adbb5;" text="PRINT">
+      <Button fx:id="btnPrint" layoutX="895.0" layoutY="143.0" mnemonicParsing="false" onAction="#getReport" prefHeight="39.0" prefWidth="63.0" style="-fx-background-color: #5adbb5;" text="PRINT">
          <effect>
             <DropShadow />
          </effect>

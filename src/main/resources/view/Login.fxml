@@ -15,8 +15,9 @@
 <AnchorPane fx:id="pane" prefHeight="344.0" prefWidth="546.0" style=" -fx-background-color: black;" styleClass="shadowed" stylesheets="@../Stylesheet/CSS.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.Login">
    <children>
       <ImageView fx:id="loginphoto" fitHeight="351.0" fitWidth="553.0" layoutX="-3.0" layoutY="-3.0">
-
-      </ImageView>
+         <image>
+            <Image url="@../Images/image-of-wooden-table-in-front-of-abstract-blurred-background-of-resturant-lights-wood-table-top-on-blur-of-lighting-in-night-cafe-restaurant-background-selective-focus-generative-ai-photo.jpg" />
+         </image></ImageView>
       <AnchorPane fx:id="pane2" layoutX="152.0" layoutY="20.0" opacity="0.75" prefHeight="286.0" prefWidth="241.0" style="-fx-background-color: #B4CDE6; -fx-background-radius: 40;">
          <styleClass>
             <String fx:value="login" />

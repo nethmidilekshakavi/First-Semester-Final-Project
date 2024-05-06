@@ -59,7 +59,7 @@ public class SupplierRepo {
     public static boolean delete(String id) throws SQLException {
         try{
             Connection connection= DbConnection.getInstance().getConnection();
-            PreparedStatement preparedStatement=connection.prepareStatement("delete from Customer where S_ID=?");
+            PreparedStatement preparedStatement=connection.prepareStatement("delete from Supplier where S_ID=?");
             preparedStatement.setString(1,id);
             int i;
             i=preparedStatement.executeUpdate();
@@ -72,7 +72,7 @@ public class SupplierRepo {
 
     public static SupplierModel searchById(String id) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
-        PreparedStatement pstm = connection.prepareStatement("SELECT * FROM Customer WHERE S_ID = ?");
+        PreparedStatement pstm = connection.prepareStatement("SELECT * FROM Supplier WHERE S_ID = ?");
         pstm.setString(1, id);
 
         ResultSet resultSet = pstm.executeQuery();

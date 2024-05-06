@@ -13,10 +13,11 @@ public class MealRepo {
     public static boolean saveMeal(MealModel mealModel) throws SQLException {
         try {
             Connection connection = DbConnection.getInstance().getConnection();
-            PreparedStatement ptsm = connection.prepareStatement("INSERT INTO Meal VALUES (?,?,?)");
+            PreparedStatement ptsm = connection.prepareStatement("INSERT INTO Meal VALUES (?,?,?,?)");
             ptsm.setString(1, mealModel.getMID());
             ptsm.setString(2, mealModel.getName());
             ptsm.setString(3, mealModel.getPrice());
+          //  ptsm.setString(4,mealModel.getMeal());
             int i;
             i = ptsm.executeUpdate();
             return i > 0;
@@ -65,9 +66,8 @@ public class MealRepo {
             String M_ID = resultSet.getString(1);
             String Name = resultSet.getString(2);
             String  Price = resultSet.getString(3);
-            String image =resultSet.getString(4);
-
-            MealModel mealModel = new MealModel(M_ID,Name,Price);
+            String image = String.valueOf((ImageView) resultSet.getBlob(4));
+          MealModel mealModel = new MealModel(M_ID,Name,Price);
 
             return mealModel;
         }

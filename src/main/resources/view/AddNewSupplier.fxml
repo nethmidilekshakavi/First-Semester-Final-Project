@@ -88,5 +88,13 @@
             <Font name="System Bold" size="13.0" />
          </font></Text>
       <TextField fx:id="AmountPaidtxt" layoutX="181.0" layoutY="380.0" opacity="0.72" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <Button fx:id="clear" layoutX="427.0" layoutY="388.0" mnemonicParsing="false" onAction="#clearOnAction" prefHeight="33.0" prefWidth="85.0" style="-fx-background-radius: 10; -fx-background-color: #F8C794;" text="Clear">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

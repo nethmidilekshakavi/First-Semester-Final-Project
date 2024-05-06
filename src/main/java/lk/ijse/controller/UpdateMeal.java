@@ -5,11 +5,13 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import lk.ijse.Model.CustomerModel;
 import lk.ijse.Model.MealModel;
 import lk.ijse.Repository.CustomerRepo;
@@ -55,9 +57,11 @@ public class UpdateMeal extends Meal{
     @FXML
     private ImageView updatemealpane;
 
+
     @FXML
     void dontSaveMeal(ActionEvent event) {
-
+        Stage stage =(Stage)midtxt.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
@@ -69,12 +73,22 @@ public class UpdateMeal extends Meal{
 
         MealModel updateMeal =new MealModel(mid,name,price);
         boolean c = MealRepo.updateMeal(updateMeal);
-        System.out.println(c);
-        if (c){
-            new Alert(Alert.AlertType.CONFIRMATION,"Meal Update successfully").show();
+        if (c) {
 
-        }else {
-            new Alert(Alert.AlertType.ERROR,"something went wrong").show();
+            Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+            successAlert.setTitle("Success");
+            successAlert.setHeaderText(null);
+            successAlert.setContentText("Meal details updated successfully.");
+            successAlert.showAndWait();
+
+            ((Node) (event.getSource())).getScene().getWindow().hide();
+        } else {
+
+            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+            errorAlert.setTitle("Error");
+            errorAlert.setHeaderText(null);
+            errorAlert.setContentText("Something went wrong.");
+            errorAlert.show();
         }
     }
 

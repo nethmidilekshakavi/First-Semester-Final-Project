@@ -128,9 +128,26 @@ public class AddNewSupplier {
         }else {
             new Alert(Alert.AlertType.ERROR,"something went wrong").show();
         }
+
+
     }
-
-
+    @FXML
+    void clearOnAction(ActionEvent event) {
+        clear();
+    }
+    public void clear(){
+        sidtxt.clear();
+        nametxt.clear();
+        addresstxt.clear();
+        mobiletxt.clear();
+        nametxt.clear();
+        txtIngredient.clear();
+        purchasetxt.clear();
+        dataOfPaymenttxt.clear();
+        AmountDuetxt.clear();
+        PaymentTypetxt.clear();
+        AmountPaidtxt.clear();
+    }
 
     @FXML
     void initialize() {

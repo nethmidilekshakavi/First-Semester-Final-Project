@@ -17,7 +17,7 @@ public class MealTM {
     private String Price;
     private JFXButton Update;
     private JFXButton Delete;
-  //  private ImageView meal;
+    //private ImageView meal;
 
 
 

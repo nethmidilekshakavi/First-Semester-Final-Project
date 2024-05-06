@@ -29,19 +29,18 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="cidtxt" layoutX="102.0" layoutY="104.0" opacity="0.72" prefHeight="24.0" prefWidth="85.0" style="-fx-background-radius: 40;" />
       <Text fx:id="fname" fill="WHITE" layoutX="55.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name :">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="fnametxt" layoutX="198.0" layoutY="203.0"  opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="fnametxt" layoutX="198.0" layoutY="203.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <Text fx:id="lname" fill="WHITE" layoutX="55.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name :">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="lnametxt" layoutX="198.0" layoutY="248.0"  opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="lnametxt" layoutX="198.0" layoutY="248.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <Text fx:id="address" fill="WHITE" layoutX="55.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address :">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -53,7 +52,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="numtxt" layoutX="198.0" layoutY="345.0"  opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="numtxt" layoutX="198.0" layoutY="345.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <Text fx:id="email" fill="WHITE" layoutX="55.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email :">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -65,7 +64,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="nictxt" layoutX="198.0" layoutY="161.0"  opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="nictxt" layoutX="198.0" layoutY="161.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <Button fx:id="btnSave" layoutX="609.0" layoutY="415.0" mnemonicParsing="false" onAction="#saveCustomer" prefHeight="33.0" prefWidth="75.0" style="-fx-background-radius: 10; -fx-background-color: #33b249;" text="SAVE" textFill="#141313">
          <effect>
             <DropShadow />
@@ -82,5 +81,14 @@
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Button>
+      <Button fx:id="clear" layoutX="415.0" layoutY="416.0" mnemonicParsing="false" onAction="#clearOnAction" prefHeight="33.0" prefWidth="85.0" style="-fx-background-radius: 10; -fx-background-color: #F8C794;" text="Clear">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <TextField fx:id="Cidtxt" layoutX="112.0" layoutY="104.0" opacity="0.76" prefHeight="24.0" prefWidth="113.0" style="-fx-background-radius: 40;" />
    </children>
 </AnchorPane>

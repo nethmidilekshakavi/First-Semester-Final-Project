@@ -88,27 +88,35 @@ public class Login {
 
     @FXML
     void loginOnAction(ActionEvent event) throws IOException {
+
             String username = "admin";
             String password = "1234";
 
             if (txtun.getText().equals(username) && txtpw.getText().equals(password)) {
-                Object parent = FXMLLoader.load(getClass().getResource("/view/dashboard.fxml"));
-                Scene scene = new Scene((Parent) parent);
+                // Load the dashboard
+                Parent parent = FXMLLoader.load(getClass().getResource("/view/dashboard.fxml"));
+                Scene scene = new Scene(parent);
                 Stage stage = new Stage();
                 stage.setScene(scene);
-                stage.setTitle("DashBoard");
+                stage.setTitle("Dashboard");
                 stage.show();
-                Stage stage1 = (Stage) txtun.getScene().getWindow();
-                stage1.close();
-            }
-            else if(txtun.getText()!=(username)){
-                new Alert(Alert.AlertType.INFORMATION, "sorry! user id can't be find!").show();
-            }
-            else if(txtpw.getText()!=(password)) {
-                new Alert(Alert.AlertType.INFORMATION, "sorry! user password can't be find!").show();
-            }
 
-    }
+                // Close the login window
+                Stage loginStage = (Stage) txtun.getScene().getWindow();
+                loginStage.close();
+            } else if (!txtun.getText().equals(username) && txtpw.getText().equals(password)) {
+                // Show alert if username is incorrect
+                new Alert(Alert.AlertType.INFORMATION, " Sorry! User ID not found.").show();
+            } else if (!txtpw.getText().equals(password) && txtun.getText().equals(username)) {
+                // Show alert if password is incorrect
+                new Alert(Alert.AlertType.INFORMATION, "Sorry! Incorrect password.").show();
+            }
+            else if(!txtun.getText().equals(username) && !txtpw.getText().equals(password)){
+                new Alert(Alert.AlertType.INFORMATION, " Sorry! Incorrect User ID & Password try Again! ").show();
+            }
+        }
+
+
 
     @FXML
     void initialize() {

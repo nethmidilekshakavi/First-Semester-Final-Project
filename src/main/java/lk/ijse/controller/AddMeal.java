@@ -59,7 +59,7 @@ public class AddMeal {
     @FXML
     private TextField pricetxt;
   //  String url;
- //   String imagePath;
+//   String imagePath = null;
 
     @FXML
     void dontSaveMeal(ActionEvent event) {
@@ -67,8 +67,8 @@ public class AddMeal {
         stage.close();
     }
 
-   // @FXML
-  /*  void imageOnClick(MouseEvent event) {
+ /*  @FXML
+    void imageOnClick(MouseEvent event) {
         Stage stage = new Stage();
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image");
@@ -78,9 +78,9 @@ public class AddMeal {
             Image image = new Image(url);
             imagePath = file.getPath();
             imageview.setImage(image);
-        }*/
+        }
 
-    //}
+    }*/
 
     @FXML
     void saveMeal(ActionEvent event) throws SQLException {
@@ -88,15 +88,27 @@ public class AddMeal {
         String name = nametxt.getText();
         String price = pricetxt.getText();
 
+
+
         MealModel mealModel = new MealModel(mid, name, price);
         boolean b = MealRepo.saveMeal(mealModel);
         if (b) {
             new Alert(Alert.AlertType.CONFIRMATION, "Meal Saves Successfully!").show();
         } else {
             new Alert(Alert.AlertType.ERROR, "something went Wrong").show();
-
         }
     }
+    @FXML
+    void clearOnAction(ActionEvent event) {
+        clear();
+    }
+
+    public void clear(){
+        midtxt.clear();
+        nametxt.clear();
+        pricetxt.clear();
+    }
+
 
     @FXML
     void initialize() {

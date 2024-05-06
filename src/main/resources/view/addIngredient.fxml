@@ -64,5 +64,13 @@
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Button>
+      <Button fx:id="clear" layoutX="426.0" layoutY="382.0" mnemonicParsing="false" onAction="#clearOnAction" prefHeight="33.0" prefWidth="85.0" style="-fx-background-radius: 10; -fx-background-color: #F8C794;" text="Clear">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

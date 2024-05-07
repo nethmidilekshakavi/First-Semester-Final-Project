@@ -1,15 +1,22 @@
 package lk.ijse.controller;
 
 import java.net.URL;
+import java.sql.Date;
+import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lk.ijse.Mail.mail;
 import lk.ijse.Model.CustomerModel;
 import lk.ijse.Model.EmployeeModel;
 import lk.ijse.Repository.CustomerRepo;
@@ -31,7 +38,7 @@ public class AddNewEmployee {
 
     @FXML
     private ImageView addEmployeePane;
-
+        public static AnchorPane apane;
     @FXML
     private Text address;
 
@@ -124,10 +131,23 @@ public class AddNewEmployee {
         boolean a = EmployeeRepo.saveEmployee(employeeModel);
         System.out.println(a);
         if (a){
+            mail mail =new mail();
+            mail.setMsg("hellow now you are a Employee of FOOD COURT RESTURANT" +
+                    "\nTime : "+ Time.valueOf(LocalTime.now()) +
+                    "\nDate : " + Date.valueOf(LocalDate.now())
+            );
+            mail.setTo(emailtxt.getText());
+            mail.setSubject("Alert");
+
+            Thread thread =new Thread(mail);
+            thread.start();
             new Alert(Alert.AlertType.CONFIRMATION,"Employee saved successfully").show();
         }else {
             new Alert(Alert.AlertType.ERROR,"something went wrong").show();
         }
+        Parent parent =null;
+        apane.getChildren().clear();
+        apane.getChildren().add(parent);
         Stage stage =(Stage)eidtxt.getScene().getWindow();
         stage.close();
     }

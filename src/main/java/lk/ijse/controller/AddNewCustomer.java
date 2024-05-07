@@ -1,27 +1,36 @@
 package lk.ijse.controller;
 
+import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.sql.Time;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ResourceBundle;
 import java.util.regex.Pattern;
 
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lk.ijse.Mail.mail;
 import lk.ijse.Model.CustomerModel;
 import lk.ijse.Repository.CustomerRepo;
 import lk.ijse.util.Regex;
 
 public class AddNewCustomer {
+    public static AnchorPane apane;
 
     @FXML
     private ResourceBundle resources;
@@ -83,10 +92,9 @@ public class AddNewCustomer {
     private TextField numtxt;
 
 
-
     @FXML
     void dontSaveCustomer(ActionEvent event) {
-        Stage stage =(Stage)Cidtxt.getScene().getWindow();
+        Stage stage = (Stage) Cidtxt.getScene().getWindow();
         stage.close();
     }
 
@@ -94,14 +102,15 @@ public class AddNewCustomer {
     void clearOnAction(ActionEvent event) {
         clear();
     }
-    public void clear(){
-       Cidtxt.clear();
-       nictxt.clear();
-       fnametxt.clear();
-       lnametxt.clear();
-       addresstxt.clear();
-       numtxt.clear();
-       Emailtxt.clear();
+
+    public void clear() {
+        Cidtxt.clear();
+        nictxt.clear();
+        fnametxt.clear();
+        lnametxt.clear();
+        addresstxt.clear();
+        numtxt.clear();
+        Emailtxt.clear();
 
     }
 
@@ -117,17 +126,26 @@ public class AddNewCustomer {
         String email = Emailtxt.getText();
 
 
-            CustomerModel customerModel = new CustomerModel(cid, nic, fname, lname, address, mobile, email);
-            boolean a = CustomerRepo.savecustomer(customerModel);
-            System.out.println(a);
-            if (a) {
-                new Alert(Alert.AlertType.CONFIRMATION, "customer saved successfully").show();
+        CustomerModel customerModel = new CustomerModel(cid, nic, fname, lname, address, mobile, email);
+        boolean a = CustomerRepo.savecustomer(customerModel);
+        System.out.println(a);
+        if (a) {
+            mail mail = new mail();
+            mail.setMsg("hellow now you are a customer of FOOD COURT RESTURANT" +
+                    "\nTime : " + Time.valueOf(LocalTime.now()) +
+                    "\nDate : " + Date.valueOf(LocalDate.now())
+            );
+            mail.setTo(Emailtxt.getText());
+            mail.setSubject("Alert");
 
-            } else {
-                new Alert(Alert.AlertType.ERROR, "something went wrong").show();
-            }
+            Thread thread = new Thread(mail);
+            thread.start();
+            new Alert(Alert.AlertType.CONFIRMATION, "customer saved successfully").show();
 
-        Stage stage1 =(Stage)Cidtxt.getScene().getWindow();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "something went wrong").show();
+        }
+        Stage stage1 = (Stage) Cidtxt.getScene().getWindow();
         stage1.close();
     }
 

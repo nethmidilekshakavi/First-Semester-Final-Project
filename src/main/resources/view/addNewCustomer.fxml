@@ -58,14 +58,14 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="Emailtxt" layoutX="197.0" layoutY="385.0"  opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="Emailtxt" layoutX="197.0" layoutY="385.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <Text fx:id="nic" fill="WHITE" layoutX="54.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NIC NUMBER :">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
       <TextField fx:id="nictxt" layoutX="198.0" layoutY="161.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
-      <Button fx:id="btnSave" layoutX="609.0" layoutY="415.0" mnemonicParsing="false" onAction="#saveCustomer" prefHeight="33.0" prefWidth="75.0" style="-fx-background-radius: 10; -fx-background-color: #33b249;" text="SAVE" textFill="#141313">
+      <Button fx:id="btnSave" layoutX="609.0" layoutY="415.0" mnemonicParsing="false" onAction="#saveCustomer" prefHeight="33.0" prefWidth="75.0" style="-fx-background-radius: 10; -fx-background-color: #33b249;" stylesheets="@../Stylesheet/btn2.css" text="SAVE" textFill="#141313">
          <effect>
             <DropShadow />
          </effect>

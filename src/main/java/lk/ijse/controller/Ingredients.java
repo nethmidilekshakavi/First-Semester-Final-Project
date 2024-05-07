@@ -93,7 +93,8 @@ public class Ingredients {
 
         for (int i = 0; i < allIgredient.size(); i++) {
             String qty = String.valueOf(allIgredient.get(i).getQty_On_Hand());
-            IngredientTM IngredientTM = new IngredientTM(allIgredient.get(i).getI_ID(),allIgredient.get(i).getDescription(),qty,allIgredient.get(i).getSupplier(), new JFXButton("Update"),new JFXButton("Delete"));
+            String supplier =String.valueOf(allIgredient.get(i).getSupplier());
+            IngredientTM IngredientTM = new IngredientTM(allIgredient.get(i).getI_ID(),allIgredient.get(i).getDescription(),qty,supplier, new JFXButton("Update"),new JFXButton("Delete"));
             observableList.add(IngredientTM);
             ingredientTable.setItems(observableList);
         }

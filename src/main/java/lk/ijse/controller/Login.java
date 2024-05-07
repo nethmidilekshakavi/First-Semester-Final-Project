@@ -100,19 +100,15 @@ public class Login {
                 stage.setScene(scene);
                 stage.setTitle("Dashboard");
                 stage.show();
-
-                // Close the login window
                 Stage loginStage = (Stage) txtun.getScene().getWindow();
                 loginStage.close();
             } else if (!txtun.getText().equals(username) && txtpw.getText().equals(password)) {
-                // Show alert if username is incorrect
-                new Alert(Alert.AlertType.INFORMATION, " Sorry! User ID not found.").show();
+                new Alert(Alert.AlertType.INFORMATION, " ⚠\uFE0F Sorry! User ID not found.").show();
             } else if (!txtpw.getText().equals(password) && txtun.getText().equals(username)) {
-                // Show alert if password is incorrect
-                new Alert(Alert.AlertType.INFORMATION, "Sorry! Incorrect password.").show();
+                new Alert(Alert.AlertType.INFORMATION, "⚠\uFE0F Sorry! Incorrect password.").show();
             }
             else if(!txtun.getText().equals(username) && !txtpw.getText().equals(password)){
-                new Alert(Alert.AlertType.INFORMATION, " Sorry! Incorrect User ID & Password try Again! ").show();
+                new Alert(Alert.AlertType.INFORMATION, " ⚠\uFE0F Sorry! Incorrect User ID & Password try Again! ").show();
             }
         }
 

@@ -77,7 +77,7 @@ public class AddIngredient {
         String iid = iidtxt.getText();
         String desc = desctxt.getText();
         int qoh = Integer.parseInt(QOHtxt.getText());
-        String supplier = suppliertxt.getText();
+        int supplier = 1;
 
         IngredientModel ingredientModel = new  IngredientModel(iid,desc,qoh,supplier);
         boolean a = IngredientRepo.saveIngredient(ingredientModel);

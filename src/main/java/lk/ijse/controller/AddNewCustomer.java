@@ -128,10 +128,11 @@ public class AddNewCustomer {
         if (isValied()) {
             CustomerModel customerModel = new CustomerModel(cid, nic, fname, lname, address, mobile, email);
             boolean a = CustomerRepo.savecustomer(customerModel);
-            System.out.println(a);
+
             if (a) {
+                new Alert(Alert.AlertType.CONFIRMATION, "customer saved successfully").show();
                 mail mail = new mail();
-                mail.setMsg("hellow now you are a customer of FOOD COURT RESTURANT" +
+                mail.setMsg("Hellow now you are a Customer of FOOD COURT RESTURANT" +
                         "\nTime : " + Time.valueOf(LocalTime.now()) +
                         "\nDate : " + Date.valueOf(LocalDate.now())
                 );
@@ -140,15 +141,17 @@ public class AddNewCustomer {
 
                 Thread thread = new Thread(mail);
                 thread.start();
-                new Alert(Alert.AlertType.CONFIRMATION, "customer saved successfully").show();
 
-            } else {
-                new Alert(Alert.AlertType.ERROR, "something went wrong").show();
+                    new Alert(Alert.AlertType.CONFIRMATION, "customer saved successfully").show();
+
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "something went wrong").show();
+                }
+               Stage stage1 = (Stage) Cidtxt.getScene().getWindow();
+                stage1.close();
             }
-            Stage stage1 = (Stage) Cidtxt.getScene().getWindow();
-            stage1.close();
         }
-    }
+
     public void txtcustomerEmailKeyreleased(KeyEvent keyEvent) {
         Regex.setTextColor(lk.ijse.util.TextField.EMAIL,Emailtxt);
     }

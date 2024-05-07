@@ -26,7 +26,7 @@
          </font>
       </Text>
       <Text fx:id="cidtxt" layoutX="90.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <TableView fx:id="employeeTable" layoutX="23.0" layoutY="127.0" prefHeight="521.0" prefWidth="1143.0">
+      <TableView fx:id="employeeTable" layoutX="23.0" layoutY="127.0" prefHeight="521.0" prefWidth="1143.0" stylesheets="@../Stylesheet/table.css">
         <columns>
           <TableColumn fx:id="colNIC" prefWidth="125.0" text="NIC" />
           <TableColumn fx:id="colfName" prefWidth="109.0" text=" First Name" />
@@ -43,14 +43,14 @@
             <DropShadow />
          </effect>
       </TableView>
-      <Button fx:id="btnAdd" layoutX="1101.0" layoutY="81.0" mnemonicParsing="false" onAction="#addNewEmployee" prefHeight="35.0" prefWidth="63.0" style="-fx-background-color: #ffbd03;" text="ADD">
+      <Button fx:id="btnAdd" layoutX="1101.0" layoutY="81.0" mnemonicParsing="false" onAction="#addNewEmployee" prefHeight="35.0" prefWidth="63.0" style="-fx-background-color: #ffbd03;" stylesheets="@../Stylesheet/btn2.css" text="ADD">
          <effect>
             <DropShadow />
          </effect>
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font></Button>
-      <Button fx:id="btnPrint" layoutX="1029.0" layoutY="81.0" mnemonicParsing="false" onAction="#getReport" prefHeight="35.0" prefWidth="63.0" style="-fx-background-color: #5adbb5;" text="PRINT">
+      <Button fx:id="btnPrint" layoutX="1029.0" layoutY="81.0" mnemonicParsing="false" onAction="#getReport" prefHeight="35.0" prefWidth="63.0" style="-fx-background-color: #5adbb5;" stylesheets="@../Stylesheet/button.css" text="PRINT">
          <effect>
             <DropShadow />
          </effect>

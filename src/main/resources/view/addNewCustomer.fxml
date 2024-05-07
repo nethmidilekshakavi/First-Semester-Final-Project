@@ -58,7 +58,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="Emailtxt" layoutX="197.0" layoutY="385.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="Emailtxt" layoutX="197.0" layoutY="385.0" onKeyReleased="#txtcustomerEmailKeyreleased" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <Text fx:id="nic" fill="WHITE" layoutX="54.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NIC NUMBER :">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -89,6 +89,6 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <TextField fx:id="Cidtxt" layoutX="112.0" layoutY="104.0" opacity="0.76" prefHeight="24.0" prefWidth="113.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="Cidtxt" layoutX="112.0" layoutY="104.0" onKeyReleased="#txtcustomerIDKeyreleased" opacity="0.76" prefHeight="24.0" prefWidth="113.0" style="-fx-background-radius: 40;" />
    </children>
 </AnchorPane>

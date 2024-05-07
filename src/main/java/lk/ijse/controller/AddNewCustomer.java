@@ -125,52 +125,45 @@ public class AddNewCustomer {
         int mobile = Integer.parseInt(numtxt.getText());
         String email = Emailtxt.getText();
 
+        if (isValied()) {
+            CustomerModel customerModel = new CustomerModel(cid, nic, fname, lname, address, mobile, email);
+            boolean a = CustomerRepo.savecustomer(customerModel);
+            System.out.println(a);
+            if (a) {
+                mail mail = new mail();
+                mail.setMsg("hellow now you are a customer of FOOD COURT RESTURANT" +
+                        "\nTime : " + Time.valueOf(LocalTime.now()) +
+                        "\nDate : " + Date.valueOf(LocalDate.now())
+                );
+                mail.setTo(Emailtxt.getText());
+                mail.setSubject("Alert");
 
-        CustomerModel customerModel = new CustomerModel(cid, nic, fname, lname, address, mobile, email);
-        boolean a = CustomerRepo.savecustomer(customerModel);
-        System.out.println(a);
-        if (a) {
-            mail mail = new mail();
-            mail.setMsg("hellow now you are a customer of FOOD COURT RESTURANT" +
-                    "\nTime : " + Time.valueOf(LocalTime.now()) +
-                    "\nDate : " + Date.valueOf(LocalDate.now())
-            );
-            mail.setTo(Emailtxt.getText());
-            mail.setSubject("Alert");
+                Thread thread = new Thread(mail);
+                thread.start();
+                new Alert(Alert.AlertType.CONFIRMATION, "customer saved successfully").show();
 
-            Thread thread = new Thread(mail);
-            thread.start();
-            new Alert(Alert.AlertType.CONFIRMATION, "customer saved successfully").show();
-
-        } else {
-            new Alert(Alert.AlertType.ERROR, "something went wrong").show();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "something went wrong").show();
+            }
+            Stage stage1 = (Stage) Cidtxt.getScene().getWindow();
+            stage1.close();
         }
-        Stage stage1 = (Stage) Cidtxt.getScene().getWindow();
-        stage1.close();
+    }
+    public void txtcustomerEmailKeyreleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.EMAIL,Emailtxt);
     }
 
-   // private boolean validateCustomer(){
+    public void txtcustomerIDKeyreleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.ID, Cidtxt);
+    }
 
-       /* boolean matches1 = Pattern.matches("^([ \\u00c0-\\u01ffa-zA-Z'\\-]{3,})+$", fname.getText());
-        if(!matches1){
-            Alert alert = new Alert(Alert.AlertType.ERROR,"Invalid name");
-            alert.showAndWait();
-            return false;
-        }*/
-
-        /*boolean matches2 = Pattern.matches("[A-Za-z0-9'\\.\\-\\s\\,]{5,}", address.getText());
-        if(!matches2){
-            Alert alert = new Alert(Alert.AlertType.ERROR,"Invalid address");
-            alert.showAndWait();
-            return false;
-        }
+    public boolean isValied(){
+        if (!Regex.setTextColor(lk.ijse.util.TextField.ID, Cidtxt)) return false;
+        if (!Regex.isTextFieldValid(lk.ijse.util.TextField.EMAIL, String.valueOf(Emailtxt)))return false;
         return true;
-
-
     }
-*/
 
-    @FXML
+@FXML
     void initialize() {
         assert AddNewCustomerPage != null : "fx:id=\"AddNewCustomerPage\" was not injected: check your FXML file 'addNewCustomer.fxml'.";
         assert CID != null : "fx:id=\"CID\" was not injected: check your FXML file 'addNewCustomer.fxml'.";
@@ -191,21 +184,6 @@ public class AddNewCustomer {
         assert numtxt != null : "fx:id=\"numtxt\" was not injected: check your FXML file 'addNewCustomer.fxml'.";
 
     }
-
-
-  /*  public void txtcustomerEmailKeyreleased(KeyEvent keyEvent) {
-    Regex.setTextColor(lk.ijse.util.TextField.EMAIL, Emailtxt);
-    }
-
-    public void txtcustomerIDKeyreleased(KeyEvent keyEvent) {
-        Regex.setTextColor(lk.ijse.util.TextField.ID, Cidtxt);
-    }
-
-    public boolean isValied(){
-        if (!Regex.setTextColor(lk.ijse.util.TextField.ID, Cidtxt)) return false;
-        if (!Regex.isTextFieldValid(lk.ijse.util.TextField.EMAIL, String.valueOf(Emailtxt)))return false;
-        return true;
-    }*/
 
 
 }

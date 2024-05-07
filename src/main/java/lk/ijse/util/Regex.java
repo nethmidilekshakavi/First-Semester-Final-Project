@@ -1,9 +1,5 @@
 package lk.ijse.util;
 
-import com.jfoenix.controls.JFXTextField;
-import javafx.scene.paint.Paint;
-
-import javax.swing.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -41,16 +37,18 @@ public class Regex {
         return false;
     }
 
-
-    public static boolean setTextColor(TextField textField, javafx.scene.control.TextField emailtxt) {
-        if (Regex.isTextFieldValid(textField, emailtxt.getText())) {
-            textField.setStyle("-fx-focus-color: green; -fx-unfocus-color: green;");
+    public static boolean setTextColor(TextField location, javafx.scene.control.TextField textField){
+        if (Regex.isTextFieldValid(location, textField.getText())){
+            textField.setStyle("-fx-background-color: Green");
+            textField.setStyle("-fx-background-color: Green");
             return true;
-        } else {
-            textField.setStyle("-fx-focus-color: red; -fx-unfocus-color: red;");
+        }else {
+            textField.setStyle("-fx-background-color: Red");
+            textField.setStyle("-fx-background-color: Red");
             return false;
         }
     }
+
 
 }
 

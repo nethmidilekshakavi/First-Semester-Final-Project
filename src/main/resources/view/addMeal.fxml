@@ -35,7 +35,6 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="midtxt" layoutX="113.0" layoutY="120.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <Text fx:id="price" fill="WHITE" layoutX="43.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price :">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -58,7 +57,7 @@
             <DropShadow />
          </effect>
       </Button>
-      <ImageView fx:id="imageview" fitHeight="150.0" fitWidth="200.0" layoutX="374.0" layoutY="89.0" onMouseClicked="#imageOnClick" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageview" fitHeight="150.0" fitWidth="200.0" layoutX="374.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true" />
       <Button fx:id="clear" layoutX="366.0" layoutY="277.0" mnemonicParsing="false" onAction="#clearOnAction" prefHeight="33.0" prefWidth="85.0" style="-fx-background-radius: 10; -fx-background-color: #F8C794;" text="Clear">
          <effect>
             <DropShadow />
@@ -67,5 +66,6 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
+      <TextField fx:id="midtxt" layoutX="90.0" layoutY="120.0" onKeyReleased="#mealKeyRelese" opacity="0.82" prefHeight="24.0" prefWidth="86.0" />
    </children>
 </AnchorPane>

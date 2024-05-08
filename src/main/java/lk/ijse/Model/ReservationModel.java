@@ -11,14 +11,12 @@ import java.util.List;
 @AllArgsConstructor
 @Data
 public class ReservationModel {
-    private int RID;
-    private int CID;
+    private String RID;
+    private String CID;
     private String Date;
     private String description;
     private String time;
     private String total;
-    private int EID;
-    private int  DID;
 
 
 }

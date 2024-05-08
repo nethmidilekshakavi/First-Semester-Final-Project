@@ -11,13 +11,10 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.UpdateSupplier">
    <children>
-      <ImageView fx:id="updateSupplierPane" fitHeight="475.0" fitWidth="711.0">
+      <ImageView fx:id="pic" fitHeight="472.0" fitWidth="724.0" layoutX="-6.0" layoutY="-3.0">
          <image>
-            <Image url="@../Images/e8aa2a6a52d3b3fb38a43b9530321ae4.jpg" />
+            <Image url="@../Images/beautiful-wood-background-with-text-space-free-vector.jpg" />
          </image>
-         <effect>
-            <DropShadow />
-         </effect>
       </ImageView>
       <Text fx:id="name" fill="WHITE" layoutX="55.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :">
          <font>
@@ -29,7 +26,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <Text fx:id="SID" fill="WHITE" layoutX="56.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SID :" wrappingWidth="36.0673828125">
+      <Text fx:id="SID" fill="WHITE" layoutX="56.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SID :" wrappingWidth="36.0673828125">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -39,7 +36,6 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="sidtxt" layoutX="186.0" layoutY="88.0" opacity="0.72" prefHeight="24.0" prefWidth="85.0" style="-fx-background-radius: 40;" />
       <TextField fx:id="newSnametxt" layoutX="188.0" layoutY="157.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <TextField fx:id="addresstxt" layoutX="190.0" layoutY="194.0" opacity="0.72" prefHeight="16.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <TextField fx:id="mobiletxt" layoutX="190.0" layoutY="229.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
@@ -95,10 +91,11 @@
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Button>
-      <Text fx:id="updateEmployeeinfor" fill="#f0f5f8" layoutX="195.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-- Update Supplier --" wrappingWidth="317.017578125">
+      <Text fx:id="updateEmployeeinfor" fill="#f0f5f8" layoutX="195.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-- Update Supplier --" wrappingWidth="317.017578125">
          <font>
             <Font name="Dyuthi Regular" size="36.0" />
          </font>
       </Text>
+      <TextField fx:id="sidtxt" layoutX="105.0" layoutY="113.0" opacity="0.72" prefHeight="24.0" prefWidth="100.0" style="-fx-background-radius: 40;" />
    </children>
 </AnchorPane>

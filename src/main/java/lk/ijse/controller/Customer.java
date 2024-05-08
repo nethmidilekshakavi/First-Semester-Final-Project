@@ -19,6 +19,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -73,10 +74,12 @@ public class Customer {
     @FXML
     private Text title;
 
-
+    @FXML
+    private AnchorPane pane;
 
     @FXML
     void addNewCustomer(ActionEvent event) throws IOException {
+        AddNewCustomer.apane = pane;
         Parent parent = FXMLLoader.load(getClass().getResource("/view/addNewCustomer.fxml"));
         Scene scene =new Scene(parent);
         Stage stage = new Stage();
@@ -134,7 +137,6 @@ public class Customer {
                                       successAlert.setContentText("Customer Deleted Successfully");
                                       successAlert.showAndWait();
                                       // Reload values after successful deletion
-
                                   } else {
                                       // Handle deletion failure
                                       Alert errorAlert = new Alert(Alert.AlertType.ERROR);
@@ -155,8 +157,6 @@ public class Customer {
                       });
                   });
 
-
-
            /*   boolean b = false;
               try {
                    b = CustomerRepo.delete(id);
@@ -171,7 +171,6 @@ public class Customer {
                   } catch (SQLException e) {
                   throw new RuntimeException(e);
               }*/
-
 
           observableList.get(i).getUpdate().setOnAction(actionEvent -> {
               Parent parent = null;
@@ -190,7 +189,6 @@ public class Customer {
           });
       }
   }
-
         public void setValues(){
             colNIC.setCellValueFactory(new PropertyValueFactory<>("NIC"));
             colFname.setCellValueFactory(new PropertyValueFactory<>("First_Name"));
@@ -201,7 +199,6 @@ public class Customer {
             colDelete.setCellValueFactory(new PropertyValueFactory<customerTM,JFXButton>("Delete"));
             colUpdate.setCellValueFactory(new PropertyValueFactory<customerTM,JFXButton>("Update"));
         }
-
 
     @FXML
     void initialize() throws SQLException {

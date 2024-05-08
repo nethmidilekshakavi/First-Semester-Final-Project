@@ -139,7 +139,7 @@
                   <Image url="@../Images/icons8-reports-58.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="logoutbtnpic" fitHeight="29.0" fitWidth="30.0" layoutX="38.0" layoutY="694.0" style="-fx-rotate: 180;">
+            <ImageView fx:id="logoutbtnpic" fitHeight="29.0" fitWidth="30.0" layoutX="72.0" layoutY="693.0" style="-fx-rotate: 180;">
                <image>
                   <Image url="@../Images/icons8-logout-24.png" />
                </image>

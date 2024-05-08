@@ -92,7 +92,7 @@ public class Meal {
         ObservableList<MealTM>observableList = FXCollections.observableArrayList();
 
        for (int i = 0; i < allMeal.size(); i++){
-         //   Image mealPic = new Image(MealModel.getMeal());
+          // Image mealPic = new Image(MealModel.getMeal());
          //  ImageView imageView = new ImageView(String.valueOf(mealPic));
            MealTM mealTM = new MealTM(allMeal.get(i).getMID(), allMeal.get(i).getName(), allMeal.get(i).getPrice(), new JFXButton("Upadte"), new JFXButton("Delete"));
           observableList.add(mealTM);

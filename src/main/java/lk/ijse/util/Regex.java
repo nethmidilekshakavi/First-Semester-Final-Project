@@ -8,18 +8,23 @@ import static javafx.scene.paint.Paint.valueOf;
 public class Regex {
     public static boolean isTextFieldValid(TextField textField, String text) {
         String filed = "";
-
         switch (textField) {
             case ID:
                 filed = "^([A-Z][0-9]{3})$";
+                break;
+            case MOBILE:
+                filed = "^0\\d{9}$";
                 break;
             case FNAME:
                 filed = "^[A-z|\\\\s]{3,}$";
                 break;
             case LNAME:
                 filed = "^[A-z|\\\\s]{3,}$";
+                break;
             case EMAIL:
                 filed = "^([A-z])([A-z0-9.]){1,}[@]([A-z0-9]){1,10}[.]([A-z]){2,5}$";
+
+
         }
         Pattern pattern = Pattern.compile(filed);
 
@@ -39,8 +44,8 @@ public class Regex {
 
     public static boolean setTextColor(TextField location, javafx.scene.control.TextField textField){
         if (Regex.isTextFieldValid(location, textField.getText())){
-            textField.setStyle("-fx-background-color: Green");
-            textField.setStyle("-fx-background-color: Green");
+            textField.setStyle("-fx-background-color: white");
+            textField.setStyle("-fx-background-color: white");
             return true;
         }else {
             textField.setStyle("-fx-background-color: Red");
@@ -48,8 +53,6 @@ public class Regex {
             return false;
         }
     }
-
-
 }
 
 

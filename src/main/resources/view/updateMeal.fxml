@@ -11,25 +11,22 @@
 
 <AnchorPane prefHeight="328.0" prefWidth="671.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.UpdateMeal">
    <children>
-      <ImageView fx:id="updatemealpane" fitHeight="338.0" fitWidth="671.0">
+      <ImageView fx:id="pic" fitHeight="339.0" fitWidth="678.0">
          <image>
-            <Image url="@../Images/e8aa2a6a52d3b3fb38a43b9530321ae4.jpg" />
+            <Image url="@../Images/beautiful-wood-background-with-text-space-free-vector.jpg" />
          </image>
-         <effect>
-            <DropShadow />
-         </effect>
       </ImageView>
       <Text fx:id="updatemeal" fill="#f0f5f8" layoutX="238.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Meal" wrappingWidth="195.017578125">
          <font>
             <Font name="Dyuthi Regular" size="36.0" />
          </font>
       </Text>
-      <Text fx:id="name" fill="WHITE" layoutX="53.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :">
+      <Text fx:id="name" fill="WHITE" layoutX="53.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="newNametxt" layoutX="134.0" layoutY="218.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="newNametxt" layoutX="134.0" layoutY="197.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <Text fx:id="mid" fill="WHITE" layoutX="53.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MID :">
          <font>
             <Font name="System Bold" size="13.0" />

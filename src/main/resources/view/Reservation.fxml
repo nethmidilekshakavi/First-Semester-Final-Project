@@ -71,9 +71,9 @@
             <DropShadow />
          </effect></Button>
       <Text fx:id="total" layoutX="44.0" layoutY="695.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total :-" />
-      <Text fx:id="totaltxt" layoutX="98.0" layoutY="695.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="82.55126953125">
+      <Text fx:id="totaltxt" fill="#e10e0e" layoutX="98.0" layoutY="695.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="82.55126953125">
          <font>
-            <Font name="System Bold Italic" size="27.0" />
+            <Font name="System Bold Italic" size="20.0" />
          </font></Text>
       <Button fx:id="btnPlaceOrder" layoutX="1005.0" layoutY="673.0" mnemonicParsing="false" onAction="#btnPlaceOrderOnAction" style="-fx-background-color: #FF6500;" text="Place Order" textFill="#fffefe">
          <effect>

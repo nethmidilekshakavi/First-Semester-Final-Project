@@ -29,8 +29,11 @@ public class UpdateCustomer extends Customer{
     @FXML
     private Text address;
 
+
     @FXML
     private Button btnCancel;
+    @FXML
+    private ImageView pic;
 
     @FXML
     private Button btnUpdate;

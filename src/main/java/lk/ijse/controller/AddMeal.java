@@ -11,12 +11,17 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import lk.ijse.Model.MealModel;
+import lk.ijse.Repository.CustomerRepo;
 import lk.ijse.Repository.MealRepo;
+import lk.ijse.util.Regex;
+
+import javax.swing.*;
 
 public class AddMeal {
 
@@ -42,10 +47,11 @@ public class AddMeal {
     private Text mealInfor;
 
     @FXML
-    private Text mid;
+    private TextField midtxt;
 
     @FXML
-    private TextField midtxt;
+    private Text mid;
+
 
     @FXML
     private Text name;
@@ -58,8 +64,8 @@ public class AddMeal {
 
     @FXML
     private TextField pricetxt;
-  //  String url;
-//   String imagePath = null;
+ ///  String url;
+ // String imagePath = null;
 
     @FXML
     void dontSaveMeal(ActionEvent event) {
@@ -67,7 +73,7 @@ public class AddMeal {
         stage.close();
     }
 
- /*  @FXML
+ /* @FXML
     void imageOnClick(MouseEvent event) {
         Stage stage = new Stage();
         FileChooser fileChooser = new FileChooser();
@@ -87,10 +93,11 @@ public class AddMeal {
         String mid = midtxt.getText();
         String name = nametxt.getText();
         String price = pricetxt.getText();
+      //  String image = imagePath.toString();
 
 
 
-        MealModel mealModel = new MealModel(mid, name, price);
+        MealModel mealModel = new MealModel(mid,name,price);
         boolean b = MealRepo.saveMeal(mealModel);
         if (b) {
             new Alert(Alert.AlertType.CONFIRMATION, "Meal Saves Successfully!").show();
@@ -98,6 +105,8 @@ public class AddMeal {
             new Alert(Alert.AlertType.ERROR, "something went Wrong").show();
         }
     }
+
+    public void mealKeyRelese(KeyEvent keyEvent) {Regex.setTextColor(lk.ijse.util.TextField.ID, midtxt);}
     @FXML
     void clearOnAction(ActionEvent event) {
         clear();
@@ -112,17 +121,6 @@ public class AddMeal {
 
     @FXML
     void initialize() {
-        assert addNewMeal != null : "fx:id=\"addNewMeal\" was not injected: check your FXML file 'addMeal.fxml'.";
-        assert btnCancel != null : "fx:id=\"btnCancel\" was not injected: check your FXML file 'addMeal.fxml'.";
-        assert btnSave != null : "fx:id=\"btnSave\" was not injected: check your FXML file 'addMeal.fxml'.";
-        assert imageview != null : "fx:id=\"imageview\" was not injected: check your FXML file 'addMeal.fxml'.";
-        assert mealInfor != null : "fx:id=\"mealInfor\" was not injected: check your FXML file 'addMeal.fxml'.";
-        assert mid != null : "fx:id=\"mid\" was not injected: check your FXML file 'addMeal.fxml'.";
-        assert midtxt != null : "fx:id=\"midtxt\" was not injected: check your FXML file 'addMeal.fxml'.";
-        assert name != null : "fx:id=\"name\" was not injected: check your FXML file 'addMeal.fxml'.";
-        assert nametxt != null : "fx:id=\"nametxt\" was not injected: check your FXML file 'addMeal.fxml'.";
-        assert price != null : "fx:id=\"price\" was not injected: check your FXML file 'addMeal.fxml'.";
-        assert pricetxt != null : "fx:id=\"pricetxt\" was not injected: check your FXML file 'addMeal.fxml'.";
 
     }
 

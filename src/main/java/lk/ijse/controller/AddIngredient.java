@@ -10,12 +10,14 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lk.ijse.Model.CustomerModel;
 import lk.ijse.Model.IngredientModel;
 import lk.ijse.Repository.CustomerRepo;
 import lk.ijse.Repository.IngredientRepo;
+import lk.ijse.util.Regex;
 
 public class AddIngredient {
 
@@ -34,6 +36,8 @@ public class AddIngredient {
     @FXML
     private Button clear;
 
+    @FXML
+    private TextField iditxt;
 
     @FXML
     private Text QOH;
@@ -56,8 +60,6 @@ public class AddIngredient {
     @FXML
     private Text igreinor;
 
-    @FXML
-    private TextField iidtxt;
 
     @FXML
     private Text supplier;
@@ -67,58 +69,51 @@ public class AddIngredient {
 
     @FXML
     void dontSaveIngredient(ActionEvent event) {
-        Stage stage =(Stage)iidtxt.getScene().getWindow();
+        Stage stage =(Stage)iditxt.getScene().getWindow();
         stage.close();
     }
 
     @FXML
     void saveIngredinet(ActionEvent event) throws SQLException {
 
-        String iid = iidtxt.getText();
+        String iid = iditxt.getText();
         String desc = desctxt.getText();
         int qoh = Integer.parseInt(QOHtxt.getText());
-        int supplier = 1;
+        String supplier = suppliertxt.getText();
 
-        IngredientModel ingredientModel = new  IngredientModel(iid,desc,qoh,supplier);
-        boolean a = IngredientRepo.saveIngredient(ingredientModel);
-        System.out.println(a);
-        if (a){
-            new Alert(Alert.AlertType.CONFIRMATION,"Ingredient saved successfully").show();
-            ((Node) (event.getSource())).getScene().getWindow().hide();
+            IngredientModel ingredientModel = new IngredientModel(iid, desc, qoh,supplier);
+            boolean a = IngredientRepo.saveIngredient(ingredientModel);
+            System.out.println(a);
+            if (a) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Ingredient saved successfully").show();
+                ((Node) (event.getSource())).getScene().getWindow().hide();
 
-        }else {
-            new Alert(Alert.AlertType.ERROR,"something went wrong").show();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "something went wrong").show();
+            }
+            Stage stage1 = (Stage) iditxt.getScene().getWindow();
+            stage1.close();
         }
-        Stage stage1 =(Stage)iidtxt.getScene().getWindow();
-        stage1.close();
-    }
 
     @FXML
     void clearOnAction(ActionEvent event) {
         clear();
     }
     public void clear(){
-       iidtxt.clear();
+        iditxt.clear();
        desctxt.clear();
        QOHtxt.clear();
        suppliertxt.clear();
     }
 
+
+
     @FXML
     void initialize() {
-        assert AddNewIngredientPage != null : "fx:id=\"AddNewIngredientPage\" was not injected: check your FXML file 'addIngredient.fxml'.";
-        assert IID != null : "fx:id=\"IID\" was not injected: check your FXML file 'addIngredient.fxml'.";
-        assert QOH != null : "fx:id=\"QOH\" was not injected: check your FXML file 'addIngredient.fxml'.";
-        assert QOHtxt != null : "fx:id=\"QOHtxt\" was not injected: check your FXML file 'addIngredient.fxml'.";
-        assert btnCancel != null : "fx:id=\"btnCancel\" was not injected: check your FXML file 'addIngredient.fxml'.";
-        assert btnSave != null : "fx:id=\"btnSave\" was not injected: check your FXML file 'addIngredient.fxml'.";
-        assert desc != null : "fx:id=\"desc\" was not injected: check your FXML file 'addIngredient.fxml'.";
-        assert desctxt != null : "fx:id=\"desctxt\" was not injected: check your FXML file 'addIngredient.fxml'.";
-        assert igreinor != null : "fx:id=\"igreinor\" was not injected: check your FXML file 'addIngredient.fxml'.";
-        assert iidtxt != null : "fx:id=\"iidtxt\" was not injected: check your FXML file 'addIngredient.fxml'.";
-        assert supplier != null : "fx:id=\"supplier\" was not injected: check your FXML file 'addIngredient.fxml'.";
-        assert suppliertxt != null : "fx:id=\"suppliertxt\" was not injected: check your FXML file 'addIngredient.fxml'.";
 
     }
 
+    public void iidKeyRelese(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.ID,iditxt);
+    }
 }

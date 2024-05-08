@@ -33,6 +33,9 @@ public class UpdateMeal extends Meal{
 
     @FXML
     private Text mid;
+    @FXML
+    private ImageView pic;
+
 
     @FXML
     private TextField midtxt;

@@ -32,6 +32,12 @@ public class UpdateSupplier {
     private Text AmountPaid;
 
     @FXML
+    private ImageView pic;
+
+    @FXML
+    private TextField sidtxt;
+
+    @FXML
     private TextField AmountPaidtxt;
 
     @FXML
@@ -81,11 +87,9 @@ public class UpdateSupplier {
 
     @FXML
     private TextField newSnametxt;
-    @FXML
-    private TextField purchasetxt;
 
     @FXML
-    private TextField sidtxt;
+    private TextField purchasetxt;
 
     @FXML
     private TextField txtIngredient;

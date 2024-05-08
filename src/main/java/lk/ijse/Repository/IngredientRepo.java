@@ -18,8 +18,8 @@ public class IngredientRepo {
 
          pstm.setString(1,ingredientModel.getI_ID());
          pstm.setString(2,ingredientModel.getDescription());
-         pstm.setInt(3,ingredientModel.getQty_On_Hand());
-         pstm.setInt(4,ingredientModel.getSupplier());
+         pstm.setInt(3, Integer.parseInt(String.valueOf(ingredientModel.getQty_On_Hand())));
+         pstm.setString(4,ingredientModel.getSupplier());
 
          int i;
          i=pstm.executeUpdate();
@@ -39,7 +39,7 @@ public class IngredientRepo {
      ptsm.setString(1,ingredientModel.getI_ID());
      ptsm.setString(2,ingredientModel.getDescription());
      ptsm.setInt(3,ingredientModel.getQty_On_Hand());
-     ptsm.setInt(4,ingredientModel.getSupplier());
+     ptsm.setString(4,ingredientModel.getSupplier());
 
      return ptsm.executeUpdate() > 0;
  }
@@ -70,7 +70,7 @@ public class IngredientRepo {
             String I_ID = resultSet.getString(1);
             String description = resultSet.getString(2);
             int qoh = resultSet.getInt(3);
-            int supplier = resultSet.getInt(4);
+            String supplier = String.valueOf(resultSet.getInt(4));
             IngredientModel ingredientModel = new IngredientModel(I_ID,description, qoh,supplier);
 
             return ingredientModel;
@@ -86,7 +86,7 @@ public class IngredientRepo {
             ResultSet resultSet =preparedStatement.executeQuery();
 
             while (resultSet.next()){
-                IngredientModel ingredientModel =new IngredientModel(resultSet.getString(1),resultSet.getString(2), resultSet.getInt(3),resultSet.getInt(4));
+                IngredientModel ingredientModel =new IngredientModel(resultSet.getString(1),resultSet.getString(2), resultSet.getInt(3),resultSet.getString(4));
                 ingredientModels.add(ingredientModel);
             }
         } catch (SQLException ex) {
@@ -108,18 +108,6 @@ public class IngredientRepo {
         }
         return idList;
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

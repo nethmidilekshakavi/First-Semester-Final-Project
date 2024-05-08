@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="774.0" prefWidth="1211.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.Customer">
+<AnchorPane fx:id="pane" prefHeight="774.0" prefWidth="1211.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.Customer">
    <children>
       <ImageView fx:id="cusPage" fitHeight="783.0" fitWidth="1256.0" layoutX="-13.0" layoutY="-2.0">
          <image>
@@ -22,14 +22,14 @@
             <Font name="Dyuthi Regular" size="36.0" />
          </font>
       </Text>
-      <Button fx:id="btnAdd" layoutX="1107.0" layoutY="80.0" mnemonicParsing="false" onAction="#addNewCustomer" prefHeight="33.0" prefWidth="63.0" style="-fx-background-color: #ffbd03;" stylesheets="@../Stylesheet/btn2.css" text="ADD" textFill="#2f2c2c">
+      <Button fx:id="btnAdd" layoutX="1107.0" layoutY="86.0" mnemonicParsing="false" onAction="#addNewCustomer" prefHeight="15.0" prefWidth="63.0" style="-fx-background-color: #ffbd03;" stylesheets="@../Stylesheet/btn2.css" text="ADD" textFill="#2f2c2c">
          <effect>
             <DropShadow />
          </effect>
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Button>
-      <Button fx:id="btnPrint" layoutX="1034.0" layoutY="80.0" mnemonicParsing="false" onAction="#getReport" prefHeight="33.0" prefWidth="63.0" style="-fx-background-color: #5adbb5;" stylesheets="@../Stylesheet/button.css" text="PRINT" textFill="#252323">
+      <Button fx:id="btnPrint" layoutX="1034.0" layoutY="86.0" mnemonicParsing="false" onAction="#getReport" prefHeight="15.0" prefWidth="63.0" style="-fx-background-color: #5adbb5;" stylesheets="@../Stylesheet/button.css" text="PRINT" textFill="#252323">
          <effect>
             <DropShadow />
          </effect>

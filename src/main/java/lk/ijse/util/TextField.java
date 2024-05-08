@@ -1,7 +1,7 @@
 package lk.ijse.util;
 
 public enum TextField {
-    ID,NIC,FNAME,LNAME,ADDRESS,MOBILE,EMAIL;
+    ID,NIC,FNAME,LNAME,MOBILE,EMAIL,QTY;
 
 
 }

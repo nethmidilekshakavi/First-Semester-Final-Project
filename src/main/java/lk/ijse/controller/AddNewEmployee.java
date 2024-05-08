@@ -2,6 +2,7 @@ package lk.ijse.controller;
 
 import java.net.URL;
 import java.sql.Date;
+import java.sql.SQLException;
 import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -13,6 +14,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -21,6 +23,7 @@ import lk.ijse.Model.CustomerModel;
 import lk.ijse.Model.EmployeeModel;
 import lk.ijse.Repository.CustomerRepo;
 import lk.ijse.Repository.EmployeeRepo;
+import lk.ijse.util.Regex;
 
 public class AddNewEmployee {
 
@@ -38,7 +41,7 @@ public class AddNewEmployee {
 
     @FXML
     private ImageView addEmployeePane;
-        public static AnchorPane apane;
+       // public static AnchorPane apane;
     @FXML
     private Text address;
 
@@ -58,9 +61,6 @@ public class AddNewEmployee {
     private TextField daytxt;
 
     @FXML
-    private TextField eidtxt;
-
-    @FXML
     private Text email;
 
     @FXML
@@ -71,6 +71,11 @@ public class AddNewEmployee {
 
     @FXML
     private TextField lnametxt;
+
+
+    @FXML
+    private TextField eidtxt;
+
 
     @FXML
     private Text mobile;
@@ -119,13 +124,12 @@ public class AddNewEmployee {
         String laname =lnametxt.getText();
         String address=addresstxt.getText();
         int mobile=Integer.parseInt(mobiletxt.getText());
-        String email=emailtxt.getText();
-        String salary = salarytxt.getText();
-        String position = positiontxt.getText();
         int year = Integer.parseInt(yeartxt.getText());
         int month = Integer.parseInt(monthtxt.getText());
         int Day = Integer.parseInt(daytxt.getText());
-
+        String email=emailtxt.getText();
+        String salary = salarytxt.getText();
+        String position = positiontxt.getText();
 
         EmployeeModel employeeModel=new EmployeeModel(id,nic,finame,laname,address,mobile,email,salary,position,year,month,Day);
         boolean a = EmployeeRepo.saveEmployee(employeeModel);
@@ -145,18 +149,17 @@ public class AddNewEmployee {
         }else {
             new Alert(Alert.AlertType.ERROR,"something went wrong").show();
         }
-        Parent parent =null;
+      /*  Parent parent =null;
         apane.getChildren().clear();
         apane.getChildren().add(parent);
         Stage stage =(Stage)eidtxt.getScene().getWindow();
-        stage.close();
+        stage.close();*/
     }
     @FXML
     void clearOnAction(ActionEvent event) {
         clear();
     }
     public void clear(){
-      eidtxt.clear();   nictxt.clear();
       nictxt.clear();   emailtxt.clear();
       fnametxt.clear(); positiontxt.clear();
       lnametxt.clear(); salarytxt.clear();
@@ -168,32 +171,25 @@ public class AddNewEmployee {
 
     @FXML
     void initialize() {
-        assert CID != null : "fx:id=\"CID\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert NIC != null : "fx:id=\"NIC\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert addEmployeePane != null : "fx:id=\"addEmployeePane\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert address != null : "fx:id=\"address\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert addresstxt != null : "fx:id=\"addresstxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert birthday != null : "fx:id=\"birthday\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert btnCancel != null : "fx:id=\"btnCancel\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert btnSave != null : "fx:id=\"btnSave\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert daytxt != null : "fx:id=\"daytxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert eidtxt != null : "fx:id=\"eidtxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert email != null : "fx:id=\"email\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert emailtxt != null : "fx:id=\"emailtxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert fnametxt != null : "fx:id=\"fnametxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert lnametxt != null : "fx:id=\"lnametxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert mobile != null : "fx:id=\"mobile\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert mobiletxt != null : "fx:id=\"mobiletxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert monthtxt != null : "fx:id=\"monthtxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert name != null : "fx:id=\"name\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert nictxt != null : "fx:id=\"nictxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert personalInformation != null : "fx:id=\"personalInformation\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert position != null : "fx:id=\"position\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert positiontxt != null : "fx:id=\"positiontxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert salary != null : "fx:id=\"salary\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert salarytxt != null : "fx:id=\"salarytxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
-        assert yeartxt != null : "fx:id=\"yeartxt\" was not injected: check your FXML file 'addNewEmployee.fxml'.";
 
+    }
+    public void eidKeyRelese(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.ID,eidtxt);
+    }
+    public void lnameKeyRelese(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.LNAME,lnametxt);
+    }
+
+    public void numnameKeyRelese(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.MOBILE,mobiletxt);
+    }
+
+    public void emailKeyRelese(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.EMAIL,emailtxt);
+    }
+
+    public void fnameKeyRelese(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.FNAME,fnametxt);
     }
 
 }

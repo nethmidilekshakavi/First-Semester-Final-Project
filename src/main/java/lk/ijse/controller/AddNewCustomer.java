@@ -27,6 +27,7 @@ import javafx.stage.Stage;
 import lk.ijse.Mail.mail;
 import lk.ijse.Model.CustomerModel;
 import lk.ijse.Repository.CustomerRepo;
+import lk.ijse.Repository.ReservationRepo;
 import lk.ijse.util.Regex;
 
 public class AddNewCustomer {
@@ -40,6 +41,10 @@ public class AddNewCustomer {
 
     @FXML
     private ImageView AddNewCustomerPage;
+
+    @FXML
+    private TextField cidtxt;
+
 
     @FXML
     private Text CID;
@@ -59,8 +64,6 @@ public class AddNewCustomer {
     @FXML
     private Button btnSave;
 
-    @FXML
-    private TextField Cidtxt;
     @FXML
     private Text customerinfor;
 
@@ -94,7 +97,7 @@ public class AddNewCustomer {
 
     @FXML
     void dontSaveCustomer(ActionEvent event) {
-        Stage stage = (Stage) Cidtxt.getScene().getWindow();
+        Stage stage = (Stage) cidtxt.getScene().getWindow();
         stage.close();
     }
 
@@ -104,7 +107,7 @@ public class AddNewCustomer {
     }
 
     public void clear() {
-        Cidtxt.clear();
+        cidtxt.clear();
         nictxt.clear();
         fnametxt.clear();
         lnametxt.clear();
@@ -115,9 +118,9 @@ public class AddNewCustomer {
     }
 
     @FXML
-    void saveCustomer(ActionEvent event) throws SQLException {
+    void saveCustomer(ActionEvent event) throws SQLException, IOException {
 
-        String cid = Cidtxt.getText();
+        String cid = cidtxt.getText();
         String nic = nictxt.getText();
         String fname = fnametxt.getText();
         String lname = lnametxt.getText();
@@ -125,68 +128,63 @@ public class AddNewCustomer {
         int mobile = Integer.parseInt(numtxt.getText());
         String email = Emailtxt.getText();
 
-        if (isValied()) {
-            CustomerModel customerModel = new CustomerModel(cid, nic, fname, lname, address, mobile, email);
-            boolean a = CustomerRepo.savecustomer(customerModel);
 
-            if (a) {
-                new Alert(Alert.AlertType.CONFIRMATION, "customer saved successfully").show();
-                mail mail = new mail();
-                mail.setMsg("Hellow now you are a Customer of FOOD COURT RESTURANT" +
-                        "\nTime : " + Time.valueOf(LocalTime.now()) +
-                        "\nDate : " + Date.valueOf(LocalDate.now())
-                );
-                mail.setTo(Emailtxt.getText());
-                mail.setSubject("Alert");
+        CustomerModel customerModel = new CustomerModel(cid, nic, fname, lname, address, mobile, email);
+        boolean a = CustomerRepo.savecustomer(customerModel);
 
-                Thread thread = new Thread(mail);
-                thread.start();
+        if (a) {
+            new Alert(Alert.AlertType.CONFIRMATION, "customer saved successfully").show();
+            mail mail = new mail();
+            mail.setMsg("Hi " + fname + " " + lname +
+                    "\nWelcome \uD83D\uDE4F you as a customer of the FOOD COURT RESTAURENT! \uD83C\uDF54 \uD83C\uDF7D\uFE0F  " +
+                    "\nYour Nexus Card Number : " + mobile +
+                    "\nTime : " + Time.valueOf(LocalTime.now()) +
+                    "\nDate : " + Date.valueOf(LocalDate.now()) +
+                    "\nThank You! \uD83D\uDE0A"
+            );
+            mail.setTo(Emailtxt.getText());
+            mail.setSubject("Alert");
 
-                    new Alert(Alert.AlertType.CONFIRMATION, "customer saved successfully").show();
+            Thread thread = new Thread(mail);
+            thread.start();
 
-                } else {
-                    new Alert(Alert.AlertType.ERROR, "something went wrong").show();
-                }
-               Stage stage1 = (Stage) Cidtxt.getScene().getWindow();
-                stage1.close();
-            }
+            new Alert(Alert.AlertType.CONFIRMATION, "customer saved successfully").show();
+
+        } else {
+            new Alert(Alert.AlertType.ERROR, "something went wrong").show();
         }
+        Stage stage1 = (Stage) cidtxt.getScene().getWindow();
+        stage1.close();
+        apane.getChildren().clear();
+        apane.getChildren().add(FXMLLoader.load(getClass().getResource("/view/Customer.fxml")));
+    }
+
 
     public void txtcustomerEmailKeyreleased(KeyEvent keyEvent) {
-        Regex.setTextColor(lk.ijse.util.TextField.EMAIL,Emailtxt);
+        Regex.setTextColor(lk.ijse.util.TextField.EMAIL, Emailtxt);
     }
 
-    public void txtcustomerIDKeyreleased(KeyEvent keyEvent) {
-        Regex.setTextColor(lk.ijse.util.TextField.ID, Cidtxt);
+    public void cidkeyRelese(KeyEvent keyEvent) {Regex.setTextColor(lk.ijse.util.TextField.ID, cidtxt);}
+
+    @FXML
+    void txtNumberKeyRelese(KeyEvent event) {
+        Regex.setTextColor(lk.ijse.util.TextField.MOBILE, numtxt);
     }
 
-    public boolean isValied(){
-        if (!Regex.setTextColor(lk.ijse.util.TextField.ID, Cidtxt)) return false;
-        if (!Regex.isTextFieldValid(lk.ijse.util.TextField.EMAIL, String.valueOf(Emailtxt)))return false;
-        return true;
+    @FXML
+    void FirstameOnkeyRelese(KeyEvent event) {
+        Regex.setTextColor(lk.ijse.util.TextField.FNAME, fnametxt);
     }
 
-@FXML
-    void initialize() {
-        assert AddNewCustomerPage != null : "fx:id=\"AddNewCustomerPage\" was not injected: check your FXML file 'addNewCustomer.fxml'.";
-        assert CID != null : "fx:id=\"CID\" was not injected: check your FXML file 'addNewCustomer.fxml'.";
-        assert Emailtxt != null : "fx:id=\"Emailtxt\" was not injected: check your FXML file 'addNewCustomer.fxml'.";
-        assert address != null : "fx:id=\"address\" was not injected: check your FXML file 'addNewCustomer.fxml'.";
-        assert addresstxt != null : "fx:id=\"addresstxt\" was not injected: check your FXML file 'addNewCustomer.fxml'.";
-        assert btnCancel != null : "fx:id=\"btnCancel\" was not injected: check your FXML file 'addNewCustomer.fxml'.";
-        assert btnSave != null : "fx:id=\"btnSave\" was not injected: check your FXML file 'addNewCustomer.fxml'.";
-        assert customerinfor != null : "fx:id=\"customerinfor\" was not injected: check your FXML file 'addNewCustomer.fxml'.";
-        assert email != null : "fx:id=\"email\" was not injected: check your FXML file 'addNewCustomer.fxml'.";
-        assert fname != null : "fx:id=\"fname\" was not injected: check your FXML file 'addNewCustomer.fxml'.";
-        assert fnametxt != null : "fx:id=\"fnametxt\" was not injected: check your FXML file 'addNewCustomer.fxml'.";
-        assert lname != null : "fx:id=\"lname\" was not injected: check your FXML file 'addNewCustomer.fxml'.";
-        assert lnametxt != null : "fx:id=\"lnametxt\" was not injected: check your FXML file 'addNewCustomer.fxml'.";
-        assert nic != null : "fx:id=\"nic\" was not injected: check your FXML file 'addNewCustomer.fxml'.";
-        assert nictxt != null : "fx:id=\"nictxt\" was not injected: check your FXML file 'addNewCustomer.fxml'.";
-        assert num != null : "fx:id=\"num\" was not injected: check your FXML file 'addNewCustomer.fxml'.";
-        assert numtxt != null : "fx:id=\"numtxt\" was not injected: check your FXML file 'addNewCustomer.fxml'.";
-
+    @FXML
+    void LastnameOnkeyRelese(KeyEvent event) {
+        Regex.setTextColor(lk.ijse.util.TextField.LNAME, lnametxt);
     }
 
+    @FXML
+    void initialize() throws SQLException {
 
+    }
 }
+
+

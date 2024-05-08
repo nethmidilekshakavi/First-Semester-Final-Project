@@ -43,6 +43,8 @@ public class WelocomePage {
     @FXML
     private ImageView welcomePage;
 
+
+
     @FXML
     void initialize() {
         assert W != null : "fx:id=\"W\" was not injected: check your FXML file 'welocomePage.fxml'.";
@@ -56,5 +58,7 @@ public class WelocomePage {
         assert welcomePage != null : "fx:id=\"welcomePage\" was not injected: check your FXML file 'welocomePage.fxml'.";
 
     }
+
+
 
 }

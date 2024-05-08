@@ -23,7 +23,8 @@ public class UpdateIngredient {
 
     @FXML
     private Text NEWIID;
-
+    @FXML
+    private ImageView pic;
     @FXML
     private Text QOH;
 

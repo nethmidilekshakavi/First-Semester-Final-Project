@@ -34,13 +34,13 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="fnametxt" layoutX="198.0" layoutY="203.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="fnametxt" layoutX="198.0" layoutY="203.0" onKeyReleased="#FirstameOnkeyRelese" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <Text fx:id="lname" fill="WHITE" layoutX="55.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name :">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="lnametxt" layoutX="198.0" layoutY="248.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="lnametxt" layoutX="198.0" layoutY="248.0" onKeyReleased="#LastnameOnkeyRelese" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <Text fx:id="address" fill="WHITE" layoutX="55.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address :">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -52,7 +52,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="numtxt" layoutX="198.0" layoutY="345.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="numtxt" layoutX="198.0" layoutY="345.0" onKeyReleased="#txtNumberKeyRelese" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <Text fx:id="email" fill="WHITE" layoutX="55.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email :">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -89,6 +89,6 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <TextField fx:id="Cidtxt" layoutX="112.0" layoutY="104.0" onKeyReleased="#txtcustomerIDKeyreleased" opacity="0.76" prefHeight="24.0" prefWidth="113.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="cidtxt" layoutX="105.0" layoutY="104.0" onKeyReleased="#cidkeyRelese" opacity="0.92" prefHeight="24.0" prefWidth="87.0" />
    </children>
 </AnchorPane>

@@ -40,10 +40,9 @@
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Text>
-      <TextField fx:id="sidtxt" layoutX="92.0" layoutY="94.0" opacity="0.72" prefHeight="24.0" prefWidth="85.0" style="-fx-background-radius: 40;" />
-      <TextField fx:id="nametxt" layoutX="178.0" layoutY="147.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="sidtxt" layoutX="91.0" layoutY="94.0" onKeyReleased="#sidKeyRelese" opacity="0.72" prefHeight="24.0" prefWidth="104.0" style="-fx-background-radius: 40;" />
       <TextField fx:id="addresstxt" layoutX="180.0" layoutY="184.0" opacity="0.72" prefHeight="16.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
-      <TextField fx:id="mobiletxt" layoutX="180.0" layoutY="219.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="mobiletxt" layoutX="180.0" layoutY="219.0" onKeyReleased="#numKeyRelese" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <Text fx:id="ingredient" fill="WHITE" layoutX="48.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingredient :">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -96,5 +95,6 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
+      <TextField fx:id="nametxt" layoutX="137.0" layoutY="148.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
    </children>
 </AnchorPane>

@@ -29,6 +29,9 @@ public class UpdateEmployee {
     private Text EID;
 
     @FXML
+    private ImageView pic;
+
+    @FXML
     private Text NIC;
 
     @FXML

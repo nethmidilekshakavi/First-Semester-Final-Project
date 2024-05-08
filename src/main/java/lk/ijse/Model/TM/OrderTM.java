@@ -13,6 +13,6 @@ import java.sql.Date;
 
 public class OrderTM {
     private String orderId;
-    private String customerId;
+    private int mobile;
     private Date date;
 }

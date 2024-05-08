@@ -35,22 +35,50 @@ public class CustomerRepo {
         return false;
 
     }
+    public static CustomerModel searchByContact(String contact) throws SQLException {
+        String sql = "SELECT * FROM Customer WHERE Phone_Number = ?";
+
+        Connection connection = DbConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setString(1, contact);
+
+        ResultSet resultSet = pstm.executeQuery();
+        if (resultSet.next()) {
+            String C_ID = resultSet.getString(1);
+            String NIC = resultSet.getString(2);
+            String First_Name = resultSet.getString(3);
+            String Last_Name = resultSet.getString(4);
+            String Address = resultSet.getString(5);
+            int Phone_Number = resultSet.getInt(6);
+            String Email = resultSet.getString(7);
+
+            CustomerModel customerModel = new CustomerModel(C_ID, NIC, First_Name, Last_Name, Address, Phone_Number, Email);
+
+            return customerModel;
+        }
+
+        return null;
+    }
 
 
-    public static boolean updateCustomer(CustomerModel customerModel) throws SQLException {
+    public static boolean updateCustomer(CustomerModel customerModel)  {
 
+try {
+    Connection connection = DbConnection.getInstance().getConnection();
+    PreparedStatement pstm = connection.prepareStatement("UPDATE Customer SET NIC = ?, First_Name = ?, Last_Name = ?, Address = ?  , Email = ?, Phone_Number = ?  WHERE C_ID = ?");
+    pstm.setString(1, customerModel.getNIC());
+    pstm.setString(2, customerModel.getFirst_Name());
+    pstm.setString(3, customerModel.getLast_Name());
+    pstm.setString(4, customerModel.getAddress());
+    pstm.setString(5, customerModel.getEmail());
 
-            Connection connection = DbConnection.getInstance().getConnection();
-            PreparedStatement pstm = connection.prepareStatement("UPDATE Customer SET NIC = ?, First_Name = ?, Last_Name = ?, Address = ?  , Email = ?, Phone_Number = ?  WHERE C_ID = ?");
-            pstm.setString(1, customerModel.getNIC());
-            pstm.setString(2, customerModel.getFirst_Name());
-            pstm.setString(3, customerModel.getLast_Name());
-            pstm.setString(4, customerModel.getAddress());
-            pstm.setInt(6, customerModel.getPhone_Number());
-            pstm.setString(5, customerModel.getEmail());
-            pstm.setString(7, customerModel.getC_ID());
-
-        return pstm.executeUpdate() > 0;
+    pstm.setInt(6, customerModel.getPhone_Number());
+    pstm.setString(7, customerModel.getC_ID());
+    return pstm.executeUpdate() > 0;
+}catch (SQLException e){
+    e.printStackTrace();
+}
+        return false;
     }
 
     public static boolean delete(String id) throws SQLException {
@@ -109,6 +137,7 @@ public class CustomerRepo {
        return customerModels;
     }
 
+
     public static List<String> getIds() throws SQLException {
         String sql = "SELECT C_ID FROM Customer";
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
@@ -123,7 +152,6 @@ public class CustomerRepo {
         }
         return idList;
     }
-
 
 }
 

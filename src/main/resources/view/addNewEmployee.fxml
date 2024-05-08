@@ -28,7 +28,7 @@
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Text>
-      <Text fx:id="CID" fill="#f5f3f3" layoutX="37.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CID :" wrappingWidth="36.0673828125">
+      <Text fx:id="CID" fill="#f5f3f3" layoutX="37.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EID :" wrappingWidth="36.0673828125">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Text>
@@ -74,13 +74,12 @@
             <Font name="Dyuthi Regular" size="36.0" />
          </font>
       </Text>
-      <TextField fx:id="eidtxt" layoutX="176.0" layoutY="110.0" opacity="0.8" prefHeight="24.0" prefWidth="85.0" style="-fx-background-radius: 40;" />
       <TextField fx:id="nictxt" layoutX="176.0" layoutY="146.0" opacity="0.8" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
-      <TextField fx:id="fnametxt" layoutX="176.0" layoutY="181.0" opacity="0.8" prefHeight="24.0" prefWidth="166.0" promptText="First Name" style="-fx-background-radius: 40;" />
-      <TextField fx:id="lnametxt" layoutX="358.0" layoutY="181.0" opacity="0.8" prefHeight="24.0" prefWidth="166.0" promptText="Last Name" style="-fx-background-radius: 40;" />
+      <TextField fx:id="fnametxt" layoutX="176.0" layoutY="181.0" onKeyReleased="#fnameKeyRelese" opacity="0.8" prefHeight="24.0" prefWidth="166.0" promptText="First Name" style="-fx-background-radius: 40;" />
+      <TextField fx:id="lnametxt" layoutX="358.0" layoutY="181.0" onKeyReleased="#lnameKeyRelese" opacity="0.8" prefHeight="24.0" prefWidth="166.0" promptText="Last Name" style="-fx-background-radius: 40;" />
       <TextField fx:id="addresstxt" layoutX="176.0" layoutY="213.0" opacity="0.8" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
-      <TextField fx:id="mobiletxt" layoutX="176.0" layoutY="285.0" opacity="0.8" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
-      <TextField fx:id="emailtxt" layoutX="176.0" layoutY="318.0" opacity="0.8" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="mobiletxt" layoutX="176.0" layoutY="285.0" onKeyReleased="#numnameKeyRelese" opacity="0.8" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="emailtxt" layoutX="176.0" layoutY="318.0" onKeyReleased="#emailKeyRelese" opacity="0.8" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <TextField fx:id="positiontxt" layoutX="176.0" layoutY="350.0" opacity="0.8" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <TextField fx:id="salarytxt" layoutX="176.0" layoutY="381.0" opacity="0.8" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <Button fx:id="clear" layoutX="405.0" layoutY="390.0" mnemonicParsing="false" onAction="#clearOnAction" prefHeight="33.0" prefWidth="85.0" style="-fx-background-radius: 10; -fx-background-color: #F8C794;" text="Clear">
@@ -91,5 +90,6 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
+      <TextField fx:id="eidtxt" layoutX="177.0" layoutY="109.0" onKeyReleased="#eidKeyRelese" opacity="0.82" prefHeight="24.0" prefWidth="94.0" />
    </children>
 </AnchorPane>

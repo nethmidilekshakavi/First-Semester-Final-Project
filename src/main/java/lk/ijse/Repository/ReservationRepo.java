@@ -35,8 +35,6 @@ public class ReservationRepo {
             ptsm.setString(4, reservationModel.getDescription());
             ptsm.setString(5, reservationModel.getTime());
             ptsm.setString(6, reservationModel.getTotal());
-            ptsm.setString(7, String.valueOf(reservationModel.getEID()));
-            ptsm.setString(8, String.valueOf(reservationModel.getDID()));
 
             int i;
             i = ptsm.executeUpdate();

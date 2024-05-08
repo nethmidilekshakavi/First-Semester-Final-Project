@@ -22,15 +22,14 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lk.ijse.Model.*;
 import lk.ijse.Model.TM.OrderTM;
 import lk.ijse.Model.TM.ReservationTM;
-import lk.ijse.Repository.CustomerRepo;
-import lk.ijse.Repository.MealRepo;
-import lk.ijse.Repository.OrderDetailRepo;
-import lk.ijse.Repository.ReservationRepo;
+import lk.ijse.Repository.*;
+import lombok.SneakyThrows;
 
 public class Reservation {
 
@@ -139,7 +138,8 @@ public class Reservation {
     @FXML
     private Text txtdesc;
     private ObservableList<ReservationTM> oblist = FXCollections.observableArrayList();
-    ObservableList<ReservationTM> observableList = FXCollections.observableArrayList();
+
+    double netTotal = 0;
 
     public void initialize() {
         setDate();
@@ -152,26 +152,26 @@ public class Reservation {
     private void setCellValueFactory() {
         colcode.setCellValueFactory(new PropertyValueFactory<>("code"));
         coldesc.setCellValueFactory(new PropertyValueFactory<>("description"));
-        colqty.setCellValueFactory(new PropertyValueFactory<>("Qty"));
+        colqty.setCellValueFactory(new PropertyValueFactory<>("qty"));
         colprice.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
         coltotal.setCellValueFactory(new PropertyValueFactory<>("total"));
-        remove.setCellValueFactory(new PropertyValueFactory<ReservationTM,JFXButton>("Remove"));
+        remove.setCellValueFactory(new PropertyValueFactory<>("Remove"));
     }
 
 
 
     private void getCustomerIds() {
-       ObservableList<String>oblist = FXCollections.observableArrayList();
-       try{
-           List<String> idlist = CustomerRepo.getIds();
-           for (String id : idlist){
-               oblist.add(id);
-           }
-           nicList.setItems(oblist);
+        ObservableList<String>oblist = FXCollections.observableArrayList();
+        try{
+            ArrayList<CustomerModel> idlist = CustomerRepo.getAll();
+            for (int i = 0; i < idlist.size(); i++) {
+                oblist.add(String.valueOf(idlist.get(i).getPhone_Number()));
+            }
+            nicList.setItems(oblist);
 
-       } catch (SQLException e) {
-           throw new RuntimeException(e);
-       }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void getItemCodes() {
@@ -203,8 +203,8 @@ public class Reservation {
     }
     private String generateNextOrderId(String currentId) {
         if (currentId != null) {
-            String[] split = currentId.split("O");
-            int idNum = Integer.parseInt(split[0]);
+            String[] split = currentId.split("");
+            int idNum = Integer.parseInt(split[1]);
             return "O" + ++idNum;
         }
         return "O1";
@@ -218,59 +218,53 @@ public class Reservation {
 
     @FXML
     void btnAddToCartOnAction(ActionEvent event) {
-        String code = reservationList.getValue();
-        String desc = txtdesc.getText();
-        int qty = Integer.parseInt(qtytxt.getText());
-        double price =Integer.parseInt(ptxt.getText());
-        double total = Integer.parseInt(totaltxt.getText());
-        JFXButton btnremove = new JFXButton("remove");
-        btnremove.setCursor(Cursor.HAND);
+        String itemcode = reservationList.getValue();
+        String description = txtdesc.getText();
+        String qty = qtytxt.getText();
+        String unitPrice = ptxt.getText();
+        double unit = Double.parseDouble(unitPrice);
+        int qtyget = Integer.parseInt(qty);
+        double total = unit * qtyget;
 
-        btnremove.setOnAction((e) -> {
-            ButtonType yes = new ButtonType("yes", ButtonBar.ButtonData.OK_DONE);
-            ButtonType no = new ButtonType("no", ButtonBar.ButtonData.CANCEL_CLOSE);
-
-            Optional<ButtonType> type = new Alert(Alert.AlertType.INFORMATION, "Are you sure to remove?", yes, no).showAndWait();
-
-            if (type.orElse(no) == yes) {
-                int selectedIndex = orderTable.getSelectionModel().getSelectedIndex();
-                oblist.remove(selectedIndex);
-
-                orderTable.refresh();
-                calculateNetTotal();
-            }
-        });
-        for (int i = 0; i < orderTable.getItems().size(); i++) {
-            if (code.equals(colcode.getCellData(i))) {
-
-                ReservationTM tm = oblist.get(i);
-                qty += tm.getQty();
-                total = qty * price ;
-
-                tm.setQty(qty);
-                tm.setTotal(total);
-
-                orderTable.refresh();
-
-                calculateNetTotal();
-                return;
-
-            }
-        }
-         ReservationTM reservationTM = new ReservationTM(code,desc,qty,price,total,new JFXButton("Remove"));
-        oblist.add(reservationTM);
-
-        orderTable.setItems(oblist);
-        calculateNetTotal();
-        qtytxt.setText("");
+        netTotal += total;
+        oblist.add(new ReservationTM(itemcode,description,qtyget,unit,total,new JFXButton("Delete")));
+        loadTable();
+        clearFields();
+        setTblAction();
+        setNetTotal();
     }
 
-    private void calculateNetTotal() {
-        double netTotal = 0;
-        for (int i =0; i < orderTable.getItems().size(); i ++){
-            netTotal += (double) coltotal.getCellData(i);
-        }
+    private void loadTable() {
+        orderTable.setItems(oblist);
+    }
+
+    private void setNetTotal() {
         totaltxt.setText(String.valueOf(netTotal));
+    }
+
+    private void setTblAction() {
+        for (int i = 0; i < oblist.size(); i++) {
+            int finalI = i;
+            double total1 = oblist.get(i).getTotal();
+            oblist.get(i).getRemove().setOnAction(event -> {
+                oblist.remove(finalI);
+                loadTable();
+                setTblAction();
+                netTotal -= total1;
+                setNetTotal();
+            });
+            oblist.get(i).getRemove().setStyle("-fx-background-color: rgba(175, 108, 108, 1)");
+            oblist.get(i).getRemove().setTextFill(Color.WHITE);
+
+
+        }
+    }
+
+    private void clearFields() {
+        reservationList.setValue("");
+        txtdesc.setText("");
+        qtytxt.setText("");
+        ptxt.setText("");
     }
 
 
@@ -285,63 +279,65 @@ public class Reservation {
         stage.show();
     }
 
+    @SneakyThrows
     @FXML
     void btnPlaceOrderOnAction(ActionEvent event) {
-        String orderid = reservationIDtxt.getText();
-        String cusid = nicList.getValue();
-        String date = String.valueOf(Date.parse(String.valueOf(LocalDate.now())));
-       double alltotal = 0;
-        double t = alltotal;
-        String des = txtdesc.getText();
+        String reId = reservationIDtxt.getText();
+        String custId ="";
+        ArrayList<CustomerModel> all = CustomerRepo.getAll();
+        for (int i = 0; i < all.size(); i++) {
+            int phoneNumber = all.get(i).getPhone_Number();
+            int value = Integer.parseInt(nicList.getValue());
+            if (value == phoneNumber){
+                custId = all.get(i).getC_ID();
+            }
+        }
+
+        String date = this.date.getText();
+        String des = "";
         String time = String.valueOf(LocalTime.now());
 
-      // OrderModel om= new OrderModel(orderid,cusid,date);
-        new ReservationModel(0,Integer.parseInt(cusid),date,des,time,String.valueOf(t),1,1);
-
-      /*  List<OrderDetailsModel> odlist = new ArrayList<>();
-
-        for(int i = 0; i<orderTable.getItems().size(); i++){
-            ReservationTM tm = oblist.get(i);
-
-            OrderDetailsModel od = new OrderDetailsModel(
-                    orderid,
-                    tm.getCode(),
-                    tm.getQty(),
-                    tm.getUnitPrice()
-            );
-            odlist.add(od);
-        }*/
-
-       
-
-      /*  try {
-         //   ReservationRepo.saveReservation(new ReservationModel(0,Integer.parseInt(cusid),date,des,time,String.parse(t),1,1));
-            new Alert(Alert.AlertType.CONFIRMATION,"Saved to reservation").show();
-        } catch (SQLException e) {
-            e.printStackTrace();
+        ReservationModel reservationModel = new ReservationModel(reId,custId,date,des,time,String.valueOf(netTotal));
+        ArrayList<ReservationDetailModel> arrayList = new ArrayList<>();
+        for (int i = 0; i < oblist.size(); i++) {
+            String code = oblist.get(i).getCode();
+            String unitPrice = String.valueOf(oblist.get(i).getUnitPrice());
+            String qty1 = String.valueOf(oblist.get(i).getQty());
+            ReservationDetailModel reservationDetailModel = new ReservationDetailModel(reId,code,unitPrice,qty1);
+            System.out.println(reservationDetailModel);
+            arrayList.add(reservationDetailModel);
         }
-*/
-
-        for (int i = 0; i < observableList.size(); i++) {
-            String q = "0";
-            String w  = observableList.get(i).getCode();
-            String e = String.valueOf(observableList.get(i).getQty());
-            String r = String.valueOf(observableList.get(i).getUnitPrice());
-            OrderDetailRepo.saveOrderDetail(new OrderDetailsModel(q,w,e,r));
-
+        boolean b = TransactionRepo.setTransaction(reservationModel,arrayList);
+        if (b){
+            new Alert(Alert.AlertType.INFORMATION,"Order Placed Successfully!!").show();
+            clearAllFields();
         }
 
+    }
 
+    private void clearAllFields() {
+        clearFields();
+        nicList.setValue("");
+        nametxt.setText("");
+        String text = reservationIDtxt.getText();
+        String[] split = text.split("");
+        oblist.clear();
+        loadTable();
+        int x = Integer.parseInt(split[1]) + 1;
+        reservationIDtxt.setText("0"+x);
+        totaltxt.setText("");
     }
 
     @FXML
     void comboCustomerList(ActionEvent event) {
-        String C_ID = nicList.getValue();
-        try{
-            CustomerModel customerModel = CustomerRepo.searchById(C_ID);
-            nametxt.setText(customerModel.getFirst_Name());
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        String number = nicList.getValue();
+        if (number.equals("")){}else {
+            try {
+                CustomerModel customerModel = CustomerRepo.searchByContact(number);
+                nametxt.setText(customerModel.getFirst_Name());
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
@@ -367,7 +363,7 @@ public class Reservation {
 
     }
 
-  
+
 
 }
 

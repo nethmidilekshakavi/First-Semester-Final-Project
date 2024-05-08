@@ -17,7 +17,7 @@
             <Image url="@../Images/pngtree-blue-gradient-web-ui-background-image_518658.jpg" />
          </image>
       </ImageView>
-      <TableView fx:id="SupplierTable" layoutX="7.0" layoutY="126.0" prefHeight="548.0" prefWidth="1172.0">
+      <TableView fx:id="SupplierTable" layoutX="7.0" layoutY="126.0" prefHeight="548.0" prefWidth="1172.0" stylesheets="@../Stylesheet/table.css">
          <columns>
             <TableColumn fx:id="colName" prefWidth="96.0" text="Name" />
             <TableColumn fx:id="colAddress" prefWidth="98.0" text="Address" />
@@ -37,14 +37,14 @@
             <Font name="Dyuthi Regular" size="36.0" />
          </font>
       </Text>
-      <Button fx:id="btnAdd" layoutX="1111.0" layoutY="81.0" mnemonicParsing="false" onAction="#addNewSupplier" prefHeight="36.0" prefWidth="63.0" style="-fx-background-color: #ffbd03;" text="ADD" textFill="#1b1a1a">
+      <Button fx:id="btnAdd" layoutX="1111.0" layoutY="94.0" mnemonicParsing="false" onAction="#addNewSupplier" prefHeight="23.0" prefWidth="63.0" style="-fx-background-color: #ffbd03;" stylesheets="@../Stylesheet/button.css" text="ADD" textFill="#1b1a1a">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>
          <effect>
             <DropShadow />
          </effect></Button>
-      <Button fx:id="btnPrint" layoutX="1039.0" layoutY="81.0" mnemonicParsing="false" onAction="#getReport" prefHeight="36.0" prefWidth="63.0" style="-fx-background-color: #5adbb5;" text="PRINT" textFill="#141313">
+      <Button fx:id="btnPrint" layoutX="1039.0" layoutY="93.0" mnemonicParsing="false" onAction="#getReport" prefHeight="24.0" prefWidth="63.0" style="-fx-background-color: #5adbb5;" stylesheets="@../Stylesheet/btn2.css" text="PRINT" textFill="#141313">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>

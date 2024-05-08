@@ -18,6 +18,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lk.ijse.Model.CustomerModel;
 import lk.ijse.Model.IngredientModel;
+import lk.ijse.Model.SupplierModel;
 import lk.ijse.Repository.CustomerRepo;
 import lk.ijse.Repository.IngredientRepo;
 import lk.ijse.util.Regex;
@@ -82,7 +83,7 @@ public class AddIngredient {
 
         String iid = iditxt.getText();
         String desc = desctxt.getText();
-        int qoh = Integer.parseInt(QOHtxt.getText());
+        String qoh = QOHtxt.getText();
         String supplier = suppliertxt.getText();
 
             IngredientModel ingredientModel = new IngredientModel(iid, desc, qoh,supplier);

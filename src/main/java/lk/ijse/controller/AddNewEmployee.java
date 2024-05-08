@@ -153,6 +153,8 @@ public class AddNewEmployee {
         }else {
             new Alert(Alert.AlertType.ERROR,"something went wrong").show();
         }
+        Stage stage1 = (Stage) eidtxt.getScene().getWindow();
+        stage1.close();
         apane.getChildren().clear();
         apane.getChildren().add(FXMLLoader.load(getClass().getResource("/view/Employee.fxml")));
     }

@@ -93,6 +93,8 @@ public class UpdateMeal extends Meal{
             errorAlert.setContentText("Something went wrong.");
             errorAlert.show();
         }
+        Stage stage1 = (Stage) midtxt.getScene().getWindow();
+        stage1.close();
     }
 
     @FXML

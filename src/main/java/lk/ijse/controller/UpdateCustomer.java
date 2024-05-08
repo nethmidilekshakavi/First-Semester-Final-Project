@@ -116,6 +116,8 @@ public class UpdateCustomer extends Customer{
             errorAlert.setContentText("Something went wrong.");
             errorAlert.show();
         }
+        Stage stage1 = (Stage) cidtxt.getScene().getWindow();
+        stage1.close();
     }
 
     @FXML

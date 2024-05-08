@@ -139,9 +139,10 @@ public class AddNewSupplier {
         }else {
             new Alert(Alert.AlertType.ERROR,"something went wrong").show();
         }
+        Stage stage1 = (Stage) sidtxt.getScene().getWindow();
+        stage1.close();
         apane.getChildren().clear();
         apane.getChildren().add(FXMLLoader.load(getClass().getResource("/view/Supplier.fxml")));
-
     }
     @FXML
     void clearOnAction(ActionEvent event) {

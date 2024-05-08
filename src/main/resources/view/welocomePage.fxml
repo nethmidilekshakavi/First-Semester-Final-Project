@@ -39,7 +39,7 @@
             <DropShadow />
          </effect>
       </Text>
-      <Text fx:id="W" fill="#fffbfb" layoutX="25.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="W">
+      <Text fx:id="W" fill="#eea411" layoutX="25.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="W">
          <font>
             <Font name="Dyuthi Regular" size="46.0" />
          </font>

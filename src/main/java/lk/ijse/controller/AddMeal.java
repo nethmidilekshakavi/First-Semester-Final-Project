@@ -109,6 +109,8 @@ public class AddMeal {
         } else {
             new Alert(Alert.AlertType.ERROR, "something went Wrong").show();
         }
+        Stage stage1 = (Stage) midtxt.getScene().getWindow();
+        stage1.close();
         apane.getChildren().clear();
         apane.getChildren().add(FXMLLoader.load(getClass().getResource("/view/Meal.fxml")));
     }

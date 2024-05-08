@@ -139,6 +139,8 @@ public class UpdateSupplier {
             errorAlert.setContentText("Something went wrong.");
             errorAlert.show();
         }
+        Stage stage1 = (Stage) sidtxt.getScene().getWindow();
+        stage1.close();
     }
 
     @FXML

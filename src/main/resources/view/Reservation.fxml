@@ -16,33 +16,33 @@
 
 <AnchorPane prefHeight="774.0" prefWidth="1211.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.Reservation">
    <children>
-      <ImageView fx:id="pane" fitHeight="782.0" fitWidth="1222.0" layoutX="-6.0" layoutY="-2.0">
+      <ImageView fx:id="pane" fitHeight="782.0" fitWidth="1216.0" layoutX="-6.0" layoutY="-2.0" opacity="0.19">
          <image>
-            <Image url="@../Images/pngtree-blue-gradient-web-ui-background-image_518658.jpg" />
+            <Image url="@../Images/desktop-wallpaper-plain-blue-bright-blue-plain.jpg" />
          </image>
       </ImageView>
-      <Text fx:id="title" layoutX="511.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Place Order Form">
+      <Text fx:id="title" layoutX="460.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME TO FOOD COURT">
          <font>
             <Font name="Dyuthi Regular" size="36.0" />
          </font>
       </Text>
-      <JFXComboBox fx:id="nicList" layoutX="181.0" layoutY="104.0" onAction="#comboCustomerList" prefHeight="24.0" prefWidth="145.0" />
-      <Text fx:id="RID" layoutX="75.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation ID :" />
-      <Text fx:id="date" layoutX="960.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation Date :">
+      <JFXComboBox fx:id="nicList" layoutX="181.0" layoutY="136.0" onAction="#comboCustomerList" prefHeight="24.0" prefWidth="145.0" />
+      <Text fx:id="RID" layoutX="75.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation ID :" />
+      <Text fx:id="date" layoutX="903.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation Date :">
          <font>
             <Font name="System Bold" size="16.0" />
          </font></Text>
-      <Text fx:id="CNIC" layoutX="76.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer TEL:" />
-      <Text fx:id="RCODE" layoutX="75.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Code :" />
-      <JFXComboBox fx:id="reservationList" layoutX="77.0" layoutY="177.0" onAction="#comboMealList" prefHeight="24.0" prefWidth="145.0" />
+      <Text fx:id="CNIC" layoutX="76.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer TEL:" />
+      <Text fx:id="RCODE" layoutX="75.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Code :" />
+      <JFXComboBox fx:id="reservationList" layoutX="77.0" layoutY="232.0" onAction="#comboMealList" prefHeight="24.0" prefWidth="145.0" />
       <Text fx:id="desc" layoutX="328.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description :" />
-      <Text fx:id="txtdesc" layoutX="305.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="121.42431640625">
+      <Text fx:id="txtdesc" layoutX="328.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="121.42431640625">
          <font>
             <Font name="System Bold" size="20.0" />
          </font></Text>
-      <Text fx:id="reservationIDtxt" layoutX="181.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="64.0" />
+      <Text fx:id="reservationIDtxt" layoutX="181.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="64.0" />
       <Text fx:id="price" layoutX="613.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price :" />
-      <Text fx:id="ptxt" layoutX="586.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="120.0">
+      <Text fx:id="ptxt" layoutX="609.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="120.0">
          <font>
             <Font size="20.0" />
          </font></Text>
@@ -51,7 +51,7 @@
          <effect>
             <DropShadow />
          </effect></TextField>
-      <TableView fx:id="orderTable" layoutX="76.0" layoutY="397.0" prefHeight="235.0" prefWidth="1038.0">
+      <TableView fx:id="orderTable" layoutX="76.0" layoutY="363.0" prefHeight="235.0" prefWidth="1038.0" stylesheets="@../Stylesheet/table.css">
         <columns>
           <TableColumn fx:id="colcode" prefWidth="163.0" text="CODE" />
           <TableColumn fx:id="coldesc" prefWidth="240.0" text="Description" />
@@ -64,16 +64,16 @@
             <DropShadow />
          </effect>
       </TableView>
-      <Button fx:id="btnnewCID" layoutX="337.0" layoutY="110.0" mnemonicParsing="false" onAction="#btnNewCustomerOnAction" style="-fx-background-color: #90D26D;" text="+ NEW">
+      <Button fx:id="btnnewCID" layoutX="337.0" layoutY="142.0" mnemonicParsing="false" onAction="#btnNewCustomerOnAction" style="-fx-background-color: #90D26D;" text="+ NEW">
          <effect>
             <DropShadow />
          </effect></Button>
-      <Text fx:id="total" layoutX="44.0" layoutY="695.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total :-" />
-      <Text fx:id="totaltxt" fill="#e10e0e" layoutX="98.0" layoutY="695.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="82.55126953125">
+      <Text fx:id="total" layoutX="44.0" layoutY="671.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total :-" />
+      <Text fx:id="totaltxt" fill="#e10e0e" layoutX="91.0" layoutY="673.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="159.55126953125">
          <font>
             <Font name="System Bold Italic" size="20.0" />
          </font></Text>
-      <Button fx:id="btnPlaceOrder" layoutX="1005.0" layoutY="673.0" mnemonicParsing="false" onAction="#btnPlaceOrderOnAction" style="-fx-background-color: #FF6500;" text="Place Order" textFill="#fffefe">
+      <Button fx:id="btnPlaceOrder" layoutX="1007.0" layoutY="653.0" mnemonicParsing="false" onAction="#btnPlaceOrderOnAction" prefHeight="33.0" prefWidth="104.0" style="-fx-background-color: #FF6500;" text="Place Order" textFill="#fffefe">
          <effect>
             <DropShadow />
          </effect>
@@ -84,7 +84,7 @@
          <font>
             <Font size="25.0" />
          </font></Text>
-      <JFXButton fx:id="btnAddToCart" buttonType="RAISED" layoutX="1005.0" layoutY="258.0" onAction="#btnAddToCartOnAction" prefHeight="33.0" prefWidth="120.0" style="-fx-background-color: #41B06E;" text="Add to cart" textFill="#eee8e8">
+      <JFXButton fx:id="btnAddToCart" buttonType="RAISED" layoutX="902.0" layoutY="300.0" onAction="#btnAddToCartOnAction" prefHeight="33.0" prefWidth="145.0" style="-fx-background-color: #41B06E;" text="Add to cart" textFill="#eee8e8">
          <graphic>
             <ImageView fitHeight="16.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -104,10 +104,5 @@
          <font>
             <Font name="System Bold Italic" size="19.0" />
          </font></Text>
-      <ImageView fx:id="itemPic" fitHeight="133.0" fitWidth="154.0" layoutX="73.0" layoutY="235.0" onMouseClicked="#imageOnClick" pickOnBounds="true" preserveRatio="true">
-         <effect>
-            <DropShadow />
-         </effect>
-      </ImageView>
    </children>
 </AnchorPane>

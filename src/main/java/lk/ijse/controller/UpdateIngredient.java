@@ -1,14 +1,21 @@
 package lk.ijse.controller;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lk.ijse.Model.CustomerModel;
+import lk.ijse.Model.IngredientModel;
+import lk.ijse.Repository.CustomerRepo;
+import lk.ijse.Repository.IngredientRepo;
 
 public class UpdateIngredient {
 
@@ -68,8 +75,34 @@ public class UpdateIngredient {
     }
 
     @FXML
-    void updateIngredient(ActionEvent event) {
+    void updateIngredient(ActionEvent event) throws SQLException {
+        String iidd = iidtxt.getText();
+        String desc = desctxt.getText();
+        String qtyOnHand = QOHtxt.getText();
+        String supplier = suppliertxt.getText();
 
+
+        IngredientModel ingredientModel = new IngredientModel(iidd,desc,qtyOnHand,supplier);
+        boolean c = IngredientRepo.updateIngredient(ingredientModel);
+
+        if (c) {
+            Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+            successAlert.setTitle("Success");
+            successAlert.setHeaderText(null);
+            successAlert.setContentText("Ingredient details updated successfully.");
+            successAlert.showAndWait();
+
+            ((Node) (event.getSource())).getScene().getWindow().hide();
+        } else {
+
+            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+            errorAlert.setTitle("Error");
+            errorAlert.setHeaderText(null);
+            errorAlert.setContentText("Something went wrong.");
+            errorAlert.show();
+        }
+        Stage stage1 = (Stage) iidtxt.getScene().getWindow();
+        stage1.close();
     }
 
     @FXML

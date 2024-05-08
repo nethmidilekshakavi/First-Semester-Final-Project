@@ -21,6 +21,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -69,9 +70,13 @@ public class Meal {
     @FXML
     private Text title;
 
+    @FXML
+    private AnchorPane pane;
+
 
     @FXML
     void addNewEmployee(ActionEvent event) throws IOException {
+        AddMeal.apane = pane;
         Parent parent = FXMLLoader.load(getClass().getResource("/view/addMeal.fxml"));
         Scene scene =new Scene(parent);
         Stage stage = new Stage();

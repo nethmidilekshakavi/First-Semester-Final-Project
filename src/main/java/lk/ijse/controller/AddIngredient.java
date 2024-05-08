@@ -1,16 +1,19 @@
 package lk.ijse.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lk.ijse.Model.CustomerModel;
@@ -20,6 +23,7 @@ import lk.ijse.Repository.IngredientRepo;
 import lk.ijse.util.Regex;
 
 public class AddIngredient {
+    public static AnchorPane apane;
 
     @FXML
     private ResourceBundle resources;
@@ -74,7 +78,7 @@ public class AddIngredient {
     }
 
     @FXML
-    void saveIngredinet(ActionEvent event) throws SQLException {
+    void saveIngredinet(ActionEvent event) throws SQLException, IOException {
 
         String iid = iditxt.getText();
         String desc = desctxt.getText();
@@ -93,6 +97,8 @@ public class AddIngredient {
             }
             Stage stage1 = (Stage) iditxt.getScene().getWindow();
             stage1.close();
+        apane.getChildren().clear();
+        apane.getChildren().add(FXMLLoader.load(getClass().getResource("/view/Ingredients.fxml")));
         }
 
     @FXML

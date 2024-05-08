@@ -1,16 +1,19 @@
 package lk.ijse.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lk.ijse.Model.CustomerModel;
@@ -20,6 +23,7 @@ import lk.ijse.Repository.SupplierRepo;
 import lk.ijse.util.Regex;
 
 public class AddNewSupplier {
+    public static AnchorPane apane;
 
     @FXML
     private ResourceBundle resources;
@@ -113,7 +117,8 @@ public class AddNewSupplier {
 
 
     @FXML
-    void saveSupplier(ActionEvent event) throws SQLException {
+    void saveSupplier(ActionEvent event) throws SQLException, IOException {
+
         String sid = sidtxt.getText();
         String name = nametxt.getText();
         String address = addresstxt.getText();
@@ -134,7 +139,8 @@ public class AddNewSupplier {
         }else {
             new Alert(Alert.AlertType.ERROR,"something went wrong").show();
         }
-
+        apane.getChildren().clear();
+        apane.getChildren().add(FXMLLoader.load(getClass().getResource("/view/Supplier.fxml")));
 
     }
     @FXML

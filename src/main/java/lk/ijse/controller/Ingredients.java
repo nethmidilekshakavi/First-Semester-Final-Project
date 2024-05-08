@@ -20,6 +20,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -70,9 +71,11 @@ public class Ingredients {
 
     @FXML
     private Text title;
-
+    @FXML
+    private AnchorPane pane;
     @FXML
     void addNewIngredient(ActionEvent event) throws IOException {
+        AddIngredient.apane = pane;
         Parent parent = FXMLLoader.load(getClass().getResource("/view/addIngredient.fxml"));
         Scene scene = new Scene(parent);
         Stage stage = new Stage();

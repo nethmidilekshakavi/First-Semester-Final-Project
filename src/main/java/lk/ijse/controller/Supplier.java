@@ -18,6 +18,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -84,7 +85,11 @@ public class Supplier {
     private Text title;
 
     @FXML
+    private AnchorPane pane;
+
+    @FXML
     void addNewSupplier(ActionEvent event) throws IOException {
+        AddNewSupplier.apane = pane;
         Parent parent = FXMLLoader.load(getClass().getResource("/view/AddNewSupplier.fxml"));
         Scene scene =new Scene(parent);
         Stage stage = new Stage();

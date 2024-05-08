@@ -1,5 +1,6 @@
 package lk.ijse.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -9,6 +10,7 @@ import java.time.LocalTime;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -26,6 +28,7 @@ import lk.ijse.Repository.EmployeeRepo;
 import lk.ijse.util.Regex;
 
 public class AddNewEmployee {
+    public static AnchorPane apane;
 
     @FXML
     private ResourceBundle resources;
@@ -110,6 +113,7 @@ public class AddNewEmployee {
     @FXML
     private TextField yeartxt;
 
+
     @FXML
     void dontSaveEmployee(ActionEvent event) {
         Stage stage =(Stage)eidtxt.getScene().getWindow();
@@ -117,7 +121,7 @@ public class AddNewEmployee {
     }
 
     @FXML
-    void saveEmployee(ActionEvent event) {
+    void saveEmployee(ActionEvent event) throws IOException {
         String id=eidtxt.getText();
         String nic= nictxt.getText();
         String finame=fnametxt.getText();
@@ -149,11 +153,8 @@ public class AddNewEmployee {
         }else {
             new Alert(Alert.AlertType.ERROR,"something went wrong").show();
         }
-      /*  Parent parent =null;
         apane.getChildren().clear();
-        apane.getChildren().add(parent);
-        Stage stage =(Stage)eidtxt.getScene().getWindow();
-        stage.close();*/
+        apane.getChildren().add(FXMLLoader.load(getClass().getResource("/view/Employee.fxml")));
     }
     @FXML
     void clearOnAction(ActionEvent event) {

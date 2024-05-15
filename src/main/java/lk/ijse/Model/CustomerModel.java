@@ -19,4 +19,7 @@ public class CustomerModel extends Customer {
     private  int Phone_Number;
     private  String Email;
 
+    public CustomerModel(String nic, String firstName, String lastName, String address, int phoneNumber, String email) {
+
+    }
 }

@@ -1,6 +1,7 @@
 package lk.ijse.Repository;
 
 import lk.ijse.DB.DbConnection;
+import lk.ijse.Model.CustomerModel;
 import lk.ijse.Model.IngredientModel;
 
 import java.sql.Connection;
@@ -30,18 +31,40 @@ public class IngredientRepo {
      }
      return false;
  }
+    public static ArrayList<IngredientModel> searchIID (String iid){
+        ArrayList<IngredientModel> ingredientModels = new ArrayList<>();
+        try {
+            Connection connection = DbConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Ingredient WHERE I_ID = ?");
+            preparedStatement.setString(1,iid);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+               IngredientModel ingredientModel = new IngredientModel(resultSet.getString(1),resultSet.getString(2),resultSet.getString(3),resultSet.getString(4));
+                ingredientModels.add(ingredientModel);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return ingredientModels;
+    }
 
 
- public static boolean updateIngredient(IngredientModel ingredientModel) throws SQLException {
-     Connection connection = DbConnection.getInstance().getConnection();
-     PreparedStatement ptsm = connection.prepareStatement("UPDATE Ingredient SET I_ID = ?,Descrption = ?,Qty_On_Hand = ?,S_ID = ?");
+ public static boolean updateIngredient(IngredientModel ingredientModel){
+     try {
 
-     ptsm.setString(1,ingredientModel.getI_ID());
-     ptsm.setString(2,ingredientModel.getDescription());
-     ptsm.setString(3,ingredientModel.getQty_On_Hand());
-     ptsm.setString(4,ingredientModel.getSupplier());
+         Connection connection = DbConnection.getInstance().getConnection();
+         PreparedStatement ptsm = connection.prepareStatement("UPDATE Ingredient SET I_ID = ?,Descrption = ?,Qty_On_Hand = ?,S_ID = ?");
 
-     return ptsm.executeUpdate() > 0;
+         ptsm.setString(1, ingredientModel.getI_ID());
+         ptsm.setString(2, ingredientModel.getDescription());
+         ptsm.setString(3, ingredientModel.getQty_On_Hand());
+         ptsm.setString(4, ingredientModel.getSupplier());
+         return ptsm.executeUpdate() > 0;
+     } catch (SQLException e) {
+        e.printStackTrace();
+     }
+     return false;
  }
 
     public static boolean delete(String id) throws SQLException {

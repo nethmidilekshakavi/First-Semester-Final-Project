@@ -2,6 +2,7 @@ package lk.ijse.controller;
 
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,11 +11,17 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lk.ijse.Model.CustomerModel;
 import lk.ijse.Model.IngredientModel;
+import lk.ijse.Model.MealModel;
 import lk.ijse.Model.SupplierModel;
+import lk.ijse.Repository.CustomerRepo;
 import lk.ijse.Repository.IngredientRepo;
+import lk.ijse.Repository.MealRepo;
 import lk.ijse.Repository.SupplierRepo;
 
 public class UpdateSupplier {
@@ -106,8 +113,11 @@ public class UpdateSupplier {
         stage.close();
     }
 
+
+
     @FXML
     void updateSupplier(ActionEvent event) throws SQLException {
+
        String sid = sidtxt.getText();
        String newname = newSnametxt.getText();
        String addr = addresstxt.getText();
@@ -171,4 +181,21 @@ public class UpdateSupplier {
 
     }
 
+    public void enterid(KeyEvent keyEvent) {
+        if (keyEvent.getCode().equals(KeyCode.ENTER)){
+            String id = String.valueOf(sidtxt.getText());
+            ArrayList<SupplierModel> supplierModels = SupplierRepo.searchSID(id);
+
+           newSnametxt.setText(supplierModels.get(0).getName());
+           addresstxt.setText(supplierModels.get(0).getAddress());
+           mobiletxt.setText(String.valueOf(supplierModels.get(0).getPhone_Number()));
+           txtIngredient.setText(supplierModels.get(0).getIngredient());
+           purchasetxt.setText(supplierModels.get(0).getDate_Of_Purchase());
+           dataOfPaymenttxt.setText(supplierModels.get(0).getDate_of_Payment());
+           AmountDuetxt.setText(supplierModels.get(0).getAmount_due());
+           PaymentTypetxt.setText(supplierModels.get(0).getPayment_Type());
+           AmountPaidtxt.setText(supplierModels.get(0).getAmount_Paid());
+
+        }
+    }
 }

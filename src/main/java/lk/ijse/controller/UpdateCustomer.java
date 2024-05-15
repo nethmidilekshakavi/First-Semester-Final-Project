@@ -1,21 +1,29 @@
 package lk.ijse.controller;
 
+import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lk.ijse.DB.DbConnection;
 import lk.ijse.Model.CustomerModel;
 import lk.ijse.Repository.CustomerRepo;
 
-public class UpdateCustomer extends Customer{
+public class UpdateCustomer {
+    public static AnchorPane upane;
 
     @FXML
     private ResourceBundle resources;
@@ -29,7 +37,6 @@ public class UpdateCustomer extends Customer{
     @FXML
     private Text address;
 
-
     @FXML
     private Button btnCancel;
     @FXML
@@ -37,6 +44,9 @@ public class UpdateCustomer extends Customer{
 
     @FXML
     private Button btnUpdate;
+
+    @FXML
+    private AnchorPane pane;
 
     @FXML
     private TextField cidtxt;
@@ -55,6 +65,7 @@ public class UpdateCustomer extends Customer{
 
     @FXML
     private TextField newaddresstxt;
+
 
     @FXML
     private TextField newfnametxt;
@@ -79,14 +90,15 @@ public class UpdateCustomer extends Customer{
 
     @FXML
     private Text updatecustomerinfor;
+
     @FXML
     void dontUpdateCustomer(ActionEvent event) {
-        Stage stage =(Stage)cidtxt.getScene().getWindow();
+        Stage stage = (Stage) cidtxt.getScene().getWindow();
         stage.close();
     }
 
     @FXML
-    void updateCustomerOnAction(ActionEvent event) throws SQLException {
+    void updateCustomerOnAction(ActionEvent event) throws SQLException, IOException {
         String cidd = cidtxt.getText();
         String nnic = newnictxt.getText();
         String finame = newfnametxt.getText();
@@ -118,8 +130,9 @@ public class UpdateCustomer extends Customer{
         }
         Stage stage1 = (Stage) cidtxt.getScene().getWindow();
         stage1.close();
+        upane.getChildren().clear();
+        upane.getChildren().add(FXMLLoader.load(getClass().getResource("/view/Customer.fxml")));
     }
-
     @FXML
     void initialize() {
         assert CID != null : "fx:id=\"CID\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";
@@ -140,7 +153,22 @@ public class UpdateCustomer extends Customer{
         assert num != null : "fx:id=\"num\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";
         assert updateCustomerPage != null : "fx:id=\"updateCustomerPage\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";
         assert updatecustomerinfor != null : "fx:id=\"updatecustomerinfor\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";
-
     }
 
+    public void ideeenter(KeyEvent keyEvent) {
+        if (keyEvent.getCode().equals(KeyCode.ENTER)){
+            String id = String.valueOf(cidtxt.getText());
+            ArrayList <CustomerModel> customerModels = CustomerRepo.searchCID(id);
+
+            newnictxt.setText(customerModels.get(0).getNIC());
+            newfnametxt.setText(customerModels.get(0).getFirst_Name());
+            newlnametxt.setText(customerModels.get(0).getLast_Name());
+            newaddresstxt.setText(customerModels.get(0).getAddress());
+            newnumtxt.setText(String.valueOf(customerModels.get(0).getPhone_Number()));
+            newEmailtxt.setText(customerModels.get(0).getEmail());
+
+        }
+    }
 }
+
+

@@ -189,6 +189,14 @@ public class dashboard implements Initializable {
     }
     @FXML
     void logOutTheSystem(ActionEvent event) throws IOException {
+        Parent parent = FXMLLoader.load(getClass().getResource("/view/Login.fxml"));
+        Scene scene = new Scene(parent);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
+        Stage stage1 = (Stage)Emptypane.getScene().getWindow();
+        stage1.close();
 
     }
 

@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -25,11 +26,16 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lk.ijse.DB.DbConnection;
 import lk.ijse.Model.*;
 import lk.ijse.Model.TM.OrderTM;
 import lk.ijse.Model.TM.ReservationTM;
 import lk.ijse.Repository.*;
 import lombok.SneakyThrows;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 public class Reservation {
 
@@ -294,7 +300,7 @@ public class Reservation {
         }
 
         String date = this.date.getText();
-        String des = "";
+        String des = txtdesc.getText(); // methana haduwa
         String time = String.valueOf(LocalTime.now());
 
         ReservationModel reservationModel = new ReservationModel(reId,custId,date,des,time,String.valueOf(netTotal));
@@ -303,6 +309,7 @@ public class Reservation {
             String code = oblist.get(i).getCode();
             String unitPrice = String.valueOf(oblist.get(i).getUnitPrice());
             String qty1 = String.valueOf(oblist.get(i).getQty());
+
             ReservationDetailModel reservationDetailModel = new ReservationDetailModel(reId,code,unitPrice,qty1);
             System.out.println(reservationDetailModel);
             arrayList.add(reservationDetailModel);
@@ -364,7 +371,18 @@ public class Reservation {
     }
 
 
+    public void PrintOnAction(ActionEvent actionEvent) throws JRException, SQLException {
+        InputStream resourceAsStream = getClass().getResourceAsStream("/Report/Reservation.jrxml");
+        JasperDesign load = JRXmlLoader.load(resourceAsStream);
+        JasperReport jasperReport = JasperCompileManager.compileReport(load);
+        JasperPrint jasperPrint = JasperFillManager.fillReport(
+                jasperReport,
+                null,
+                DbConnection.getInstance().getConnection()
+        );
 
+        JasperViewer.viewReport(jasperPrint,false);
+    }
 }
 
 

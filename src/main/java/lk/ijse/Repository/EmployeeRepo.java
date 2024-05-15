@@ -18,7 +18,7 @@ public class EmployeeRepo {
     public static boolean saveEmployee(EmployeeModel employeeModel) {
         try {
             Connection connection = DbConnection.getInstance().getConnection();
-            PreparedStatement ptsm = connection.prepareStatement("INSERT INTO Employee VALUES(?, ?,?,?,?,?,?,?,?,?,?,?)");
+            PreparedStatement ptsm = connection.prepareStatement("INSERT INTO Employee VALUES(?,?,?,?,?,?,?,?,?,?,?,?)");
 
             ptsm.setString(1, employeeModel.getE_ID());
             ptsm.setString(2, employeeModel.getNIC());
@@ -81,36 +81,22 @@ public class EmployeeRepo {
         return false;
     }
 
+    public static ArrayList<EmployeeModel> searchEID (String eid){
+        ArrayList<EmployeeModel> employeeModels = new ArrayList<>();
+        try {
+            Connection connection = DbConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Employee WHERE E_ID = ?");
+            preparedStatement.setString(1,eid);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                EmployeeModel employeeModel = new EmployeeModel(resultSet.getString(1),resultSet.getString(2),resultSet.getString(3),resultSet.getString(4),resultSet.getString(5),resultSet.getInt(6),resultSet.getString(7),resultSet.getString(8),resultSet.getString(9),resultSet.getInt(10),resultSet.getInt(11),resultSet.getInt(12));
+                employeeModels.add(employeeModel);
+            }
 
-    public static EmployeeModel SearchByID(String id) throws SQLException {
-        String sql = "SELECT * FROM Employee WHERE E_ID = ?";
-
-        Connection connection = DbConnection.getInstance().getConnection();
-        PreparedStatement pstm = connection.prepareStatement(sql);
-
-        ResultSet resultSet = pstm.executeQuery();
-        if (resultSet.next()) {
-            String E_ID = resultSet.getString(1);
-            String NIC = resultSet.getString(2);
-            String First_Name = resultSet.getString(3);
-            String Last_Name = resultSet.getString(4);
-            String Address = resultSet.getString(5);
-            int Phone_Number = Integer.parseInt(resultSet.getString(6));
-            String Email = resultSet.getString(7);
-            String Salary = resultSet.getString(8);
-            String Position = resultSet.getString(9);
-            int year = Integer.parseInt(resultSet.getString(10));
-            int Month = Integer.parseInt(resultSet.getString(11));
-            int Day = Integer.parseInt(resultSet.getString(12));
-
-            EmployeeModel employeeModel = new EmployeeModel(E_ID, NIC, First_Name, Last_Name, Address, Phone_Number, Email, Salary, Position, year,Month,Day);
-
-            return employeeModel;
-
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        return null;
-
-
+        return employeeModels;
     }
 
     public static ArrayList<EmployeeModel> getAll() throws SQLException{

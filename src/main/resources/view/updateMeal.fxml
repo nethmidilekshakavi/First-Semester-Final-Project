@@ -9,37 +9,37 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="328.0" prefWidth="671.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.UpdateMeal">
+<AnchorPane prefHeight="380.0" prefWidth="393.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.UpdateMeal">
    <children>
-      <ImageView fx:id="pic" fitHeight="339.0" fitWidth="678.0">
+      <ImageView fx:id="pic" fitHeight="380.0" fitWidth="394.0">
          <image>
             <Image url="@../Images/beautiful-wood-background-with-text-space-free-vector.jpg" />
          </image>
       </ImageView>
-      <Text fx:id="updatemeal" fill="#f0f5f8" layoutX="238.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Meal" wrappingWidth="195.017578125">
+      <Text fx:id="updatemeal" fill="#f0f5f8" layoutX="99.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Meal" wrappingWidth="195.017578125">
          <font>
             <Font name="Dyuthi Regular" size="36.0" />
          </font>
       </Text>
-      <Text fx:id="name" fill="WHITE" layoutX="53.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :">
+      <Text fx:id="name" fill="WHITE" layoutX="53.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="newNametxt" layoutX="134.0" layoutY="197.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="newNametxt" layoutX="134.0" layoutY="191.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <Text fx:id="mid" fill="WHITE" layoutX="53.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MID :">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="midtxt" layoutX="134.0" layoutY="130.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
-      <Text fx:id="price" fill="WHITE" layoutX="53.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price :">
+      <TextField fx:id="midtxt" layoutX="134.0" layoutY="130.0" onKeyPressed="#enterID" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <Text fx:id="price" fill="WHITE" layoutX="53.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price :">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="newpricetxt" layoutX="134.0" layoutY="262.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
-      <Button fx:id="btnMeal" layoutX="568.0" layoutY="276.0" mnemonicParsing="false" onAction="#updateMeal" prefHeight="34.0" prefWidth="85.0" style="-fx-background-radius: 15; -fx-background-color: #F99417;" text="UPDATE" textFill="#252323">
+      <TextField fx:id="newpricetxt" layoutX="134.0" layoutY="253.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <Button fx:id="btnMeal" layoutX="216.0" layoutY="317.0" mnemonicParsing="false" onAction="#updateMeal" prefHeight="34.0" prefWidth="85.0" style="-fx-background-radius: 15; -fx-background-color: #F99417;" text="UPDATE" textFill="#252323">
          <effect>
             <DropShadow />
          </effect>
@@ -47,7 +47,7 @@
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnCancel" layoutX="486.0" layoutY="276.0" mnemonicParsing="false" onAction="#dontSaveMeal" prefHeight="34.0" prefWidth="76.0" style="-fx-background-radius: 15; -fx-background-color: #D6E4E5;" text="CANCEL" textFill="#252323">
+      <Button fx:id="btnCancel" layoutX="133.0" layoutY="317.0" mnemonicParsing="false" onAction="#dontSaveMeal" prefHeight="34.0" prefWidth="76.0" style="-fx-background-radius: 15; -fx-background-color: #D6E4E5;" text="CANCEL" textFill="#252323">
          <effect>
             <DropShadow />
          </effect>

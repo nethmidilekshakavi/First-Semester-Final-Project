@@ -1,14 +1,30 @@
 package lk.ijse.controller;
 
+import java.awt.*;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.util.Duration;
 
-public class WelocomePage {
+public class WelocomePage  {
 
     @FXML
     private ResourceBundle resources;
@@ -44,7 +60,6 @@ public class WelocomePage {
     private ImageView welcomePage;
 
 
-
     @FXML
     void initialize() {
         assert W != null : "fx:id=\"W\" was not injected: check your FXML file 'welocomePage.fxml'.";
@@ -59,6 +74,33 @@ public class WelocomePage {
 
     }
 
+    public void WelocomeOnAction(KeyEvent keyEvent) throws IOException {
+
+        if (keyEvent.getCode().equals(KeyCode.ENTER)){
+            Parent parent = FXMLLoader.load(getClass().getResource("/view/Login.fxml"));
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+        }
+
+        /*Duration duration = Duration.seconds(1.5);
+        Timeline timeline = new Timeline(new KeyFrame(duration, event -> {
+            try {
+                Parent parent = FXMLLoader.load(getClass().getResource("/view/Login.fxml"));
+                Scene scene = new Scene(parent);
+                Stage stage = new Stage();
+                stage.initStyle(StageStyle.UNDECORATED);
+                // stage.setMaximized(true);
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }));
+        timeline.play();*/
+
+    }
 
 
 }

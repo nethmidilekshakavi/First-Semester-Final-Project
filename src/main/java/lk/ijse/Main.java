@@ -23,6 +23,3 @@ public class Main  extends Application{
     
 }
 
-/* stage.setScene(new Scene(FXMLLoader.load(this.getClass().getResource("/view/dashboard.fxml"))));
-        stage.show();
-        stage.centerOnScreen();*/

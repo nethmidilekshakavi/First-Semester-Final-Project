@@ -60,7 +60,6 @@ public class CustomerRepo {
         return null;
     }
 
-
     public static boolean updateCustomer(CustomerModel customerModel)  {
 
 try {
@@ -95,30 +94,7 @@ try {
             return false;
         }
 
-    public static CustomerModel searchById(String id) throws SQLException {
-        String sql = "SELECT * FROM Customer WHERE C_ID = ?";
 
-        Connection connection = DbConnection.getInstance().getConnection();
-        PreparedStatement pstm = connection.prepareStatement(sql);
-        pstm.setString(1, id);
-
-        ResultSet resultSet = pstm.executeQuery();
-        if (resultSet.next()) {
-            String C_ID = resultSet.getString(1);
-            String NIC = resultSet.getString(2);
-            String First_Name = resultSet.getString(3);
-            String Last_Name = resultSet.getString(4);
-            String Address = resultSet.getString(5);
-            int Phone_Number = resultSet.getInt(6);
-            String Email = resultSet.getString(7);
-
-            CustomerModel customerModel = new CustomerModel(C_ID, NIC, First_Name, Last_Name, Address, Phone_Number, Email);
-
-            return customerModel;
-        }
-
-        return null;
-    }
 
     public static ArrayList<CustomerModel> getAll() throws SQLException {
        ArrayList<CustomerModel>customerModels =new ArrayList<>();
@@ -137,21 +113,24 @@ try {
        return customerModels;
     }
 
+    public static ArrayList<CustomerModel> searchCID (String cid){
+        ArrayList<CustomerModel> customerModels = new ArrayList<>();
+        try {
+            Connection connection = DbConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Customer WHERE C_ID = ?");
+            preparedStatement.setString(1,cid);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                CustomerModel customerModel = new CustomerModel(resultSet.getString(1),resultSet.getString(2),resultSet.getString(3),resultSet.getString(4),resultSet.getString(5),resultSet.getInt(6),resultSet.getString(7));
+                customerModels.add(customerModel);
+            }
 
-    public static List<String> getIds() throws SQLException {
-        String sql = "SELECT C_ID FROM Customer";
-        PreparedStatement pstm = DbConnection.getInstance().getConnection()
-                .prepareStatement(sql);
-
-        List<String> idList = new ArrayList<>();
-
-        ResultSet resultSet = pstm.executeQuery();
-        while (resultSet.next()) {
-            String id = resultSet.getString(1);
-            idList.add(id);
+        } catch (SQLException e) {
+           e.printStackTrace();
         }
-        return idList;
+        return customerModels;
     }
+
 
 }
 

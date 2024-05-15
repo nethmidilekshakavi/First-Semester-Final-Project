@@ -1,7 +1,9 @@
 package lk.ijse.controller;
 
+import java.awt.*;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,6 +12,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lk.ijse.Model.CustomerModel;
@@ -84,6 +88,7 @@ public class UpdateEmployee {
 
     @FXML
     private TextField neweidtxt;
+
 
     @FXML
     private TextField nictxt;
@@ -186,4 +191,23 @@ public class UpdateEmployee {
 
     }
 
+    public void idEnter(KeyEvent keyEvent) {
+        if (keyEvent.getCode().equals(KeyCode.ENTER)){
+            String id = String.valueOf(eidtxt.getText());
+            ArrayList<EmployeeModel> employeeModels = EmployeeRepo.searchEID(id);
+
+            nictxt.setText(employeeModels.get(0).getNIC());
+           fnametxt.setText(employeeModels.get(0).getFirst_Name());
+            lnametxt.setText(employeeModels.get(0).getLast_Name());
+            addresstxt.setText(employeeModels.get(0).getAddress());
+            daytxt.setText(String.valueOf(employeeModels.get(0).getDay()));
+            monthtxt.setText(String.valueOf(employeeModels.get(0).getMonth()));
+            yeartxt.setText(String.valueOf(employeeModels.get(0).getYear()));
+            mobiletxt.setText(String.valueOf(employeeModels.get(0).getPhone_Number()));
+            emailtxt.setText(employeeModels.get(0).getEmail());
+            positiontxt.setText(employeeModels.get(0).getPosition());
+            salarytxt.setText(employeeModels.get(0).getSalary());
+
+        }
+    }
 }

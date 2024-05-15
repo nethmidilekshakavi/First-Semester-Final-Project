@@ -105,7 +105,23 @@ public class MealRepo {
         return idList;
     }
 
+    public static ArrayList<MealModel> searchMID (String mid){
+        ArrayList<MealModel> mealModels = new ArrayList<>();
+        try {
+            Connection connection = DbConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Meal WHERE M_ID = ?");
+            preparedStatement.setString(1,mid);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                MealModel mealModel = new MealModel(resultSet.getString(1),resultSet.getString(2),resultSet.getString(3));
+                mealModels.add(mealModel);
+            }
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return mealModels;
+    }
 
 }
 

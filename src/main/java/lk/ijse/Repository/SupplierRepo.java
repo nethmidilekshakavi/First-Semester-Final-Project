@@ -126,6 +126,23 @@ public class SupplierRepo {
         }
         return idList;
     }
+    public static ArrayList<SupplierModel> searchSID (String sid){
+        ArrayList<SupplierModel> supplierModels = new ArrayList<>();
+        try {
+            Connection connection = DbConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Supplier WHERE S_ID = ?");
+            preparedStatement.setString(1,sid);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+               SupplierModel supplierModel = new SupplierModel(resultSet.getString(1),resultSet.getString(2),resultSet.getString(3),resultSet.getInt(4),resultSet.getString(5),resultSet.getString(6),resultSet.getString(7),resultSet.getString(8),resultSet.getString(9),resultSet.getString(10));
+                supplierModels.add(supplierModel);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return supplierModels;
+    }
 
 
 }

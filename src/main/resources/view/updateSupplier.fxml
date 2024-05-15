@@ -45,12 +45,12 @@
          </font>
       </Text>
       <TextField fx:id="txtIngredient" layoutX="190.0" layoutY="291.0" opacity="0.72" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
-      <Text fx:id="dateOdPurchase" fill="WHITE" layoutX="386.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Of Purchase :">
+      <Text fx:id="dateOdPurchase" fill="WHITE" layoutX="386.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Of Purchase :">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="purchasetxt" layoutX="530.0" layoutY="282.0" opacity="0.72" prefHeight="24.0" prefWidth="151.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="purchasetxt" layoutX="530.0" layoutY="290.0" opacity="0.72" prefHeight="24.0" prefWidth="151.0" style="-fx-background-radius: 40;" />
       <Text fx:id="amountDue" fill="WHITE" layoutX="55.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount Due :">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -96,6 +96,6 @@
             <Font name="Dyuthi Regular" size="36.0" />
          </font>
       </Text>
-      <TextField fx:id="sidtxt" layoutX="105.0" layoutY="113.0" opacity="0.72" prefHeight="24.0" prefWidth="100.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="sidtxt" layoutX="105.0" layoutY="113.0" onKeyPressed="#enterid" opacity="0.72" prefHeight="24.0" prefWidth="100.0" style="-fx-background-radius: 40;" />
    </children>
 </AnchorPane>

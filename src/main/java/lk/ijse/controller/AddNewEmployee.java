@@ -44,7 +44,7 @@ public class AddNewEmployee {
 
     @FXML
     private ImageView addEmployeePane;
-       // public static AnchorPane apane;
+
     @FXML
     private Text address;
 
@@ -128,19 +128,19 @@ public class AddNewEmployee {
         String laname =lnametxt.getText();
         String address=addresstxt.getText();
         int mobile=Integer.parseInt(mobiletxt.getText());
-        int year = Integer.parseInt(yeartxt.getText());
-        int month = Integer.parseInt(monthtxt.getText());
-        int Day = Integer.parseInt(daytxt.getText());
         String email=emailtxt.getText();
         String salary = salarytxt.getText();
         String position = positiontxt.getText();
+        int year = Integer.parseInt(yeartxt.getText());
+        int month = Integer.parseInt(monthtxt.getText());
+        int Day = Integer.parseInt(daytxt.getText());
 
         EmployeeModel employeeModel=new EmployeeModel(id,nic,finame,laname,address,mobile,email,salary,position,year,month,Day);
         boolean a = EmployeeRepo.saveEmployee(employeeModel);
         System.out.println(a);
         if (a){
             mail mail =new mail();
-            mail.setMsg("hellow now you are a Employee of FOOD COURT RESTURANT" +
+            mail.setMsg("Hellow now you are a Employee of FOOD COURT RESTURANT" +
                     "\nTime : "+ Time.valueOf(LocalTime.now()) +
                     "\nDate : " + Date.valueOf(LocalDate.now())
             );

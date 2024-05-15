@@ -2,6 +2,7 @@ package lk.ijse.controller;
 
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,6 +11,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lk.ijse.Model.CustomerModel;
@@ -110,4 +113,14 @@ public class UpdateMeal extends Meal{
 
     }
 
+    public void enterID(KeyEvent keyEvent) {
+        if (keyEvent.getCode().equals(KeyCode.ENTER)){
+            String id = String.valueOf(midtxt.getText());
+            ArrayList<MealModel> mealModels = MealRepo.searchMID(id);
+
+           newNametxt.setText(mealModels.get(0).getName());
+           newpricetxt.setText(mealModels.get(0).getPrice());
+
+        }
+    }
 }

@@ -99,6 +99,7 @@ public class UpdateCustomer {
 
     @FXML
     void updateCustomerOnAction(ActionEvent event) throws SQLException, IOException {
+        UpdateCustomer.upane = pane;
         String cidd = cidtxt.getText();
         String nnic = newnictxt.getText();
         String finame = newfnametxt.getText();

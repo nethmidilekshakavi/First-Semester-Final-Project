@@ -75,14 +75,10 @@ public class WelocomePage  {
     }
 
     public void WelocomeOnAction(KeyEvent keyEvent) throws IOException {
+         
 
-        if (keyEvent.getCode().equals(KeyCode.ENTER)){
-            Parent parent = FXMLLoader.load(getClass().getResource("/view/Login.fxml"));
-            Scene scene = new Scene(parent);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.show();
-        }
+
+
 
         /*Duration duration = Duration.seconds(1.5);
         Timeline timeline = new Timeline(new KeyFrame(duration, event -> {

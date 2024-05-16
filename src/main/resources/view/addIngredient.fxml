@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="414.0" prefWidth="711.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.AddIngredient">
    <children>
-      <ImageView fx:id="AddNewIngredientPage" fitHeight="439.0" fitWidth="711.0">
+      <ImageView fx:id="AddNewIngredientPage" fitHeight="414.0" fitWidth="711.0">
          <image>
             <Image url="@../Images/beautiful-wood-background-with-text-space-free-vector.jpg" />
          </image>
@@ -34,7 +34,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="QOHtxt" layoutX="208.0" layoutY="253.0"  opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="QOHtxt" layoutX="208.0" layoutY="253.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
       <Text fx:id="supplier" fill="WHITE" layoutX="65.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier  :">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -47,7 +47,7 @@
          </font>
       </Text>
       <TextField fx:id="desctxt" layoutX="208.0" layoutY="190.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
-      <Button fx:id="btnSave" layoutX="619.0" layoutY="382.0" mnemonicParsing="false" onAction="#saveIngredinet" prefHeight="33.0" prefWidth="75.0" style="-fx-background-radius: 10; -fx-background-color: #33b249;" text="SAVE" textFill="#1e1d1d">
+      <Button fx:id="btnSave" layoutX="600.0" layoutY="350.0" mnemonicParsing="false" onAction="#saveIngredinet" prefHeight="33.0" prefWidth="75.0" style="-fx-background-radius: 10; -fx-background-color: #33b249;" text="SAVE" textFill="#1e1d1d">
          <effect>
             <DropShadow />
          </effect>
@@ -55,7 +55,7 @@
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnCancel" layoutX="522.0" layoutY="382.0" mnemonicParsing="false" onAction="#dontSaveIngredient" prefHeight="33.0" prefWidth="85.0" style="-fx-background-radius: 10; -fx-background-color: #B5C0D0;" text="CANCEL" textFill="#1e1d1d">
+      <Button fx:id="btnCancel" layoutX="504.0" layoutY="351.0" mnemonicParsing="false" onAction="#dontSaveIngredient" prefHeight="33.0" prefWidth="85.0" style="-fx-background-radius: 10; -fx-background-color: #B5C0D0;" text="CANCEL" textFill="#1e1d1d">
          <effect>
             <DropShadow />
          </effect>
@@ -63,7 +63,7 @@
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="clear" layoutX="426.0" layoutY="382.0" mnemonicParsing="false" onAction="#clearOnAction" prefHeight="33.0" prefWidth="85.0" style="-fx-background-radius: 10; -fx-background-color: #F8C794;" text="Clear">
+      <Button fx:id="clear" layoutX="408.0" layoutY="351.0" mnemonicParsing="false" onAction="#clearOnAction" prefHeight="33.0" prefWidth="85.0" style="-fx-background-radius: 10; -fx-background-color: #F8C794;" text="Clear">
          <effect>
             <DropShadow />
          </effect>
@@ -72,5 +72,13 @@
          </font>
       </Button>
       <TextField fx:id="iditxt" layoutX="103.0" layoutY="127.0" onKeyReleased="#iidKeyRelese" opacity="0.87" prefHeight="24.0" prefWidth="94.0" />
+      <ImageView fx:id="image" fitHeight="168.0" fitWidth="246.0" layoutX="424.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/43690446c65f440fd519e4c8486ef984.jpg" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
    </children>
 </AnchorPane>

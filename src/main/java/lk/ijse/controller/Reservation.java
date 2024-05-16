@@ -22,6 +22,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
@@ -303,14 +305,16 @@ public class Reservation {
         String des = txtdesc.getText(); // methana haduwa
         String time = String.valueOf(LocalTime.now());
 
+
         ReservationModel reservationModel = new ReservationModel(reId,custId,date,des,time,String.valueOf(netTotal));
         ArrayList<ReservationDetailModel> arrayList = new ArrayList<>();
         for (int i = 0; i < oblist.size(); i++) {
             String code = oblist.get(i).getCode();
+            String desc = oblist.get(i).getDescription();
             String unitPrice = String.valueOf(oblist.get(i).getUnitPrice());
             String qty1 = String.valueOf(oblist.get(i).getQty());
 
-            ReservationDetailModel reservationDetailModel = new ReservationDetailModel(reId,code,unitPrice,qty1);
+            ReservationDetailModel reservationDetailModel = new ReservationDetailModel(reId,code,desc,unitPrice,qty1);
             System.out.println(reservationDetailModel);
             arrayList.add(reservationDetailModel);
         }
@@ -382,8 +386,8 @@ public class Reservation {
         );
 
         JasperViewer.viewReport(jasperPrint,false);
-    }
-}
+
+}}
 
 
 

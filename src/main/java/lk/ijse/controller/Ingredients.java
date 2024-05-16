@@ -174,7 +174,7 @@ public class Ingredients {
         colIid.setCellValueFactory(new PropertyValueFactory<>("I_ID"));
        colDesc.setCellValueFactory(new PropertyValueFactory<>("Description"));
        colQOh.setCellValueFactory(new PropertyValueFactory<>("Qty_On_Hand"));
-       colSID.setCellValueFactory(new PropertyValueFactory<>("S_ID"));
+       colSID.setCellValueFactory(new PropertyValueFactory<>("Supplier"));
        colupdate.setCellValueFactory(new PropertyValueFactory<IngredientTM,JFXButton>("Update"));
        coldelete.setCellValueFactory(new PropertyValueFactory<IngredientTM,JFXButton>("Delete"));
     }

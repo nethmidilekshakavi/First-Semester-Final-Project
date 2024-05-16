@@ -7,14 +7,16 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="pane" prefHeight="774.0" prefWidth="1211.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.Supplier">
    <children>
-      <ImageView fx:id="SupplierPane" fitHeight="778.0" fitWidth="1253.0" layoutX="-10.0">
+      <ImageView fx:id="SupplierPane" fitHeight="778.0" fitWidth="1243.0">
          <image>
-            <Image url="@../Images/pngtree-blue-gradient-web-ui-background-image_518658.jpg" />
+            <Image url="@../Images/c67eacaa9d63304bd4c77d22b284b1a6.jpg" />
          </image>
       </ImageView>
       <TableView fx:id="SupplierTable" layoutX="7.0" layoutY="126.0" prefHeight="548.0" prefWidth="1172.0" stylesheets="@../Stylesheet/table.css">
@@ -32,7 +34,7 @@
             <TableColumn fx:id="coldelete" prefWidth="84.0" text="DELETE" />
          </columns>
       </TableView>
-      <Text fx:id="title" layoutX="502.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suppliers Details">
+      <Text fx:id="title" layoutX="502.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--Suppliers Details--">
          <font>
             <Font name="Dyuthi Regular" size="36.0" />
          </font>
@@ -51,5 +53,30 @@
          <effect>
             <DropShadow />
          </effect></Button>
+      <Rectangle fx:id="rec1" arcHeight="5.0" arcWidth="5.0" fill="#3c5b6f" height="55.0" layoutX="1.0" layoutY="1.0" stroke="#3c5b6f" strokeType="INSIDE" width="50.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Rectangle>
+      <Rectangle fx:id="rec3" arcHeight="5.0" arcWidth="5.0" fill="#7aba78" height="55.0" layoutX="16.0" layoutY="16.0" stroke="#7aba78" strokeType="INSIDE" width="50.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Rectangle>
+      <Rectangle fx:id="rec2" arcHeight="5.0" arcWidth="5.0" fill="#7aba78" height="31.0" layoutX="66.0" layoutY="2.0" stroke="#7aba78" strokeType="INSIDE" width="27.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Rectangle>
+      <Rectangle fx:id="rec4" arcHeight="5.0" arcWidth="5.0" fill="#7aba78" height="31.0" layoutX="1.0" layoutY="66.0" stroke="#7aba78" strokeType="INSIDE" width="27.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Rectangle>
+      <Circle fx:id="cir5" fill="#3c5b6f" layoutX="66.0" layoutY="71.0" radius="9.0" stroke="#3c5b6f" strokeType="INSIDE">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Circle>
    </children>
 </AnchorPane>

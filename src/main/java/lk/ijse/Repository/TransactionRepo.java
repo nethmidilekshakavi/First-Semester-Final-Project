@@ -15,7 +15,7 @@ public class TransactionRepo {
         Connection connection = DbConnection.getInstance().getConnection();
         connection.setAutoCommit(false);
 
-        PreparedStatement ptsm = connection.prepareStatement("INSERT INTO Reservation VALUES(?, ?, ?, ?,?,?)");
+        PreparedStatement ptsm = connection.prepareStatement("INSERT INTO Reservation VALUES(?,?,?,?,?,?)");
 
         ptsm.setString(1 ,reservationModel.getRID());
         ptsm.setString(2, reservationModel.getCID());

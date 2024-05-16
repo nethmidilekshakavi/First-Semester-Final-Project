@@ -3,12 +3,14 @@ package lk.ijse.Repository;
 import com.sun.source.tree.BreakTree;
 import lk.ijse.DB.DbConnection;
 import lk.ijse.Model.CustomerModel;
+import lk.ijse.Model.MealModel;
 import lk.ijse.Model.ReservationModel;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class ReservationRepo {
    public static String getCurrentId() throws SQLException {
@@ -27,7 +29,7 @@ public class ReservationRepo {
     public static boolean saveReservation(ReservationModel reservationModel) throws SQLException {
         try {
             Connection connection = DbConnection.getInstance().getConnection();
-            PreparedStatement ptsm = connection.prepareStatement("INSERT INTO Reservation VALUES(?, ?, ?, ?,?,?,?,?)");
+            PreparedStatement ptsm = connection.prepareStatement("INSERT INTO Reservation VALUES(?,?,?,?,?,?)");
 
             ptsm.setString(1, String.valueOf(reservationModel.getRID()));
             ptsm.setString(2, String.valueOf(reservationModel.getCID()));
@@ -35,6 +37,7 @@ public class ReservationRepo {
             ptsm.setString(4, reservationModel.getDescription());
             ptsm.setString(5, reservationModel.getTime());
             ptsm.setString(6, reservationModel.getTotal());
+
 
             int i;
             i = ptsm.executeUpdate();

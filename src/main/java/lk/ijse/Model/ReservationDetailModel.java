@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 public class ReservationDetailModel {
     private String rid;
     private String mid;
+    private String desc;
     private String unitPrice;
     private String qty;
 }

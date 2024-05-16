@@ -90,5 +90,13 @@
          </font>
       </Button>
       <TextField fx:id="cidtxt" layoutX="105.0" layoutY="104.0" onKeyReleased="#cidkeyRelese" opacity="0.92" prefHeight="24.0" prefWidth="87.0" />
+      <ImageView fx:id="imaghe" fitHeight="299.0" fitWidth="259.0" layoutX="445.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/f856f3a58991d5bc71ba418947895d3a.jpg" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
    </children>
 </AnchorPane>

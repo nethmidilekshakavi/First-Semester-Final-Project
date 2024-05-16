@@ -1,11 +1,8 @@
 package lk.ijse.Model;
 
-import lk.ijse.controller.Reservation;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor

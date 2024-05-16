@@ -2,6 +2,7 @@ package lk.ijse.controller;
 
 import java.net.URL;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -22,6 +23,10 @@ public class MainForm {
 
     @FXML
     private AnchorPane AP01;
+
+    @FXML
+    private Text time;
+
 
     @FXML
     private AnchorPane AP02;
@@ -413,7 +418,7 @@ public class MainForm {
     void initialize() {
        getDate();
        getPrice();
-
+       getTime();
 
         assert AP01 != null : "fx:id=\"AP01\" was not injected: check your FXML file 'MainForm.fxml'.";
         assert AP02 != null : "fx:id=\"AP02\" was not injected: check your FXML file 'MainForm.fxml'.";
@@ -543,6 +548,10 @@ public class MainForm {
         assert txtC211 != null : "fx:id=\"txtC211\" was not injected: check your FXML file 'MainForm.fxml'.";
         assert userpic != null : "fx:id=\"userpic\" was not injected: check your FXML file 'MainForm.fxml'.";
         assert watermelonpic != null : "fx:id=\"watermelonpic\" was not injected: check your FXML file 'MainForm.fxml'.";
+
+    }
+
+    private void getTime() {
 
     }
 

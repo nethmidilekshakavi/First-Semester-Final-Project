@@ -86,7 +86,6 @@ public class Customer {
     @FXML
     void addNewCustomer(ActionEvent event) throws IOException {
         AddNewCustomer.apane = pane;
-        UpdateCustomer.upane = pane;
         Parent parent = FXMLLoader.load(getClass().getResource("/view/addNewCustomer.fxml"));
         Scene scene =new Scene(parent);
         Stage stage = new Stage();
@@ -98,18 +97,17 @@ public class Customer {
 
     @FXML
     void getReport(ActionEvent event) throws JRException, SQLException {
-            InputStream resourceAsStream = getClass().getResourceAsStream("/Report/Customer.jrxml.fxml");
-            JasperDesign load = JRXmlLoader.load(resourceAsStream);
-            JasperReport jasperReport = JasperCompileManager.compileReport(load);
-            JasperPrint jasperPrint = JasperFillManager.fillReport(
-                    jasperReport,
-                    null,
-                    DbConnection.getInstance().getConnection()
-            );
+        InputStream resourceAsStream = getClass().getResourceAsStream("/Report/Customers.jrxml");
+        JasperDesign load = JRXmlLoader.load(resourceAsStream);
+        JasperReport jasperReport = JasperCompileManager.compileReport(load);
+        JasperPrint jasperPrint = JasperFillManager.fillReport(
+                jasperReport,
+                null,
+                DbConnection.getInstance().getConnection()
+        );
 
-            JasperViewer.viewReport(jasperPrint,false);
-        }
-
+        JasperViewer.viewReport(jasperPrint,false);
+    }
 
   public void loadvalues() throws SQLException {
         ArrayList<CustomerModel> allcustomer=CustomerRepo.getAll();

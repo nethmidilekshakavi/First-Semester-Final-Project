@@ -96,5 +96,21 @@
          </font>
       </Button>
       <TextField fx:id="nametxt" layoutX="137.0" layoutY="148.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="496.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/c6f01bef9c13add9bf586ae2d304ec07.jpg" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="99.0" fitWidth="100.0" layoutX="437.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 350;">
+         <image>
+            <Image url="@../Images/5f08006f46ecef33095d028f84cc5e65.jpg" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
    </children>
 </AnchorPane>

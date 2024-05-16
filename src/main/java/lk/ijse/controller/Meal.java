@@ -2,6 +2,7 @@ package lk.ijse.controller;
 
 import java.awt.*;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -25,10 +26,15 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lk.ijse.DB.DbConnection;
 import lk.ijse.Model.MealModel;
 import lk.ijse.Model.TM.MealTM;
 import lk.ijse.Repository.CustomerRepo;
 import lk.ijse.Repository.MealRepo;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 public class Meal {
 
@@ -87,7 +93,18 @@ public class Meal {
     }
 
     @FXML
-    void getReport(ActionEvent event) {
+    void getReport(ActionEvent event) throws JRException, SQLException {
+        InputStream resourceAsStream = getClass().getResourceAsStream("/Report/Meal.jrxml");
+        JasperDesign load = JRXmlLoader.load(resourceAsStream);
+        JasperReport jasperReport = JasperCompileManager.compileReport(load);
+        JasperPrint jasperPrint = JasperFillManager.fillReport(
+                jasperReport,
+                null,
+                DbConnection.getInstance().getConnection()
+        );
+
+        JasperViewer.viewReport(jasperPrint,false);
+
 
     }
 

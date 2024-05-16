@@ -2,6 +2,7 @@ package lk.ijse.Repository;
 
 import lk.ijse.DB.DbConnection;
 import lk.ijse.Model.CustomerModel;
+import lk.ijse.controller.UpdateCustomer;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -61,7 +62,6 @@ public class CustomerRepo {
     }
 
     public static boolean updateCustomer(CustomerModel customerModel)  {
-
 try {
     Connection connection = DbConnection.getInstance().getConnection();
     PreparedStatement pstm = connection.prepareStatement("UPDATE Customer SET NIC = ?, First_Name = ?, Last_Name = ?, Address = ?  , Email = ?, Phone_Number = ?  WHERE C_ID = ?");

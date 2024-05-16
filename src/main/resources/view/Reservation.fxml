@@ -21,7 +21,7 @@
             <Image url="@../Images/439934641_906257328179868_688262380341938637_n.jpg" />
          </image>
       </ImageView>
-      <Text fx:id="title" layoutX="460.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME TO FOOD COURT">
+      <Text fx:id="title" layoutX="393.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME TO FOOD COURT">
          <font>
             <Font name="FreeSerif" size="36.0" />
          </font>

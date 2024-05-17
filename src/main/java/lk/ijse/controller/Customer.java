@@ -37,10 +37,8 @@ public class Customer {
 
     @FXML
     private ResourceBundle resources;
-
     @FXML
     private URL location;
-
     @FXML
     private ImageView EmployeePane;
 
@@ -82,10 +80,10 @@ public class Customer {
 
     @FXML
     private AnchorPane pane;
-
     @FXML
     void addNewCustomer(ActionEvent event) throws IOException {
         AddNewCustomer.apane = pane;
+        UpdateCustomer.upane=pane;
         Parent parent = FXMLLoader.load(getClass().getResource("/view/addNewCustomer.fxml"));
         Scene scene =new Scene(parent);
         Stage stage = new Stage();
@@ -94,7 +92,6 @@ public class Customer {
         stage.centerOnScreen();
         stage.show();
     }
-
     @FXML
     void getReport(ActionEvent event) throws JRException, SQLException {
         InputStream resourceAsStream = getClass().getResourceAsStream("/Report/Customers.jrxml");
@@ -105,10 +102,8 @@ public class Customer {
                 null,
                 DbConnection.getInstance().getConnection()
         );
-
         JasperViewer.viewReport(jasperPrint,false);
     }
-
   public void loadvalues() throws SQLException {
         ArrayList<CustomerModel> allcustomer=CustomerRepo.getAll();
         ObservableList<customerTM>observableList =FXCollections.observableArrayList();
@@ -119,7 +114,6 @@ public class Customer {
           observableList.add(customerTM);
           customerTable.setItems(observableList);
       }
-
       for (int i = 0; i < observableList.size(); i++) {
           observableList.get(i).getUpdate().setStyle("-fx-background-color: rgba(16, 176, 72)");
           observableList.get(i).getUpdate().setPrefWidth(130);
@@ -131,7 +125,6 @@ public class Customer {
           observableList.get(i).getDelete().setPrefHeight(30);
           observableList.get(i).getUpdate().setTextFill(Color.WHITE);
           observableList.get(i).getDelete().setTextFill(Color.WHITE);
-
       }
       for (int i=0 ;i<observableList.size();i++){
           String id =observableList.get(i).getC_ID();
@@ -201,7 +194,6 @@ public class Customer {
               stage.setTitle("Update Customer");
               stage.centerOnScreen();
               stage.show();
-
           });
       }
   }
@@ -215,7 +207,6 @@ public class Customer {
             colDelete.setCellValueFactory(new PropertyValueFactory<customerTM,JFXButton>("Delete"));
             colUpdate.setCellValueFactory(new PropertyValueFactory<customerTM,JFXButton>("Update"));
         }
-
     @FXML
     void initialize() throws SQLException {
         assert EmployeePane != null : "fx:id=\"EmployeePane\" was not injected: check your FXML file 'Customer.fxml'.";

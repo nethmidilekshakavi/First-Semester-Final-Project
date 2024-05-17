@@ -133,6 +133,7 @@ public class UpdateCustomer {
         stage1.close();
         upane.getChildren().clear();
         upane.getChildren().add(FXMLLoader.load(getClass().getResource("/view/Customer.fxml")));
+
     }
     @FXML
     void initialize() {

@@ -45,7 +45,6 @@ public class AddNewCustomer {
     @FXML
     private TextField cidtxt;
 
-
     @FXML
     private Text CID;
 
@@ -93,7 +92,6 @@ public class AddNewCustomer {
 
     @FXML
     private TextField numtxt;
-
 
     @FXML
     void dontSaveCustomer(ActionEvent event) {
@@ -158,7 +156,6 @@ public class AddNewCustomer {
         apane.getChildren().clear();
         apane.getChildren().add(FXMLLoader.load(getClass().getResource("/view/Customer.fxml")));
     }
-
 
     public void txtcustomerEmailKeyreleased(KeyEvent keyEvent) {
         Regex.setTextColor(lk.ijse.util.TextField.EMAIL, Emailtxt);

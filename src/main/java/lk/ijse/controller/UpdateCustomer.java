@@ -18,7 +18,8 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import lk.ijse.DB.DbConnection;
+import lk.ijse.Dao.Custom.CustomerDao;
+import lk.ijse.Dao.Impl.CustomerDaoImpl;
 import lk.ijse.Model.CustomerModel;
 import lk.ijse.Repository.CustomerRepo;
 
@@ -91,6 +92,8 @@ public class UpdateCustomer {
     @FXML
     private Text updatecustomerinfor;
 
+    CustomerDao customerDao = new CustomerDaoImpl();
+
     @FXML
     void dontUpdateCustomer(ActionEvent event) {
         Stage stage = (Stage) cidtxt.getScene().getWindow();
@@ -109,8 +112,7 @@ public class UpdateCustomer {
         String ema = newEmailtxt.getText();
 
 
-        CustomerModel updatecustomer = new CustomerModel(cidd, nnic, finame, laname, add, phone, ema);
-        boolean c = CustomerRepo.updateCustomer(updatecustomer);
+     boolean c  = customerDao.UpdateCustomer(new CustomerModel(cidd,nnic,finame,laname,add,phone,ema));
 
         if (c) {
             // Show success message
@@ -157,10 +159,10 @@ public class UpdateCustomer {
         assert updatecustomerinfor != null : "fx:id=\"updatecustomerinfor\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";
     }
 
-    public void ideeenter(KeyEvent keyEvent) {
+    public void ideeenter(KeyEvent keyEvent) throws SQLException {
         if (keyEvent.getCode().equals(KeyCode.ENTER)){
             String id = String.valueOf(cidtxt.getText());
-            ArrayList <CustomerModel> customerModels = CustomerRepo.searchCID(id);
+            ArrayList <CustomerModel> customerModels = customerDao.SearchCID(id);
 
             newnictxt.setText(customerModels.get(0).getNIC());
             newfnametxt.setText(customerModels.get(0).getFirst_Name());

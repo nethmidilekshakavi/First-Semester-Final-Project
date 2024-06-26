@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ReservationRepo {
+    //orderid
    public static String getCurrentId() throws SQLException {
         String sql = "SELECT R_ID FROM Reservation ORDER BY R_ID DESC LIMIT 1";
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
@@ -26,6 +27,7 @@ public class ReservationRepo {
         return null;
     }
 
+    //saveOrder
     public static boolean saveReservation(ReservationModel reservationModel) throws SQLException {
         try {
             Connection connection = DbConnection.getInstance().getConnection();

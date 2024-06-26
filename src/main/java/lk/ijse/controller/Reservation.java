@@ -16,21 +16,19 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lk.ijse.DB.DbConnection;
+import lk.ijse.Dao.Custom.CustomerDao;
+import lk.ijse.Dao.Impl.CustomerDaoImpl;
 import lk.ijse.Model.*;
-import lk.ijse.Model.TM.OrderTM;
 import lk.ijse.Model.TM.ReservationTM;
 import lk.ijse.Repository.*;
 import lombok.SneakyThrows;
@@ -149,6 +147,8 @@ public class Reservation {
 
     double netTotal = 0;
 
+    CustomerDao customerDao = new CustomerDaoImpl();
+
     public void initialize() {
         setDate();
         getCurrentOrderId();
@@ -167,21 +167,20 @@ public class Reservation {
     }
 
 
-
+//getAllCustomerID
     private void getCustomerIds() {
-        ObservableList<String>oblist = FXCollections.observableArrayList();
         try{
-            ArrayList<CustomerModel> idlist = CustomerRepo.getAll();
-            for (int i = 0; i < idlist.size(); i++) {
-                oblist.add(String.valueOf(idlist.get(i).getPhone_Number()));
+            ArrayList<String>allids = customerDao.allcustomerNumber();
+
+            for (String s : allids){
+                nicList.getItems().add(s);
             }
-            nicList.setItems(oblist);
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-
+//item
     private void getItemCodes() {
         ObservableList<String> oblist = FXCollections.observableArrayList();
         try {
@@ -197,7 +196,7 @@ public class Reservation {
         }
     }
 
-
+//order
     private void getCurrentOrderId() {
         try {
             String currentId = ReservationRepo.getCurrentId();
@@ -292,7 +291,7 @@ public class Reservation {
     void btnPlaceOrderOnAction(ActionEvent event) {
         String reId = reservationIDtxt.getText();
         String custId ="";
-        ArrayList<CustomerModel> all = CustomerRepo.getAll();
+        ArrayList<CustomerModel> all = customerDao.AllCustomer();
         for (int i = 0; i < all.size(); i++) {
             int phoneNumber = all.get(i).getPhone_Number();
             int value = Integer.parseInt(nicList.getValue());
@@ -338,20 +337,25 @@ public class Reservation {
         reservationIDtxt.setText("0"+x);
         totaltxt.setText("");
     }
-
+//customer
     @FXML
     void comboCustomerList(ActionEvent event) {
         String number = nicList.getValue();
         if (number.equals("")){}else {
             try {
-                CustomerModel customerModel = CustomerRepo.searchByContact(number);
-                nametxt.setText(customerModel.getFirst_Name());
+
+                ArrayList<CustomerModel> arrayList = customerDao.loadAllCustomerID();
+                for (CustomerModel c : arrayList){
+                    nicList.getItems().add(String.valueOf(c.getPhone_Number()));
+                    nametxt.setText(c.getFirst_Name());
+                }
+
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
         }
     }
-
+//meal
     @FXML
     void comboMealList(ActionEvent event) {
         String mid = reservationList.getValue();

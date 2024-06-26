@@ -18,16 +18,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lk.ijse.DB.DbConnection;
+import lk.ijse.Dao.Custom.CustomerDao;
+import lk.ijse.Dao.Impl.CustomerDaoImpl;
 import lk.ijse.Model.CustomerModel;
 import lk.ijse.Model.TM.customerTM;
-import lk.ijse.Repository.CustomerRepo;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
@@ -80,6 +80,10 @@ public class Customer {
 
     @FXML
     private AnchorPane pane;
+
+
+    CustomerDao customerDao = (CustomerDao) new CustomerDaoImpl();
+
     @FXML
     void addNewCustomer(ActionEvent event) throws IOException {
         AddNewCustomer.apane = pane;
@@ -105,15 +109,20 @@ public class Customer {
         JasperViewer.viewReport(jasperPrint,false);
     }
   public void loadvalues() throws SQLException {
-        ArrayList<CustomerModel> allcustomer=CustomerRepo.getAll();
-        ObservableList<customerTM>observableList =FXCollections.observableArrayList();
+      //gellAllCustomer
+      ObservableList<customerTM> observableList = FXCollections.observableArrayList();
 
-      for (int i=0 ;i< allcustomer.size() ; i++){
-          String mobile =String.valueOf(allcustomer.get(i).getPhone_Number());
-          customerTM customerTM =new customerTM(allcustomer.get(i).getC_ID(),allcustomer.get(i).getNIC(),allcustomer.get(i).getFirst_Name(),allcustomer.get(i).getLast_Name(),allcustomer.get(i).getAddress(),mobile,allcustomer.get(i).getEmail(), new JFXButton("Delete"),new JFXButton("Update"));
-          observableList.add(customerTM);
+
+      ArrayList<CustomerModel> customerDTOS = customerDao.AllCustomer();
+      for (CustomerModel customerModel : customerDTOS) {
+          String mobile = String.valueOf(customerModel.getPhone_Number());
+
+          customerTable.getItems().add(new customerTM(customerModel.getC_ID(), customerModel.getNIC(), customerModel.getFirst_Name(), customerModel.getLast_Name(), customerModel.getAddress(), mobile, customerModel.getEmail(), new JFXButton("delete"), new JFXButton("update")));
+        //  observableList.add(customerTM);
           customerTable.setItems(observableList);
       }
+
+
       for (int i = 0; i < observableList.size(); i++) {
           observableList.get(i).getUpdate().setStyle("-fx-background-color: rgba(16, 176, 72)");
           observableList.get(i).getUpdate().setPrefWidth(130);
@@ -138,7 +147,8 @@ public class Customer {
                       confirmDialog.showAndWait().ifPresent(response -> {
                           if (response == ButtonType.OK) {
                               try {
-                                  boolean deleted = CustomerRepo.delete(id);
+                                  //deleteCustomer
+                                  boolean deleted = customerDao.DeleteCustomer(id);
                                   if (deleted) {
                                       Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
                                       successAlert.setTitle("Success");
@@ -185,6 +195,7 @@ public class Customer {
               Parent parent = null;
               try {
                   parent = FXMLLoader.load(getClass().getResource("/view/UpdateCustomer.fxml"));
+
               } catch (IOException e) {
                   throw new RuntimeException(e);
               }

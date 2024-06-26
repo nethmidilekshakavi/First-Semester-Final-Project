@@ -8,26 +8,22 @@ import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ResourceBundle;
-import java.util.regex.Pattern;
 
-import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lk.ijse.Dao.Custom.CustomerDao;
+import lk.ijse.Dao.Impl.CustomerDaoImpl;
 import lk.ijse.Mail.mail;
 import lk.ijse.Model.CustomerModel;
-import lk.ijse.Repository.CustomerRepo;
-import lk.ijse.Repository.ReservationRepo;
 import lk.ijse.util.Regex;
 
 public class AddNewCustomer {
@@ -93,6 +89,8 @@ public class AddNewCustomer {
     @FXML
     private TextField numtxt;
 
+    CustomerDao customerDao = new CustomerDaoImpl();
+
     @FXML
     void dontSaveCustomer(ActionEvent event) {
         Stage stage = (Stage) cidtxt.getScene().getWindow();
@@ -126,11 +124,9 @@ public class AddNewCustomer {
         int mobile = Integer.parseInt(numtxt.getText());
         String email = Emailtxt.getText();
 
+        boolean b =  customerDao.SaveCustomer(new CustomerModel(cid,nic,fname,lname,address,mobile,email));
 
-        CustomerModel customerModel = new CustomerModel(cid, nic, fname, lname, address, mobile, email);
-        boolean a = CustomerRepo.savecustomer(customerModel);
-
-        if (a) {
+        if (b) {
             new Alert(Alert.AlertType.CONFIRMATION, "customer saved successfully").show();
             mail mail = new mail();
             mail.setMsg("Hi " + fname + " " + lname +

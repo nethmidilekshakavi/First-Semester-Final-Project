@@ -15,12 +15,13 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import lk.ijse.Model.CustomerModel;
+import lk.ijse.BO.BOFactory;
+import lk.ijse.BO.Custom.CustomerBO;
+import lk.ijse.BO.Custom.MealBO;
 import lk.ijse.Model.MealModel;
-import lk.ijse.Repository.CustomerRepo;
 import lk.ijse.Repository.MealRepo;
 
-public class UpdateMeal extends Meal{
+public class UpdateMeal extends MealController {
 
     @FXML
     private ResourceBundle resources;
@@ -63,7 +64,7 @@ public class UpdateMeal extends Meal{
     @FXML
     private ImageView updatemealpane;
 
-
+    MealBO mealBO  = (MealBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.MEAL);
     @FXML
     void dontSaveMeal(ActionEvent event) {
         Stage stage =(Stage)midtxt.getScene().getWindow();
@@ -71,20 +72,21 @@ public class UpdateMeal extends Meal{
     }
 
     @FXML
-    void updateMeal(ActionEvent event) throws SQLException {
+    void updateMeal(ActionEvent event) throws SQLException, ClassNotFoundException {
 
         String mid = midtxt.getText();
         String name = newNametxt.getText();
         String price = newpricetxt.getText();
 
-        MealModel updateMeal =new MealModel(mid,name,price);
-        boolean c = MealRepo.updateMeal(updateMeal);
+
+        boolean c = mealBO.updateCustomer(new MealModel(mid,name,price));
+
         if (c) {
 
             Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
             successAlert.setTitle("Success");
             successAlert.setHeaderText(null);
-            successAlert.setContentText("Meal details updated successfully.");
+            successAlert.setContentText("MealController details updated successfully.");
             successAlert.showAndWait();
 
             ((Node) (event.getSource())).getScene().getWindow().hide();

@@ -19,6 +19,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import lk.ijse.BO.BOFactory;
+import lk.ijse.BO.Custom.CustomerBO;
+import lk.ijse.BO.Custom.MealBO;
+import lk.ijse.Model.CustomerModel;
 import lk.ijse.Model.MealModel;
 import lk.ijse.Repository.CustomerRepo;
 import lk.ijse.Repository.MealRepo;
@@ -72,6 +76,9 @@ public class AddMeal {
  ///  String url;
  // String imagePath = null;
 
+    MealBO mealBO  = (MealBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.MEAL);
+
+
     @FXML
     void dontSaveMeal(ActionEvent event) {
         Stage stage = (Stage)midtxt.getScene().getWindow();
@@ -94,18 +101,16 @@ public class AddMeal {
     }*/
 
     @FXML
-    void saveMeal(ActionEvent event) throws SQLException, IOException {
+    void saveMeal(ActionEvent event) throws SQLException, IOException, ClassNotFoundException {
         String mid = midtxt.getText();
         String name = nametxt.getText();
         String price = pricetxt.getText();
-      //  String image = imagePath.toString();
 
 
+        boolean b = mealBO.saveMeal(new MealModel(mid,name,price));
 
-        MealModel mealModel = new MealModel(mid,name,price);
-        boolean b = MealRepo.saveMeal(mealModel);
         if (b) {
-            new Alert(Alert.AlertType.CONFIRMATION, "Meal Saves Successfully!").show();
+            new Alert(Alert.AlertType.CONFIRMATION, "MealController Saves Successfully!").show();
         } else {
             new Alert(Alert.AlertType.ERROR, "something went Wrong").show();
         }

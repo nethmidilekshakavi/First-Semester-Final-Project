@@ -1,6 +1,5 @@
-package lk.ijse.Model;
+package lk.ijse.Entity;
 
-import lk.ijse.controller.CustomerController;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 
-public class CustomerModel extends CustomerController {
+public class Customer  {
 
     private String C_ID;
     private  String NIC;
@@ -19,7 +18,8 @@ public class CustomerModel extends CustomerController {
     private  int Phone_Number;
     private  String Email;
 
-    public CustomerModel(int phoneNumber) {
+
+    public Customer(String num) {
 
     }
 }

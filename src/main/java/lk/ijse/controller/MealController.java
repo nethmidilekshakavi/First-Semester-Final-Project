@@ -1,6 +1,5 @@
 package lk.ijse.controller;
 
-import java.awt.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -9,7 +8,6 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
-import com.sun.prism.Image;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -26,17 +24,21 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lk.ijse.BO.BOFactory;
+import lk.ijse.BO.Custom.CustomerBO;
+import lk.ijse.BO.Custom.MealBO;
 import lk.ijse.DB.DbConnection;
+import lk.ijse.Model.CustomerModel;
 import lk.ijse.Model.MealModel;
 import lk.ijse.Model.TM.MealTM;
-import lk.ijse.Repository.CustomerRepo;
+import lk.ijse.Model.TM.customerTM;
 import lk.ijse.Repository.MealRepo;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
 
-public class Meal {
+public class MealController {
 
     @FXML
     private ResourceBundle resources;
@@ -80,6 +82,9 @@ public class Meal {
     private AnchorPane pane;
 
 
+
+    MealBO mealBO = (MealBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.MEAL);
+
     @FXML
     void addNewEmployee(ActionEvent event) throws IOException {
         AddMeal.apane = pane;
@@ -87,7 +92,7 @@ public class Meal {
         Scene scene =new Scene(parent);
         Stage stage = new Stage();
         stage.setScene(scene);
-        stage.setTitle("ADD Meal");
+        stage.setTitle("ADD MealController");
         stage.centerOnScreen();
         stage.show();
     }
@@ -109,16 +114,16 @@ public class Meal {
     }
 
 
-    public void loadvalues() throws SQLException {
-        ArrayList<MealModel> allMeal = MealRepo.getAll();
-        ObservableList<MealTM>observableList = FXCollections.observableArrayList();
+    public void loadvalues() throws SQLException, ClassNotFoundException {
 
-       for (int i = 0; i < allMeal.size(); i++){
-          // Image mealPic = new Image(MealModel.getMeal());
-         //  ImageView imageView = new ImageView(String.valueOf(mealPic));
-           MealTM mealTM = new MealTM(allMeal.get(i).getMID(), allMeal.get(i).getName(), allMeal.get(i).getPrice(), new JFXButton("Upadte"), new JFXButton("Delete"));
-          observableList.add(mealTM);
-           mealTable.setItems(observableList);
+        //gellAllCustomer
+        ObservableList<MealTM> observableList = FXCollections.observableArrayList();
+
+        ArrayList<MealModel> mealModels = mealBO.getAllMeal();
+        for (MealModel mealModel : mealModels) {
+            mealTable.getItems().add(new MealTM(mealModel.getMID(),mealModel.getName(),mealModel.getPrice(), new JFXButton("Update"), new JFXButton("Delete")));
+            mealTable.setItems(observableList);
+
         }
         for (int i = 0; i < observableList.size(); i++) {
             observableList.get(i).getUpdate().setStyle("-fx-background-color: rgba(16, 176, 72)");
@@ -144,18 +149,18 @@ public class Meal {
             observableList.get(i).getDelete().setOnAction(actionEvent -> {
                 Alert confirmDialog = new Alert(Alert.AlertType.CONFIRMATION);
                 confirmDialog.setTitle("Confirm Deletion");
-                confirmDialog.setHeaderText("Are you sure you want to delete this Meal?");
+                confirmDialog.setHeaderText("Are you sure you want to delete this MealController?");
                 confirmDialog.setContentText("Press OK to confirm or Cancel to abort.");
 
                 confirmDialog.showAndWait().ifPresent(response -> {
                     if (response == ButtonType.OK) {
                         try {
-                            boolean deleted = MealRepo.delete(id);
+                            boolean deleted = mealBO.deleteCustomer(id);
                             if (deleted) {
                                 Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
                                 successAlert.setTitle("Success");
                                 successAlert.setHeaderText(null);
-                                successAlert.setContentText("Meal Deleted Successfully");
+                                successAlert.setContentText("MealController Deleted Successfully");
                                 successAlert.showAndWait();
                                 // Reload values after successful deletion
 
@@ -164,15 +169,19 @@ public class Meal {
                                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                                 errorAlert.setTitle("Error");
                                 errorAlert.setHeaderText(null);
-                                errorAlert.setContentText("Failed to delete Meal.");
+                                errorAlert.setContentText("Failed to delete MealController.");
                                 errorAlert.showAndWait();
                             }
                         } catch (SQLException e) {
+                            throw new RuntimeException(e);
+                        } catch (ClassNotFoundException e) {
                             throw new RuntimeException(e);
                         }
                         try {
                             loadvalues();
                         } catch (SQLException e) {
+                            throw new RuntimeException(e);
+                        } catch (ClassNotFoundException e) {
                             throw new RuntimeException(e);
                         }
                     }
@@ -190,7 +199,7 @@ public class Meal {
                 Scene scene =new Scene(parent);
                 Stage stage = new Stage();
                 stage.setScene(scene);
-                stage.setTitle("Update Meal");
+                stage.setTitle("Update MealController");
                 stage.centerOnScreen();
                 stage.show();
             });
@@ -203,20 +212,20 @@ public class Meal {
         colprice.setCellValueFactory(new PropertyValueFactory<>("Price"));
         colDelete.setCellValueFactory(new PropertyValueFactory<MealTM,JFXButton>("Delete"));
         colUpdate.setCellValueFactory(new PropertyValueFactory<MealTM,JFXButton>("Update"));
-        colimage.setCellValueFactory(new PropertyValueFactory<>("Meal"));
+        colimage.setCellValueFactory(new PropertyValueFactory<>("MealController"));
     }
 
         @FXML
-        void initialize () throws SQLException {
-            assert btnAdd != null : "fx:id=\"btnAdd\" was not injected: check your FXML file 'Meal.fxml'.";
-            assert btnPrint != null : "fx:id=\"btnPrint\" was not injected: check your FXML file 'Meal.fxml'.";
-            assert colmid != null : "fx:id=\"colmid\" was not injected: check your FXML file 'Meal.fxml'.";
-            assert colname != null : "fx:id=\"colname\" was not injected: check your FXML file 'Meal.fxml'.";
-            assert colprice != null : "fx:id=\"colprice\" was not injected: check your FXML file 'Meal.fxml'.";
-            assert mealPane != null : "fx:id=\"mealPane\" was not injected: check your FXML file 'Meal.fxml'.";
-            assert mealTable != null : "fx:id=\"mealTable\" was not injected: check your FXML file 'Meal.fxml'.";
-            assert title != null : "fx:id=\"title\" was not injected: check your FXML file 'Meal.fxml'.";
-            assert colimage != null:"fx:id=\"colimage\" was not injected: check your FXML file 'Meal.fxml'.";
+        void initialize () throws SQLException, ClassNotFoundException {
+            assert btnAdd != null : "fx:id=\"btnAdd\" was not injected: check your FXML file 'MealController.fxml'.";
+            assert btnPrint != null : "fx:id=\"btnPrint\" was not injected: check your FXML file 'MealController.fxml'.";
+            assert colmid != null : "fx:id=\"colmid\" was not injected: check your FXML file 'MealController.fxml'.";
+            assert colname != null : "fx:id=\"colname\" was not injected: check your FXML file 'MealController.fxml'.";
+            assert colprice != null : "fx:id=\"colprice\" was not injected: check your FXML file 'MealController.fxml'.";
+            assert mealPane != null : "fx:id=\"mealPane\" was not injected: check your FXML file 'MealController.fxml'.";
+            assert mealTable != null : "fx:id=\"mealTable\" was not injected: check your FXML file 'MealController.fxml'.";
+            assert title != null : "fx:id=\"title\" was not injected: check your FXML file 'MealController.fxml'.";
+            assert colimage != null:"fx:id=\"colimage\" was not injected: check your FXML file 'MealController.fxml'.";
             loadvalues();
             setValues();
 

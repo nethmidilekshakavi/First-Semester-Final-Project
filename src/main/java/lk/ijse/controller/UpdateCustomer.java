@@ -18,8 +18,11 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lk.ijse.BO.BOFactory;
+import lk.ijse.BO.Custom.CustomerBO;
 import lk.ijse.Dao.Custom.CustomerDao;
 import lk.ijse.Dao.Impl.CustomerDaoImpl;
+import lk.ijse.Entity.Customer;
 import lk.ijse.Model.CustomerModel;
 import lk.ijse.Repository.CustomerRepo;
 
@@ -92,7 +95,7 @@ public class UpdateCustomer {
     @FXML
     private Text updatecustomerinfor;
 
-    CustomerDao customerDao = new CustomerDaoImpl();
+    CustomerBO customerBO  = (CustomerBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.CUSTOMER);
 
     @FXML
     void dontUpdateCustomer(ActionEvent event) {
@@ -101,7 +104,7 @@ public class UpdateCustomer {
     }
 
     @FXML
-    void updateCustomerOnAction(ActionEvent event) throws SQLException, IOException {
+    void updateCustomerOnAction(ActionEvent event) throws SQLException, IOException, ClassNotFoundException {
         UpdateCustomer.upane = pane;
         String cidd = cidtxt.getText();
         String nnic = newnictxt.getText();
@@ -112,14 +115,14 @@ public class UpdateCustomer {
         String ema = newEmailtxt.getText();
 
 
-     boolean c  = customerDao.UpdateCustomer(new CustomerModel(cidd,nnic,finame,laname,add,phone,ema));
+     boolean c  = customerBO.updateCustomer(new CustomerModel(cidd,nnic,finame,laname,add,phone,ema));
 
         if (c) {
             // Show success message
             Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
             successAlert.setTitle("Success");
             successAlert.setHeaderText(null);
-            successAlert.setContentText("Customer details updated successfully.");
+            successAlert.setContentText("CustomerController details updated successfully.");
             successAlert.showAndWait();
 
             ((Node) (event.getSource())).getScene().getWindow().hide();
@@ -159,17 +162,19 @@ public class UpdateCustomer {
         assert updatecustomerinfor != null : "fx:id=\"updatecustomerinfor\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";
     }
 
-    public void ideeenter(KeyEvent keyEvent) throws SQLException {
+    //loadwena tika hadanna one
+    public void ideeenter(KeyEvent keyEvent) throws SQLException, ClassNotFoundException {
         if (keyEvent.getCode().equals(KeyCode.ENTER)){
             String id = String.valueOf(cidtxt.getText());
-            ArrayList <CustomerModel> customerModels = customerDao.SearchCID(id);
+           ArrayList<Customer> customers = customerBO.serachCID(id);
 
-            newnictxt.setText(customerModels.get(0).getNIC());
-            newfnametxt.setText(customerModels.get(0).getFirst_Name());
-            newlnametxt.setText(customerModels.get(0).getLast_Name());
-            newaddresstxt.setText(customerModels.get(0).getAddress());
-            newnumtxt.setText(String.valueOf(customerModels.get(0).getPhone_Number()));
-            newEmailtxt.setText(customerModels.get(0).getEmail());
+
+            newnictxt.setText(String.valueOf(customers.get(0)));
+            newfnametxt.setText(String.valueOf(fname.getText()));
+            newlnametxt.setText(String.valueOf(lname.getText()));
+            newaddresstxt.setText(String.valueOf(address.getText()));
+            newnumtxt.setText(String.valueOf(String.valueOf(num.getText())));
+            newEmailtxt.setText(String.valueOf(email.getText()));
 
         }
     }

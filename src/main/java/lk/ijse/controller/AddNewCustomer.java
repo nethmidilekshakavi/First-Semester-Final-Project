@@ -20,6 +20,8 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lk.ijse.BO.BOFactory;
+import lk.ijse.BO.Custom.CustomerBO;
 import lk.ijse.Dao.Custom.CustomerDao;
 import lk.ijse.Dao.Impl.CustomerDaoImpl;
 import lk.ijse.Mail.mail;
@@ -89,7 +91,7 @@ public class AddNewCustomer {
     @FXML
     private TextField numtxt;
 
-    CustomerDao customerDao = new CustomerDaoImpl();
+    CustomerBO customerBO  = (CustomerBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.CUSTOMER);
 
     @FXML
     void dontSaveCustomer(ActionEvent event) {
@@ -114,7 +116,7 @@ public class AddNewCustomer {
     }
 
     @FXML
-    void saveCustomer(ActionEvent event) throws SQLException, IOException {
+    void saveCustomer(ActionEvent event) throws SQLException, IOException, ClassNotFoundException {
 
         String cid = cidtxt.getText();
         String nic = nictxt.getText();
@@ -124,7 +126,7 @@ public class AddNewCustomer {
         int mobile = Integer.parseInt(numtxt.getText());
         String email = Emailtxt.getText();
 
-        boolean b =  customerDao.SaveCustomer(new CustomerModel(cid,nic,fname,lname,address,mobile,email));
+      boolean b =   customerBO.saveCustomer(new CustomerModel(cid,nic,fname,lname,address,mobile,email));
 
         if (b) {
             new Alert(Alert.AlertType.CONFIRMATION, "customer saved successfully").show();

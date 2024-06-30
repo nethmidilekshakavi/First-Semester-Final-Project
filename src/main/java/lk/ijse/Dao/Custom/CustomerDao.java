@@ -1,26 +1,26 @@
 package lk.ijse.Dao.Custom;
 
-import lk.ijse.Model.CustomerModel;
+import lk.ijse.Dao.CrudDao;
+import lk.ijse.Entity.Customer;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public interface CustomerDao {
+public interface CustomerDao extends CrudDao<Customer> {
 
-    ArrayList<CustomerModel> AllCustomer() throws SQLException;
+    boolean Save(Customer Entity) throws SQLException, ClassNotFoundException;
 
-    boolean SaveCustomer(CustomerModel customerModel) throws SQLException;
+    boolean Update(Customer Entity) throws SQLException, ClassNotFoundException;
 
-    boolean UpdateCustomer(CustomerModel customerModel) throws SQLException;
-
-    boolean DeleteCustomer(String id) throws SQLException;
+    boolean Delete(String id) throws SQLException, ClassNotFoundException;
 
 
-    ArrayList<String> allcustomerNumber() throws SQLException;
+    ArrayList<String> allcustomerNumber(Customer entity) throws SQLException, ClassNotFoundException;
 
 
-    ArrayList<CustomerModel>SearchCID(String cid) throws SQLException;
+    ArrayList<Customer> SearchCID(String cid) throws SQLException, ClassNotFoundException;
 
-    ArrayList<String> loadAllCustomerID() throws SQLException;
+
+    ArrayList<Customer> loadAllCustomerNumber() throws SQLException, ClassNotFoundException;
 }
 

@@ -1,4 +1,4 @@
-package lk.ijse.Model;
+package lk.ijse.Entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 
-public class MealModel  {
+public class Meal {
     private String MID;
     private String Name;
     private String Price;

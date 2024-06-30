@@ -28,7 +28,7 @@ public class MealRepo {
         return false;
     }
 
-    public static boolean updateMeal(MealModel mealModel) throws SQLException {
+   /* public static boolean updateMeal(MealModel mealModel) throws SQLException {
 
         Connection connection = DbConnection.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement( "UPDATE Meal SET Name = ?, Meal_Price = ? WHERE M_ID = ?");
@@ -38,9 +38,9 @@ public class MealRepo {
         pstm.setString(3,mealModel.getMID());
 
         return pstm.executeUpdate() > 0;
-    }
+    }*/
 
-    public static boolean delete(String id) throws SQLException {
+  /*  public static boolean delete(String id) throws SQLException {
         try{
             Connection connection= DbConnection.getInstance().getConnection();
             PreparedStatement preparedStatement=connection.prepareStatement("delete from Meal where M_ID=?");
@@ -52,7 +52,7 @@ public class MealRepo {
             e.printStackTrace();
         }
         return false;
-    }
+    }*/
 
     public static MealModel searchById(String id) throws SQLException {
         String sql = "SELECT * FROM Meal WHERE M_ID = ?";
@@ -74,7 +74,7 @@ public class MealRepo {
 
         return null;
     }
-    public static ArrayList<MealModel> getAll() throws SQLException {
+    /*public static ArrayList<MealModel> getAll() throws SQLException {
         ArrayList<MealModel>mealModel =new ArrayList<>();
       try {
             Connection connection =DbConnection.getInstance().getConnection();
@@ -89,7 +89,7 @@ public class MealRepo {
             throw new RuntimeException(ex);
         }
         return mealModel;
-    }
+    }*/
     public static List<String> getIds() throws SQLException {
         String sql = "SELECT M_ID FROM Meal";
         PreparedStatement pstm = DbConnection.getInstance().getConnection()

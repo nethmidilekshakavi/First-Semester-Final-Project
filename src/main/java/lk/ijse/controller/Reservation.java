@@ -25,6 +25,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lk.ijse.BO.BOFactory;
+import lk.ijse.BO.Custom.CustomerBO;
 import lk.ijse.DB.DbConnection;
 import lk.ijse.Dao.Custom.CustomerDao;
 import lk.ijse.Dao.Impl.CustomerDaoImpl;
@@ -147,12 +149,12 @@ public class Reservation {
 
     double netTotal = 0;
 
-    CustomerDao customerDao = new CustomerDaoImpl();
+    CustomerBO customerBO = (CustomerBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.CUSTOMER);
 
     public void initialize() {
         setDate();
         getCurrentOrderId();
-        getCustomerIds();
+       // getCustomerIds();
         getItemCodes();
         setCellValueFactory();
     }
@@ -168,17 +170,17 @@ public class Reservation {
 
 
 //getAllCustomerID
-    private void getCustomerIds() {
-        try{
-            ArrayList<String>allids = customerDao.allcustomerNumber();
+   private void getCustomerIds() {
+      /*  try{
+          //  ArrayList<String>allids = customerBO.serachCid();
 
-            for (String s : allids){
+           // for (String s : allids){
                 nicList.getItems().add(s);
             }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }
+        }*/
     }
 //item
     private void getItemCodes() {
@@ -281,7 +283,7 @@ public class Reservation {
         Scene scene =new Scene(parent);
         Stage stage = new Stage();
         stage.setScene(scene);
-        stage.setTitle("Add New Customer Form");
+        stage.setTitle("Add New CustomerController Form");
         stage.centerOnScreen();
         stage.show();
     }
@@ -291,7 +293,8 @@ public class Reservation {
     void btnPlaceOrderOnAction(ActionEvent event) {
         String reId = reservationIDtxt.getText();
         String custId ="";
-        ArrayList<CustomerModel> all = customerDao.AllCustomer();
+        ArrayList<CustomerModel> all =
+        customerBO.getAllCustomers();
         for (int i = 0; i < all.size(); i++) {
             int phoneNumber = all.get(i).getPhone_Number();
             int value = Integer.parseInt(nicList.getValue());
@@ -344,13 +347,15 @@ public class Reservation {
         if (number.equals("")){}else {
             try {
 
-                ArrayList<CustomerModel> arrayList = customerDao.loadAllCustomerID();
+                ArrayList<CustomerModel> arrayList = customerBO.getAllNumber();
                 for (CustomerModel c : arrayList){
                     nicList.getItems().add(String.valueOf(c.getPhone_Number()));
                     nametxt.setText(c.getFirst_Name());
                 }
 
             } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
         }

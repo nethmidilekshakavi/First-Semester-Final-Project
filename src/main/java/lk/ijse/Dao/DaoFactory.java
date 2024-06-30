@@ -1,6 +1,8 @@
 package lk.ijse.Dao;
 
+import lk.ijse.BO.Impl.EmployeeBOImpl;
 import lk.ijse.Dao.Impl.CustomerDaoImpl;
+import lk.ijse.Dao.Impl.EmployeeDaoImpl;
 import lk.ijse.Dao.Impl.MealDaoImpl;
 
 public class DaoFactory {
@@ -14,7 +16,7 @@ public class DaoFactory {
     }
 
     public enum DAOTypes {
-        CUSTOMER,ITEM,ORDER,ORDER_DETAILS,QUERY_DAO,MEAL
+        CUSTOMER,ITEM,ORDER,ORDER_DETAILS,QUERY_DAO,MEAL,EMPLOYEE
     }
 
     public SuperDao getDAO(DAOTypes types){
@@ -23,6 +25,8 @@ public class DaoFactory {
                 return new CustomerDaoImpl();
             case MEAL:
                 return new MealDaoImpl();
+            case EMPLOYEE:
+                return new EmployeeDaoImpl();
 
         }
         return null;

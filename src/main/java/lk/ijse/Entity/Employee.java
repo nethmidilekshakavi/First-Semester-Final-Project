@@ -1,6 +1,6 @@
 package lk.ijse.Entity;
 
-import lk.ijse.controller.Employee;
+import lk.ijse.controller.EmployeeController;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 
-public class EmployeeModel extends Employee {
+public class Employee extends EmployeeController {
     private String E_ID;
     private String NIC;
     private String First_Name;

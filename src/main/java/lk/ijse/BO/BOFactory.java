@@ -1,6 +1,7 @@
 package lk.ijse.BO;
 
 import lk.ijse.BO.Impl.CustomerBOImpl;
+import lk.ijse.BO.Impl.EmployeeBOImpl;
 import lk.ijse.BO.Impl.MealBOImpl;
 import lk.ijse.Dao.Impl.CustomerDaoImpl;
 import lk.ijse.Dao.Impl.MealDaoImpl;
@@ -14,7 +15,7 @@ public class BOFactory {
     }
 
     public enum BOTypes{
-        CUSTOMER,ITEM,MEAL
+        CUSTOMER,ITEM,MEAL,EMPLOYEE
     }
 
     //Object creation logic for BO objects
@@ -24,6 +25,8 @@ public class BOFactory {
                 return new CustomerBOImpl();
             case MEAL:
                 return  new MealBOImpl();
+            case EMPLOYEE:
+                return new EmployeeBOImpl();
 
         }
         return null;

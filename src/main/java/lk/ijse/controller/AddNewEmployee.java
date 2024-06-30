@@ -140,7 +140,7 @@ public class AddNewEmployee {
         System.out.println(a);
         if (a){
           /*  mail mail =new mail();
-            mail.setMsg("Hellow now you are a Employee of FOOD COURT RESTURANT" +
+            mail.setMsg("Hellow now you are a EmployeeController of FOOD COURT RESTURANT" +
                     "\nTime : "+ Time.valueOf(LocalTime.now()) +
                     "\nDate : " + Date.valueOf(LocalDate.now())
             );
@@ -149,7 +149,7 @@ public class AddNewEmployee {
 
             Thread thread =new Thread(mail);
             thread.start();*/
-            new Alert(Alert.AlertType.CONFIRMATION,"Employee saved successfully").show();
+            new Alert(Alert.AlertType.CONFIRMATION,"EmployeeController saved successfully").show();
         }else {
             new Alert(Alert.AlertType.ERROR,"something went wrong").show();
         }

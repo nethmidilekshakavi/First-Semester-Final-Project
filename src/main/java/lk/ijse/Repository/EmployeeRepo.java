@@ -99,7 +99,7 @@ public class EmployeeRepo {
         return employeeModels;
     }
 
-    public static ArrayList<EmployeeModel> getAll() throws SQLException{
+ /*   public static ArrayList<EmployeeModel> getAll() throws SQLException{
         ArrayList<EmployeeModel>employeeModels = new ArrayList<>();
 
         try {
@@ -115,7 +115,7 @@ public class EmployeeRepo {
             throw new RuntimeException(e);
         }
             return employeeModels;
-    }
+    }*/
 
     public static List<String> getIds() throws SQLException {
         String sql = "SELECT E_ID FROM Employee";

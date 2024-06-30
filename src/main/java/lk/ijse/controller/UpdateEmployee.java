@@ -142,7 +142,7 @@ public class UpdateEmployee {
             Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
             successAlert.setTitle("Success");
             successAlert.setHeaderText(null);
-            successAlert.setContentText("Employee details updated successfully.");
+            successAlert.setContentText("EmployeeController details updated successfully.");
             successAlert.showAndWait();
 
 

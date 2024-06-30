@@ -56,4 +56,21 @@ public class MealDaoImpl implements MealDao {
 
     }
 
+    @Override
+    public Meal searchById(String code) throws SQLException, ClassNotFoundException {
+        ResultSet rst  = SQLUtil.execute("SELECT * FROM Meal WHERE M_ID = ?",code+"");
+        rst.next();
+        return new Meal(code + "", rst.getString(2));
+    }
+@Override
+    public ArrayList<Meal> getIds() throws SQLException, ClassNotFoundException {
+        ArrayList<Meal> allMeal = new ArrayList<>();
+        ResultSet resultSet = SQLUtil.execute("SELECT M_ID FROM Meal");
+        while (resultSet.next()) {
+            Meal meal = new Meal(resultSet.getString(1),resultSet.getString(2));
+            allMeal.add(meal);
+        }
+        return allMeal;
+    }
+
 }

@@ -12,8 +12,9 @@ public class Meal {
     private String MID;
     private String Name;
     private String Price;
-   // private  String meal;
-  //  private JFileChooser pic;
 
 
+    public Meal(String string, String rstString) {
+
+    }
 }

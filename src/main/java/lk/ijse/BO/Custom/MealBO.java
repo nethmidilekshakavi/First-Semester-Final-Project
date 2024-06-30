@@ -1,6 +1,7 @@
 package lk.ijse.BO.Custom;
 
 import lk.ijse.BO.SuperBo;
+import lk.ijse.Entity.Meal;
 import lk.ijse.Model.MealModel;
 
 import java.sql.SQLException;
@@ -14,4 +15,6 @@ public interface MealBO extends SuperBo {
     boolean updateCustomer(MealModel mealModel) throws SQLException, ClassNotFoundException;
 
     boolean deleteCustomer(String id) throws SQLException, ClassNotFoundException;
+
+    Meal serchbyIDS(String code) throws SQLException, ClassNotFoundException;
 }

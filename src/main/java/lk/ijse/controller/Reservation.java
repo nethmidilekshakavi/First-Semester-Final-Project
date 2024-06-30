@@ -27,9 +27,11 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lk.ijse.BO.BOFactory;
 import lk.ijse.BO.Custom.CustomerBO;
+import lk.ijse.BO.Custom.MealBO;
 import lk.ijse.DB.DbConnection;
 import lk.ijse.Dao.Custom.CustomerDao;
 import lk.ijse.Dao.Impl.CustomerDaoImpl;
+import lk.ijse.Entity.Meal;
 import lk.ijse.Model.*;
 import lk.ijse.Model.TM.ReservationTM;
 import lk.ijse.Repository.*;
@@ -150,6 +152,7 @@ public class Reservation {
     double netTotal = 0;
 
     CustomerBO customerBO = (CustomerBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.CUSTOMER);
+    MealBO mealBO = (MealBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.MEAL);
 
     public void initialize() {
         setDate();
@@ -365,7 +368,7 @@ public class Reservation {
     void comboMealList(ActionEvent event) {
         String mid = reservationList.getValue();
         try{
-            MealModel mealModel = MealRepo.searchById(mid);
+            Meal mealModel = mealBO.serchbyIDS(mid);
             if(mealModel != null){
                 txtdesc.setText(mealModel.getName());
                 //   QOHtxt.setText(mealModel.);
@@ -374,6 +377,8 @@ public class Reservation {
 
             qtytxt.requestFocus();
         } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }

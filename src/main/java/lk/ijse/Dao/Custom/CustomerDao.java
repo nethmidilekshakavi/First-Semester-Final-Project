@@ -22,5 +22,8 @@ public interface CustomerDao extends CrudDao<Customer> {
 
 
     ArrayList<Customer> loadAllCustomerNumber() throws SQLException, ClassNotFoundException;
+
+
+    Customer searchByCID(String num) throws SQLException, ClassNotFoundException;
 }
 

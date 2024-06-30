@@ -19,7 +19,7 @@ public class Customer  {
     private  String Email;
 
 
-    public Customer(String num) {
+    public Customer(String num, String string) {
 
     }
 }

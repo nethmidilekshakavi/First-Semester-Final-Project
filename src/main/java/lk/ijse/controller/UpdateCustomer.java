@@ -162,19 +162,19 @@ public class UpdateCustomer {
         assert updatecustomerinfor != null : "fx:id=\"updatecustomerinfor\" was not injected: check your FXML file 'UpdateCustomer.fxml'.";
     }
 
-    //loadwena tika hadanna one
+
     public void ideeenter(KeyEvent keyEvent) throws SQLException, ClassNotFoundException {
         if (keyEvent.getCode().equals(KeyCode.ENTER)){
             String id = String.valueOf(cidtxt.getText());
            ArrayList<Customer> customers = customerBO.serachCID(id);
 
 
-            newnictxt.setText(String.valueOf(customers.get(0)));
-            newfnametxt.setText(String.valueOf(fname.getText()));
-            newlnametxt.setText(String.valueOf(lname.getText()));
-            newaddresstxt.setText(String.valueOf(address.getText()));
-            newnumtxt.setText(String.valueOf(String.valueOf(num.getText())));
-            newEmailtxt.setText(String.valueOf(email.getText()));
+            newnictxt.setText(String.valueOf(customers.get(0).getNIC()));
+            newfnametxt.setText(String.valueOf(customers.get(0).getFirst_Name()));
+            newlnametxt.setText(String.valueOf(customers.get(0).getLast_Name()));
+            newaddresstxt.setText(String.valueOf(customers.get(0).getAddress()));
+            newnumtxt.setText(String.valueOf(String.valueOf(customers.get(0).getPhone_Number())));
+            newEmailtxt.setText(String.valueOf(customers.get(0).getEmail()));
 
         }
     }
